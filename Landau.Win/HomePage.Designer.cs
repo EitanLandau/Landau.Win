@@ -35,8 +35,9 @@
             this.kryptonRibbonGroupTriple1 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.btnAdd = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.btnChange = new Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.btnDeateils = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.costumerList = new Krypton.Ribbon.KryptonRibbonGroupComboBox();
             this.kryptonRibbonTab1 = new Krypton.Ribbon.KryptonRibbonTab();
+            this.kryptonRibbonGroup2 = new Krypton.Ribbon.KryptonRibbonGroup();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             this.kryptonRibbon1.RibbonTabs.AddRange(new Krypton.Ribbon.KryptonRibbonTab[] {
             this.costumerMangmentTab,
             this.kryptonRibbonTab1});
-            this.kryptonRibbon1.SelectedTab = this.costumerMangmentTab;
+            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab1;
             this.kryptonRibbon1.Size = new System.Drawing.Size(859, 171);
             this.kryptonRibbon1.TabIndex = 0;
             // 
@@ -68,7 +69,7 @@
             this.kryptonRibbonGroupTriple1.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
             this.btnAdd,
             this.btnChange,
-            this.btnDeateils});
+            this.costumerList});
             // 
             // btnAdd
             // 
@@ -82,12 +83,18 @@
             this.btnChange.TextLine1 = "שנה פרטי לקוח";
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
-            // btnDeateils
+            // costumerList
             // 
-            this.btnDeateils.ImageLarge = global::Landau.Win.Properties.Resources.צילום_מסך_2023_11_12_190958;
-            this.btnDeateils.ImageSmall = null;
-            this.btnDeateils.TextLine1 = "פרטי לקוח";
-            this.btnDeateils.Click += new System.EventHandler(this.btnDeateils_Click);
+            this.costumerList.DropDownWidth = 121;
+            this.costumerList.FormattingEnabled = false;
+            this.costumerList.ItemHeight = 20;
+            this.costumerList.Text = "";
+            this.costumerList.TextUpdate += new System.EventHandler(this.איתן);
+            // 
+            // kryptonRibbonTab1
+            // 
+            this.kryptonRibbonTab1.Groups.AddRange(new Krypton.Ribbon.KryptonRibbonGroup[] {
+            this.kryptonRibbonGroup2});
             // 
             // HomePage
             // 
@@ -113,8 +120,9 @@
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple1;
         private Krypton.Ribbon.KryptonRibbonGroupButton btnAdd;
         private Krypton.Ribbon.KryptonRibbonGroupButton btnChange;
-        private Krypton.Ribbon.KryptonRibbonGroupButton btnDeateils;
         private Krypton.Ribbon.KryptonRibbonTab kryptonRibbonTab1;
+        private Krypton.Ribbon.KryptonRibbonGroupComboBox costumerList;
+        private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup2;
     }
 }
 
