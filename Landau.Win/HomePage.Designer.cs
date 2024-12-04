@@ -48,7 +48,7 @@
             this.kryptonRibbon1.RibbonTabs.AddRange(new Krypton.Ribbon.KryptonRibbonTab[] {
             this.costumerMangmentTab,
             this.kryptonRibbonTab1});
-            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab1;
+            this.kryptonRibbon1.SelectedTab = this.costumerMangmentTab;
             this.kryptonRibbon1.Size = new System.Drawing.Size(859, 171);
             this.kryptonRibbon1.TabIndex = 0;
             // 
