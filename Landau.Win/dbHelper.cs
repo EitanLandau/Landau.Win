@@ -14,14 +14,14 @@ namespace Landau.Win
 
         #region Definitions
         public static List<costumerTBL> allCostumers;
-        public static List<orderTBL> allOrders; // Replaced phone with order
+        public static List<orderTBL> allOrders; 
         #endregion
 
         #region load func
         public static void init()
         {
             getAllCostumers();
-            getAllOrders(); // Replaced getAllPhones with getAllOrders
+            getAllOrders(); 
         }
 
         #endregion
@@ -41,9 +41,9 @@ namespace Landau.Win
             return allCostumers;
         }
 
-        public static List<orderTBL> getAllOrders() // Replaced getAllPhones with getAllOrders
+        public static List<orderTBL> getAllOrders() 
         {
-            allOrders = (from s in db.orderTBL select s).ToList(); // Replaced phoneTBL with orderTBL
+            allOrders = (from s in db.orderTBL select s).ToList(); 
             return allOrders;
         }
 
@@ -66,18 +66,18 @@ namespace Landau.Win
             }
         }
 
-        public static orderTBL addOrder(orderTBL p1) // Replaced addPhone with addOrder
+        public static orderTBL addOrder(orderTBL p1) 
         {
             try
             {
-                db.orderTBL.Add(p1); // Replaced phoneTBL with orderTBL
+                db.orderTBL.Add(p1); 
                 db.SaveChanges();
-                getAllOrders(); // Replaced getAllPhones with getAllOrders
+                getAllOrders(); 
                 return p1;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error add order " + ex.Message.ToString()); // Replaced phone with order
+                MessageBox.Show("Error add order " + ex.Message.ToString()); 
                 return null;
             }
         }
@@ -90,8 +90,11 @@ namespace Landau.Win
             costumerTBL toUpdate = (from s in db.costumerTBL where s.Id == c1.Id select s).FirstOrDefault();
             if (toUpdate != null)
             {
+                toUpdate.Id = c1.Id;
                 toUpdate.firstName = c1.firstName;
                 toUpdate.lastName = c1.lastName;
+                toUpdate.email = c1.email;
+                toUpdate.phoneNumber = c1.phoneNumber;
                 db.SaveChanges();
                 getAllCostumers();
                 return true;
@@ -99,15 +102,18 @@ namespace Landau.Win
             return false;
         }
 
-        public static bool updateOrder(orderTBL p1) // Replaced updatePhone with updateOrder
+        public static bool updateOrder(orderTBL p1) 
         {
             orderTBL toUpdate = (from s in db.orderTBL where s.Id == p1.Id select s).FirstOrDefault(); // Replaced phoneTBL with orderTBL
             if (toUpdate != null)
             {
                 toUpdate.Id = p1.Id;
-                toUpdate.address = p1.address;// This might still be the order phone, if it refers to a phone in the order.
+                toUpdate.coustumerID = p1.coustumerID;
+                toUpdate.address = p1.address;
+                toUpdate.date = p1.date;
+                toUpdate.notes = p1.notes;
                 db.SaveChanges();
-                getAllOrders(); // Replaced getAllPhones with getAllOrders
+                getAllOrders(); 
                 return true;
             }
             return false;
@@ -135,16 +141,16 @@ namespace Landau.Win
             }
         }
 
-        public static bool deleteOrder(orderTBL p1) // Replaced deletePhone with deleteOrder
+        public static bool deleteOrder(orderTBL p1) 
         {
             try
             {
                 orderTBL toDelete = (from s in db.orderTBL where s.Id == p1.Id select s).FirstOrDefault(); // Replaced phoneTBL with orderTBL
                 if (toDelete == null)
                     return false;
-                db.orderTBL.Remove(toDelete); // Replaced phoneTBL with orderTBL
+                db.orderTBL.Remove(toDelete); 
                 db.SaveChanges();
-                getAllOrders(); // Replaced getAllPhones with getAllOrders
+                getAllOrders(); // 
                 return true;
             }
             catch (Exception ex)
