@@ -14,14 +14,16 @@ namespace Landau.Win
 
         #region Definitions
         public static List<costumerTBL> allCostumers;
-        public static List<orderTBL> allOrders; 
+        public static List<orderTBL> allOrders;
+        public static List<subOrderTBL> allSubOrders;
+        public static List<serviceTBL> allServices;
         #endregion
 
         #region load func
         public static void init()
         {
             getAllCostumers();
-            getAllOrders(); 
+            getAllOrders();
         }
 
         #endregion
@@ -40,11 +42,20 @@ namespace Landau.Win
             allCostumers = (from s in db.costumerTBL orderby s.firstName select s).ToList();
             return allCostumers;
         }
-
         public static List<orderTBL> getAllOrders() 
         {
             allOrders = (from s in db.orderTBL select s).ToList(); 
             return allOrders;
+        }
+        public static List<subOrderTBL> getAllSubOrders()
+        {
+            allCostumers = (from s in db.costumerTBL orderby s.firstName select s).ToList();
+            return allSubOrders;
+        }
+        public static List<serviceTBL> getAllServices()
+        {
+            allCostumers = (from s in db.costumerTBL orderby s.firstName select s).ToList();
+            return allServices;
         }
 
         #endregion
