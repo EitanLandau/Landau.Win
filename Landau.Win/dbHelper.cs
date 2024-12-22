@@ -19,154 +19,255 @@ namespace Landau.Win
         public static List<serviceTBL> allServices;
         #endregion
 
-        #region load func
-        public static void init()
+        #region Load Functions
+        public static void Init()
         {
-            getAllCostumers();
-            getAllOrders();
+            GetAllCostumers();
+            GetAllOrders();
+            GetAllSubOrders();
+            GetAllServices();
         }
-
         #endregion
 
-        #region get func
-        public static costumerTBL getCostumerByName(string fn, string ln)
+        #region Get Functions
+        public static List<costumerTBL> GetAllCostumers()
         {
-            costumerTBL result = allCostumers.Where(x => x.firstName == fn
-                                                       && x.lastName == ln)
-                                             .FirstOrDefault();
-            return result;
-        }
-
-        public static List<costumerTBL> getAllCostumers()
-        {
-            allCostumers = (from s in db.costumerTBL orderby s.firstName select s).ToList();
+            allCostumers = (from c in db.costumerTBL orderby c.lastName select c).ToList();
             return allCostumers;
         }
-        public static List<orderTBL> getAllOrders() 
+
+        public static List<orderTBL> GetAllOrders()
         {
-            allOrders = (from s in db.orderTBL select s).ToList(); 
+            allOrders = (from o in db.orderTBL orderby o.date select o).ToList();
             return allOrders;
         }
-        public static List<subOrderTBL> getAllSubOrders()
+
+        public static List<subOrderTBL> GetAllSubOrders()
         {
-            allCostumers = (from s in db.costumerTBL orderby s.firstName select s).ToList();
+            allSubOrders = (from so in db.subOrderTBL orderby so.Id select so).ToList();
             return allSubOrders;
         }
-        public static List<serviceTBL> getAllServices()
+
+        public static List<serviceTBL> GetAllServices()
         {
-            allCostumers = (from s in db.costumerTBL orderby s.firstName select s).ToList();
+            allServices = (from s in db.serviceTBL orderby s.serviceName select s).ToList();
             return allServices;
         }
-
         #endregion
 
-        #region add func
-        public static costumerTBL addCostumer(costumerTBL c1)
+        #region Add Functions
+        public static costumerTBL AddCostumer(costumerTBL customer)
         {
             try
             {
-                db.costumerTBL.Add(c1);
+                db.costumerTBL.Add(customer);
                 db.SaveChanges();
-                getAllCostumers();
-                return c1;
+                GetAllCostumers();
+                return customer;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error add costumer " + ex.Message.ToString());
+                MessageBox.Show("Error adding customer: " + ex.Message);
                 return null;
             }
         }
 
-        public static orderTBL addOrder(orderTBL p1) 
+        public static orderTBL AddOrder(orderTBL order)
         {
             try
             {
-                db.orderTBL.Add(p1); 
+                db.orderTBL.Add(order);
                 db.SaveChanges();
-                getAllOrders(); 
-                return p1;
+                GetAllOrders();
+                return order;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error add order " + ex.Message.ToString()); 
+                MessageBox.Show("Error adding order: " + ex.Message);
                 return null;
             }
         }
 
+        public static subOrderTBL AddSubOrder(subOrderTBL subOrder)
+        {
+            try
+            {
+                db.subOrderTBL.Add(subOrder);
+                db.SaveChanges();
+                GetAllSubOrders();
+                return subOrder;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error adding sub-order: " + ex.Message);
+                return null;
+            }
+        }
+
+        public static serviceTBL AddService(serviceTBL service)
+        {
+            try
+            {
+                db.serviceTBL.Add(service);
+                db.SaveChanges();
+                GetAllServices();
+                return service;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error adding service: " + ex.Message);
+                return null;
+            }
+        }
         #endregion
 
-        #region update func
-        public static bool updateCostumer(costumerTBL c1)
+        #region Update Functions
+        public static bool UpdateCostumer(costumerTBL customer)
         {
-            costumerTBL toUpdate = (from s in db.costumerTBL where s.Id == c1.Id select s).FirstOrDefault();
+            var toUpdate = db.costumerTBL.FirstOrDefault(c => c.Id == customer.Id);
             if (toUpdate != null)
             {
-                toUpdate.Id = c1.Id;
-                toUpdate.firstName = c1.firstName;
-                toUpdate.lastName = c1.lastName;
-                toUpdate.email = c1.email;
-                toUpdate.phoneNumber = c1.phoneNumber;
+                toUpdate.Id = customer.Id;
+                toUpdate.firstName = customer.firstName;
+                toUpdate.lastName = customer.lastName;
+                toUpdate.email = customer.email;
+                toUpdate.phoneNumber = customer.phoneNumber;
                 db.SaveChanges();
-                getAllCostumers();
+                GetAllCostumers();
                 return true;
             }
             return false;
         }
 
-        public static bool updateOrder(orderTBL p1) 
+        public static bool UpdateOrder(orderTBL order)
         {
-            orderTBL toUpdate = (from s in db.orderTBL where s.Id == p1.Id select s).FirstOrDefault(); // Replaced phoneTBL with orderTBL
+            var toUpdate = db.orderTBL.FirstOrDefault(o => o.Id == order.Id);
             if (toUpdate != null)
             {
-                toUpdate.Id = p1.Id;
-                toUpdate.coustumerID = p1.coustumerID;
-                toUpdate.address = p1.address;
-                toUpdate.date = p1.date;
-                toUpdate.notes = p1.notes;
+                toUpdate.Id = order.Id;
+                toUpdate.coustumerID = order.coustumerID;
+                toUpdate.address = order.address;
+                toUpdate.date = order.date;
+                toUpdate.notes = order.notes;
                 db.SaveChanges();
-                getAllOrders(); 
+                GetAllOrders();
                 return true;
             }
             return false;
         }
 
+        public static bool UpdateSubOrder(subOrderTBL subOrder)
+        {
+            var toUpdate = db.subOrderTBL.FirstOrDefault(so => so.Id == subOrder.Id);
+            if (toUpdate != null)
+            {
+                toUpdate.Id = subOrder.Id;
+                toUpdate.serviceID = subOrder.serviceID;
+                toUpdate.orderID = subOrder.orderID;
+                toUpdate.serviceID = subOrder.serviceID;
+                toUpdate.dateOfFirstMeeting = subOrder.dateOfFirstMeeting;
+                toUpdate.price = subOrder.price;
+                toUpdate.amountInvited = subOrder.amountInvited;
+                toUpdate.notes = subOrder.notes;
+                db.SaveChanges();
+                GetAllSubOrders();
+                return true;
+            }
+            return false;
+        }
+
+        public static bool UpdateService(serviceTBL service)
+        {
+            var toUpdate = db.serviceTBL.FirstOrDefault(s => s.Id == service.Id);
+            if (toUpdate != null)
+            {
+                toUpdate.Id = service.Id;
+                toUpdate.serviceType = service.serviceType;
+                toUpdate.serviceName = service.serviceName;
+                toUpdate.sessionsNum = service.sessionsNum;
+                toUpdate.sessionsLength = service.sessionsLength;
+                toUpdate.price = service.price;
+                db.SaveChanges();
+                GetAllServices();
+                return true;
+            }
+            return false;
+        }
         #endregion
 
-        #region delete func
-        public static bool deleteCostumer(costumerTBL c1)
+        #region Delete Functions
+        public static bool DeleteCostumer(costumerTBL customer)
         {
             try
             {
-                costumerTBL toDelete = (from s in db.costumerTBL where s.Id == c1.Id select s).FirstOrDefault();
+                var toDelete = db.costumerTBL.FirstOrDefault(c => c.Id == customer.Id);
                 if (toDelete == null)
                     return false;
                 db.costumerTBL.Remove(toDelete);
                 db.SaveChanges();
-                getAllCostumers();
+                GetAllCostumers();
                 return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error delete: " + ex.Message.ToString());
+                MessageBox.Show("Error deleting customer: " + ex.Message);
                 return false;
             }
         }
 
-        public static bool deleteOrder(orderTBL p1) 
+        public static bool DeleteOrder(orderTBL order)
         {
             try
             {
-                orderTBL toDelete = (from s in db.orderTBL where s.Id == p1.Id select s).FirstOrDefault(); // Replaced phoneTBL with orderTBL
+                var toDelete = db.orderTBL.FirstOrDefault(o => o.Id == order.Id);
                 if (toDelete == null)
                     return false;
-                db.orderTBL.Remove(toDelete); 
+                db.orderTBL.Remove(toDelete);
                 db.SaveChanges();
-                getAllOrders(); // 
+                GetAllOrders();
                 return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error delete: " + ex.Message.ToString());
+                MessageBox.Show("Error deleting order: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool DeleteSubOrder(subOrderTBL subOrder)
+        {
+            try
+            {
+                var toDelete = db.subOrderTBL.FirstOrDefault(so => so.Id == subOrder.Id);
+                if (toDelete == null)
+                    return false;
+                db.subOrderTBL.Remove(toDelete);
+                db.SaveChanges();
+                GetAllSubOrders();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting sub-order: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool DeleteService(serviceTBL service)
+        {
+            try
+            {
+                var toDelete = db.serviceTBL.FirstOrDefault(s => s.Id == service.Id);
+                if (toDelete == null)
+                    return false;
+                db.serviceTBL.Remove(toDelete);
+                db.SaveChanges();
+                GetAllServices();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting service: " + ex.Message);
                 return false;
             }
         }
