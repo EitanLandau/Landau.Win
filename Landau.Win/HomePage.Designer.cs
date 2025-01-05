@@ -45,6 +45,10 @@
             // 
             this.kryptonRibbon1.InDesignHelperMode = true;
             this.kryptonRibbon1.Name = "kryptonRibbon1";
+            this.kryptonRibbon1.QATLocation = Krypton.Ribbon.QATLocation.Hidden;
+            this.kryptonRibbon1.RibbonFileAppButton.AppButtonVisible = false;
+            this.kryptonRibbon1.RibbonShortcuts.ToggleKeyboardAccess1 = System.Windows.Forms.Keys.None;
+            this.kryptonRibbon1.RibbonShortcuts.ToggleMinimizeMode = System.Windows.Forms.Keys.None;
             this.kryptonRibbon1.RibbonTabs.AddRange(new Krypton.Ribbon.KryptonRibbonTab[] {
             this.costumerMangmentTab,
             this.kryptonRibbonTab1});
