@@ -42,5 +42,10 @@ namespace Landau.Win
 
 
         }
+
+        private void kryptonRibbon1_SelectedTabChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

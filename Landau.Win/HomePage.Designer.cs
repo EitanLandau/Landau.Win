@@ -30,14 +30,12 @@
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.kryptonRibbon1 = new Krypton.Ribbon.KryptonRibbon();
-            this.costumerMangmentTab = new Krypton.Ribbon.KryptonRibbonTab();
-            this.kryptonRibbonGroup1 = new Krypton.Ribbon.KryptonRibbonGroup();
+            this.costumersMangment = new Krypton.Ribbon.KryptonRibbonTab();
+            this.costumerFeatures = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple1 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
-            this.btnAdd = new Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.btnChange = new Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.costumerList = new Krypton.Ribbon.KryptonRibbonGroupComboBox();
-            this.kryptonRibbonTab1 = new Krypton.Ribbon.KryptonRibbonTab();
-            this.kryptonRibbonGroup2 = new Krypton.Ribbon.KryptonRibbonGroup();
+            this.addBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.updateBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.costumerLst = new Krypton.Ribbon.KryptonRibbonGroupButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,60 +43,43 @@
             // 
             this.kryptonRibbon1.InDesignHelperMode = true;
             this.kryptonRibbon1.Name = "kryptonRibbon1";
-            this.kryptonRibbon1.QATLocation = Krypton.Ribbon.QATLocation.Hidden;
-            this.kryptonRibbon1.RibbonFileAppButton.AppButtonVisible = false;
-            this.kryptonRibbon1.RibbonShortcuts.ToggleKeyboardAccess1 = System.Windows.Forms.Keys.None;
-            this.kryptonRibbon1.RibbonShortcuts.ToggleMinimizeMode = System.Windows.Forms.Keys.None;
             this.kryptonRibbon1.RibbonTabs.AddRange(new Krypton.Ribbon.KryptonRibbonTab[] {
-            this.costumerMangmentTab,
-            this.kryptonRibbonTab1});
-            this.kryptonRibbon1.SelectedTab = this.costumerMangmentTab;
+            this.costumersMangment});
+            this.kryptonRibbon1.SelectedTab = this.costumersMangment;
             this.kryptonRibbon1.Size = new System.Drawing.Size(859, 171);
             this.kryptonRibbon1.TabIndex = 0;
+            this.kryptonRibbon1.SelectedTabChanged += new System.EventHandler(this.kryptonRibbon1_SelectedTabChanged);
             // 
-            // costumerMangmentTab
+            // costumersMangment
             // 
-            this.costumerMangmentTab.Groups.AddRange(new Krypton.Ribbon.KryptonRibbonGroup[] {
-            this.kryptonRibbonGroup1});
-            this.costumerMangmentTab.Text = "ניהול לקוחות";
+            this.costumersMangment.Groups.AddRange(new Krypton.Ribbon.KryptonRibbonGroup[] {
+            this.costumerFeatures});
+            this.costumersMangment.Text = "ניהול לקוחות";
             // 
-            // kryptonRibbonGroup1
+            // costumerFeatures
             // 
-            this.kryptonRibbonGroup1.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.costumerFeatures.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
             this.kryptonRibbonGroupTriple1});
-            this.kryptonRibbonGroup1.TextLine1 = "לקוחות";
+            this.costumerFeatures.TextLine1 = "( :";
             // 
             // kryptonRibbonGroupTriple1
             // 
             this.kryptonRibbonGroupTriple1.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.btnAdd,
-            this.btnChange,
-            this.costumerList});
+            this.addBtn,
+            this.updateBtn,
+            this.costumerLst});
             // 
-            // btnAdd
+            // addBtn
             // 
-            this.btnAdd.ImageLarge = global::Landau.Win.Properties.Resources.צילום_מסך_2024_11_26_152303;
-            this.btnAdd.TextLine1 = "הוסף לקוח";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.addBtn.TextLine1 = "הוסף לקוח";
             // 
-            // btnChange
+            // updateBtn
             // 
-            this.btnChange.ImageLarge = global::Landau.Win.Properties.Resources.צילום_מסך_2024_03_03_191346;
-            this.btnChange.TextLine1 = "שנה פרטי לקוח";
-            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
+            this.updateBtn.TextLine1 = "עדכן לקוח";
             // 
-            // costumerList
+            // costumerLst
             // 
-            this.costumerList.DropDownWidth = 121;
-            this.costumerList.FormattingEnabled = false;
-            this.costumerList.ItemHeight = 20;
-            this.costumerList.Text = "";
-            this.costumerList.TextUpdate += new System.EventHandler(this.איתן);
-            // 
-            // kryptonRibbonTab1
-            // 
-            this.kryptonRibbonTab1.Groups.AddRange(new Krypton.Ribbon.KryptonRibbonGroup[] {
-            this.kryptonRibbonGroup2});
+            this.costumerLst.TextLine1 = "רשימת לקוחות";
             // 
             // HomePage
             // 
@@ -119,14 +100,12 @@
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Krypton.Ribbon.KryptonRibbon kryptonRibbon1;
-        private Krypton.Ribbon.KryptonRibbonTab costumerMangmentTab;
-        private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup1;
+        private Krypton.Ribbon.KryptonRibbonTab costumersMangment;
+        private Krypton.Ribbon.KryptonRibbonGroup costumerFeatures;
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple1;
-        private Krypton.Ribbon.KryptonRibbonGroupButton btnAdd;
-        private Krypton.Ribbon.KryptonRibbonGroupButton btnChange;
-        private Krypton.Ribbon.KryptonRibbonTab kryptonRibbonTab1;
-        private Krypton.Ribbon.KryptonRibbonGroupComboBox costumerList;
-        private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup2;
+        private Krypton.Ribbon.KryptonRibbonGroupButton addBtn;
+        private Krypton.Ribbon.KryptonRibbonGroupButton updateBtn;
+        private Krypton.Ribbon.KryptonRibbonGroupButton costumerLst;
     }
 }
 
