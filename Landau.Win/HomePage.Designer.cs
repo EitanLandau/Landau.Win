@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.kryptonRibbon1 = new Krypton.Ribbon.KryptonRibbon();
             this.costumersMangment = new Krypton.Ribbon.KryptonRibbonTab();
@@ -35,7 +36,13 @@
             this.kryptonRibbonGroupTriple1 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.addBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.updateBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.costumerLst = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.costumerLstBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.orders = new Krypton.Ribbon.KryptonRibbonTab();
+            this.kryptonRibbonGroup1 = new Krypton.Ribbon.KryptonRibbonGroup();
+            this.kryptonRibbonGroupTriple2 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.ordersHistoryBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.newOrdedbtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonGroupButton3 = new Krypton.Ribbon.KryptonRibbonGroupButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,8 +51,9 @@
             this.kryptonRibbon1.InDesignHelperMode = true;
             this.kryptonRibbon1.Name = "kryptonRibbon1";
             this.kryptonRibbon1.RibbonTabs.AddRange(new Krypton.Ribbon.KryptonRibbonTab[] {
-            this.costumersMangment});
-            this.kryptonRibbon1.SelectedTab = this.costumersMangment;
+            this.costumersMangment,
+            this.orders});
+            this.kryptonRibbon1.SelectedTab = this.orders;
             this.kryptonRibbon1.Size = new System.Drawing.Size(859, 171);
             this.kryptonRibbon1.TabIndex = 0;
             this.kryptonRibbon1.SelectedTabChanged += new System.EventHandler(this.kryptonRibbon1_SelectedTabChanged);
@@ -67,19 +75,49 @@
             this.kryptonRibbonGroupTriple1.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
             this.addBtn,
             this.updateBtn,
-            this.costumerLst});
+            this.costumerLstBtn});
             // 
             // addBtn
             // 
+            this.addBtn.ImageLarge = global::Landau.Win.Properties.Resources.צילום_מסך_2024_11_26_152303;
             this.addBtn.TextLine1 = "הוסף לקוח";
             // 
             // updateBtn
             // 
+            this.updateBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("updateBtn.ImageLarge")));
             this.updateBtn.TextLine1 = "עדכן לקוח";
             // 
-            // costumerLst
+            // costumerLstBtn
             // 
-            this.costumerLst.TextLine1 = "רשימת לקוחות";
+            this.costumerLstBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("costumerLstBtn.ImageLarge")));
+            this.costumerLstBtn.TextLine1 = "רשימת לקוחות";
+            // 
+            // orders
+            // 
+            this.orders.Groups.AddRange(new Krypton.Ribbon.KryptonRibbonGroup[] {
+            this.kryptonRibbonGroup1});
+            this.orders.Text = "הזמנות";
+            // 
+            // kryptonRibbonGroup1
+            // 
+            this.kryptonRibbonGroup1.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.kryptonRibbonGroupTriple2});
+            // 
+            // kryptonRibbonGroupTriple2
+            // 
+            this.kryptonRibbonGroupTriple2.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.ordersHistoryBtn,
+            this.newOrdedbtn,
+            this.kryptonRibbonGroupButton3});
+            // 
+            // ordersHistoryBtn
+            // 
+            this.ordersHistoryBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("ordersHistoryBtn.ImageLarge")));
+            this.ordersHistoryBtn.TextLine1 = "היסטורית הזמנות";
+            // 
+            // newOrdedbtn
+            // 
+            this.newOrdedbtn.TextLine1 = "הוסף הזמנה";
             // 
             // HomePage
             // 
@@ -105,7 +143,13 @@
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple1;
         private Krypton.Ribbon.KryptonRibbonGroupButton addBtn;
         private Krypton.Ribbon.KryptonRibbonGroupButton updateBtn;
-        private Krypton.Ribbon.KryptonRibbonGroupButton costumerLst;
+        private Krypton.Ribbon.KryptonRibbonGroupButton costumerLstBtn;
+        private Krypton.Ribbon.KryptonRibbonTab orders;
+        private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup1;
+        private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple2;
+        private Krypton.Ribbon.KryptonRibbonGroupButton ordersHistoryBtn;
+        private Krypton.Ribbon.KryptonRibbonGroupButton newOrdedbtn;
+        private Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton3;
     }
 }
 
