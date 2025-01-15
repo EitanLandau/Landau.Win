@@ -47,5 +47,10 @@ namespace Landau.Win
         {
 
         }
+
+        private void newOrdedbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

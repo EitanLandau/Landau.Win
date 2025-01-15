@@ -149,6 +149,7 @@ namespace Landau.Win
                 toUpdate.address = order.address;
                 toUpdate.date = order.date;
                 toUpdate.notes = order.notes;
+             
                 db.SaveChanges();
                 GetAllOrders();
                 return true;

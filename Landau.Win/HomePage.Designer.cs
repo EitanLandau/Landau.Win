@@ -42,7 +42,8 @@
             this.kryptonRibbonGroupTriple2 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.ordersHistoryBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.newOrdedbtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.kryptonRibbonGroupButton3 = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.updateOrderBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonTab1 = new Krypton.Ribbon.KryptonRibbonTab();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,8 @@
             this.kryptonRibbon1.Name = "kryptonRibbon1";
             this.kryptonRibbon1.RibbonTabs.AddRange(new Krypton.Ribbon.KryptonRibbonTab[] {
             this.costumersMangment,
-            this.orders});
+            this.orders,
+            this.kryptonRibbonTab1});
             this.kryptonRibbon1.SelectedTab = this.orders;
             this.kryptonRibbon1.Size = new System.Drawing.Size(859, 171);
             this.kryptonRibbon1.TabIndex = 0;
@@ -108,7 +110,7 @@
             this.kryptonRibbonGroupTriple2.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
             this.ordersHistoryBtn,
             this.newOrdedbtn,
-            this.kryptonRibbonGroupButton3});
+            this.updateOrderBtn});
             // 
             // ordersHistoryBtn
             // 
@@ -117,7 +119,14 @@
             // 
             // newOrdedbtn
             // 
+            this.newOrdedbtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("newOrdedbtn.ImageLarge")));
             this.newOrdedbtn.TextLine1 = "הוסף הזמנה";
+            this.newOrdedbtn.Click += new System.EventHandler(this.newOrdedbtn_Click);
+            // 
+            // updateOrderBtn
+            // 
+            this.updateOrderBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("updateOrderBtn.ImageLarge")));
+            this.updateOrderBtn.TextLine1 = "עדכן הזמנה";
             // 
             // HomePage
             // 
@@ -149,7 +158,8 @@
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple2;
         private Krypton.Ribbon.KryptonRibbonGroupButton ordersHistoryBtn;
         private Krypton.Ribbon.KryptonRibbonGroupButton newOrdedbtn;
-        private Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton3;
+        private Krypton.Ribbon.KryptonRibbonGroupButton updateOrderBtn;
+        private Krypton.Ribbon.KryptonRibbonTab kryptonRibbonTab1;
     }
 }
 
