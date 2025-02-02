@@ -90,10 +90,16 @@
     <Compile Include="costumerTBL.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="HomePage.cs">
+    <Compile Include="forms\ordersHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomePage.Designer.cs">
+    <Compile Include="forms\ordersHistory.Designer.cs">
+      <DependentUpon>ordersHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\HomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
@@ -122,7 +128,10 @@
     <Compile Include="subOrderTBL.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="HomePage.resx">
+    <EmbeddedResource Include="forms\ordersHistory.resx">
+      <DependentUpon>ordersHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

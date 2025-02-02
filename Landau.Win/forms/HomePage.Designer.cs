@@ -116,6 +116,7 @@
             // 
             this.ordersHistoryBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("ordersHistoryBtn.ImageLarge")));
             this.ordersHistoryBtn.TextLine1 = "היסטורית הזמנות";
+            this.ordersHistoryBtn.Click += new System.EventHandler(this.ordersHistoryBtn_Click);
             // 
             // newOrdedbtn
             // 

@@ -52,5 +52,10 @@ namespace Landau.Win
         {
 
         }
+
+        private void ordersHistoryBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
