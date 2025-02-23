@@ -38,12 +38,13 @@
             this.updateBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.costumerLstBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.orders = new Krypton.Ribbon.KryptonRibbonTab();
-            this.kryptonRibbonGroup1 = new Krypton.Ribbon.KryptonRibbonGroup();
+            this.ordersGroup = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple2 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.ordersHistoryBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.newOrdedbtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.updateOrderBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kryptonRibbonTab1 = new Krypton.Ribbon.KryptonRibbonTab();
+            this.addOrderPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,13 +98,14 @@
             // orders
             // 
             this.orders.Groups.AddRange(new Krypton.Ribbon.KryptonRibbonGroup[] {
-            this.kryptonRibbonGroup1});
+            this.ordersGroup});
             this.orders.Text = "הזמנות";
             // 
-            // kryptonRibbonGroup1
+            // ordersGroup
             // 
-            this.kryptonRibbonGroup1.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.ordersGroup.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
             this.kryptonRibbonGroupTriple2});
+            this.ordersGroup.TextLine1 = "נתק אותי";
             // 
             // kryptonRibbonGroupTriple2
             // 
@@ -129,11 +131,23 @@
             this.updateOrderBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("updateOrderBtn.ImageLarge")));
             this.updateOrderBtn.TextLine1 = "עדכן הזמנה";
             // 
+            // addOrderPanel
+            // 
+            this.addOrderPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.addOrderPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.addOrderPanel.Location = new System.Drawing.Point(0, 177);
+            this.addOrderPanel.Name = "addOrderPanel";
+            this.addOrderPanel.Size = new System.Drawing.Size(859, 276);
+            this.addOrderPanel.TabIndex = 1;
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(859, 450);
+            this.Controls.Add(this.addOrderPanel);
             this.Controls.Add(this.kryptonRibbon1);
             this.Name = "HomePage";
             this.Text = "homePage";
@@ -155,12 +169,13 @@
         private Krypton.Ribbon.KryptonRibbonGroupButton updateBtn;
         private Krypton.Ribbon.KryptonRibbonGroupButton costumerLstBtn;
         private Krypton.Ribbon.KryptonRibbonTab orders;
-        private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup1;
+        private Krypton.Ribbon.KryptonRibbonGroup ordersGroup;
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple2;
         private Krypton.Ribbon.KryptonRibbonGroupButton ordersHistoryBtn;
         private Krypton.Ribbon.KryptonRibbonGroupButton newOrdedbtn;
         private Krypton.Ribbon.KryptonRibbonGroupButton updateOrderBtn;
         private Krypton.Ribbon.KryptonRibbonTab kryptonRibbonTab1;
+        private System.Windows.Forms.Panel addOrderPanel;
     }
 }
 

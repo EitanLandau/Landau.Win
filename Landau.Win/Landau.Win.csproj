@@ -69,7 +69,9 @@
     <Reference Include="Krypton.Workspace, Version=90.24.11.317, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Workspace.90.24.11.317\lib\net472\Krypton.Workspace.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -86,15 +88,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dbHelper.cs" />
     <Compile Include="costumerTBL.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="forms\ordersHistory.cs">
+    <Compile Include="dbHelper.cs" />
+    <Compile Include="forms\addOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\ordersHistory.Designer.cs">
-      <DependentUpon>ordersHistory.cs</DependentUpon>
+    <Compile Include="forms\addOrderForm.Designer.cs">
+      <DependentUpon>addOrderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\HomePage.cs">
       <SubType>Form</SubType>
@@ -128,8 +130,8 @@
     <Compile Include="subOrderTBL.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="forms\ordersHistory.resx">
-      <DependentUpon>ordersHistory.cs</DependentUpon>
+    <EmbeddedResource Include="forms\addOrderForm.resx">
+      <DependentUpon>addOrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
@@ -175,8 +177,8 @@
     </Content>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

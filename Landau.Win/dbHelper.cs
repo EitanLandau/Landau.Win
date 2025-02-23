@@ -145,7 +145,7 @@ namespace Landau.Win
             if (toUpdate != null)
             {
                 toUpdate.Id = order.Id;
-                toUpdate.coustumerID = order.coustumerID;
+                toUpdate.costumerID = order.costumerID;
                 toUpdate.address = order.address;
                 toUpdate.date = order.date;
                 toUpdate.notes = order.notes;
@@ -166,7 +166,7 @@ namespace Landau.Win
                 toUpdate.serviceID = subOrder.serviceID;
                 toUpdate.orderID = subOrder.orderID;
                 toUpdate.serviceID = subOrder.serviceID;
-                toUpdate.dateOfFirstMeeting = subOrder.dateOfFirstMeeting;
+              
                 toUpdate.price = subOrder.price;
                 toUpdate.amountInvited = subOrder.amountInvited;
                 toUpdate.notes = subOrder.notes;

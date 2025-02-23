@@ -20,7 +20,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="coustumerID" Type="int" Nullable="false" />
+          <Property Name="costumerID" Type="int" Nullable="false" />
           <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="date" Type="datetime" Nullable="false" />
           <Property Name="notes" Type="nvarchar" MaxLength="200" />
@@ -43,7 +43,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="orderID" Type="int" Nullable="false" />
           <Property Name="serviceID" Type="int" Nullable="false" />
-          <Property Name="dateOfFirstMeeting" Type="datetime" Nullable="false" />
+          <Property Name="dateOfNextMeeting" Type="datetime" Nullable="false" />
           <Property Name="price" Type="int" Nullable="false" />
           <Property Name="amountInvited" Type="int" Nullable="false" />
           <Property Name="notes" Type="nvarchar" MaxLength="200" Nullable="false" />
@@ -56,7 +56,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="orderTBL">
-              <PropertyRef Name="coustumerID" />
+              <PropertyRef Name="costumerID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -123,7 +123,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="coustumerID" Type="Int32" Nullable="false" />
+          <Property Name="costumerID" Type="Int32" Nullable="false" />
           <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="notes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
@@ -149,7 +149,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="orderID" Type="Int32" Nullable="false" />
           <Property Name="serviceID" Type="Int32" Nullable="false" />
-          <Property Name="dateOfFirstMeeting" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dateOfNextMeeting" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="price" Type="Int32" Nullable="false" />
           <Property Name="amountInvited" Type="Int32" Nullable="false" />
           <Property Name="notes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
@@ -164,7 +164,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="orderTBL">
-              <PropertyRef Name="coustumerID" />
+              <PropertyRef Name="costumerID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -231,7 +231,7 @@
             <EntityTypeMapping TypeName="dbModel.orderTBL">
               <MappingFragment StoreEntitySet="orderTBL">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="coustumerID" ColumnName="coustumerID" />
+                <ScalarProperty Name="costumerID" ColumnName="costumerID" />
                 <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="notes" ColumnName="notes" />
@@ -256,7 +256,7 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="orderID" ColumnName="orderID" />
                 <ScalarProperty Name="serviceID" ColumnName="serviceID" />
-                <ScalarProperty Name="dateOfFirstMeeting" ColumnName="dateOfFirstMeeting" />
+                <ScalarProperty Name="dateOfNextMeeting" ColumnName="dateOfNextMeeting" />
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="amountInvited" ColumnName="amountInvited" />
                 <ScalarProperty Name="notes" ColumnName="notes" />

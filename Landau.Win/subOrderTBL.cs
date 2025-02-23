@@ -17,7 +17,7 @@ namespace Landau.Win
         public int Id { get; set; }
         public int orderID { get; set; }
         public int serviceID { get; set; }
-        public System.DateTime dateOfFirstMeeting { get; set; }
+        public System.DateTime dateOfNextMeeting { get; set; }
         public int price { get; set; }
         public int amountInvited { get; set; }
         public string notes { get; set; }

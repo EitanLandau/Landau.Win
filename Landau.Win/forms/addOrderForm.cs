@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Landau.Win.forms
 {
-    public partial class ordersHistory : Form
+    public partial class addOrderForm : Form
     {
-        public ordersHistory()
+        public addOrderForm()
         {
             InitializeComponent();
         }

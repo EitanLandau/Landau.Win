@@ -21,7 +21,7 @@ namespace Landau.Win
         }
     
         public int Id { get; set; }
-        public int coustumerID { get; set; }
+        public int costumerID { get; set; }
         public string address { get; set; }
         public System.DateTime date { get; set; }
         public string notes { get; set; }

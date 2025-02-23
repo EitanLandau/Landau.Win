@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Landau.Win.forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Landau.Win
 {
     public partial class HomePage : Form
     {
+        Form current;
         public HomePage()
         {
             InitializeComponent();
@@ -50,7 +52,20 @@ namespace Landau.Win
 
         private void newOrdedbtn_Click(object sender, EventArgs e)
         {
-
+            if (current != null)
+            {
+                if (current is addOrderForm)
+                {
+                    return;
+                }
+                current.Close();
+            }
+            current = new addOrderForm();
+            current.Dock = DockStyle.Fill;
+            current.TopLevel = false;
+            current.TopMost = true;
+            addOrderPanel.Controls.Add(current);
+            current.Show();
         }
 
         private void ordersHistoryBtn_Click(object sender, EventArgs e)
