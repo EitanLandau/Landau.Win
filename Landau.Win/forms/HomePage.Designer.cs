@@ -34,7 +34,7 @@
             this.costumersMangment = new Krypton.Ribbon.KryptonRibbonTab();
             this.costumerFeatures = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple1 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
-            this.addBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.addCostumerBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.updateBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.costumerLstBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.orders = new Krypton.Ribbon.KryptonRibbonTab();
@@ -56,7 +56,7 @@
             this.costumersMangment,
             this.orders,
             this.kryptonRibbonTab1});
-            this.kryptonRibbon1.SelectedTab = this.orders;
+            this.kryptonRibbon1.SelectedTab = this.costumersMangment;
             this.kryptonRibbon1.Size = new System.Drawing.Size(859, 171);
             this.kryptonRibbon1.TabIndex = 0;
             this.kryptonRibbon1.SelectedTabChanged += new System.EventHandler(this.kryptonRibbon1_SelectedTabChanged);
@@ -76,14 +76,15 @@
             // kryptonRibbonGroupTriple1
             // 
             this.kryptonRibbonGroupTriple1.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.addBtn,
+            this.addCostumerBtn,
             this.updateBtn,
             this.costumerLstBtn});
             // 
-            // addBtn
+            // addCostumerBtn
             // 
-            this.addBtn.ImageLarge = global::Landau.Win.Properties.Resources.צילום_מסך_2024_11_26_152303;
-            this.addBtn.TextLine1 = "הוסף לקוח";
+            this.addCostumerBtn.ImageLarge = global::Landau.Win.Properties.Resources.צילום_מסך_2024_11_26_152303;
+            this.addCostumerBtn.TextLine1 = "הוסף לקוח";
+            this.addCostumerBtn.Click += new System.EventHandler(this.addCostumerBtn_Click);
             // 
             // updateBtn
             // 
@@ -165,7 +166,7 @@
         private Krypton.Ribbon.KryptonRibbonTab costumersMangment;
         private Krypton.Ribbon.KryptonRibbonGroup costumerFeatures;
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple1;
-        private Krypton.Ribbon.KryptonRibbonGroupButton addBtn;
+        private Krypton.Ribbon.KryptonRibbonGroupButton addCostumerBtn;
         private Krypton.Ribbon.KryptonRibbonGroupButton updateBtn;
         private Krypton.Ribbon.KryptonRibbonGroupButton costumerLstBtn;
         private Krypton.Ribbon.KryptonRibbonTab orders;

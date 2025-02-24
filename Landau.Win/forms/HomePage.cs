@@ -72,5 +72,15 @@ namespace Landau.Win
         {
 
         }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addCostumerBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

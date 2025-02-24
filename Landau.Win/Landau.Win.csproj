@@ -98,6 +98,12 @@
     <Compile Include="forms\addOrderForm.Designer.cs">
       <DependentUpon>addOrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\addCostumerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\addCostumerForm.Designer.cs">
+      <DependentUpon>addCostumerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     <Compile Include="subOrderTBL.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="forms\addCostumerForm.resx">
+      <DependentUpon>addCostumerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\addOrderForm.resx">
       <DependentUpon>addOrderForm.cs</DependentUpon>
     </EmbeddedResource>
