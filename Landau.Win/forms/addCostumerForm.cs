@@ -33,12 +33,12 @@ namespace Landau.Win.forms
         {
             // to add validations
 
-
             string firstName = firstNameTxt.Text.Trim();
             string lastName = lastNameTxt.Text.Trim();
             string phone  = txbPhone.Text.Trim();
             string email = txbEmail.Text.Trim();
-            costumerTBL tmp = allCustomers.Where(x => x.firstName.Equals(firstName) && x.lastName.Equals(firstName)).FirstOrDefault();
+
+                costumerTBL tmp = allCustomers.Where(x => x.firstName.Equals(firstName) && x.lastName.Equals(firstName)).FirstOrDefault();
 
             if (tmp == null)
             {
@@ -66,7 +66,7 @@ namespace Landau.Win.forms
             }
             else
             {
-                MessageBox.Show("Database contain this name");
+                MessageBox.Show("שם זה כבר נמצא במערכת , או שכבר נרשמת או שתשנה שם");
             }
 
         }
