@@ -5,13 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="febfe8b573a64a099b2d764e3a261030" Name="Diagram1">
-        <EntityTypeShape EntityType="dbModel.costumerTBL" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="dbModel.orderTBL" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="dbModel.serviceTBL" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="dbModel.subOrderTBL" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="dbModel.FK_orderTBL_costumerTBL" ManuallyRouted="false" />
         <AssociationConnector Association="dbModel.FK_subOrderTBL_ToorderTBL" ManuallyRouted="false" />
         <AssociationConnector Association="dbModel.FK_subOrderTBL_ToserviceTBL" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="dbModel.costumerTBL" Width="1.5" PointX="0.75" PointY="0.875" />
+        <AssociationConnector Association="dbModel.FK_orderTBL_costumerTBL" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

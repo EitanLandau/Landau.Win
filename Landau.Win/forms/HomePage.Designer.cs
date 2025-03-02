@@ -44,7 +44,7 @@
             this.newOrdedbtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.updateOrderBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kryptonRibbonTab1 = new Krypton.Ribbon.KryptonRibbonTab();
-            this.addOrderPanel = new System.Windows.Forms.Panel();
+            this.mainPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             this.orders,
             this.kryptonRibbonTab1});
             this.kryptonRibbon1.SelectedTab = this.costumersMangment;
-            this.kryptonRibbon1.Size = new System.Drawing.Size(859, 171);
+            this.kryptonRibbon1.Size = new System.Drawing.Size(946, 171);
             this.kryptonRibbon1.TabIndex = 0;
             this.kryptonRibbon1.SelectedTabChanged += new System.EventHandler(this.kryptonRibbon1_SelectedTabChanged);
             // 
@@ -132,26 +132,24 @@
             this.updateOrderBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("updateOrderBtn.ImageLarge")));
             this.updateOrderBtn.TextLine1 = "עדכן הזמנה";
             // 
-            // addOrderPanel
+            // mainPanel
             // 
-            this.addOrderPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.addOrderPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.addOrderPanel.Location = new System.Drawing.Point(0, 177);
-            this.addOrderPanel.Name = "addOrderPanel";
-            this.addOrderPanel.Size = new System.Drawing.Size(859, 276);
-            this.addOrderPanel.TabIndex = 1;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(0, 171);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(946, 284);
+            this.mainPanel.TabIndex = 1;
             // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 450);
-            this.Controls.Add(this.addOrderPanel);
+            this.ClientSize = new System.Drawing.Size(946, 455);
+            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.kryptonRibbon1);
             this.Name = "HomePage";
             this.Text = "homePage";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.HomePage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).EndInit();
             this.ResumeLayout(false);
@@ -176,7 +174,7 @@
         private Krypton.Ribbon.KryptonRibbonGroupButton newOrdedbtn;
         private Krypton.Ribbon.KryptonRibbonGroupButton updateOrderBtn;
         private Krypton.Ribbon.KryptonRibbonTab kryptonRibbonTab1;
-        private System.Windows.Forms.Panel addOrderPanel;
+        private System.Windows.Forms.Panel mainPanel;
     }
 }
 

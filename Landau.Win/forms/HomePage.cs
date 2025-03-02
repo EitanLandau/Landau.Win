@@ -21,7 +21,7 @@ namespace Landau.Win
 
         private void HomePage_Load(object sender, EventArgs e)
         {
-
+            DBHelper.Init();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace Landau.Win
             current.Dock = DockStyle.Fill;
             current.TopLevel = false;
             current.TopMost = true;
-            addOrderPanel.Controls.Add(current);
+            mainPanel.Controls.Add(current);
             current.Show();
         }
 
@@ -80,7 +80,20 @@ namespace Landau.Win
 
         private void addCostumerBtn_Click(object sender, EventArgs e)
         {
-
+            if (current != null)
+            {
+                if (current is addCostumerForm)
+                {
+                    return;
+                }
+                current.Close();
+            }
+            current = new addCostumerForm();
+            current.Dock = DockStyle.Fill;
+            current.TopLevel = false;
+            current.TopMost = true;
+            mainPanel.Controls.Add(current);
+            current.Show();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Landau.Win
 {
     public class DBHelper
     {
-        private static dbEntities db = new dbEntities();
+        private static dbEntities db;
 
         #region Definitions
         public static List<costumerTBL> allCostumers;
@@ -22,6 +22,7 @@ namespace Landau.Win
         #region Load Functions
         public static void Init()
         {
+            db = new dbEntities();
             GetAllCostumers();
             GetAllOrders();
             GetAllSubOrders();

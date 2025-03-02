@@ -23,8 +23,12 @@ namespace Landau.Win
         public int Id { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
+        public string fullName { get; set; }
         public string email { get; set; }
         public string phoneNumber { get; set; }
+        public System.DateTime bDate { get; set; }
+        public System.DateTime regDate { get; set; }
+        public string notes { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<orderTBL> orderTBL { get; set; }

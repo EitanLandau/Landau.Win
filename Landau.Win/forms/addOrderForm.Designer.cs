@@ -36,14 +36,15 @@
             this.notesLbl = new System.Windows.Forms.Label();
             this.dateLbl = new System.Windows.Forms.Label();
             this.dateMskdBx = new System.Windows.Forms.MaskedTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.notesTxt = new System.Windows.Forms.TextBox();
             this.continueBtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBoxAddOrder = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // pickCostumerCmbx
             // 
+            this.pickCostumerCmbx.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pickCostumerCmbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.pickCostumerCmbx.FormattingEnabled = true;
             this.pickCostumerCmbx.Location = new System.Drawing.Point(546, 34);
@@ -54,6 +55,7 @@
             // 
             // costumerLbl
             // 
+            this.costumerLbl.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.costumerLbl.AutoSize = true;
             this.costumerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.costumerLbl.Location = new System.Drawing.Point(724, 34);
@@ -64,6 +66,7 @@
             // 
             // addressLbl
             // 
+            this.addressLbl.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.addressLbl.AutoSize = true;
             this.addressLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.addressLbl.Location = new System.Drawing.Point(724, 94);
@@ -74,6 +77,7 @@
             // 
             // addressTxtBox
             // 
+            this.addressTxtBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.addressTxtBox.Location = new System.Drawing.Point(543, 98);
             this.addressTxtBox.Name = "addressTxtBox";
             this.addressTxtBox.Size = new System.Drawing.Size(163, 22);
@@ -81,6 +85,7 @@
             // 
             // notesLbl
             // 
+            this.notesLbl.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.notesLbl.AutoSize = true;
             this.notesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.notesLbl.Location = new System.Drawing.Point(724, 248);
@@ -91,6 +96,7 @@
             // 
             // dateLbl
             // 
+            this.dateLbl.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.dateLbl.AutoSize = true;
             this.dateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.dateLbl.Location = new System.Drawing.Point(724, 140);
@@ -101,6 +107,7 @@
             // 
             // dateMskdBx
             // 
+            this.dateMskdBx.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.dateMskdBx.Location = new System.Drawing.Point(518, 155);
             this.dateMskdBx.Mask = "00/00/0000 90:00";
             this.dateMskdBx.Name = "dateMskdBx";
@@ -108,16 +115,18 @@
             this.dateMskdBx.TabIndex = 7;
             this.dateMskdBx.ValidatingType = typeof(System.DateTime);
             // 
-            // textBox1
+            // notesTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(497, 238);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 141);
-            this.textBox1.TabIndex = 8;
+            this.notesTxt.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.notesTxt.Location = new System.Drawing.Point(497, 238);
+            this.notesTxt.Multiline = true;
+            this.notesTxt.Name = "notesTxt";
+            this.notesTxt.Size = new System.Drawing.Size(209, 141);
+            this.notesTxt.TabIndex = 8;
             // 
             // continueBtn
             // 
+            this.continueBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.continueBtn.Location = new System.Drawing.Point(39, 327);
             this.continueBtn.Name = "continueBtn";
             this.continueBtn.Size = new System.Drawing.Size(120, 52);
@@ -125,15 +134,18 @@
             this.continueBtn.Text = "המשך";
             this.continueBtn.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // pictureBoxAddOrder
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(868, 483);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxAddOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxAddOrder.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAddOrder.Image")));
+            this.pictureBoxAddOrder.Location = new System.Drawing.Point(12, -9);
+            this.pictureBoxAddOrder.Name = "pictureBoxAddOrder";
+            this.pictureBoxAddOrder.Size = new System.Drawing.Size(868, 483);
+            this.pictureBoxAddOrder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxAddOrder.TabIndex = 11;
+            this.pictureBoxAddOrder.TabStop = false;
             // 
             // addOrderForm
             // 
@@ -141,7 +153,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 486);
             this.Controls.Add(this.continueBtn);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.notesTxt);
             this.Controls.Add(this.dateMskdBx);
             this.Controls.Add(this.dateLbl);
             this.Controls.Add(this.notesLbl);
@@ -149,11 +161,11 @@
             this.Controls.Add(this.addressLbl);
             this.Controls.Add(this.costumerLbl);
             this.Controls.Add(this.pickCostumerCmbx);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxAddOrder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "addOrderForm";
             this.Text = "הוסף לקוח וכאלה";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddOrder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,8 +180,8 @@
         private System.Windows.Forms.Label notesLbl;
         private System.Windows.Forms.Label dateLbl;
         private System.Windows.Forms.MaskedTextBox dateMskdBx;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox notesTxt;
         private System.Windows.Forms.Button continueBtn;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxAddOrder;
     }
 }

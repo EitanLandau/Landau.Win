@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="costumerTBL">
           <Key>
             <PropertyRef Name="Id" />
@@ -12,8 +12,12 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fullName" Type="nvarchar" MaxLength="101" StoreGeneratedPattern="Computed" Nullable="false" />
           <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="phoneNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="phoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="bDate" Type="datetime" Nullable="false" />
+          <Property Name="regDate" Type="datetime" Nullable="false" />
+          <Property Name="notes" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="orderTBL">
           <Key>
@@ -102,22 +106,10 @@
             <End Role="subOrderTBL" EntitySet="subOrderTBL" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="costumerTBL">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="phoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="orderTBL" Relationship="Self.FK_orderTBL_costumerTBL" FromRole="costumerTBL" ToRole="orderTBL" />
-        </EntityType>
         <EntityType Name="orderTBL">
           <Key>
             <PropertyRef Name="Id" />
@@ -127,8 +119,8 @@
           <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="notes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="costumerTBL" Relationship="Self.FK_orderTBL_costumerTBL" FromRole="orderTBL" ToRole="costumerTBL" />
           <NavigationProperty Name="subOrderTBL" Relationship="Self.FK_subOrderTBL_ToorderTBL" FromRole="orderTBL" ToRole="subOrderTBL" />
+          <NavigationProperty Name="costumerTBL" Relationship="dbModel.FK_orderTBL_costumerTBL" FromRole="orderTBL" ToRole="costumerTBL" />
         </EntityType>
         <EntityType Name="serviceTBL">
           <Key>
@@ -156,18 +148,6 @@
           <NavigationProperty Name="orderTBL" Relationship="Self.FK_subOrderTBL_ToorderTBL" FromRole="subOrderTBL" ToRole="orderTBL" />
           <NavigationProperty Name="serviceTBL" Relationship="Self.FK_subOrderTBL_ToserviceTBL" FromRole="subOrderTBL" ToRole="serviceTBL" />
         </EntityType>
-        <Association Name="FK_orderTBL_costumerTBL">
-          <End Role="costumerTBL" Type="Self.costumerTBL" Multiplicity="1" />
-          <End Role="orderTBL" Type="Self.orderTBL" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="costumerTBL">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="orderTBL">
-              <PropertyRef Name="costumerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_subOrderTBL_ToorderTBL">
           <End Role="orderTBL" Type="Self.orderTBL" Multiplicity="1" />
           <End Role="subOrderTBL" Type="Self.subOrderTBL" Multiplicity="*" />
@@ -193,14 +173,9 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="dbEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="costumerTBL" EntityType="Self.costumerTBL" />
           <EntitySet Name="orderTBL" EntityType="Self.orderTBL" />
           <EntitySet Name="serviceTBL" EntityType="Self.serviceTBL" />
           <EntitySet Name="subOrderTBL" EntityType="Self.subOrderTBL" />
-          <AssociationSet Name="FK_orderTBL_costumerTBL" Association="Self.FK_orderTBL_costumerTBL">
-            <End Role="costumerTBL" EntitySet="costumerTBL" />
-            <End Role="orderTBL" EntitySet="orderTBL" />
-          </AssociationSet>
           <AssociationSet Name="FK_subOrderTBL_ToorderTBL" Association="Self.FK_subOrderTBL_ToorderTBL">
             <End Role="orderTBL" EntitySet="orderTBL" />
             <End Role="subOrderTBL" EntitySet="subOrderTBL" />
@@ -209,24 +184,45 @@
             <End Role="serviceTBL" EntitySet="serviceTBL" />
             <End Role="subOrderTBL" EntitySet="subOrderTBL" />
           </AssociationSet>
+          <EntitySet Name="costumerTBL" EntityType="dbModel.costumerTBL" />
+          <AssociationSet Name="FK_orderTBL_costumerTBL" Association="dbModel.FK_orderTBL_costumerTBL">
+            <End Role="costumerTBL" EntitySet="costumerTBL" />
+            <End Role="orderTBL" EntitySet="orderTBL" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="costumerTBL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fullName" Type="String" Nullable="false" MaxLength="101" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="regDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="notes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="orderTBL" Relationship="dbModel.FK_orderTBL_costumerTBL" FromRole="costumerTBL" ToRole="orderTBL" />
+        </EntityType>
+        <Association Name="FK_orderTBL_costumerTBL">
+          <End Type="dbModel.costumerTBL" Role="costumerTBL" Multiplicity="1" />
+          <End Type="dbModel.orderTBL" Role="orderTBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="costumerTBL">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="orderTBL">
+              <PropertyRef Name="costumerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="dbModelStoreContainer" CdmEntityContainer="dbEntities">
-          <EntitySetMapping Name="costumerTBL">
-            <EntityTypeMapping TypeName="dbModel.costumerTBL">
-              <MappingFragment StoreEntitySet="costumerTBL">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="firstName" ColumnName="firstName" />
-                <ScalarProperty Name="lastName" ColumnName="lastName" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="orderTBL">
             <EntityTypeMapping TypeName="dbModel.orderTBL">
               <MappingFragment StoreEntitySet="orderTBL">
@@ -260,6 +256,21 @@
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="amountInvited" ColumnName="amountInvited" />
                 <ScalarProperty Name="notes" ColumnName="notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="costumerTBL">
+            <EntityTypeMapping TypeName="dbModel.costumerTBL">
+              <MappingFragment StoreEntitySet="costumerTBL">
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="regDate" ColumnName="regDate" />
+                <ScalarProperty Name="bDate" ColumnName="bDate" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
