@@ -122,6 +122,12 @@
     <Compile Include="forms\addCostumerForm.Designer.cs">
       <DependentUpon>addCostumerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\updateCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\updateCustomerForm.Designer.cs">
+      <DependentUpon>updateCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\addOrderForm.resx">
       <DependentUpon>addOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\updateCustomerForm.resx">
+      <DependentUpon>updateCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
