@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addCostumerForm));
             this.firstNameLbl = new System.Windows.Forms.Label();
             this.firstNameTxt = new System.Windows.Forms.TextBox();
@@ -38,10 +39,12 @@
             this.phoneNumberLbl = new System.Windows.Forms.Label();
             this.addCostumerDeateilsBtn = new System.Windows.Forms.Button();
             this.addPictureBx = new System.Windows.Forms.PictureBox();
-            this.txbPhone = new System.Windows.Forms.MaskedTextBox();
             this.dtpBDate = new System.Windows.Forms.DateTimePicker();
             this.BdateLbl = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.phoneMtxb = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.addPictureBx)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // firstNameLbl
@@ -137,15 +140,7 @@
             this.addPictureBx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.addPictureBx.TabIndex = 10;
             this.addPictureBx.TabStop = false;
-            // 
-            // txbPhone
-            // 
-            this.txbPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbPhone.Location = new System.Drawing.Point(587, 275);
-            this.txbPhone.Mask = "(999) 000-0000";
-            this.txbPhone.Name = "txbPhone";
-            this.txbPhone.Size = new System.Drawing.Size(146, 22);
-            this.txbPhone.TabIndex = 11;
+            this.addPictureBx.Click += new System.EventHandler(this.addPictureBx_Click);
             // 
             // dtpBDate
             // 
@@ -167,14 +162,29 @@
             this.BdateLbl.TabIndex = 7;
             this.BdateLbl.Text = "תאריך לידה";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // phoneMtxb
+            // 
+            this.phoneMtxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.phoneMtxb.Location = new System.Drawing.Point(575, 268);
+            this.phoneMtxb.Mask = "(999) 000-0000";
+            this.phoneMtxb.Name = "phoneMtxb";
+            this.phoneMtxb.Size = new System.Drawing.Size(158, 22);
+            this.phoneMtxb.TabIndex = 13;
+            this.phoneMtxb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.phoneMtxb.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.phoneMtxb_MaskInputRejected);
+            // 
             // addCostumerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(878, 452);
+            this.Controls.Add(this.phoneMtxb);
             this.Controls.Add(this.dtpBDate);
-            this.Controls.Add(this.txbPhone);
             this.Controls.Add(this.addCostumerDeateilsBtn);
             this.Controls.Add(this.BdateLbl);
             this.Controls.Add(this.phoneNumberLbl);
@@ -190,6 +200,7 @@
             this.Text = "הוסף לקוח";
             this.Load += new System.EventHandler(this.addCostumerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.addPictureBx)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,8 +217,9 @@
         private System.Windows.Forms.Label phoneNumberLbl;
         private System.Windows.Forms.Button addCostumerDeateilsBtn;
         private System.Windows.Forms.PictureBox addPictureBx;
-        private System.Windows.Forms.MaskedTextBox txbPhone;
         private System.Windows.Forms.DateTimePicker dtpBDate;
         private System.Windows.Forms.Label BdateLbl;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.MaskedTextBox phoneMtxb;
     }
 }

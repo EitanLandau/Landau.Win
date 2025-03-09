@@ -35,8 +35,12 @@ namespace Landau.Win.forms
 
             string firstName = firstNameTxt.Text.Trim();
             string lastName = lastNameTxt.Text.Trim();
-            string phone  = txbPhone.Text.Trim();
+            string phone  = phoneMtxb.Text.Trim();
             string email = txbEmail.Text.Trim();
+            if (!validateForm())
+            {
+                return;
+            }
 
                 costumerTBL tmp = allCustomers.Where(x => x.firstName.Equals(firstName) && x.lastName.Equals(firstName)).FirstOrDefault();
 
@@ -56,7 +60,7 @@ namespace Landau.Win.forms
                     txbEmail.Text = "";
                     firstNameTxt.Text = "";
                     lastNameTxt.Text = "";
-                    txbPhone.Text = "";
+                    phoneMtxb.Text = "";
                     dtpBDate.Text = "";
                 }
                 else
@@ -71,7 +75,33 @@ namespace Landau.Win.forms
 
         }
 
+        private bool validateForm()
+        {
+            string firstName = firstNameTxt.Text.Trim();
+            string lastName = lastNameTxt.Text.Trim();
+            string phone = phoneMtxb.Text.Trim();
+            string email = txbEmail.Text.Trim();
+
+            bool a1 = Utils.isValidName(firstName, errorProvider1, firstNameTxt, "יש להזין שם תקין");
+            bool a2 = Utils.isValidName(lastName, errorProvider1, lastNameTxt, "יש להזין שם תקין");
+           // bool a3 = Utils.isValidPhoneNumber(phone, errorProvider1, phoneMtxb, "יש להזין מספר טלפון תקין");
+
+            return a1 && a2 ;
+
+
+        }
+
         private void firstNameLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void phoneMtxb_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void addPictureBx_Click(object sender, EventArgs e)
         {
 
         }
