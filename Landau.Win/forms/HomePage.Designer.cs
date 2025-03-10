@@ -90,6 +90,7 @@
             // 
             this.updateBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("updateBtn.ImageLarge")));
             this.updateBtn.TextLine1 = "עדכן לקוח";
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // costumerLstBtn
             // 
@@ -139,6 +140,7 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(946, 284);
             this.mainPanel.TabIndex = 1;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // HomePage
             // 

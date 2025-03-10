@@ -95,5 +95,28 @@ namespace Landau.Win
             mainPanel.Controls.Add(current);
             current.Show();
         }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void updateBtn_Click(object sender, EventArgs e)
+        {
+            if (current != null)
+            {
+                if (current is updateCustomerForm)
+                {
+                    return;
+                }
+                current.Close();
+            }
+            current = new updateCustomerForm();
+            current.Dock = DockStyle.Fill;
+            current.TopLevel = false;
+            current.TopMost = true;
+            mainPanel.Controls.Add(current);
+            current.Show();
+        }
     }
 }

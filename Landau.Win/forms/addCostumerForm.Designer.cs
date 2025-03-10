@@ -43,6 +43,8 @@
             this.BdateLbl = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.phoneMtxb = new System.Windows.Forms.MaskedTextBox();
+            this.notesTxb = new System.Windows.Forms.TextBox();
+            this.notesLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.addPictureBx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -51,10 +53,10 @@
             // 
             this.firstNameLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.firstNameLbl.AutoSize = true;
-            this.firstNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.firstNameLbl.Location = new System.Drawing.Point(772, 65);
+            this.firstNameLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstNameLbl.Location = new System.Drawing.Point(712, 89);
             this.firstNameLbl.Name = "firstNameLbl";
-            this.firstNameLbl.Size = new System.Drawing.Size(94, 29);
+            this.firstNameLbl.Size = new System.Drawing.Size(104, 28);
             this.firstNameLbl.TabIndex = 0;
             this.firstNameLbl.Text = "שם פרטי";
             this.firstNameLbl.Click += new System.EventHandler(this.firstNameLbl_Click);
@@ -62,7 +64,7 @@
             // firstNameTxt
             // 
             this.firstNameTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.firstNameTxt.Location = new System.Drawing.Point(575, 72);
+            this.firstNameTxt.Location = new System.Drawing.Point(546, 95);
             this.firstNameTxt.Name = "firstNameTxt";
             this.firstNameTxt.Size = new System.Drawing.Size(158, 22);
             this.firstNameTxt.TabIndex = 2;
@@ -72,25 +74,26 @@
             // 
             this.lastNameLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lastNameLbl.AutoSize = true;
-            this.lastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lastNameLbl.Location = new System.Drawing.Point(749, 141);
+            this.lastNameLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastNameLbl.Location = new System.Drawing.Point(715, 148);
             this.lastNameLbl.Name = "lastNameLbl";
-            this.lastNameLbl.Size = new System.Drawing.Size(117, 29);
+            this.lastNameLbl.Size = new System.Drawing.Size(136, 28);
             this.lastNameLbl.TabIndex = 3;
             this.lastNameLbl.Text = "שם משפחה";
             // 
             // lastNameTxt
             // 
             this.lastNameTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lastNameTxt.Location = new System.Drawing.Point(575, 148);
+            this.lastNameTxt.Location = new System.Drawing.Point(546, 148);
             this.lastNameTxt.Name = "lastNameTxt";
             this.lastNameTxt.Size = new System.Drawing.Size(158, 22);
             this.lastNameTxt.TabIndex = 4;
+            this.lastNameTxt.TextChanged += new System.EventHandler(this.lastNameTxt_TextChanged);
             // 
             // txbEmail
             // 
             this.txbEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbEmail.Location = new System.Drawing.Point(575, 211);
+            this.txbEmail.Location = new System.Drawing.Point(546, 211);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(158, 22);
             this.txbEmail.TabIndex = 5;
@@ -99,10 +102,10 @@
             // 
             this.emailLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.emailLbl.AutoSize = true;
-            this.emailLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.emailLbl.Location = new System.Drawing.Point(791, 204);
+            this.emailLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLbl.Location = new System.Drawing.Point(712, 211);
             this.emailLbl.Name = "emailLbl";
-            this.emailLbl.Size = new System.Drawing.Size(75, 29);
+            this.emailLbl.Size = new System.Drawing.Size(75, 28);
             this.emailLbl.TabIndex = 6;
             this.emailLbl.Text = "אימייל";
             // 
@@ -110,17 +113,18 @@
             // 
             this.phoneNumberLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.phoneNumberLbl.AutoSize = true;
-            this.phoneNumberLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.phoneNumberLbl.Location = new System.Drawing.Point(741, 268);
+            this.phoneNumberLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneNumberLbl.Location = new System.Drawing.Point(712, 268);
             this.phoneNumberLbl.Name = "phoneNumberLbl";
-            this.phoneNumberLbl.Size = new System.Drawing.Size(125, 29);
+            this.phoneNumberLbl.Size = new System.Drawing.Size(139, 28);
             this.phoneNumberLbl.TabIndex = 7;
             this.phoneNumberLbl.Text = "מספר טלפון";
             // 
             // addCostumerDeateilsBtn
             // 
             this.addCostumerDeateilsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addCostumerDeateilsBtn.Location = new System.Drawing.Point(354, 355);
+            this.addCostumerDeateilsBtn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addCostumerDeateilsBtn.Location = new System.Drawing.Point(88, 312);
             this.addCostumerDeateilsBtn.Name = "addCostumerDeateilsBtn";
             this.addCostumerDeateilsBtn.Size = new System.Drawing.Size(143, 63);
             this.addCostumerDeateilsBtn.TabIndex = 9;
@@ -134,9 +138,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.addPictureBx.Image = ((System.Drawing.Image)(resources.GetObject("addPictureBx.Image")));
-            this.addPictureBx.Location = new System.Drawing.Point(-3, 0);
+            this.addPictureBx.Location = new System.Drawing.Point(-12, 2);
             this.addPictureBx.Name = "addPictureBx";
-            this.addPictureBx.Size = new System.Drawing.Size(883, 455);
+            this.addPictureBx.Size = new System.Drawing.Size(886, 465);
             this.addPictureBx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.addPictureBx.TabIndex = 10;
             this.addPictureBx.TabStop = false;
@@ -146,7 +150,7 @@
             // 
             this.dtpBDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpBDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBDate.Location = new System.Drawing.Point(597, 333);
+            this.dtpBDate.Location = new System.Drawing.Point(546, 333);
             this.dtpBDate.Name = "dtpBDate";
             this.dtpBDate.Size = new System.Drawing.Size(110, 22);
             this.dtpBDate.TabIndex = 12;
@@ -155,10 +159,10 @@
             // 
             this.BdateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BdateLbl.AutoSize = true;
-            this.BdateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.BdateLbl.Location = new System.Drawing.Point(749, 333);
+            this.BdateLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BdateLbl.Location = new System.Drawing.Point(712, 333);
             this.BdateLbl.Name = "BdateLbl";
-            this.BdateLbl.Size = new System.Drawing.Size(122, 29);
+            this.BdateLbl.Size = new System.Drawing.Size(133, 28);
             this.BdateLbl.TabIndex = 7;
             this.BdateLbl.Text = "תאריך לידה";
             // 
@@ -169,7 +173,7 @@
             // phoneMtxb
             // 
             this.phoneMtxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.phoneMtxb.Location = new System.Drawing.Point(575, 268);
+            this.phoneMtxb.Location = new System.Drawing.Point(546, 274);
             this.phoneMtxb.Mask = "(999) 000-0000";
             this.phoneMtxb.Name = "phoneMtxb";
             this.phoneMtxb.Size = new System.Drawing.Size(158, 22);
@@ -177,12 +181,34 @@
             this.phoneMtxb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.phoneMtxb.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.phoneMtxb_MaskInputRejected);
             // 
+            // notesTxb
+            // 
+            this.notesTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.notesTxb.Location = new System.Drawing.Point(248, 89);
+            this.notesTxb.Multiline = true;
+            this.notesTxb.Name = "notesTxb";
+            this.notesTxb.Size = new System.Drawing.Size(181, 190);
+            this.notesTxb.TabIndex = 14;
+            // 
+            // notesLbl
+            // 
+            this.notesLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.notesLbl.AutoSize = true;
+            this.notesLbl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notesLbl.Location = new System.Drawing.Point(446, 91);
+            this.notesLbl.Name = "notesLbl";
+            this.notesLbl.Size = new System.Drawing.Size(67, 24);
+            this.notesLbl.TabIndex = 15;
+            this.notesLbl.Text = "הערות";
+            // 
             // addCostumerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(878, 452);
+            this.Controls.Add(this.notesLbl);
+            this.Controls.Add(this.notesTxb);
             this.Controls.Add(this.phoneMtxb);
             this.Controls.Add(this.dtpBDate);
             this.Controls.Add(this.addCostumerDeateilsBtn);
@@ -221,5 +247,7 @@
         private System.Windows.Forms.Label BdateLbl;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.MaskedTextBox phoneMtxb;
+        private System.Windows.Forms.Label notesLbl;
+        private System.Windows.Forms.TextBox notesTxb;
     }
 }

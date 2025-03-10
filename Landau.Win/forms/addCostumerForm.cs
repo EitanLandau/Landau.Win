@@ -31,12 +31,12 @@ namespace Landau.Win.forms
 
         private void addCostumerDeateilsBtn_Click(object sender, EventArgs e)
         {
-            // to add validations
 
             string firstName = firstNameTxt.Text.Trim();
             string lastName = lastNameTxt.Text.Trim();
             string phone  = phoneMtxb.Text.Trim();
             string email = txbEmail.Text.Trim();
+            string notes = notesTxb.Text.Trim();
             if (!validateForm())
             {
                 return;
@@ -51,6 +51,7 @@ namespace Landau.Win.forms
                 c1.lastName = lastName;
                 c1.email = email;
                 c1.phoneNumber = phone;
+                c1.notes = notes;
                 c1.bDate = dtpBDate.Value;
                 c1.regDate = DateTime.Now;
                 c1 = DBHelper.AddCostumer(c1);
@@ -62,6 +63,7 @@ namespace Landau.Win.forms
                     lastNameTxt.Text = "";
                     phoneMtxb.Text = "";
                     dtpBDate.Text = "";
+                    notesTxb.Text = "";
                 }
                 else
                 {
@@ -102,6 +104,11 @@ namespace Landau.Win.forms
         }
 
         private void addPictureBx_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lastNameTxt_TextChanged(object sender, EventArgs e)
         {
 
         }
