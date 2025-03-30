@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.ReportingServices.Diagnostics.Internal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,9 +34,26 @@ namespace Landau.Win.forms
         }
         private void updCustomerDeatils_Click(object sender, EventArgs e)
         {
+            costumerTBL selectedCustomer = (costumerTBL)pickCustomerCmbx.SelectedItem;
+            if (selectedCustomer == null)
+            {
+                return;
+            }
+            if (!ValidateUpdate())
+                return ;
+            selectedCustomer.firstName = updFirstNameTxb.Text.Trim();
+            selectedCustomer.lastName = updLastNameTxb.Text.Trim();
+            selectedCustomer.lastName = updLastNameTxb.Text.Trim();
 
         }
-
+        private bool ValidateUpdate()
+        {
+            bool a1 = Utils.isValidName( updFirstNameTxb.Text, errorProvider1, updFirstNameTxb, "יש למלא שם ללקוח");
+            bool a2 = Utils.isValidName(updLastNameTxb.Text, errorProvider1, updLastNameTxb, "יש למלא שם ללקוח");
+            //bool a3 = Utils.isValidPhoneNumber(updPhoneMtxb.Text, errorProvider1, updPhoneMtxb , "יש למלא שם טלפון");
+            bool a4 = Utils.isValidEmail(updEmailTxb.Text, errorProvider1, updEmailTxb, "יש למלא אימייל");
+            return a1 && a2 && a4;
+        }
         private void updFirstNameTxb_TextChanged(object sender, EventArgs e)
         {
 
@@ -47,7 +66,17 @@ namespace Landau.Win.forms
 
         private void pickCustomerCmbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+          costumerTBL selectedCustomer = (costumerTBL)pickCustomerCmbx.SelectedItem;
+            if (selectedCustomer == null)
+            {
+                return;
+            }
+            updFirstNameTxb.Text = selectedCustomer.firstName;
+            updLastNameTxb.Text = selectedCustomer.lastName;
+            updEmailTxb.Text = selectedCustomer.email;
+            updPhoneMtxb.Text = selectedCustomer.phoneNumber;
+            updNotesTxb.Text = selectedCustomer.notes;
+            updBdateDtp.Value = selectedCustomer.bDate;
         }
     }
 }
