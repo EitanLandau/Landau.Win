@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(updateCustomerForm));
             this.pickCustomerCmbx = new System.Windows.Forms.ComboBox();
+            this.costumerTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbDataSet = new Landau.Win.dbDataSet();
             this.pickCustLbl = new System.Windows.Forms.Label();
             this.updateFormPic = new System.Windows.Forms.PictureBox();
             this.updFirstNameTxb = new System.Windows.Forms.TextBox();
@@ -46,17 +49,35 @@
             this.label7 = new System.Windows.Forms.Label();
             this.updNotesTxb = new System.Windows.Forms.TextBox();
             this.updCustomerDeatils = new System.Windows.Forms.Button();
+            this.costumerTBLTableAdapter = new Landau.Win.dbDataSetTableAdapters.costumerTBLTableAdapter();
+            this.costumerTBLBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updateFormPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // pickCustomerCmbx
             // 
             this.pickCustomerCmbx.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pickCustomerCmbx.DataSource = this.costumerTBLBindingSource1;
+            this.pickCustomerCmbx.DisplayMember = "fullName";
             this.pickCustomerCmbx.FormattingEnabled = true;
             this.pickCustomerCmbx.Location = new System.Drawing.Point(335, 65);
             this.pickCustomerCmbx.Name = "pickCustomerCmbx";
             this.pickCustomerCmbx.Size = new System.Drawing.Size(142, 24);
             this.pickCustomerCmbx.TabIndex = 0;
+            this.pickCustomerCmbx.SelectedIndexChanged += new System.EventHandler(this.pickCustomerCmbx_SelectedIndexChanged);
+            // 
+            // costumerTBLBindingSource
+            // 
+            this.costumerTBLBindingSource.DataMember = "costumerTBL";
+            this.costumerTBLBindingSource.DataSource = this.dbDataSet;
+            // 
+            // dbDataSet
+            // 
+            this.dbDataSet.DataSetName = "dbDataSet";
+            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pickCustLbl
             // 
@@ -82,6 +103,7 @@
             this.updateFormPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.updateFormPic.TabIndex = 2;
             this.updateFormPic.TabStop = false;
+            this.updateFormPic.Click += new System.EventHandler(this.updateFormPic_Click);
             // 
             // updFirstNameTxb
             // 
@@ -90,6 +112,7 @@
             this.updFirstNameTxb.Name = "updFirstNameTxb";
             this.updFirstNameTxb.Size = new System.Drawing.Size(142, 22);
             this.updFirstNameTxb.TabIndex = 3;
+            this.updFirstNameTxb.TextChanged += new System.EventHandler(this.updFirstNameTxb_TextChanged);
             // 
             // updEmailTxb
             // 
@@ -219,6 +242,15 @@
             this.updCustomerDeatils.TabIndex = 16;
             this.updCustomerDeatils.Text = "עדכן";
             this.updCustomerDeatils.UseVisualStyleBackColor = true;
+            this.updCustomerDeatils.Click += new System.EventHandler(this.updCustomerDeatils_Click);
+            // 
+            // costumerTBLTableAdapter
+            // 
+            this.costumerTBLTableAdapter.ClearBeforeFill = true;
+            // 
+            // costumerTBLBindingSource1
+            // 
+            this.costumerTBLBindingSource1.DataSource = typeof(Landau.Win.costumerTBL);
             // 
             // updateCustomerForm
             // 
@@ -246,7 +278,11 @@
             this.HelpButton = true;
             this.Name = "updateCustomerForm";
             this.Text = "עדכן פרטי לקוח";
+            this.Load += new System.EventHandler(this.updateCustomerForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updateFormPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +307,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox updNotesTxb;
         private System.Windows.Forms.Button updCustomerDeatils;
+        private dbDataSet dbDataSet;
+        private System.Windows.Forms.BindingSource costumerTBLBindingSource;
+        private dbDataSetTableAdapters.costumerTBLTableAdapter costumerTBLTableAdapter;
+        private System.Windows.Forms.BindingSource costumerTBLBindingSource1;
     }
 }

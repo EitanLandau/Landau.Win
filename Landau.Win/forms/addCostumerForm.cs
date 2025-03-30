@@ -86,9 +86,9 @@ namespace Landau.Win.forms
 
             bool a1 = Utils.isValidName(firstName, errorProvider1, firstNameTxt, "יש להזין שם תקין");
             bool a2 = Utils.isValidName(lastName, errorProvider1, lastNameTxt, "יש להזין שם תקין");
-            bool a3 = Utils.isValidPhoneNumber(phone, errorProvider1, phoneMtxb, "יש להזין מספר טלפון תקין");
+           // bool a3 = Utils.isValidPhoneNumber(phone, errorProvider1, phoneMtxb, "יש להזין מספר טלפון תקין");
             bool a4 = Utils.isValidEmail(email, errorProvider1, txbEmail, "יש להזין כתובת אימייל תקינה");
-            return a1 && a2 && a3 && a4;
+            return a1 && a2 && a4;
 
 
         }
