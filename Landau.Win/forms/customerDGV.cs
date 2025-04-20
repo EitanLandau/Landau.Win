@@ -10,11 +10,29 @@ using System.Windows.Forms;
 
 namespace Landau.Win.forms
 {
-    public partial class customerDGV : Form
+    public partial class customerListForm : Form
     {
-        public customerDGV()
+        List<costumerTBL> custList;
+        public customerListForm()
         {
             InitializeComponent();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void customerDGV_Load(object sender, EventArgs e)
+        {
+            updateDGV();
+        }
+
+        private void updateDGV()
+        {
+            custList = DBHelper.allCostumers;
+            customerListDGV.DataSource = custList;
+            lblTotalCustomers.Text = "סך לקוחות : "+custList.Count;
         }
     }
 }

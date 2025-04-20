@@ -124,13 +124,13 @@ namespace Landau.Win
 
             if (current != null)
             {
-                if (current is customerDGV)
+                if (current is customerListForm)
                 {
                     return;
                 }
                 current.Close();
             }
-            current = new customerDGV();
+            current = new customerListForm();
             current.Dock = DockStyle.Fill;
             current.TopLevel = false;
             current.TopMost = true;
