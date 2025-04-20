@@ -127,6 +127,12 @@
     <Compile Include="forms\addCostumerForm.Designer.cs">
       <DependentUpon>addCostumerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\customerDGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\customerDGV.Designer.cs">
+      <DependentUpon>customerDGV.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\updateCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\addOrderForm.resx">
       <DependentUpon>addOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\customerDGV.resx">
+      <DependentUpon>customerDGV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\updateCustomerForm.resx">
       <DependentUpon>updateCustomerForm.cs</DependentUpon>

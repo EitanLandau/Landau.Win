@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Landau.Win.forms
 {
-    public partial class addOrderForm : Form
+    public partial class customerDGV : Form
     {
-        public addOrderForm()
+        public customerDGV()
         {
             InitializeComponent();
-        }
-
-        private void pickCostumerCmbx_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void continueBtn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

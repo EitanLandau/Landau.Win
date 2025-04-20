@@ -118,5 +118,29 @@ namespace Landau.Win
             mainPanel.Controls.Add(current);
             current.Show();
         }
+
+        private void costumerLstBtn_Click(object sender, EventArgs e)
+        {
+
+            if (current != null)
+            {
+                if (current is customerDGV)
+                {
+                    return;
+                }
+                current.Close();
+            }
+            current = new customerDGV();
+            current.Dock = DockStyle.Fill;
+            current.TopLevel = false;
+            current.TopMost = true;
+            mainPanel.Controls.Add(current);
+            current.Show();
+        }
+
+        private void costumerFeatures_DialogBoxLauncherClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

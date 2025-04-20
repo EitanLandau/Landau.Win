@@ -72,6 +72,7 @@
             this.costumerFeatures.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
             this.kryptonRibbonGroupTriple1});
             this.costumerFeatures.TextLine1 = "( :";
+            this.costumerFeatures.DialogBoxLauncherClick += new System.EventHandler(this.costumerFeatures_DialogBoxLauncherClick);
             // 
             // kryptonRibbonGroupTriple1
             // 
@@ -96,6 +97,7 @@
             // 
             this.costumerLstBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("costumerLstBtn.ImageLarge")));
             this.costumerLstBtn.TextLine1 = "רשימת לקוחות";
+            this.costumerLstBtn.Click += new System.EventHandler(this.costumerLstBtn_Click);
             // 
             // orders
             // 

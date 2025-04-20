@@ -43,16 +43,26 @@ namespace Landau.Win.forms
                 return ;
             selectedCustomer.firstName = updFirstNameTxb.Text.Trim();
             selectedCustomer.lastName = updLastNameTxb.Text.Trim();
-            selectedCustomer.lastName = updLastNameTxb.Text.Trim();
+            selectedCustomer.email = updEmailTxb.Text.Trim();
+            selectedCustomer.phoneNumber = updPhoneMtxb.Text.Trim();
+            selectedCustomer.bDate = updBdateDtp.Value;
+            selectedCustomer.notes = updNotesTxb.Text.Trim();
+            DBHelper.UpdateCostumer(selectedCustomer);
+            updFirstNameTxb.Text = "";
+            updLastNameTxb.Text = "";
+            updEmailTxb .Text = "";
+            updPhoneMtxb.Text = "";
+            updBdateDtp.Text = "";
+            updNotesTxb.Text = "";
 
         }
         private bool ValidateUpdate()
         {
             bool a1 = Utils.isValidName( updFirstNameTxb.Text, errorProvider1, updFirstNameTxb, "יש למלא שם ללקוח");
             bool a2 = Utils.isValidName(updLastNameTxb.Text, errorProvider1, updLastNameTxb, "יש למלא שם ללקוח");
-            //bool a3 = Utils.isValidPhoneNumber(updPhoneMtxb.Text, errorProvider1, updPhoneMtxb , "יש למלא שם טלפון");
+            bool a3 = Utils.isValidPhoneNumber(updPhoneMtxb.Text, errorProvider1, updPhoneMtxb , "יש למלא מספר טלפון");
             bool a4 = Utils.isValidEmail(updEmailTxb.Text, errorProvider1, updEmailTxb, "יש למלא אימייל");
-            return a1 && a2 && a4;
+            return a1 && a2 && a3 && a4;
         }
         private void updFirstNameTxb_TextChanged(object sender, EventArgs e)
         {

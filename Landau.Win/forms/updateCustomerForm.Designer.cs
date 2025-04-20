@@ -133,7 +133,7 @@
             this.updLastNameTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.updLastNameTxb.Location = new System.Drawing.Point(510, 207);
             this.updLastNameTxb.Name = "updLastNameTxb";
-            this.updLastNameTxb.Size = new System.Drawing.Size(142, 22);
+            this.updLastNameTxb.Size = new System.Drawing.Size(137, 22);
             this.updLastNameTxb.TabIndex = 5;
             // 
             // updPhoneMtxb

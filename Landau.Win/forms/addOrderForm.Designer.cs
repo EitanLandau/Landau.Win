@@ -133,6 +133,7 @@
             this.continueBtn.TabIndex = 10;
             this.continueBtn.Text = "המשך";
             this.continueBtn.UseVisualStyleBackColor = true;
+            this.continueBtn.Click += new System.EventHandler(this.continueBtn_Click);
             // 
             // pictureBoxAddOrder
             // 
