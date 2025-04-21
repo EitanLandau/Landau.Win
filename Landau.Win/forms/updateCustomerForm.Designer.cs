@@ -96,6 +96,7 @@
             this.pickCustLbl.Size = new System.Drawing.Size(115, 28);
             this.pickCustLbl.TabIndex = 1;
             this.pickCustLbl.Text = "בחר לקוח";
+            this.pickCustLbl.Click += new System.EventHandler(this.pickCustLbl_Click);
             // 
             // updateFormPic
             // 

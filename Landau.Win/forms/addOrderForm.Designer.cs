@@ -47,7 +47,7 @@
             this.pickCostumerCmbx.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pickCostumerCmbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.pickCostumerCmbx.FormattingEnabled = true;
-            this.pickCostumerCmbx.Location = new System.Drawing.Point(546, 34);
+            this.pickCostumerCmbx.Location = new System.Drawing.Point(497, 32);
             this.pickCostumerCmbx.Name = "pickCostumerCmbx";
             this.pickCostumerCmbx.Size = new System.Drawing.Size(160, 30);
             this.pickCostumerCmbx.TabIndex = 0;
@@ -57,10 +57,10 @@
             // 
             this.costumerLbl.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.costumerLbl.AutoSize = true;
-            this.costumerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.costumerLbl.Location = new System.Drawing.Point(724, 34);
+            this.costumerLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costumerLbl.Location = new System.Drawing.Point(695, 34);
             this.costumerLbl.Name = "costumerLbl";
-            this.costumerLbl.Size = new System.Drawing.Size(51, 25);
+            this.costumerLbl.Size = new System.Drawing.Size(64, 28);
             this.costumerLbl.TabIndex = 1;
             this.costumerLbl.Text = "לקוח";
             // 
@@ -68,17 +68,17 @@
             // 
             this.addressLbl.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.addressLbl.AutoSize = true;
-            this.addressLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.addressLbl.Location = new System.Drawing.Point(724, 94);
+            this.addressLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.addressLbl.Location = new System.Drawing.Point(695, 88);
             this.addressLbl.Name = "addressLbl";
-            this.addressLbl.Size = new System.Drawing.Size(60, 25);
+            this.addressLbl.Size = new System.Drawing.Size(79, 28);
             this.addressLbl.TabIndex = 2;
             this.addressLbl.Text = "כתובת";
             // 
             // addressTxtBox
             // 
             this.addressTxtBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.addressTxtBox.Location = new System.Drawing.Point(543, 98);
+            this.addressTxtBox.Location = new System.Drawing.Point(497, 94);
             this.addressTxtBox.Name = "addressTxtBox";
             this.addressTxtBox.Size = new System.Drawing.Size(163, 22);
             this.addressTxtBox.TabIndex = 3;
@@ -87,10 +87,10 @@
             // 
             this.notesLbl.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.notesLbl.AutoSize = true;
-            this.notesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.notesLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.notesLbl.Location = new System.Drawing.Point(724, 248);
             this.notesLbl.Name = "notesLbl";
-            this.notesLbl.Size = new System.Drawing.Size(60, 25);
+            this.notesLbl.Size = new System.Drawing.Size(78, 28);
             this.notesLbl.TabIndex = 5;
             this.notesLbl.Text = "הערות";
             // 
@@ -98,17 +98,17 @@
             // 
             this.dateLbl.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.dateLbl.AutoSize = true;
-            this.dateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.dateLbl.Location = new System.Drawing.Point(724, 140);
+            this.dateLbl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.dateLbl.Location = new System.Drawing.Point(695, 138);
             this.dateLbl.Name = "dateLbl";
-            this.dateLbl.Size = new System.Drawing.Size(117, 50);
+            this.dateLbl.Size = new System.Drawing.Size(139, 48);
             this.dateLbl.TabIndex = 6;
             this.dateLbl.Text = "תאריך התחלה\r\n      (ושעה)";
             // 
             // dateMskdBx
             // 
             this.dateMskdBx.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.dateMskdBx.Location = new System.Drawing.Point(518, 155);
+            this.dateMskdBx.Location = new System.Drawing.Point(497, 160);
             this.dateMskdBx.Mask = "00/00/0000 90:00";
             this.dateMskdBx.Name = "dateMskdBx";
             this.dateMskdBx.Size = new System.Drawing.Size(188, 22);
@@ -127,6 +127,7 @@
             // continueBtn
             // 
             this.continueBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.continueBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.continueBtn.Location = new System.Drawing.Point(39, 327);
             this.continueBtn.Name = "continueBtn";
             this.continueBtn.Size = new System.Drawing.Size(120, 52);

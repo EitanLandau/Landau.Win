@@ -39,8 +39,9 @@ namespace Landau.Win.forms
             {
                 return;
             }
-            if (!ValidateUpdate())
+            if (!ValidateUpdate()) { 
                 return ;
+               }
             selectedCustomer.firstName = updFirstNameTxb.Text.Trim();
             selectedCustomer.lastName = updLastNameTxb.Text.Trim();
             selectedCustomer.email = updEmailTxb.Text.Trim();
@@ -87,6 +88,11 @@ namespace Landau.Win.forms
             updPhoneMtxb.Text = selectedCustomer.phoneNumber;
             updNotesTxb.Text = selectedCustomer.notes;
             updBdateDtp.Value = selectedCustomer.bDate;
+        }
+
+        private void pickCustLbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

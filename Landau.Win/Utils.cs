@@ -34,7 +34,9 @@ namespace Landau.Win
         }
         public static bool isValidPhoneNumber(string phone, ErrorProvider ep, MaskedTextBox mtxb, string error)
         {
-            if (phone.Any(Char.IsDigit) && phone.Length >= 10)
+            bool a1 = phone.Any(Char.IsDigit);
+            bool a2 = phone.Length == 14;
+            if (a1 && a2)
             {
                 ep.SetError(mtxb, "");
                 return true;
