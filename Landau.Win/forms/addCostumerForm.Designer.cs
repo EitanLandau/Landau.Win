@@ -138,9 +138,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.addPictureBx.Image = ((System.Drawing.Image)(resources.GetObject("addPictureBx.Image")));
-            this.addPictureBx.Location = new System.Drawing.Point(-12, 2);
+            this.addPictureBx.Location = new System.Drawing.Point(-41, -25);
             this.addPictureBx.Name = "addPictureBx";
-            this.addPictureBx.Size = new System.Drawing.Size(886, 465);
+            this.addPictureBx.Size = new System.Drawing.Size(915, 478);
             this.addPictureBx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.addPictureBx.TabIndex = 10;
             this.addPictureBx.TabStop = false;
@@ -205,7 +205,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(878, 452);
             this.Controls.Add(this.notesLbl);
             this.Controls.Add(this.notesTxb);
@@ -221,6 +220,7 @@
             this.Controls.Add(this.firstNameTxt);
             this.Controls.Add(this.firstNameLbl);
             this.Controls.Add(this.addPictureBx);
+            this.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "addCostumerForm";
             this.Text = "הוסף לקוח";
