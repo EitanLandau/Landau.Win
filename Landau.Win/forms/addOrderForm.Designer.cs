@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addOrderForm));
             this.pickCostumerCmbx = new System.Windows.Forms.ComboBox();
             this.costumerLbl = new System.Windows.Forms.Label();
             this.continueBtn = new System.Windows.Forms.Button();
             this.pictureBoxAddOrder = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.orderNotesTxb = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddOrder)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +45,7 @@
             this.pickCostumerCmbx.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pickCostumerCmbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.pickCostumerCmbx.FormattingEnabled = true;
-            this.pickCostumerCmbx.Location = new System.Drawing.Point(575, 79);
+            this.pickCostumerCmbx.Location = new System.Drawing.Point(363, 81);
             this.pickCostumerCmbx.Name = "pickCostumerCmbx";
             this.pickCostumerCmbx.Size = new System.Drawing.Size(225, 30);
             this.pickCostumerCmbx.TabIndex = 0;
@@ -50,10 +53,11 @@
             // 
             // costumerLbl
             // 
-            this.costumerLbl.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.costumerLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.costumerLbl.AutoSize = true;
             this.costumerLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.costumerLbl.Location = new System.Drawing.Point(685, 31);
+            this.costumerLbl.Location = new System.Drawing.Point(421, 37);
             this.costumerLbl.Name = "costumerLbl";
             this.costumerLbl.Size = new System.Drawing.Size(115, 28);
             this.costumerLbl.TabIndex = 1;
@@ -61,9 +65,10 @@
             // 
             // continueBtn
             // 
-            this.continueBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.continueBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.continueBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.continueBtn.Location = new System.Drawing.Point(103, 344);
+            this.continueBtn.Location = new System.Drawing.Point(416, 394);
             this.continueBtn.Name = "continueBtn";
             this.continueBtn.Size = new System.Drawing.Size(120, 52);
             this.continueBtn.TabIndex = 10;
@@ -86,20 +91,38 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(722, 146);
+            this.label1.Location = new System.Drawing.Point(434, 139);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 28);
             this.label1.TabIndex = 12;
             this.label1.Text = "הערות";
+            // 
+            // orderNotesTxb
+            // 
+            this.orderNotesTxb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.orderNotesTxb.Location = new System.Drawing.Point(363, 193);
+            this.orderNotesTxb.Multiline = true;
+            this.orderNotesTxb.Name = "orderNotesTxb";
+            this.orderNotesTxb.Size = new System.Drawing.Size(225, 183);
+            this.orderNotesTxb.TabIndex = 13;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // addOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 486);
+            this.Controls.Add(this.orderNotesTxb);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.continueBtn);
             this.Controls.Add(this.costumerLbl);
@@ -121,5 +144,7 @@
         private System.Windows.Forms.Button continueBtn;
         private System.Windows.Forms.PictureBox pictureBoxAddOrder;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox orderNotesTxb;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
