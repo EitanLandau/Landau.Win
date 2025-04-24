@@ -39,7 +39,7 @@ namespace Landau.Win
 
         public static List<orderTBL> GetAllOrders()
         {
-            allOrders = (from o in db.orderTBL orderby o.date select o).ToList();
+            allOrders = (from o in db.orderTBL orderby o.orderDate select o).ToList();
             return allOrders;
         }
 
@@ -147,8 +147,8 @@ namespace Landau.Win
             {
                 toUpdate.Id = order.Id;
                 toUpdate.costumerID = order.costumerID;
-                toUpdate.address = order.address;
-                toUpdate.date = order.date;
+                toUpdate.orderDate = order.orderDate;
+                toUpdate.status = order.status;
                 toUpdate.notes = order.notes;
              
                 db.SaveChanges();

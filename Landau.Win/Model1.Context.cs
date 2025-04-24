@@ -25,9 +25,9 @@ namespace Landau.Win
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<costumerTBL> costumerTBL { get; set; }
         public virtual DbSet<orderTBL> orderTBL { get; set; }
         public virtual DbSet<serviceTBL> serviceTBL { get; set; }
         public virtual DbSet<subOrderTBL> subOrderTBL { get; set; }
-        public virtual DbSet<costumerTBL> costumerTBL { get; set; }
     }
 }

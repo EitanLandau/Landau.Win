@@ -88,6 +88,7 @@ namespace Landau.Win.forms
             updPhoneMtxb.Text = selectedCustomer.phoneNumber;
             updNotesTxb.Text = selectedCustomer.notes;
             updBdateDtp.Value = selectedCustomer.bDate;
+            
         }
 
         private void pickCustLbl_Click(object sender, EventArgs e)

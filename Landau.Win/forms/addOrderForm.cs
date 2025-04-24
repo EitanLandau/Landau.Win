@@ -12,6 +12,7 @@ namespace Landau.Win.forms
 {
     public partial class addOrderForm : Form
     {
+        orderTBL selectedcostumer;
         public addOrderForm()
         {
             InitializeComponent();
@@ -24,6 +25,13 @@ namespace Landau.Win.forms
 
         private void continueBtn_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void addOrderForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dbDataSet.costumerTBL' table. You can move, or remove it, as needed.
+            this.costumerTBLTableAdapter.Fill(this.dbDataSet.costumerTBL);
 
         }
     }

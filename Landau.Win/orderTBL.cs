@@ -22,12 +22,12 @@ namespace Landau.Win
     
         public int Id { get; set; }
         public int costumerID { get; set; }
-        public string address { get; set; }
-        public System.DateTime date { get; set; }
         public string notes { get; set; }
+        public System.DateTime orderDate { get; set; }
+        public string status { get; set; }
     
+        public virtual costumerTBL costumerTBL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<subOrderTBL> subOrderTBL { get; set; }
-        public virtual costumerTBL costumerTBL { get; set; }
     }
 }

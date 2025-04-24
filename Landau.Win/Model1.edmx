@@ -25,9 +25,9 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="costumerID" Type="int" Nullable="false" />
-          <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="date" Type="datetime" Nullable="false" />
           <Property Name="notes" Type="nvarchar" MaxLength="200" />
+          <Property Name="orderDate" Type="datetime" Nullable="false" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="serviceTBL">
           <Key>
@@ -37,7 +37,7 @@
           <Property Name="serviceType" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="serviceName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="sessionsNum" Type="int" Nullable="false" />
-          <Property Name="sessionsLength" Type="time" Precision="7" Nullable="false" />
+          <Property Name="sessionsLength" Type="time" Precision="0" Nullable="false" />
           <Property Name="price" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="subOrderTBL">
@@ -110,84 +110,22 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="orderTBL">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="costumerID" Type="Int32" Nullable="false" />
-          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="notes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="subOrderTBL" Relationship="Self.FK_subOrderTBL_ToorderTBL" FromRole="orderTBL" ToRole="subOrderTBL" />
-          <NavigationProperty Name="costumerTBL" Relationship="dbModel.FK_orderTBL_costumerTBL" FromRole="orderTBL" ToRole="costumerTBL" />
-        </EntityType>
-        <EntityType Name="serviceTBL">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="serviceType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="serviceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="sessionsNum" Type="Int32" Nullable="false" />
-          <Property Name="sessionsLength" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="price" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="subOrderTBL" Relationship="Self.FK_subOrderTBL_ToserviceTBL" FromRole="serviceTBL" ToRole="subOrderTBL" />
-        </EntityType>
-        <EntityType Name="subOrderTBL">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="orderID" Type="Int32" Nullable="false" />
-          <Property Name="serviceID" Type="Int32" Nullable="false" />
-          <Property Name="dateOfNextMeeting" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="price" Type="Int32" Nullable="false" />
-          <Property Name="amountInvited" Type="Int32" Nullable="false" />
-          <Property Name="notes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="orderTBL" Relationship="Self.FK_subOrderTBL_ToorderTBL" FromRole="subOrderTBL" ToRole="orderTBL" />
-          <NavigationProperty Name="serviceTBL" Relationship="Self.FK_subOrderTBL_ToserviceTBL" FromRole="subOrderTBL" ToRole="serviceTBL" />
-        </EntityType>
-        <Association Name="FK_subOrderTBL_ToorderTBL">
-          <End Role="orderTBL" Type="Self.orderTBL" Multiplicity="1" />
-          <End Role="subOrderTBL" Type="Self.subOrderTBL" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="orderTBL">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="subOrderTBL">
-              <PropertyRef Name="orderID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_subOrderTBL_ToserviceTBL">
-          <End Role="serviceTBL" Type="Self.serviceTBL" Multiplicity="1" />
-          <End Role="subOrderTBL" Type="Self.subOrderTBL" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="serviceTBL">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="subOrderTBL">
-              <PropertyRef Name="serviceID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="dbEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="orderTBL" EntityType="Self.orderTBL" />
-          <EntitySet Name="serviceTBL" EntityType="Self.serviceTBL" />
-          <EntitySet Name="subOrderTBL" EntityType="Self.subOrderTBL" />
-          <AssociationSet Name="FK_subOrderTBL_ToorderTBL" Association="Self.FK_subOrderTBL_ToorderTBL">
-            <End Role="orderTBL" EntitySet="orderTBL" />
-            <End Role="subOrderTBL" EntitySet="subOrderTBL" />
-          </AssociationSet>
-          <AssociationSet Name="FK_subOrderTBL_ToserviceTBL" Association="Self.FK_subOrderTBL_ToserviceTBL">
-            <End Role="serviceTBL" EntitySet="serviceTBL" />
-            <End Role="subOrderTBL" EntitySet="subOrderTBL" />
-          </AssociationSet>
           <EntitySet Name="costumerTBL" EntityType="dbModel.costumerTBL" />
+          <EntitySet Name="orderTBL" EntityType="dbModel.orderTBL" />
+          <EntitySet Name="serviceTBL" EntityType="dbModel.serviceTBL" />
+          <EntitySet Name="subOrderTBL" EntityType="dbModel.subOrderTBL" />
           <AssociationSet Name="FK_orderTBL_costumerTBL" Association="dbModel.FK_orderTBL_costumerTBL">
             <End Role="costumerTBL" EntitySet="costumerTBL" />
             <End Role="orderTBL" EntitySet="orderTBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_subOrderTBL_ToorderTBL" Association="dbModel.FK_subOrderTBL_ToorderTBL">
+            <End Role="orderTBL" EntitySet="orderTBL" />
+            <End Role="subOrderTBL" EntitySet="subOrderTBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_subOrderTBL_ToserviceTBL" Association="dbModel.FK_subOrderTBL_ToserviceTBL">
+            <End Role="serviceTBL" EntitySet="serviceTBL" />
+            <End Role="subOrderTBL" EntitySet="subOrderTBL" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="costumerTBL">
@@ -205,6 +143,44 @@
           <Property Name="notes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="orderTBL" Relationship="dbModel.FK_orderTBL_costumerTBL" FromRole="costumerTBL" ToRole="orderTBL" />
         </EntityType>
+        <EntityType Name="orderTBL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="costumerID" Type="Int32" Nullable="false" />
+          <Property Name="notes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="orderDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="costumerTBL" Relationship="dbModel.FK_orderTBL_costumerTBL" FromRole="orderTBL" ToRole="costumerTBL" />
+          <NavigationProperty Name="subOrderTBL" Relationship="dbModel.FK_subOrderTBL_ToorderTBL" FromRole="orderTBL" ToRole="subOrderTBL" />
+        </EntityType>
+        <EntityType Name="serviceTBL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="serviceType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="serviceName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sessionsNum" Type="Int32" Nullable="false" />
+          <Property Name="sessionsLength" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="subOrderTBL" Relationship="dbModel.FK_subOrderTBL_ToserviceTBL" FromRole="serviceTBL" ToRole="subOrderTBL" />
+        </EntityType>
+        <EntityType Name="subOrderTBL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orderID" Type="Int32" Nullable="false" />
+          <Property Name="serviceID" Type="Int32" Nullable="false" />
+          <Property Name="dateOfNextMeeting" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="amountInvited" Type="Int32" Nullable="false" />
+          <Property Name="notes" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="orderTBL" Relationship="dbModel.FK_subOrderTBL_ToorderTBL" FromRole="subOrderTBL" ToRole="orderTBL" />
+          <NavigationProperty Name="serviceTBL" Relationship="dbModel.FK_subOrderTBL_ToserviceTBL" FromRole="subOrderTBL" ToRole="serviceTBL" />
+        </EntityType>
         <Association Name="FK_orderTBL_costumerTBL">
           <End Type="dbModel.costumerTBL" Role="costumerTBL" Multiplicity="1" />
           <End Type="dbModel.orderTBL" Role="orderTBL" Multiplicity="*" />
@@ -217,48 +193,36 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_subOrderTBL_ToorderTBL">
+          <End Type="dbModel.orderTBL" Role="orderTBL" Multiplicity="1" />
+          <End Type="dbModel.subOrderTBL" Role="subOrderTBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orderTBL">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="subOrderTBL">
+              <PropertyRef Name="orderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_subOrderTBL_ToserviceTBL">
+          <End Type="dbModel.serviceTBL" Role="serviceTBL" Multiplicity="1" />
+          <End Type="dbModel.subOrderTBL" Role="subOrderTBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="serviceTBL">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="subOrderTBL">
+              <PropertyRef Name="serviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="dbModelStoreContainer" CdmEntityContainer="dbEntities">
-          <EntitySetMapping Name="orderTBL">
-            <EntityTypeMapping TypeName="dbModel.orderTBL">
-              <MappingFragment StoreEntitySet="orderTBL">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="costumerID" ColumnName="costumerID" />
-                <ScalarProperty Name="address" ColumnName="address" />
-                <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="notes" ColumnName="notes" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="serviceTBL">
-            <EntityTypeMapping TypeName="dbModel.serviceTBL">
-              <MappingFragment StoreEntitySet="serviceTBL">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="serviceType" ColumnName="serviceType" />
-                <ScalarProperty Name="serviceName" ColumnName="serviceName" />
-                <ScalarProperty Name="sessionsNum" ColumnName="sessionsNum" />
-                <ScalarProperty Name="sessionsLength" ColumnName="sessionsLength" />
-                <ScalarProperty Name="price" ColumnName="price" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="subOrderTBL">
-            <EntityTypeMapping TypeName="dbModel.subOrderTBL">
-              <MappingFragment StoreEntitySet="subOrderTBL">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="orderID" ColumnName="orderID" />
-                <ScalarProperty Name="serviceID" ColumnName="serviceID" />
-                <ScalarProperty Name="dateOfNextMeeting" ColumnName="dateOfNextMeeting" />
-                <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="amountInvited" ColumnName="amountInvited" />
-                <ScalarProperty Name="notes" ColumnName="notes" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="costumerTBL">
             <EntityTypeMapping TypeName="dbModel.costumerTBL">
               <MappingFragment StoreEntitySet="costumerTBL">
@@ -270,6 +234,42 @@
                 <ScalarProperty Name="fullName" ColumnName="fullName" />
                 <ScalarProperty Name="lastName" ColumnName="lastName" />
                 <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orderTBL">
+            <EntityTypeMapping TypeName="dbModel.orderTBL">
+              <MappingFragment StoreEntitySet="orderTBL">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="orderDate" ColumnName="orderDate" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="costumerID" ColumnName="costumerID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="serviceTBL">
+            <EntityTypeMapping TypeName="dbModel.serviceTBL">
+              <MappingFragment StoreEntitySet="serviceTBL">
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="sessionsLength" ColumnName="sessionsLength" />
+                <ScalarProperty Name="sessionsNum" ColumnName="sessionsNum" />
+                <ScalarProperty Name="serviceName" ColumnName="serviceName" />
+                <ScalarProperty Name="serviceType" ColumnName="serviceType" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subOrderTBL">
+            <EntityTypeMapping TypeName="dbModel.subOrderTBL">
+              <MappingFragment StoreEntitySet="subOrderTBL">
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="amountInvited" ColumnName="amountInvited" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="dateOfNextMeeting" ColumnName="dateOfNextMeeting" />
+                <ScalarProperty Name="serviceID" ColumnName="serviceID" />
+                <ScalarProperty Name="orderID" ColumnName="orderID" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
