@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="dbModel.lecturesNseminarsTBL" Width="1.5" PointX="3" PointY="5.25" />
         <EntityTypeShape EntityType="dbModel.orderTBL" Width="1.5" PointX="3" PointY="1.25" />
         <EntityTypeShape EntityType="dbModel.serviceTBL" Width="1.5" PointX="5.75" PointY="4.75" />
-        <EntityTypeShape EntityType="dbModel.subOrderTBL" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="dbModel.subOrderTBL" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="dbModel.FK_orderTBL_costumerTBL" />
         <AssociationConnector Association="dbModel.FK_subOrderTBL_ToserviceTBL" />
         <AssociationConnector Association="dbModel.FK_subOrderTBL_ToorderTBL" />
