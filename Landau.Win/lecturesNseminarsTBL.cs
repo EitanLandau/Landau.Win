@@ -12,13 +12,22 @@ namespace Landau.Win
     using System;
     using System.Collections.Generic;
     
-    public partial class serviceTBL
+    public partial class lecturesNseminarsTBL
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public lecturesNseminarsTBL()
+        {
+            this.subOrderTBL = new HashSet<subOrderTBL>();
+        }
+    
         public int Id { get; set; }
-        public string serviceName { get; set; }
-        public int sessionsNum { get; set; }
-        public System.TimeSpan sessionsLength { get; set; }
+        public bool type { get; set; }
         public int price { get; set; }
+        public System.TimeSpan length { get; set; }
         public string description { get; set; }
+        public string title { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<subOrderTBL> subOrderTBL { get; set; }
     }
 }

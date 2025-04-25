@@ -45,7 +45,7 @@ namespace Landau.Win
 
         public static List<subOrderTBL> GetAllSubOrders()
         {
-            allSubOrders = (from so in db.subOrderTBL orderby so.Id select so).ToList();
+            allSubOrders = (from so in db.subOrderTBL orderby so.date select so).ToList();
             return allSubOrders;
         }
 
@@ -164,10 +164,10 @@ namespace Landau.Win
             if (toUpdate != null)
             {
                 toUpdate.Id = subOrder.Id;
-                toUpdate.serviceID = subOrder.serviceID;
+                toUpdate.lectureID = subOrder.lectureID;
                 toUpdate.orderID = subOrder.orderID;
-                toUpdate.serviceID = subOrder.serviceID;
-              
+                toUpdate.date = subOrder.date;
+                toUpdate.adress = subOrder.adress;
                 toUpdate.price = subOrder.price;
                 toUpdate.amountInvited = subOrder.amountInvited;
                 toUpdate.notes = subOrder.notes;
@@ -184,7 +184,7 @@ namespace Landau.Win
             if (toUpdate != null)
             {
                 toUpdate.Id = service.Id;
-                toUpdate.serviceType = service.serviceType;
+                toUpdate.description = service.description;
                 toUpdate.serviceName = service.serviceName;
                 toUpdate.sessionsNum = service.sessionsNum;
                 toUpdate.sessionsLength = service.sessionsLength;

@@ -16,13 +16,14 @@ namespace Landau.Win
     {
         public int Id { get; set; }
         public int orderID { get; set; }
-        public int serviceID { get; set; }
-        public System.DateTime dateOfNextMeeting { get; set; }
+        public int lectureID { get; set; }
+        public System.DateTime date { get; set; }
         public int price { get; set; }
         public int amountInvited { get; set; }
         public string notes { get; set; }
+        public string adress { get; set; }
     
+        public virtual lecturesNseminarsTBL lecturesNseminarsTBL { get; set; }
         public virtual orderTBL orderTBL { get; set; }
-        public virtual serviceTBL serviceTBL { get; set; }
     }
 }

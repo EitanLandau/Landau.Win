@@ -43,8 +43,15 @@
             this.ordersHistoryBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.newOrdedbtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.updateOrderBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonGroupTriple4 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.kryptonRibbonGroupButton2 = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.serviceTab = new Krypton.Ribbon.KryptonRibbonTab();
             this.kryptonRibbonTab1 = new Krypton.Ribbon.KryptonRibbonTab();
+            this.kryptonRibbonGroup1 = new Krypton.Ribbon.KryptonRibbonGroup();
+            this.kryptonRibbonGroupTriple3 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.kryptonRibbonGroupButton1 = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.kryptonRibbonGroupThemeComboBox1 = new Krypton.Ribbon.KryptonRibbonGroupThemeComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,8 +62,9 @@
             this.kryptonRibbon1.RibbonTabs.AddRange(new Krypton.Ribbon.KryptonRibbonTab[] {
             this.costumersMangment,
             this.orders,
+            this.serviceTab,
             this.kryptonRibbonTab1});
-            this.kryptonRibbon1.SelectedTab = this.costumersMangment;
+            this.kryptonRibbon1.SelectedTab = this.serviceTab;
             this.kryptonRibbon1.Size = new System.Drawing.Size(946, 171);
             this.kryptonRibbon1.TabIndex = 0;
             this.kryptonRibbon1.SelectedTabChanged += new System.EventHandler(this.kryptonRibbon1_SelectedTabChanged);
@@ -108,7 +116,8 @@
             // ordersGroup
             // 
             this.ordersGroup.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
-            this.kryptonRibbonGroupTriple2});
+            this.kryptonRibbonGroupTriple2,
+            this.kryptonRibbonGroupTriple4});
             this.ordersGroup.TextLine1 = "נתק אותי";
             // 
             // kryptonRibbonGroupTriple2
@@ -135,6 +144,30 @@
             this.updateOrderBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("updateOrderBtn.ImageLarge")));
             this.updateOrderBtn.TextLine1 = "עדכן הזמנה";
             // 
+            // kryptonRibbonGroupTriple4
+            // 
+            this.kryptonRibbonGroupTriple4.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.kryptonRibbonGroupButton2});
+            // 
+            // serviceTab
+            // 
+            this.serviceTab.Text = "פרויקטים";
+            // 
+            // kryptonRibbonTab1
+            // 
+            this.kryptonRibbonTab1.Groups.AddRange(new Krypton.Ribbon.KryptonRibbonGroup[] {
+            this.kryptonRibbonGroup1});
+            // 
+            // kryptonRibbonGroup1
+            // 
+            this.kryptonRibbonGroup1.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.kryptonRibbonGroupTriple3});
+            // 
+            // kryptonRibbonGroupTriple3
+            // 
+            this.kryptonRibbonGroupTriple3.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.kryptonRibbonGroupButton1});
+            // 
             // mainPanel
             // 
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -143,6 +176,13 @@
             this.mainPanel.Size = new System.Drawing.Size(946, 284);
             this.mainPanel.TabIndex = 1;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
+            // 
+            // kryptonRibbonGroupThemeComboBox1
+            // 
+            this.kryptonRibbonGroupThemeComboBox1.DefaultPalette = Krypton.Toolkit.PaletteMode.Microsoft365Blue;
+            this.kryptonRibbonGroupThemeComboBox1.DropDownWidth = 121;
+            this.kryptonRibbonGroupThemeComboBox1.FormattingEnabled = false;
+            this.kryptonRibbonGroupThemeComboBox1.ItemHeight = 20;
             // 
             // HomePage
             // 
@@ -177,8 +217,15 @@
         private Krypton.Ribbon.KryptonRibbonGroupButton ordersHistoryBtn;
         private Krypton.Ribbon.KryptonRibbonGroupButton newOrdedbtn;
         private Krypton.Ribbon.KryptonRibbonGroupButton updateOrderBtn;
-        private Krypton.Ribbon.KryptonRibbonTab kryptonRibbonTab1;
+        private Krypton.Ribbon.KryptonRibbonTab serviceTab;
         private System.Windows.Forms.Panel mainPanel;
+        private Krypton.Ribbon.KryptonRibbonTab kryptonRibbonTab1;
+        private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup1;
+        private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple3;
+        private Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton1;
+        private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple4;
+        private Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton2;
+        private Krypton.Ribbon.KryptonRibbonGroupThemeComboBox kryptonRibbonGroupThemeComboBox1;
     }
 }
 

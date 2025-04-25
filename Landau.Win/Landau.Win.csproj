@@ -133,6 +133,12 @@
     <Compile Include="forms\custumerList.Designer.cs">
       <DependentUpon>custumerList.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\updateCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </Compile>
     <Compile Include="forms\HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lecturesNseminarsTBL.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -181,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\custumerList.resx">
       <DependentUpon>custumerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\updateCustomerForm.resx">
       <DependentUpon>updateCustomerForm.cs</DependentUpon>
