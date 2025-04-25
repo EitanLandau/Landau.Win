@@ -17,6 +17,7 @@ namespace Landau.Win
         public static List<orderTBL> allOrders;
         public static List<subOrderTBL> allSubOrders;
         public static List<serviceTBL> allServices;
+        public static List<lecturesNseminarsTBL> allLecturesNseminars;
         #endregion
 
         #region Load Functions
@@ -27,6 +28,7 @@ namespace Landau.Win
             GetAllOrders();
             GetAllSubOrders();
             GetAllServices();
+            GetAlllecturesNseminars();
         }
         #endregion
 
@@ -53,6 +55,11 @@ namespace Landau.Win
         {
             allServices = (from s in db.serviceTBL orderby s.serviceName select s).ToList();
             return allServices;
+        }
+        public static List<lecturesNseminarsTBL> GetAlllecturesNseminars()
+        {
+           allLecturesNseminars = (from l in db.lecturesNseminarsTBL orderby l.title select l).ToList();
+            return allLecturesNseminars;
         }
         #endregion
 
