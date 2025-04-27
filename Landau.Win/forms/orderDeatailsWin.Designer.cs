@@ -55,11 +55,12 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(-2, -3);
+            this.pictureBox1.Location = new System.Drawing.Point(-48, -2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(796, 448);
+            this.pictureBox1.Size = new System.Drawing.Size(849, 453);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBoxAddOrder
             // 
@@ -67,19 +68,21 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxAddOrder.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAddOrder.Image")));
-            this.pictureBoxAddOrder.Location = new System.Drawing.Point(26, -3);
+            this.pictureBoxAddOrder.Location = new System.Drawing.Point(-20, -2);
             this.pictureBoxAddOrder.Name = "pictureBoxAddOrder";
-            this.pictureBoxAddOrder.Size = new System.Drawing.Size(841, 448);
+            this.pictureBoxAddOrder.Size = new System.Drawing.Size(821, 453);
             this.pictureBoxAddOrder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxAddOrder.TabIndex = 12;
             this.pictureBoxAddOrder.TabStop = false;
+            this.pictureBoxAddOrder.Click += new System.EventHandler(this.pictureBoxAddOrder_Click);
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(563, 61);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(156)))), ((int)(((byte)(160)))));
+            this.label1.Location = new System.Drawing.Point(566, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(202, 28);
             this.label1.TabIndex = 13;
@@ -88,13 +91,16 @@
             // 
             // addSubOrderBtn
             // 
+            this.addSubOrderBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addSubOrderBtn.BackColor = System.Drawing.Color.Navy;
             this.addSubOrderBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.addSubOrderBtn.Location = new System.Drawing.Point(41, 321);
+            this.addSubOrderBtn.ForeColor = System.Drawing.Color.AliceBlue;
+            this.addSubOrderBtn.Location = new System.Drawing.Point(41, 331);
             this.addSubOrderBtn.Name = "addSubOrderBtn";
-            this.addSubOrderBtn.Size = new System.Drawing.Size(147, 38);
+            this.addSubOrderBtn.Size = new System.Drawing.Size(147, 46);
             this.addSubOrderBtn.TabIndex = 14;
             this.addSubOrderBtn.Text = "הוסף הזמנה";
-            this.addSubOrderBtn.UseVisualStyleBackColor = true;
+            this.addSubOrderBtn.UseVisualStyleBackColor = false;
             this.addSubOrderBtn.Click += new System.EventHandler(this.addSubOrderBtn_Click);
             // 
             // adressTxb
@@ -122,13 +128,16 @@
             // 
             // finishOrderBtn
             // 
+            this.finishOrderBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.finishOrderBtn.BackColor = System.Drawing.Color.Navy;
             this.finishOrderBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.finishOrderBtn.Location = new System.Drawing.Point(41, 365);
+            this.finishOrderBtn.ForeColor = System.Drawing.Color.AliceBlue;
+            this.finishOrderBtn.Location = new System.Drawing.Point(41, 383);
             this.finishOrderBtn.Name = "finishOrderBtn";
-            this.finishOrderBtn.Size = new System.Drawing.Size(147, 38);
+            this.finishOrderBtn.Size = new System.Drawing.Size(147, 46);
             this.finishOrderBtn.TabIndex = 17;
             this.finishOrderBtn.Text = "סיים הזמנה";
-            this.finishOrderBtn.UseVisualStyleBackColor = true;
+            this.finishOrderBtn.UseVisualStyleBackColor = false;
             this.finishOrderBtn.Click += new System.EventHandler(this.finishOrderBtn_Click);
             // 
             // label2
@@ -136,6 +145,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(156)))), ((int)(((byte)(160)))));
             this.label2.Location = new System.Drawing.Point(689, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 28);
@@ -157,6 +167,7 @@
             // 
             this.ammountInvitedUD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ammountInvitedUD.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.ammountInvitedUD.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.ammountInvitedUD.Location = new System.Drawing.Point(402, 174);
             this.ammountInvitedUD.Maximum = new decimal(new int[] {
             10000,
@@ -184,7 +195,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(156)))), ((int)(((byte)(160)))));
             this.label3.Location = new System.Drawing.Point(618, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 28);
@@ -196,6 +207,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(156)))), ((int)(((byte)(160)))));
             this.label4.Location = new System.Drawing.Point(690, 291);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 28);
@@ -207,6 +219,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(156)))), ((int)(((byte)(160)))));
             this.label5.Location = new System.Drawing.Point(689, 232);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 28);

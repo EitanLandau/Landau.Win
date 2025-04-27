@@ -67,6 +67,7 @@
             this.costumerLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.costumerLbl.AutoSize = true;
             this.costumerLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costumerLbl.ForeColor = System.Drawing.Color.SteelBlue;
             this.costumerLbl.Location = new System.Drawing.Point(421, 37);
             this.costumerLbl.Name = "costumerLbl";
             this.costumerLbl.Size = new System.Drawing.Size(115, 28);
@@ -76,13 +77,15 @@
             // continueBtn
             // 
             this.continueBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.continueBtn.BackColor = System.Drawing.Color.Navy;
             this.continueBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.continueBtn.ForeColor = System.Drawing.Color.AliceBlue;
             this.continueBtn.Location = new System.Drawing.Point(395, 391);
             this.continueBtn.Name = "continueBtn";
             this.continueBtn.Size = new System.Drawing.Size(141, 55);
             this.continueBtn.TabIndex = 10;
             this.continueBtn.Text = "המשך";
-            this.continueBtn.UseVisualStyleBackColor = true;
+            this.continueBtn.UseVisualStyleBackColor = false;
             this.continueBtn.Click += new System.EventHandler(this.continueBtn_Click);
             // 
             // pictureBoxAddOrder
@@ -91,9 +94,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxAddOrder.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAddOrder.Image")));
-            this.pictureBoxAddOrder.Location = new System.Drawing.Point(45, -9);
+            this.pictureBoxAddOrder.Location = new System.Drawing.Point(30, -9);
             this.pictureBoxAddOrder.Name = "pictureBoxAddOrder";
-            this.pictureBoxAddOrder.Size = new System.Drawing.Size(868, 483);
+            this.pictureBoxAddOrder.Size = new System.Drawing.Size(838, 483);
             this.pictureBoxAddOrder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxAddOrder.TabIndex = 11;
             this.pictureBoxAddOrder.TabStop = false;
@@ -103,6 +106,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
             this.label1.Location = new System.Drawing.Point(434, 139);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 28);

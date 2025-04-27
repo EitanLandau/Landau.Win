@@ -56,7 +56,8 @@
             this.firstNameLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.firstNameLbl.AutoSize = true;
             this.firstNameLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstNameLbl.Location = new System.Drawing.Point(713, 48);
+            this.firstNameLbl.ForeColor = System.Drawing.Color.SeaGreen;
+            this.firstNameLbl.Location = new System.Drawing.Point(745, 48);
             this.firstNameLbl.Name = "firstNameLbl";
             this.firstNameLbl.Size = new System.Drawing.Size(104, 28);
             this.firstNameLbl.TabIndex = 0;
@@ -77,6 +78,7 @@
             this.lastNameLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lastNameLbl.AutoSize = true;
             this.lastNameLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastNameLbl.ForeColor = System.Drawing.Color.SeaGreen;
             this.lastNameLbl.Location = new System.Drawing.Point(713, 98);
             this.lastNameLbl.Name = "lastNameLbl";
             this.lastNameLbl.Size = new System.Drawing.Size(136, 28);
@@ -105,7 +107,8 @@
             this.emailLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.emailLbl.AutoSize = true;
             this.emailLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailLbl.Location = new System.Drawing.Point(710, 143);
+            this.emailLbl.ForeColor = System.Drawing.Color.SeaGreen;
+            this.emailLbl.Location = new System.Drawing.Point(774, 149);
             this.emailLbl.Name = "emailLbl";
             this.emailLbl.Size = new System.Drawing.Size(75, 28);
             this.emailLbl.TabIndex = 6;
@@ -116,6 +119,7 @@
             this.phoneNumberLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.phoneNumberLbl.AutoSize = true;
             this.phoneNumberLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneNumberLbl.ForeColor = System.Drawing.Color.SeaGreen;
             this.phoneNumberLbl.Location = new System.Drawing.Point(710, 198);
             this.phoneNumberLbl.Name = "phoneNumberLbl";
             this.phoneNumberLbl.Size = new System.Drawing.Size(139, 28);
@@ -125,13 +129,15 @@
             // addCostumerDeateilsBtn
             // 
             this.addCostumerDeateilsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.addCostumerDeateilsBtn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addCostumerDeateilsBtn.Location = new System.Drawing.Point(64, 306);
+            this.addCostumerDeateilsBtn.BackColor = System.Drawing.Color.ForestGreen;
+            this.addCostumerDeateilsBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addCostumerDeateilsBtn.ForeColor = System.Drawing.Color.LightGreen;
+            this.addCostumerDeateilsBtn.Location = new System.Drawing.Point(23, 324);
             this.addCostumerDeateilsBtn.Name = "addCostumerDeateilsBtn";
-            this.addCostumerDeateilsBtn.Size = new System.Drawing.Size(143, 63);
+            this.addCostumerDeateilsBtn.Size = new System.Drawing.Size(143, 49);
             this.addCostumerDeateilsBtn.TabIndex = 9;
             this.addCostumerDeateilsBtn.Text = "הוסף לקוח";
-            this.addCostumerDeateilsBtn.UseVisualStyleBackColor = true;
+            this.addCostumerDeateilsBtn.UseVisualStyleBackColor = false;
             this.addCostumerDeateilsBtn.Click += new System.EventHandler(this.addCostumerDeateilsBtn_Click);
             // 
             // addPictureBx
@@ -154,7 +160,7 @@
             this.dtpBDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpBDate.Location = new System.Drawing.Point(545, 257);
             this.dtpBDate.Name = "dtpBDate";
-            this.dtpBDate.Size = new System.Drawing.Size(110, 22);
+            this.dtpBDate.Size = new System.Drawing.Size(159, 22);
             this.dtpBDate.TabIndex = 12;
             // 
             // BdateLbl
@@ -162,7 +168,8 @@
             this.BdateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BdateLbl.AutoSize = true;
             this.BdateLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BdateLbl.Location = new System.Drawing.Point(709, 251);
+            this.BdateLbl.ForeColor = System.Drawing.Color.SeaGreen;
+            this.BdateLbl.Location = new System.Drawing.Point(716, 251);
             this.BdateLbl.Name = "BdateLbl";
             this.BdateLbl.Size = new System.Drawing.Size(133, 28);
             this.BdateLbl.TabIndex = 7;
@@ -186,7 +193,7 @@
             // notesTxb
             // 
             this.notesTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.notesTxb.Location = new System.Drawing.Point(254, 36);
+            this.notesTxb.Location = new System.Drawing.Point(254, 48);
             this.notesTxb.Multiline = true;
             this.notesTxb.Name = "notesTxb";
             this.notesTxb.Size = new System.Drawing.Size(181, 298);
@@ -196,10 +203,11 @@
             // 
             this.notesLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.notesLbl.AutoSize = true;
-            this.notesLbl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notesLbl.Location = new System.Drawing.Point(453, 39);
+            this.notesLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notesLbl.ForeColor = System.Drawing.Color.SeaGreen;
+            this.notesLbl.Location = new System.Drawing.Point(452, 48);
             this.notesLbl.Name = "notesLbl";
-            this.notesLbl.Size = new System.Drawing.Size(67, 24);
+            this.notesLbl.Size = new System.Drawing.Size(78, 28);
             this.notesLbl.TabIndex = 15;
             this.notesLbl.Text = "הערות";
             // 
@@ -216,7 +224,8 @@
             this.institutionLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.institutionLbl.AutoSize = true;
             this.institutionLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.institutionLbl.Location = new System.Drawing.Point(709, 306);
+            this.institutionLbl.ForeColor = System.Drawing.Color.SeaGreen;
+            this.institutionLbl.Location = new System.Drawing.Point(784, 306);
             this.institutionLbl.Name = "institutionLbl";
             this.institutionLbl.Size = new System.Drawing.Size(65, 28);
             this.institutionLbl.TabIndex = 17;

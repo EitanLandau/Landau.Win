@@ -91,8 +91,9 @@
             // 
             this.pickCustLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pickCustLbl.AutoSize = true;
+            this.pickCustLbl.BackColor = System.Drawing.SystemColors.Control;
             this.pickCustLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pickCustLbl.ForeColor = System.Drawing.Color.Black;
+            this.pickCustLbl.ForeColor = System.Drawing.Color.DarkOrange;
             this.pickCustLbl.Location = new System.Drawing.Point(351, 18);
             this.pickCustLbl.Name = "pickCustLbl";
             this.pickCustLbl.Size = new System.Drawing.Size(115, 28);
@@ -106,7 +107,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.updateFormPic.Image = ((System.Drawing.Image)(resources.GetObject("updateFormPic.Image")));
-            this.updateFormPic.Location = new System.Drawing.Point(4, 2);
+            this.updateFormPic.Location = new System.Drawing.Point(0, 0);
             this.updateFormPic.Name = "updateFormPic";
             this.updateFormPic.Size = new System.Drawing.Size(797, 455);
             this.updateFormPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -117,7 +118,7 @@
             // updFirstNameTxb
             // 
             this.updFirstNameTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updFirstNameTxb.Location = new System.Drawing.Point(510, 155);
+            this.updFirstNameTxb.Location = new System.Drawing.Point(486, 127);
             this.updFirstNameTxb.Name = "updFirstNameTxb";
             this.updFirstNameTxb.Size = new System.Drawing.Size(142, 22);
             this.updFirstNameTxb.TabIndex = 3;
@@ -126,7 +127,7 @@
             // updEmailTxb
             // 
             this.updEmailTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updEmailTxb.Location = new System.Drawing.Point(510, 258);
+            this.updEmailTxb.Location = new System.Drawing.Point(486, 258);
             this.updEmailTxb.Name = "updEmailTxb";
             this.updEmailTxb.Size = new System.Drawing.Size(142, 22);
             this.updEmailTxb.TabIndex = 4;
@@ -134,7 +135,7 @@
             // updLastNameTxb
             // 
             this.updLastNameTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updLastNameTxb.Location = new System.Drawing.Point(510, 207);
+            this.updLastNameTxb.Location = new System.Drawing.Point(486, 200);
             this.updLastNameTxb.Name = "updLastNameTxb";
             this.updLastNameTxb.Size = new System.Drawing.Size(137, 22);
             this.updLastNameTxb.TabIndex = 5;
@@ -142,7 +143,7 @@
             // updPhoneMtxb
             // 
             this.updPhoneMtxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updPhoneMtxb.Location = new System.Drawing.Point(510, 307);
+            this.updPhoneMtxb.Location = new System.Drawing.Point(486, 307);
             this.updPhoneMtxb.Mask = "(999) 000-0000";
             this.updPhoneMtxb.Name = "updPhoneMtxb";
             this.updPhoneMtxb.Size = new System.Drawing.Size(142, 22);
@@ -152,7 +153,7 @@
             // 
             this.updBdateDtp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.updBdateDtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.updBdateDtp.Location = new System.Drawing.Point(510, 359);
+            this.updBdateDtp.Location = new System.Drawing.Point(486, 355);
             this.updBdateDtp.Name = "updBdateDtp";
             this.updBdateDtp.Size = new System.Drawing.Size(113, 22);
             this.updBdateDtp.TabIndex = 7;
@@ -161,10 +162,11 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(687, 155);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label1.Location = new System.Drawing.Point(684, 121);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 24);
+            this.label1.Size = new System.Drawing.Size(104, 28);
             this.label1.TabIndex = 8;
             this.label1.Text = "שם פרטי";
             // 
@@ -172,10 +174,11 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(662, 359);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label2.Location = new System.Drawing.Point(643, 349);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 24);
+            this.label2.Size = new System.Drawing.Size(133, 28);
             this.label2.TabIndex = 9;
             this.label2.Text = "תאריך לידה";
             // 
@@ -183,10 +186,11 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(711, 307);
+            this.label3.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label3.Location = new System.Drawing.Point(705, 300);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 24);
+            this.label3.Size = new System.Drawing.Size(71, 28);
             this.label3.TabIndex = 10;
             this.label3.Text = "טלפון";
             // 
@@ -194,10 +198,11 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(711, 258);
+            this.label4.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label4.Location = new System.Drawing.Point(701, 251);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 24);
+            this.label4.Size = new System.Drawing.Size(75, 28);
             this.label4.TabIndex = 11;
             this.label4.Text = "אימייל";
             // 
@@ -205,10 +210,11 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(658, 207);
+            this.label5.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label5.Location = new System.Drawing.Point(652, 194);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 24);
+            this.label5.Size = new System.Drawing.Size(136, 28);
             this.label5.TabIndex = 12;
             this.label5.Text = "שם משפחה";
             // 
@@ -225,17 +231,18 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(410, 155);
+            this.label7.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label7.Location = new System.Drawing.Point(388, 127);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 24);
+            this.label7.Size = new System.Drawing.Size(78, 28);
             this.label7.TabIndex = 14;
             this.label7.Text = "הערות";
             // 
             // updNotesTxb
             // 
             this.updNotesTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updNotesTxb.Location = new System.Drawing.Point(213, 155);
+            this.updNotesTxb.Location = new System.Drawing.Point(194, 128);
             this.updNotesTxb.Multiline = true;
             this.updNotesTxb.Name = "updNotesTxb";
             this.updNotesTxb.Size = new System.Drawing.Size(176, 222);
@@ -244,13 +251,16 @@
             // updCustomerDeatils
             // 
             this.updCustomerDeatils.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.updCustomerDeatils.BackColor = System.Drawing.Color.OrangeRed;
+            this.updCustomerDeatils.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.updCustomerDeatils.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updCustomerDeatils.ForeColor = System.Drawing.Color.LightYellow;
             this.updCustomerDeatils.Location = new System.Drawing.Point(35, 376);
             this.updCustomerDeatils.Name = "updCustomerDeatils";
             this.updCustomerDeatils.Size = new System.Drawing.Size(114, 52);
             this.updCustomerDeatils.TabIndex = 16;
             this.updCustomerDeatils.Text = "עדכן";
-            this.updCustomerDeatils.UseVisualStyleBackColor = true;
+            this.updCustomerDeatils.UseVisualStyleBackColor = false;
             this.updCustomerDeatils.Click += new System.EventHandler(this.updCustomerDeatils_Click);
             // 
             // costumerTBLTableAdapter
@@ -266,6 +276,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label9.ForeColor = System.Drawing.Color.DarkOrange;
             this.label9.Location = new System.Drawing.Point(711, 401);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 28);
@@ -275,7 +286,7 @@
             // updInstitutionTxb
             // 
             this.updInstitutionTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updInstitutionTxb.Location = new System.Drawing.Point(510, 406);
+            this.updInstitutionTxb.Location = new System.Drawing.Point(486, 406);
             this.updInstitutionTxb.Name = "updInstitutionTxb";
             this.updInstitutionTxb.Size = new System.Drawing.Size(142, 22);
             this.updInstitutionTxb.TabIndex = 19;
