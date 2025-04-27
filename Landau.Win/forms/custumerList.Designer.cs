@@ -29,50 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.customerListDGV = new System.Windows.Forms.DataGridView();
+            this.costumerTBLBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.lblTotalCustomers = new System.Windows.Forms.Label();
-            this.costumerTBLBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.costumerTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerListDGV = new System.Windows.Forms.DataGridView();
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.regDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.customerListDGV)).BeginInit();
+            this.institution = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerListDGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // customerListDGV
+            // costumerTBLBindingSource1
             // 
-            this.customerListDGV.AllowUserToAddRows = false;
-            this.customerListDGV.AllowUserToDeleteRows = false;
-            this.customerListDGV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customerListDGV.AutoGenerateColumns = false;
-            this.customerListDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.customerListDGV.ColumnHeadersHeight = 29;
-            this.customerListDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.customerListDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fullNameDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.phoneNumberDataGridViewTextBoxColumn,
-            this.bDateDataGridViewTextBoxColumn,
-            this.regDateDataGridViewTextBoxColumn,
-            this.notesDataGridViewTextBoxColumn});
-            this.customerListDGV.DataSource = this.costumerTBLBindingSource1;
-            this.customerListDGV.Location = new System.Drawing.Point(12, 41);
-            this.customerListDGV.Name = "customerListDGV";
-            this.customerListDGV.ReadOnly = true;
-            this.customerListDGV.RowHeadersVisible = false;
-            this.customerListDGV.RowHeadersWidth = 51;
-            this.customerListDGV.RowTemplate.Height = 24;
-            this.customerListDGV.Size = new System.Drawing.Size(911, 370);
-            this.customerListDGV.TabIndex = 0;
-            this.customerListDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.costumerTBLBindingSource1.DataSource = typeof(Landau.Win.costumerTBL);
             // 
             // label1
             // 
@@ -94,13 +70,39 @@
             this.lblTotalCustomers.TabIndex = 2;
             this.lblTotalCustomers.Text = "label2";
             // 
-            // costumerTBLBindingSource1
-            // 
-            this.costumerTBLBindingSource1.DataSource = typeof(Landau.Win.costumerTBL);
-            // 
             // costumerTBLBindingSource
             // 
             this.costumerTBLBindingSource.DataSource = typeof(Landau.Win.costumerTBL);
+            // 
+            // customerListDGV
+            // 
+            this.customerListDGV.AllowUserToAddRows = false;
+            this.customerListDGV.AllowUserToDeleteRows = false;
+            this.customerListDGV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.customerListDGV.AutoGenerateColumns = false;
+            this.customerListDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.customerListDGV.ColumnHeadersHeight = 29;
+            this.customerListDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.customerListDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fullNameDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.phoneNumberDataGridViewTextBoxColumn,
+            this.bDateDataGridViewTextBoxColumn,
+            this.regDateDataGridViewTextBoxColumn,
+            this.notesDataGridViewTextBoxColumn,
+            this.institution});
+            this.customerListDGV.DataSource = this.costumerTBLBindingSource1;
+            this.customerListDGV.Location = new System.Drawing.Point(12, 41);
+            this.customerListDGV.Name = "customerListDGV";
+            this.customerListDGV.ReadOnly = true;
+            this.customerListDGV.RowHeadersVisible = false;
+            this.customerListDGV.RowHeadersWidth = 51;
+            this.customerListDGV.RowTemplate.Height = 24;
+            this.customerListDGV.Size = new System.Drawing.Size(911, 370);
+            this.customerListDGV.TabIndex = 0;
+            this.customerListDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // fullNameDataGridViewTextBoxColumn
             // 
@@ -150,6 +152,14 @@
             this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
             this.notesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // institution
+            // 
+            this.institution.DataPropertyName = "institution";
+            this.institution.HeaderText = "מוסד";
+            this.institution.MinimumWidth = 6;
+            this.institution.Name = "institution";
+            this.institution.ReadOnly = true;
+            // 
             // customerListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -163,26 +173,26 @@
             this.Name = "customerListForm";
             this.Text = "רשימת לקוחות";
             this.Load += new System.EventHandler(this.customerDGV_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.customerListDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerListDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView customerListDGV;
         private System.Windows.Forms.BindingSource costumerTBLBindingSource;
         private System.Windows.Forms.BindingSource costumerTBLBindingSource1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTotalCustomers;
+        private System.Windows.Forms.DataGridView customerListDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn regDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn notesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn institution;
     }
 }

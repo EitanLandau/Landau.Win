@@ -34,8 +34,9 @@
             this.pictureBoxAddOrder = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.addSubOrderBtn = new System.Windows.Forms.Button();
-            this.adress = new System.Windows.Forms.TextBox();
+            this.adressTxb = new System.Windows.Forms.TextBox();
             this.picProductCmbx = new System.Windows.Forms.ComboBox();
+            this.lecturesNseminarsTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.finishOrderBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpOrder = new System.Windows.Forms.DateTimePicker();
@@ -44,11 +45,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.OrderDeatsNotes = new System.Windows.Forms.TextBox();
-            this.lecturesNseminarsTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.errorProviderOrder = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ammountInvitedUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturesNseminarsTBLBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ammountInvitedUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -95,13 +97,13 @@
             this.addSubOrderBtn.UseVisualStyleBackColor = true;
             this.addSubOrderBtn.Click += new System.EventHandler(this.addSubOrderBtn_Click);
             // 
-            // adress
+            // adressTxb
             // 
-            this.adress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.adress.Location = new System.Drawing.Point(402, 239);
-            this.adress.Name = "adress";
-            this.adress.Size = new System.Drawing.Size(154, 22);
-            this.adress.TabIndex = 15;
+            this.adressTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.adressTxb.Location = new System.Drawing.Point(402, 239);
+            this.adressTxb.Name = "adressTxb";
+            this.adressTxb.Size = new System.Drawing.Size(154, 22);
+            this.adressTxb.TabIndex = 15;
             // 
             // picProductCmbx
             // 
@@ -114,6 +116,10 @@
             this.picProductCmbx.Size = new System.Drawing.Size(154, 24);
             this.picProductCmbx.TabIndex = 16;
             // 
+            // lecturesNseminarsTBLBindingSource
+            // 
+            this.lecturesNseminarsTBLBindingSource.DataSource = typeof(Landau.Win.lecturesNseminarsTBL);
+            // 
             // finishOrderBtn
             // 
             this.finishOrderBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
@@ -123,6 +129,7 @@
             this.finishOrderBtn.TabIndex = 17;
             this.finishOrderBtn.Text = "סיים הזמנה";
             this.finishOrderBtn.UseVisualStyleBackColor = true;
+            this.finishOrderBtn.Click += new System.EventHandler(this.finishOrderBtn_Click);
             // 
             // label2
             // 
@@ -148,16 +155,36 @@
             // 
             // ammountInvitedUD
             // 
+            this.ammountInvitedUD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ammountInvitedUD.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.ammountInvitedUD.Location = new System.Drawing.Point(402, 174);
+            this.ammountInvitedUD.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.ammountInvitedUD.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ammountInvitedUD.Name = "ammountInvitedUD";
-            this.ammountInvitedUD.Size = new System.Drawing.Size(154, 22);
+            this.ammountInvitedUD.Size = new System.Drawing.Size(154, 32);
             this.ammountInvitedUD.TabIndex = 20;
+            this.ammountInvitedUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ammountInvitedUD.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(618, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 28);
@@ -195,9 +222,9 @@
             this.OrderDeatsNotes.Size = new System.Drawing.Size(154, 140);
             this.OrderDeatsNotes.TabIndex = 25;
             // 
-            // lecturesNseminarsTBLBindingSource
+            // errorProviderOrder
             // 
-            this.lecturesNseminarsTBLBindingSource.DataSource = typeof(Landau.Win.lecturesNseminarsTBL);
+            this.errorProviderOrder.ContainerControl = this;
             // 
             // orderDeatailsWin
             // 
@@ -213,7 +240,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.finishOrderBtn);
             this.Controls.Add(this.picProductCmbx);
-            this.Controls.Add(this.adress);
+            this.Controls.Add(this.adressTxb);
             this.Controls.Add(this.addSubOrderBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxAddOrder);
@@ -223,8 +250,9 @@
             this.Text = "פרטי הזמנה";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddOrder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ammountInvitedUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturesNseminarsTBLBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ammountInvitedUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderOrder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,7 +264,7 @@
         private System.Windows.Forms.PictureBox pictureBoxAddOrder;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button addSubOrderBtn;
-        private System.Windows.Forms.TextBox adress;
+        private System.Windows.Forms.TextBox adressTxb;
         private System.Windows.Forms.ComboBox picProductCmbx;
         private System.Windows.Forms.Button finishOrderBtn;
         private System.Windows.Forms.Label label2;
@@ -247,5 +275,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox OrderDeatsNotes;
         private System.Windows.Forms.BindingSource lecturesNseminarsTBLBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProviderOrder;
     }
 }

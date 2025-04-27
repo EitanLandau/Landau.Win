@@ -60,7 +60,24 @@ namespace Landau.Win
                 }
                 current.Close();
             }
-            current = new orderDeatailsWin(o1);
+            current = new orderDeatailsWin(o1 , this);
+            current.Dock = DockStyle.Fill;
+            current.TopLevel = false;
+            current.TopMost = true;
+            mainPanel.Controls.Add(current);
+            current.Show();
+        }
+        public void OpenAddOrderForm()
+        {
+            if (current != null)
+            {
+                if (current is addOrderForm)
+                {
+                    return;
+                }
+                current.Close();
+            }
+            current = new addOrderForm(this);
             current.Dock = DockStyle.Fill;
             current.TopLevel = false;
             current.TopMost = true;
