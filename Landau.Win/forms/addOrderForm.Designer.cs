@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addOrderForm));
             this.pickCostumerCmbx = new System.Windows.Forms.ComboBox();
+            this.costumerTBLBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.costumerTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.costumerLbl = new System.Windows.Forms.Label();
             this.continueBtn = new System.Windows.Forms.Button();
@@ -38,13 +39,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.orderNotesTxb = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dbDataSet = new Landau.Win.dbDataSet();
-            this.costumerTBLBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.costumerTBLTableAdapter = new Landau.Win.dbDataSetTableAdapters.costumerTBLTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // pickCostumerCmbx
@@ -79,9 +77,9 @@
             // 
             this.continueBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.continueBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.continueBtn.Location = new System.Drawing.Point(416, 394);
+            this.continueBtn.Location = new System.Drawing.Point(395, 391);
             this.continueBtn.Name = "continueBtn";
-            this.continueBtn.Size = new System.Drawing.Size(120, 52);
+            this.continueBtn.Size = new System.Drawing.Size(141, 55);
             this.continueBtn.TabIndex = 10;
             this.continueBtn.Text = "המשך";
             this.continueBtn.UseVisualStyleBackColor = true;
@@ -126,16 +124,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // dbDataSet
-            // 
-            this.dbDataSet.DataSetName = "dbDataSet";
-            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // costumerTBLBindingSource1
-            // 
-            this.costumerTBLBindingSource1.DataMember = "costumerTBL";
-            this.costumerTBLBindingSource1.DataSource = this.dbDataSet;
-            // 
             // costumerTBLTableAdapter
             // 
             this.costumerTBLTableAdapter.ClearBeforeFill = true;
@@ -155,10 +143,9 @@
             this.Name = "addOrderForm";
             this.Text = "הוסף לקוח וכאלה";
             this.Load += new System.EventHandler(this.addOrderForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddOrder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,7 +161,6 @@
         private System.Windows.Forms.TextBox orderNotesTxb;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.BindingSource costumerTBLBindingSource;
-        private dbDataSet dbDataSet;
         private System.Windows.Forms.BindingSource costumerTBLBindingSource1;
         private dbDataSetTableAdapters.costumerTBLTableAdapter costumerTBLTableAdapter;
     }

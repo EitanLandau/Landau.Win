@@ -32,6 +32,26 @@ namespace Landau.Win
 
             }
         }
+        public static bool isValidInstitution(string institution, ErrorProvider ep, TextBox txb, string error)
+        {
+            if (institution == null)
+            {
+                ep.SetError(txb, error);
+                return false;
+            }
+            bool a1 = institution.Trim().Length > 2;
+            if (a1)
+            {
+                ep.SetError(txb, "");
+                return true;
+            }
+            else
+            {
+                ep.SetError(txb, error);
+                return false;
+
+            }
+        }
         public static bool isValidPhoneNumber(string phone, ErrorProvider ep, MaskedTextBox mtxb, string error)
         {
             bool a1 = phone.Any(Char.IsDigit);

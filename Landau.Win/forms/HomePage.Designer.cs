@@ -43,8 +43,6 @@
             this.ordersHistoryBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.newOrdedbtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.updateOrderBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.kryptonRibbonGroupTriple4 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
-            this.kryptonRibbonGroupButton2 = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.serviceTab = new Krypton.Ribbon.KryptonRibbonTab();
             this.kryptonRibbonTab1 = new Krypton.Ribbon.KryptonRibbonTab();
             this.kryptonRibbonGroup1 = new Krypton.Ribbon.KryptonRibbonGroup();
@@ -52,6 +50,11 @@
             this.kryptonRibbonGroupButton1 = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.kryptonRibbonGroupThemeComboBox1 = new Krypton.Ribbon.KryptonRibbonGroupThemeComboBox();
+            this.kryptonRibbonGroup2 = new Krypton.Ribbon.KryptonRibbonGroup();
+            this.kryptonRibbonGroupTriple4 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.lectureListBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.addLectureBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.updLectureBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,12 +62,15 @@
             // 
             this.kryptonRibbon1.InDesignHelperMode = true;
             this.kryptonRibbon1.Name = "kryptonRibbon1";
+            this.kryptonRibbon1.RibbonShortcuts.ToggleKeyboardAccess1 = System.Windows.Forms.Keys.None;
+            this.kryptonRibbon1.RibbonShortcuts.ToggleKeyboardAccess2 = System.Windows.Forms.Keys.None;
+            this.kryptonRibbon1.RibbonShortcuts.ToggleMinimizeMode = System.Windows.Forms.Keys.None;
             this.kryptonRibbon1.RibbonTabs.AddRange(new Krypton.Ribbon.KryptonRibbonTab[] {
             this.costumersMangment,
             this.orders,
             this.serviceTab,
             this.kryptonRibbonTab1});
-            this.kryptonRibbon1.SelectedTab = this.serviceTab;
+            this.kryptonRibbon1.SelectedTab = this.orders;
             this.kryptonRibbon1.Size = new System.Drawing.Size(946, 171);
             this.kryptonRibbon1.TabIndex = 0;
             this.kryptonRibbon1.SelectedTabChanged += new System.EventHandler(this.kryptonRibbon1_SelectedTabChanged);
@@ -91,7 +97,7 @@
             // 
             // addCostumerBtn
             // 
-            this.addCostumerBtn.ImageLarge = global::Landau.Win.Properties.Resources.צילום_מסך_2024_11_26_152303;
+            this.addCostumerBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("addCostumerBtn.ImageLarge")));
             this.addCostumerBtn.TextLine1 = "הוסף לקוח";
             this.addCostumerBtn.Click += new System.EventHandler(this.addCostumerBtn_Click);
             // 
@@ -116,8 +122,7 @@
             // ordersGroup
             // 
             this.ordersGroup.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
-            this.kryptonRibbonGroupTriple2,
-            this.kryptonRibbonGroupTriple4});
+            this.kryptonRibbonGroupTriple2});
             this.ordersGroup.TextLine1 = "נתק אותי";
             // 
             // kryptonRibbonGroupTriple2
@@ -144,14 +149,11 @@
             this.updateOrderBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("updateOrderBtn.ImageLarge")));
             this.updateOrderBtn.TextLine1 = "עדכן הזמנה";
             // 
-            // kryptonRibbonGroupTriple4
-            // 
-            this.kryptonRibbonGroupTriple4.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.kryptonRibbonGroupButton2});
-            // 
             // serviceTab
             // 
-            this.serviceTab.Text = "פרויקטים";
+            this.serviceTab.Groups.AddRange(new Krypton.Ribbon.KryptonRibbonGroup[] {
+            this.kryptonRibbonGroup2});
+            this.serviceTab.Text = "סדנאות והרצאות";
             // 
             // kryptonRibbonTab1
             // 
@@ -183,6 +185,33 @@
             this.kryptonRibbonGroupThemeComboBox1.DropDownWidth = 121;
             this.kryptonRibbonGroupThemeComboBox1.FormattingEnabled = false;
             this.kryptonRibbonGroupThemeComboBox1.ItemHeight = 20;
+            // 
+            // kryptonRibbonGroup2
+            // 
+            this.kryptonRibbonGroup2.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.kryptonRibbonGroupTriple4});
+            // 
+            // kryptonRibbonGroupTriple4
+            // 
+            this.kryptonRibbonGroupTriple4.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.lectureListBtn,
+            this.addLectureBtn,
+            this.updLectureBtn});
+            // 
+            // lectureListBtn
+            // 
+            this.lectureListBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("lectureListBtn.ImageLarge")));
+            this.lectureListBtn.TextLine1 = "הרצאות וסדנאות";
+            // 
+            // addLectureBtn
+            // 
+            this.addLectureBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("addLectureBtn.ImageLarge")));
+            this.addLectureBtn.TextLine1 = "הוסף מוצר";
+            // 
+            // updLectureBtn
+            // 
+            this.updLectureBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("updLectureBtn.ImageLarge")));
+            this.updLectureBtn.TextLine1 = "עדכן מוצר";
             // 
             // HomePage
             // 
@@ -223,9 +252,12 @@
         private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup1;
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple3;
         private Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton1;
-        private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple4;
-        private Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton2;
         private Krypton.Ribbon.KryptonRibbonGroupThemeComboBox kryptonRibbonGroupThemeComboBox1;
+        private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup2;
+        private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple4;
+        private Krypton.Ribbon.KryptonRibbonGroupButton lectureListBtn;
+        private Krypton.Ribbon.KryptonRibbonGroupButton addLectureBtn;
+        private Krypton.Ribbon.KryptonRibbonGroupButton updLectureBtn;
     }
 }
 

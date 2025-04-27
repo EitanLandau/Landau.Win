@@ -49,7 +49,24 @@ namespace Landau.Win
         {
 
         }
+        public void openOrderDetailsWin(orderTBL o1)
+        {
 
+            if (current != null)
+            {
+                if (current is orderDeatailsWin)
+                {
+                    return;
+                }
+                current.Close();
+            }
+            current = new orderDeatailsWin(o1);
+            current.Dock = DockStyle.Fill;
+            current.TopLevel = false;
+            current.TopMost = true;
+            mainPanel.Controls.Add(current);
+            current.Show();
+        }
         private void newOrdedbtn_Click(object sender, EventArgs e)
         {
             if (current != null)
@@ -60,7 +77,7 @@ namespace Landau.Win
                 }
                 current.Close();
             }
-            current = new addOrderForm();
+            current = new addOrderForm(this);
             current.Dock = DockStyle.Fill;
             current.TopLevel = false;
             current.TopMost = true;

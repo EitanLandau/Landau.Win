@@ -37,6 +37,7 @@ namespace Landau.Win.forms
             string phone  = phoneMtxb.Text.Trim();
             string email = txbEmail.Text.Trim();
             string notes = notesTxb.Text.Trim();
+            string institution = institutionTxb.Text.Trim();
             if (!validateForm())
             {
                 return;
@@ -54,6 +55,7 @@ namespace Landau.Win.forms
                 c1.notes = notes;
                 c1.bDate = dtpBDate.Value;
                 c1.regDate = DateTime.Now;
+                c1.institution = institution;
                 c1 = DBHelper.AddCostumer(c1);
                 if (c1 != null)
                 {
@@ -64,6 +66,7 @@ namespace Landau.Win.forms
                     phoneMtxb.Text = "";
                     dtpBDate.Text = "";
                     notesTxb.Text = "";
+                    institutionTxb.Text = "";
                 }
                 else
                 {
@@ -83,12 +86,14 @@ namespace Landau.Win.forms
             string lastName = lastNameTxt.Text.Trim();
             string phone = phoneMtxb.Text.Trim();
             string email = txbEmail.Text.Trim();
+            string institution = institutionTxb.Text.Trim();
 
             bool a1 = Utils.isValidName(firstName, errorProvider1, firstNameTxt, "יש להזין שם תקין");
             bool a2 = Utils.isValidName(lastName, errorProvider1, lastNameTxt, "יש להזין שם תקין");
             bool a3 = Utils.isValidPhoneNumber(phone, errorProvider1, phoneMtxb, "יש להזין מספר טלפון תקין");
             bool a4 = Utils.isValidEmail(email, errorProvider1, txbEmail, "יש להזין כתובת אימייל תקינה");
-            return a1 && a2 && a3 && a4;
+            bool a5 = Utils.isValidInstitution(institution, errorProvider1, institutionTxb, "יש להזין מוסד");
+            return a1 && a2 && a3 && a4 && a5;
 
 
         }

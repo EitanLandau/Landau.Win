@@ -18,6 +18,7 @@
           <Property Name="bDate" Type="datetime" Nullable="false" />
           <Property Name="regDate" Type="datetime" Nullable="false" />
           <Property Name="notes" Type="nvarchar" MaxLength="250" />
+          <Property Name="institution" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="lecturesNseminarsTBL">
           <Key>
@@ -76,7 +77,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_subOrderTBL_ToorderTBL">
+        <Association Name="FK_subOrderTBL_orderTBL">
           <End Role="orderTBL" Type="Self.orderTBL" Multiplicity="1" />
           <End Role="subOrderTBL" Type="Self.subOrderTBL" Multiplicity="*" />
           <ReferentialConstraint>
@@ -88,7 +89,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_subOrderTBL_ToserviceTBL">
+        <Association Name="FK_subOrderTBL_serviceTBL">
           <End Role="lecturesNseminarsTBL" Type="Self.lecturesNseminarsTBL" Multiplicity="1" />
           <End Role="subOrderTBL" Type="Self.subOrderTBL" Multiplicity="*" />
           <ReferentialConstraint>
@@ -110,11 +111,11 @@
             <End Role="costumerTBL" EntitySet="costumerTBL" />
             <End Role="orderTBL" EntitySet="orderTBL" />
           </AssociationSet>
-          <AssociationSet Name="FK_subOrderTBL_ToorderTBL" Association="Self.FK_subOrderTBL_ToorderTBL">
+          <AssociationSet Name="FK_subOrderTBL_orderTBL" Association="Self.FK_subOrderTBL_orderTBL">
             <End Role="orderTBL" EntitySet="orderTBL" />
             <End Role="subOrderTBL" EntitySet="subOrderTBL" />
           </AssociationSet>
-          <AssociationSet Name="FK_subOrderTBL_ToserviceTBL" Association="Self.FK_subOrderTBL_ToserviceTBL">
+          <AssociationSet Name="FK_subOrderTBL_serviceTBL" Association="Self.FK_subOrderTBL_serviceTBL">
             <End Role="lecturesNseminarsTBL" EntitySet="lecturesNseminarsTBL" />
             <End Role="subOrderTBL" EntitySet="subOrderTBL" />
           </AssociationSet>
@@ -133,11 +134,11 @@
             <End Role="costumerTBL" EntitySet="costumerTBL" />
             <End Role="orderTBL" EntitySet="orderTBL" />
           </AssociationSet>
-          <AssociationSet Name="FK_subOrderTBL_ToserviceTBL" Association="dbModel.FK_subOrderTBL_ToserviceTBL">
+          <AssociationSet Name="FK_subOrderTBL_serviceTBL" Association="dbModel.FK_subOrderTBL_serviceTBL">
             <End Role="lecturesNseminarsTBL" EntitySet="lecturesNseminarsTBL" />
             <End Role="subOrderTBL" EntitySet="subOrderTBL" />
           </AssociationSet>
-          <AssociationSet Name="FK_subOrderTBL_ToorderTBL" Association="dbModel.FK_subOrderTBL_ToorderTBL">
+          <AssociationSet Name="FK_subOrderTBL_orderTBL" Association="dbModel.FK_subOrderTBL_orderTBL">
             <End Role="orderTBL" EntitySet="orderTBL" />
             <End Role="subOrderTBL" EntitySet="subOrderTBL" />
           </AssociationSet>
@@ -155,6 +156,7 @@
           <Property Name="bDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="regDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="notes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="institution" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="orderTBL" Relationship="dbModel.FK_orderTBL_costumerTBL" FromRole="costumerTBL" ToRole="orderTBL" />
         </EntityType>
         <EntityType Name="lecturesNseminarsTBL">
@@ -167,7 +169,7 @@
           <Property Name="length" Type="Time" Nullable="false" Precision="0" />
           <Property Name="description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="subOrderTBL" Relationship="dbModel.FK_subOrderTBL_ToserviceTBL" FromRole="lecturesNseminarsTBL" ToRole="subOrderTBL" />
+          <NavigationProperty Name="subOrderTBL" Relationship="dbModel.FK_subOrderTBL_serviceTBL" FromRole="lecturesNseminarsTBL" ToRole="subOrderTBL" />
         </EntityType>
         <EntityType Name="orderTBL">
           <Key>
@@ -179,7 +181,7 @@
           <Property Name="orderDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="costumerTBL" Relationship="dbModel.FK_orderTBL_costumerTBL" FromRole="orderTBL" ToRole="costumerTBL" />
-          <NavigationProperty Name="subOrderTBL" Relationship="dbModel.FK_subOrderTBL_ToorderTBL" FromRole="orderTBL" ToRole="subOrderTBL" />
+          <NavigationProperty Name="subOrderTBL" Relationship="dbModel.FK_subOrderTBL_orderTBL" FromRole="orderTBL" ToRole="subOrderTBL" />
         </EntityType>
         <EntityType Name="serviceTBL">
           <Key>
@@ -204,8 +206,8 @@
           <Property Name="amountInvited" Type="Int32" Nullable="false" />
           <Property Name="notes" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="adress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="lecturesNseminarsTBL" Relationship="dbModel.FK_subOrderTBL_ToserviceTBL" FromRole="subOrderTBL" ToRole="lecturesNseminarsTBL" />
-          <NavigationProperty Name="orderTBL" Relationship="dbModel.FK_subOrderTBL_ToorderTBL" FromRole="subOrderTBL" ToRole="orderTBL" />
+          <NavigationProperty Name="lecturesNseminarsTBL" Relationship="dbModel.FK_subOrderTBL_serviceTBL" FromRole="subOrderTBL" ToRole="lecturesNseminarsTBL" />
+          <NavigationProperty Name="orderTBL" Relationship="dbModel.FK_subOrderTBL_orderTBL" FromRole="subOrderTBL" ToRole="orderTBL" />
         </EntityType>
         <Association Name="FK_orderTBL_costumerTBL">
           <End Type="dbModel.costumerTBL" Role="costumerTBL" Multiplicity="1" />
@@ -219,7 +221,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_subOrderTBL_ToserviceTBL">
+        <Association Name="FK_subOrderTBL_serviceTBL">
           <End Type="dbModel.lecturesNseminarsTBL" Role="lecturesNseminarsTBL" Multiplicity="1" />
           <End Type="dbModel.subOrderTBL" Role="subOrderTBL" Multiplicity="*" />
           <ReferentialConstraint>
@@ -231,7 +233,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_subOrderTBL_ToorderTBL">
+        <Association Name="FK_subOrderTBL_orderTBL">
           <End Type="dbModel.orderTBL" Role="orderTBL" Multiplicity="1" />
           <End Type="dbModel.subOrderTBL" Role="subOrderTBL" Multiplicity="*" />
           <ReferentialConstraint>
@@ -252,6 +254,7 @@
           <EntitySetMapping Name="costumerTBL">
             <EntityTypeMapping TypeName="dbModel.costumerTBL">
               <MappingFragment StoreEntitySet="costumerTBL">
+                <ScalarProperty Name="institution" ColumnName="institution" />
                 <ScalarProperty Name="notes" ColumnName="notes" />
                 <ScalarProperty Name="regDate" ColumnName="regDate" />
                 <ScalarProperty Name="bDate" ColumnName="bDate" />

@@ -140,6 +140,8 @@ namespace Landau.Win
                 toUpdate.lastName = customer.lastName;
                 toUpdate.email = customer.email;
                 toUpdate.phoneNumber = customer.phoneNumber;
+                toUpdate.bDate = customer.bDate;
+                toUpdate.notes = customer.notes;
                 db.SaveChanges();
                 GetAllCostumers();
                 return true;

@@ -29,6 +29,7 @@ namespace Landau.Win
         public System.DateTime bDate { get; set; }
         public System.DateTime regDate { get; set; }
         public string notes { get; set; }
+        public string institution { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<orderTBL> orderTBL { get; set; }

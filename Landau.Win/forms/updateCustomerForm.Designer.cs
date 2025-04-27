@@ -52,6 +52,9 @@
             this.updCustomerDeatils = new System.Windows.Forms.Button();
             this.costumerTBLTableAdapter = new Landau.Win.dbDataSetTableAdapters.costumerTBLTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.updInstitutionTxb = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
@@ -243,7 +246,7 @@
             // 
             this.updCustomerDeatils.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.updCustomerDeatils.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updCustomerDeatils.Location = new System.Drawing.Point(35, 343);
+            this.updCustomerDeatils.Location = new System.Drawing.Point(35, 376);
             this.updCustomerDeatils.Name = "updCustomerDeatils";
             this.updCustomerDeatils.Size = new System.Drawing.Size(114, 52);
             this.updCustomerDeatils.TabIndex = 16;
@@ -259,11 +262,42 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 16);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "label8";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label9.Location = new System.Drawing.Point(711, 401);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 28);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "מוסד";
+            // 
+            // updInstitutionTxb
+            // 
+            this.updInstitutionTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.updInstitutionTxb.Location = new System.Drawing.Point(510, 406);
+            this.updInstitutionTxb.Name = "updInstitutionTxb";
+            this.updInstitutionTxb.Size = new System.Drawing.Size(142, 22);
+            this.updInstitutionTxb.TabIndex = 19;
+            // 
             // updateCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.updInstitutionTxb);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.updCustomerDeatils);
             this.Controls.Add(this.updNotesTxb);
             this.Controls.Add(this.label7);
@@ -320,5 +354,8 @@
         private dbDataSetTableAdapters.costumerTBLTableAdapter costumerTBLTableAdapter;
         private System.Windows.Forms.BindingSource costumerTBLBindingSource1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox updInstitutionTxb;
     }
 }

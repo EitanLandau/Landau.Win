@@ -48,6 +48,7 @@ namespace Landau.Win.forms
             selectedCustomer.phoneNumber = updPhoneMtxb.Text.Trim();
             selectedCustomer.bDate = updBdateDtp.Value;
             selectedCustomer.notes = updNotesTxb.Text.Trim();
+            selectedCustomer.institution = updInstitutionTxb.Text.Trim();
             DBHelper.UpdateCostumer(selectedCustomer);
             updFirstNameTxb.Text = "";
             updLastNameTxb.Text = "";
@@ -55,6 +56,7 @@ namespace Landau.Win.forms
             updPhoneMtxb.Text = "";
             updBdateDtp.Text = "";
             updNotesTxb.Text = "";
+            updInstitutionTxb.Text = "";
 
         }
         private bool ValidateUpdate()
@@ -63,6 +65,7 @@ namespace Landau.Win.forms
             bool a2 = Utils.isValidName(updLastNameTxb.Text, errorProvider1, updLastNameTxb, "יש למלא שם ללקוח");
             bool a3 = Utils.isValidPhoneNumber(updPhoneMtxb.Text, errorProvider1, updPhoneMtxb , "יש למלא מספר טלפון");
             bool a4 = Utils.isValidEmail(updEmailTxb.Text, errorProvider1, updEmailTxb, "יש למלא אימייל");
+            bool a5 = Utils.isValidInstitution(updInstitutionTxb.Text, errorProvider1, updInstitutionTxb, "יש להזין מוסד");
             return a1 && a2 && a3 && a4;
         }
         private void updFirstNameTxb_TextChanged(object sender, EventArgs e)
@@ -88,6 +91,7 @@ namespace Landau.Win.forms
             updPhoneMtxb.Text = selectedCustomer.phoneNumber;
             updNotesTxb.Text = selectedCustomer.notes;
             updBdateDtp.Value = selectedCustomer.bDate;
+            updInstitutionTxb.Text = selectedCustomer.institution;
             
         }
 
