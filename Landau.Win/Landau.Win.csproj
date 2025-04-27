@@ -230,6 +230,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\costumerTBL.datasource" />
+    <None Include="Properties\DataSources\lecturesNseminarsTBL.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

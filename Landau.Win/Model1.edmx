@@ -60,7 +60,6 @@
           <Property Name="orderID" Type="int" Nullable="false" />
           <Property Name="lectureID" Type="int" Nullable="false" />
           <Property Name="date" Type="datetime" Nullable="false" />
-          <Property Name="price" Type="int" Nullable="false" />
           <Property Name="amountInvited" Type="int" Nullable="false" />
           <Property Name="notes" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="adress" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -202,7 +201,6 @@
           <Property Name="orderID" Type="Int32" Nullable="false" />
           <Property Name="lectureID" Type="Int32" Nullable="false" />
           <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="price" Type="Int32" Nullable="false" />
           <Property Name="amountInvited" Type="Int32" Nullable="false" />
           <Property Name="notes" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="adress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -308,7 +306,6 @@
                 <ScalarProperty Name="adress" ColumnName="adress" />
                 <ScalarProperty Name="notes" ColumnName="notes" />
                 <ScalarProperty Name="amountInvited" ColumnName="amountInvited" />
-                <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="lectureID" ColumnName="lectureID" />
                 <ScalarProperty Name="orderID" ColumnName="orderID" />

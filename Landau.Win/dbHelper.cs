@@ -177,7 +177,6 @@ namespace Landau.Win
                 toUpdate.orderID = subOrder.orderID;
                 toUpdate.date = subOrder.date;
                 toUpdate.adress = subOrder.adress;
-                toUpdate.price = subOrder.price;
                 toUpdate.amountInvited = subOrder.amountInvited;
                 toUpdate.notes = subOrder.notes;
                 db.SaveChanges();

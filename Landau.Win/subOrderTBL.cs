@@ -18,7 +18,6 @@ namespace Landau.Win
         public int orderID { get; set; }
         public int lectureID { get; set; }
         public System.DateTime date { get; set; }
-        public int price { get; set; }
         public int amountInvited { get; set; }
         public string notes { get; set; }
         public string adress { get; set; }

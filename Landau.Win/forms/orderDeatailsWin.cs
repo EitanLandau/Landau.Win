@@ -33,5 +33,12 @@ namespace Landau.Win.forms
         {
 
         }
+
+        private void addSubOrderBtn_Click(object sender, EventArgs e)
+        {
+            int selectedLecture = picProductCmbx.SelectedIndex;
+            int order = o1.Id;
+           
+        }
     }
 }

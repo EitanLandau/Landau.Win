@@ -44,17 +44,17 @@
             this.newOrdedbtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.updateOrderBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.serviceTab = new Krypton.Ribbon.KryptonRibbonTab();
+            this.kryptonRibbonGroup2 = new Krypton.Ribbon.KryptonRibbonGroup();
+            this.kryptonRibbonGroupTriple4 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.lectureListBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.addLectureBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.updLectureBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kryptonRibbonTab1 = new Krypton.Ribbon.KryptonRibbonTab();
             this.kryptonRibbonGroup1 = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple3 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.kryptonRibbonGroupButton1 = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.kryptonRibbonGroupThemeComboBox1 = new Krypton.Ribbon.KryptonRibbonGroupThemeComboBox();
-            this.kryptonRibbonGroup2 = new Krypton.Ribbon.KryptonRibbonGroup();
-            this.kryptonRibbonGroupTriple4 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
-            this.lectureListBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.addLectureBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.updLectureBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,6 +155,33 @@
             this.kryptonRibbonGroup2});
             this.serviceTab.Text = "סדנאות והרצאות";
             // 
+            // kryptonRibbonGroup2
+            // 
+            this.kryptonRibbonGroup2.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.kryptonRibbonGroupTriple4});
+            // 
+            // kryptonRibbonGroupTriple4
+            // 
+            this.kryptonRibbonGroupTriple4.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.lectureListBtn,
+            this.addLectureBtn,
+            this.updLectureBtn});
+            // 
+            // lectureListBtn
+            // 
+            this.lectureListBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("lectureListBtn.ImageLarge")));
+            this.lectureListBtn.TextLine1 = "הרצאות וסדנאות";
+            // 
+            // addLectureBtn
+            // 
+            this.addLectureBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("addLectureBtn.ImageLarge")));
+            this.addLectureBtn.TextLine1 = "הוסף מוצר";
+            // 
+            // updLectureBtn
+            // 
+            this.updLectureBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("updLectureBtn.ImageLarge")));
+            this.updLectureBtn.TextLine1 = "עדכן מוצר";
+            // 
             // kryptonRibbonTab1
             // 
             this.kryptonRibbonTab1.Groups.AddRange(new Krypton.Ribbon.KryptonRibbonGroup[] {
@@ -185,33 +212,6 @@
             this.kryptonRibbonGroupThemeComboBox1.DropDownWidth = 121;
             this.kryptonRibbonGroupThemeComboBox1.FormattingEnabled = false;
             this.kryptonRibbonGroupThemeComboBox1.ItemHeight = 20;
-            // 
-            // kryptonRibbonGroup2
-            // 
-            this.kryptonRibbonGroup2.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
-            this.kryptonRibbonGroupTriple4});
-            // 
-            // kryptonRibbonGroupTriple4
-            // 
-            this.kryptonRibbonGroupTriple4.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.lectureListBtn,
-            this.addLectureBtn,
-            this.updLectureBtn});
-            // 
-            // lectureListBtn
-            // 
-            this.lectureListBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("lectureListBtn.ImageLarge")));
-            this.lectureListBtn.TextLine1 = "הרצאות וסדנאות";
-            // 
-            // addLectureBtn
-            // 
-            this.addLectureBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("addLectureBtn.ImageLarge")));
-            this.addLectureBtn.TextLine1 = "הוסף מוצר";
-            // 
-            // updLectureBtn
-            // 
-            this.updLectureBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("updLectureBtn.ImageLarge")));
-            this.updLectureBtn.TextLine1 = "עדכן מוצר";
             // 
             // HomePage
             // 
