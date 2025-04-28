@@ -241,6 +241,7 @@
             this.Controls.Add(this.adressTxb);
             this.Controls.Add(this.addSubOrderBtn);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "orderDeatailsWin";
             this.Text = "פרטי הזמנה";

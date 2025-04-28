@@ -50,7 +50,7 @@
             this.productTypeCmbx.Items.AddRange(new object[] {
             "סדנא",
             "הרצאה"});
-            this.productTypeCmbx.Location = new System.Drawing.Point(401, 59);
+            this.productTypeCmbx.Location = new System.Drawing.Point(402, 41);
             this.productTypeCmbx.Name = "productTypeCmbx";
             this.productTypeCmbx.Size = new System.Drawing.Size(121, 24);
             this.productTypeCmbx.TabIndex = 0;
@@ -59,7 +59,7 @@
             // 
             this.priceNumUD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.priceNumUD.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.priceNumUD.Location = new System.Drawing.Point(402, 141);
+            this.priceNumUD.Location = new System.Drawing.Point(403, 127);
             this.priceNumUD.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -76,7 +76,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label1.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label1.Location = new System.Drawing.Point(650, 55);
+            this.label1.Location = new System.Drawing.Point(659, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 28);
             this.label1.TabIndex = 2;
@@ -87,7 +87,7 @@
             this.titleTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.titleTxb.Location = new System.Drawing.Point(402, 346);
             this.titleTxb.Name = "titleTxb";
-            this.titleTxb.Size = new System.Drawing.Size(120, 22);
+            this.titleTxb.Size = new System.Drawing.Size(249, 22);
             this.titleTxb.TabIndex = 3;
             // 
             // sessionLengthDtp
@@ -106,7 +106,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label2.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label2.Location = new System.Drawing.Point(689, 141);
+            this.label2.Location = new System.Drawing.Point(689, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 28);
             this.label2.TabIndex = 5;
@@ -190,6 +190,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.priceNumUD);
             this.Controls.Add(this.productTypeCmbx);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "addProductWin";
             this.Text = "Form1";

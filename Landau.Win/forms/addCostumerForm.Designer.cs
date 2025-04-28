@@ -46,9 +46,7 @@
             this.notesLbl = new System.Windows.Forms.Label();
             this.institutionTxb = new System.Windows.Forms.TextBox();
             this.institutionLbl = new System.Windows.Forms.Label();
-            this.addPictureBx = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addPictureBx)).BeginInit();
             this.SuspendLayout();
             // 
             // firstNameLbl
@@ -132,7 +130,7 @@
             this.addCostumerDeateilsBtn.BackColor = System.Drawing.Color.ForestGreen;
             this.addCostumerDeateilsBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addCostumerDeateilsBtn.ForeColor = System.Drawing.Color.LightGreen;
-            this.addCostumerDeateilsBtn.Location = new System.Drawing.Point(23, 324);
+            this.addCostumerDeateilsBtn.Location = new System.Drawing.Point(30, 345);
             this.addCostumerDeateilsBtn.Name = "addCostumerDeateilsBtn";
             this.addCostumerDeateilsBtn.Size = new System.Drawing.Size(143, 49);
             this.addCostumerDeateilsBtn.TabIndex = 9;
@@ -217,24 +215,12 @@
             this.institutionLbl.TabIndex = 17;
             this.institutionLbl.Text = "מוסד";
             // 
-            // addPictureBx
-            // 
-            this.addPictureBx.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.addPictureBx.Image = ((System.Drawing.Image)(resources.GetObject("addPictureBx.Image")));
-            this.addPictureBx.Location = new System.Drawing.Point(-32, -56);
-            this.addPictureBx.Name = "addPictureBx";
-            this.addPictureBx.Size = new System.Drawing.Size(915, 478);
-            this.addPictureBx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.addPictureBx.TabIndex = 10;
-            this.addPictureBx.TabStop = false;
-            this.addPictureBx.Click += new System.EventHandler(this.addPictureBx_Click);
-            // 
             // addCostumerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(878, 452);
             this.Controls.Add(this.institutionLbl);
             this.Controls.Add(this.institutionTxb);
@@ -251,14 +237,13 @@
             this.Controls.Add(this.lastNameLbl);
             this.Controls.Add(this.firstNameTxt);
             this.Controls.Add(this.firstNameLbl);
-            this.Controls.Add(this.addPictureBx);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "addCostumerForm";
             this.Text = "הוסף לקוח";
             this.Load += new System.EventHandler(this.addCostumerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addPictureBx)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,7 +259,6 @@
         private System.Windows.Forms.Label emailLbl;
         private System.Windows.Forms.Label phoneNumberLbl;
         private System.Windows.Forms.Button addCostumerDeateilsBtn;
-        private System.Windows.Forms.PictureBox addPictureBx;
         private System.Windows.Forms.DateTimePicker dtpBDate;
         private System.Windows.Forms.Label BdateLbl;
         private System.Windows.Forms.ErrorProvider errorProvider1;

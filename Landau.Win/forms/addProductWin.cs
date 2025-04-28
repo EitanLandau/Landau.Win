@@ -28,11 +28,13 @@ namespace Landau.Win.forms
 
         private void addProductBtn_Click(object sender, EventArgs e)
         {
-            // if (!validateForm())
-            //  {
-            //    return;
-            //}
-            lecturesNseminarsTBL tmp = allLecturesNseminars.Where(x => x.title.Equals(titleTxb.Text)).FirstOrDefault();
+            string title = titleTxb.Text;
+
+            /*if (!validateForm())
+              {
+                return;
+            }*/
+            lecturesNseminarsTBL tmp = allLecturesNseminars.Where(x => x.title.Equals(title)).FirstOrDefault();
 
             if (tmp == null)
             {

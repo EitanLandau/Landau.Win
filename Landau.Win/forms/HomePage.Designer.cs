@@ -40,15 +40,15 @@
             this.orders = new Krypton.Ribbon.KryptonRibbonTab();
             this.ordersGroup = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple2 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
-            this.ordersHistoryBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.newOrdedbtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.updateOrderBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.ordersHistoryBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.serviceTab = new Krypton.Ribbon.KryptonRibbonTab();
             this.kryptonRibbonGroup2 = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple4 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
-            this.lectureListBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.addLectureBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.updLectureBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.lectureListBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kryptonRibbonTab1 = new Krypton.Ribbon.KryptonRibbonTab();
             this.kryptonRibbonGroup1 = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple3 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
@@ -132,12 +132,6 @@
             this.updateOrderBtn,
             this.ordersHistoryBtn});
             // 
-            // ordersHistoryBtn
-            // 
-            this.ordersHistoryBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("ordersHistoryBtn.ImageLarge")));
-            this.ordersHistoryBtn.TextLine1 = "היסטורית הזמנות";
-            this.ordersHistoryBtn.Click += new System.EventHandler(this.ordersHistoryBtn_Click);
-            // 
             // newOrdedbtn
             // 
             this.newOrdedbtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("newOrdedbtn.ImageLarge")));
@@ -148,6 +142,12 @@
             // 
             this.updateOrderBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("updateOrderBtn.ImageLarge")));
             this.updateOrderBtn.TextLine1 = "עדכן הזמנה";
+            // 
+            // ordersHistoryBtn
+            // 
+            this.ordersHistoryBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("ordersHistoryBtn.ImageLarge")));
+            this.ordersHistoryBtn.TextLine1 = "היסטורית הזמנות";
+            this.ordersHistoryBtn.Click += new System.EventHandler(this.ordersHistoryBtn_Click);
             // 
             // serviceTab
             // 
@@ -167,11 +167,6 @@
             this.updLectureBtn,
             this.lectureListBtn});
             // 
-            // lectureListBtn
-            // 
-            this.lectureListBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("lectureListBtn.ImageLarge")));
-            this.lectureListBtn.TextLine1 = "הרצאות וסדנאות";
-            // 
             // addLectureBtn
             // 
             this.addLectureBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("addLectureBtn.ImageLarge")));
@@ -182,6 +177,11 @@
             // 
             this.updLectureBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("updLectureBtn.ImageLarge")));
             this.updLectureBtn.TextLine1 = "עדכן מוצר";
+            // 
+            // lectureListBtn
+            // 
+            this.lectureListBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("lectureListBtn.ImageLarge")));
+            this.lectureListBtn.TextLine1 = "הרצאות וסדנאות";
             // 
             // kryptonRibbonTab1
             // 
