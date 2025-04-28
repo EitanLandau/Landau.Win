@@ -117,12 +117,12 @@ namespace Landau.Win
             {
                 db.lecturesNseminarsTBL.Add(product);
                 db.SaveChanges();
-                GetAllSubOrders();
+                GetAlllecturesNseminars();
                 return product;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error adding sub-order: " + ex.Message);
+                MessageBox.Show("Error adding product: " + ex.Message);
                 return null;
             }
         }

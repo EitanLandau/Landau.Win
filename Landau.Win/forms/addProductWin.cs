@@ -28,40 +28,41 @@ namespace Landau.Win.forms
 
         private void addProductBtn_Click(object sender, EventArgs e)
         {
-            string title = titleTxb.Text;
-
-            /*if (!validateForm())
-              {
-                return;
-            }*/
-            lecturesNseminarsTBL tmp = allLecturesNseminars.Where(x => x.title.Equals(title)).FirstOrDefault();
-
-            if (tmp == null)
+  
+            if (!validateForm())
             {
-                lecturesNseminarsTBL L1 = new lecturesNseminarsTBL();
-                L1.type = productTypeCmbx.SelectedItem == "סדנא";
-                L1.price = (int)priceNumUD.Value;
-                L1.length = sessionLengthDtp.Value.TimeOfDay;
-                L1.title = titleTxb.Text;
-                L1.description = productDescribtionTxb.Text;
-                L1 = DBHelper.AddProduct(L1);
-                if (L1 != null)
-                {
-                    MessageBox.Show("🐧(: סבבה תות בננה");
-                    productTypeCmbx.Text = "";
-                    priceNumUD.Value = 0;
-                    titleTxb.Text = "";
-                    productDescribtionTxb.Text = "";
-                }
-                else
-                {
-                    MessageBox.Show("וואלה לא סבבה");
-                }
+                return;
+            }
+
+            lecturesNseminarsTBL L1 = new lecturesNseminarsTBL();
+            L1.type = productTypeCmbx.SelectedItem == "סדנא";
+            L1.price = (int)priceNumUD.Value;
+            L1.length = sessionLengthDtp.Value.TimeOfDay;
+            L1.title = titleTxb.Text;
+            L1.description = productDescribtionTxb.Text;
+            L1 = DBHelper.AddProduct(L1);
+            if (L1 != null)
+            {
+                MessageBox.Show("🐧(: סבבה תות בננה");
+                productTypeCmbx.Text = "";
+                priceNumUD.Value = 0;
+                titleTxb.Text = "";
+                productDescribtionTxb.Text = "";
             }
             else
             {
-                MessageBox.Show("יש כבר מוצר בשם הזה");
+                MessageBox.Show("וואלה לא סבבה");
             }
+  
         }
+
+
+
+        private bool validateForm()
+        {
+            bool a1 = Utils.isNotNull(productTypeCmbx.SelectedItem, errorProviderProduct, productTypeCmbx, "יש לבחור סוג מוצר");
+            bool a2 = Utils.isNotEmpty(titleTxb.Text, errorProviderProduct, titleTxb, "יש להזין כותרת להרצאה");
+            return a1 && a2;
+                }
     }
 }

@@ -81,9 +81,13 @@ namespace Landau.Win
                 return false;
             }
         }
-        public static bool isNotNull(object obj)
+        public static bool isNotNull(object obj , ErrorProvider ep , ComboBox cmbx , string error)
         {
-            return obj != null;
+            return obj != null && obj != "";
+        }
+        public static bool isNotEmpty(string str, ErrorProvider ep, TextBox txb, string error)
+        {
+            return str != null && str != "";
         }
     }
 }

@@ -41,7 +41,7 @@ namespace Landau.Win.forms
 
         private void addSubOrderBtn_Click(object sender, EventArgs e)
         {
-            lecturesNseminarsTBL selectedLecture = (lecturesNseminarsTBL)picProductCmbx.SelectedItem;
+            lecturesNseminarsTBL selectedLecture = (lecturesNseminarsTBL)picKProductCmbx.SelectedItem;
             if (!validateForm())
             {
                 return;
@@ -59,7 +59,7 @@ namespace Landau.Win.forms
             if (s1 != null)
             {
                 MessageBox.Show("🐋(:סבבי ");
-                picProductCmbx.Text = "";
+                picKProductCmbx.Text = "";
                 ammountInvitedUD.Value = 1;
                 adressTxb.Text = "";
                 OrderDeatsNotes.Text = "";
@@ -76,6 +76,18 @@ namespace Landau.Win.forms
 
         private void finishOrderBtn_Click(object sender, EventArgs e)
         {
+            if(subOrderCounter == 0)
+            {
+                DialogResult result = MessageBox.Show(
+"לא נוספה שום הזמנה לסל בטוח שאתה רוצה להמשיך? ",
+"המשך הזמנה",
+MessageBoxButtons.YesNo,
+MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                { 
+                    mainWin.OpenAddOrderForm();
+                }
+                }
             if (!validateForm() && subOrderCounter==0)
             {
                 DialogResult result = MessageBox.Show(
@@ -90,10 +102,6 @@ namespace Landau.Win.forms
                 }
             }
             if (!validateForm())
-            {
-                return;
-            }
-
             mainWin.OpenAddOrderForm();
         }
 
@@ -101,11 +109,11 @@ namespace Landau.Win.forms
         {
          
             bool a1 = Utils.isValidInstitution(adressTxb.Text, errorProviderOrder, adressTxb, "יש להזין כתובת");
-            bool a2 = picProductCmbx.SelectedItem != "" && picProductCmbx.SelectedItem != null;
+            bool a2 = picKProductCmbx.SelectedItem != "" && picKProductCmbx.SelectedItem != null;
             bool a3 = adressTxb.Text != "" && adressTxb.Text != null;
             if (!a2)
             {
-                errorProviderOrder.SetError(picProductCmbx, "יש לבחור מוצר");
+                errorProviderOrder.SetError(picKProductCmbx, "יש לבחור מוצר");
                 return false;
             }
             if (!a3)
@@ -123,6 +131,12 @@ namespace Landau.Win.forms
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void orderDeatailsWin_Load(object sender, EventArgs e)
+        {
+            picKProductCmbx.DataSource = DBHelper.GetAlllecturesNseminars();
+            picKProductCmbx.DisplayMember = "title";
         }
     }
 }

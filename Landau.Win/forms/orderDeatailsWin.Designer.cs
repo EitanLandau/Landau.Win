@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.addSubOrderBtn = new System.Windows.Forms.Button();
             this.adressTxb = new System.Windows.Forms.TextBox();
-            this.picProductCmbx = new System.Windows.Forms.ComboBox();
+            this.picKProductCmbx = new System.Windows.Forms.ComboBox();
             this.lecturesNseminarsTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.finishOrderBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -80,21 +80,21 @@
             // adressTxb
             // 
             this.adressTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.adressTxb.Location = new System.Drawing.Point(402, 239);
+            this.adressTxb.Location = new System.Drawing.Point(367, 232);
             this.adressTxb.Name = "adressTxb";
             this.adressTxb.Size = new System.Drawing.Size(154, 22);
             this.adressTxb.TabIndex = 15;
             // 
-            // picProductCmbx
+            // picKProductCmbx
             // 
-            this.picProductCmbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picProductCmbx.DataSource = this.lecturesNseminarsTBLBindingSource;
-            this.picProductCmbx.DisplayMember = "title";
-            this.picProductCmbx.FormattingEnabled = true;
-            this.picProductCmbx.Location = new System.Drawing.Point(392, 40);
-            this.picProductCmbx.Name = "picProductCmbx";
-            this.picProductCmbx.Size = new System.Drawing.Size(154, 24);
-            this.picProductCmbx.TabIndex = 16;
+            this.picKProductCmbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picKProductCmbx.DataSource = this.lecturesNseminarsTBLBindingSource;
+            this.picKProductCmbx.DisplayMember = "title";
+            this.picKProductCmbx.FormattingEnabled = true;
+            this.picKProductCmbx.Location = new System.Drawing.Point(331, 40);
+            this.picKProductCmbx.Name = "picKProductCmbx";
+            this.picKProductCmbx.Size = new System.Drawing.Size(215, 24);
+            this.picKProductCmbx.TabIndex = 16;
             // 
             // lecturesNseminarsTBLBindingSource
             // 
@@ -131,7 +131,7 @@
             this.ammountInvitedUD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ammountInvitedUD.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.ammountInvitedUD.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.ammountInvitedUD.Location = new System.Drawing.Point(402, 174);
+            this.ammountInvitedUD.Location = new System.Drawing.Point(354, 167);
             this.ammountInvitedUD.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -143,7 +143,7 @@
             0,
             0});
             this.ammountInvitedUD.Name = "ammountInvitedUD";
-            this.ammountInvitedUD.Size = new System.Drawing.Size(154, 32);
+            this.ammountInvitedUD.Size = new System.Drawing.Size(175, 32);
             this.ammountInvitedUD.TabIndex = 20;
             this.ammountInvitedUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ammountInvitedUD.Value = new decimal(new int[] {
@@ -192,10 +192,10 @@
             // OrderDeatsNotes
             // 
             this.OrderDeatsNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.OrderDeatsNotes.Location = new System.Drawing.Point(402, 305);
+            this.OrderDeatsNotes.Location = new System.Drawing.Point(331, 289);
             this.OrderDeatsNotes.Multiline = true;
             this.OrderDeatsNotes.Name = "OrderDeatsNotes";
-            this.OrderDeatsNotes.Size = new System.Drawing.Size(154, 140);
+            this.OrderDeatsNotes.Size = new System.Drawing.Size(218, 140);
             this.OrderDeatsNotes.TabIndex = 25;
             // 
             // errorProviderOrder
@@ -206,9 +206,9 @@
             // 
             this.orderDateDtp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.orderDateDtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.orderDateDtp.Location = new System.Drawing.Point(392, 91);
+            this.orderDateDtp.Location = new System.Drawing.Point(331, 91);
             this.orderDateDtp.Name = "orderDateDtp";
-            this.orderDateDtp.Size = new System.Drawing.Size(154, 26);
+            this.orderDateDtp.Size = new System.Drawing.Size(215, 26);
             this.orderDateDtp.StateCommon.Content.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.orderDateDtp.TabIndex = 26;
             // 
@@ -216,9 +216,9 @@
             // 
             this.orderHourDtp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.orderHourDtp.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.orderHourDtp.Location = new System.Drawing.Point(418, 123);
+            this.orderHourDtp.Location = new System.Drawing.Point(367, 123);
             this.orderHourDtp.Name = "orderHourDtp";
-            this.orderHourDtp.Size = new System.Drawing.Size(113, 26);
+            this.orderHourDtp.Size = new System.Drawing.Size(141, 26);
             this.orderHourDtp.StateCommon.Content.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.orderHourDtp.TabIndex = 27;
             // 
@@ -237,7 +237,7 @@
             this.Controls.Add(this.ammountInvitedUD);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.finishOrderBtn);
-            this.Controls.Add(this.picProductCmbx);
+            this.Controls.Add(this.picKProductCmbx);
             this.Controls.Add(this.adressTxb);
             this.Controls.Add(this.addSubOrderBtn);
             this.Controls.Add(this.label1);
@@ -245,6 +245,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "orderDeatailsWin";
             this.Text = "פרטי הזמנה";
+            this.Load += new System.EventHandler(this.orderDeatailsWin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lecturesNseminarsTBLBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ammountInvitedUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderOrder)).EndInit();
@@ -257,7 +258,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button addSubOrderBtn;
         private System.Windows.Forms.TextBox adressTxb;
-        private System.Windows.Forms.ComboBox picProductCmbx;
+        private System.Windows.Forms.ComboBox picKProductCmbx;
         private System.Windows.Forms.Button finishOrderBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown ammountInvitedUD;
@@ -265,9 +266,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox OrderDeatsNotes;
-        private System.Windows.Forms.BindingSource lecturesNseminarsTBLBindingSource;
         private System.Windows.Forms.ErrorProvider errorProviderOrder;
         private Krypton.Toolkit.KryptonDateTimePicker orderDateDtp;
         private Krypton.Toolkit.KryptonDateTimePicker orderHourDtp;
+        private System.Windows.Forms.BindingSource lecturesNseminarsTBLBindingSource;
     }
 }

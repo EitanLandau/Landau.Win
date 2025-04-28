@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addProductWin));
             this.productTypeCmbx = new System.Windows.Forms.ComboBox();
             this.priceNumUD = new System.Windows.Forms.NumericUpDown();
@@ -40,7 +41,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.productDescribtionTxb = new System.Windows.Forms.TextBox();
             this.addProductBtn = new System.Windows.Forms.Button();
+            this.errorProviderProduct = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.priceNumUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // productTypeCmbx
@@ -172,6 +175,10 @@
             this.addProductBtn.UseVisualStyleBackColor = false;
             this.addProductBtn.Click += new System.EventHandler(this.addProductBtn_Click);
             // 
+            // errorProviderProduct
+            // 
+            this.errorProviderProduct.ContainerControl = this;
+            // 
             // addProductWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -195,6 +202,7 @@
             this.Name = "addProductWin";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.priceNumUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +221,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox productDescribtionTxb;
         private System.Windows.Forms.Button addProductBtn;
+        private System.Windows.Forms.ErrorProvider errorProviderProduct;
     }
 }
