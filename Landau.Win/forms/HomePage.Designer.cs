@@ -176,6 +176,7 @@
             // 
             this.addLectureBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("addLectureBtn.ImageLarge")));
             this.addLectureBtn.TextLine1 = "הוסף מוצר";
+            this.addLectureBtn.Click += new System.EventHandler(this.addLectureBtn_Click);
             // 
             // updLectureBtn
             // 

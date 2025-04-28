@@ -111,7 +111,21 @@ namespace Landau.Win
                 return null;
             }
         }
-
+        public static lecturesNseminarsTBL AddProduct(lecturesNseminarsTBL product)
+        {
+            try
+            {
+                db.lecturesNseminarsTBL.Add(product);
+                db.SaveChanges();
+                GetAllSubOrders();
+                return product;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error adding sub-order: " + ex.Message);
+                return null;
+            }
+        }
         public static serviceTBL AddService(serviceTBL service)
         {
             try

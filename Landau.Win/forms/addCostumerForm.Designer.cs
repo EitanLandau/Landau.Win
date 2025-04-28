@@ -38,7 +38,6 @@
             this.emailLbl = new System.Windows.Forms.Label();
             this.phoneNumberLbl = new System.Windows.Forms.Label();
             this.addCostumerDeateilsBtn = new System.Windows.Forms.Button();
-            this.addPictureBx = new System.Windows.Forms.PictureBox();
             this.dtpBDate = new System.Windows.Forms.DateTimePicker();
             this.BdateLbl = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -47,8 +46,9 @@
             this.notesLbl = new System.Windows.Forms.Label();
             this.institutionTxb = new System.Windows.Forms.TextBox();
             this.institutionLbl = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.addPictureBx)).BeginInit();
+            this.addPictureBx = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addPictureBx)).BeginInit();
             this.SuspendLayout();
             // 
             // firstNameLbl
@@ -140,20 +140,6 @@
             this.addCostumerDeateilsBtn.UseVisualStyleBackColor = false;
             this.addCostumerDeateilsBtn.Click += new System.EventHandler(this.addCostumerDeateilsBtn_Click);
             // 
-            // addPictureBx
-            // 
-            this.addPictureBx.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.addPictureBx.Image = ((System.Drawing.Image)(resources.GetObject("addPictureBx.Image")));
-            this.addPictureBx.Location = new System.Drawing.Point(-32, -56);
-            this.addPictureBx.Name = "addPictureBx";
-            this.addPictureBx.Size = new System.Drawing.Size(915, 478);
-            this.addPictureBx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.addPictureBx.TabIndex = 10;
-            this.addPictureBx.TabStop = false;
-            this.addPictureBx.Click += new System.EventHandler(this.addPictureBx_Click);
-            // 
             // dtpBDate
             // 
             this.dtpBDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -193,10 +179,10 @@
             // notesTxb
             // 
             this.notesTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.notesTxb.Location = new System.Drawing.Point(254, 48);
+            this.notesTxb.Location = new System.Drawing.Point(288, 98);
             this.notesTxb.Multiline = true;
             this.notesTxb.Name = "notesTxb";
-            this.notesTxb.Size = new System.Drawing.Size(181, 298);
+            this.notesTxb.Size = new System.Drawing.Size(181, 236);
             this.notesTxb.TabIndex = 14;
             // 
             // notesLbl
@@ -205,7 +191,7 @@
             this.notesLbl.AutoSize = true;
             this.notesLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notesLbl.ForeColor = System.Drawing.Color.SeaGreen;
-            this.notesLbl.Location = new System.Drawing.Point(452, 48);
+            this.notesLbl.Location = new System.Drawing.Point(335, 48);
             this.notesLbl.Name = "notesLbl";
             this.notesLbl.Size = new System.Drawing.Size(78, 28);
             this.notesLbl.TabIndex = 15;
@@ -230,6 +216,20 @@
             this.institutionLbl.Size = new System.Drawing.Size(65, 28);
             this.institutionLbl.TabIndex = 17;
             this.institutionLbl.Text = "מוסד";
+            // 
+            // addPictureBx
+            // 
+            this.addPictureBx.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.addPictureBx.Image = ((System.Drawing.Image)(resources.GetObject("addPictureBx.Image")));
+            this.addPictureBx.Location = new System.Drawing.Point(-32, -56);
+            this.addPictureBx.Name = "addPictureBx";
+            this.addPictureBx.Size = new System.Drawing.Size(915, 478);
+            this.addPictureBx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.addPictureBx.TabIndex = 10;
+            this.addPictureBx.TabStop = false;
+            this.addPictureBx.Click += new System.EventHandler(this.addPictureBx_Click);
             // 
             // addCostumerForm
             // 
@@ -257,8 +257,8 @@
             this.Name = "addCostumerForm";
             this.Text = "הוסף לקוח";
             this.Load += new System.EventHandler(this.addCostumerForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.addPictureBx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addPictureBx)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

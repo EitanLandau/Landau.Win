@@ -50,6 +50,7 @@ namespace Landau.Win.forms
             selectedCustomer.notes = updNotesTxb.Text.Trim();
             selectedCustomer.institution = updInstitutionTxb.Text.Trim();
             DBHelper.UpdateCostumer(selectedCustomer);
+            pickCustomerCmbx.Text = "";
             updFirstNameTxb.Text = "";
             updLastNameTxb.Text = "";
             updEmailTxb .Text = "";

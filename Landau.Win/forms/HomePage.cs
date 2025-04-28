@@ -176,5 +176,23 @@ namespace Landau.Win
         {
 
         }
+
+        private void addLectureBtn_Click(object sender, EventArgs e)
+        {
+            if (current != null)
+            {
+                if (current is addProductWin)
+                {
+                    return;
+                }
+                current.Close();
+            }
+            current = new addProductWin();
+            current.Dock = DockStyle.Fill;
+            current.TopLevel = false;
+            current.TopMost = true;
+            mainPanel.Controls.Add(current);
+            current.Show();
+        }
     }
 }

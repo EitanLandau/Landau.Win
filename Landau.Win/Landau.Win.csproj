@@ -133,6 +133,12 @@
     <Compile Include="forms\custumerList.Designer.cs">
       <DependentUpon>custumerList.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\addProductWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\addProductWin.Designer.cs">
+      <DependentUpon>addProductWin.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\orderDeatailsWin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\addOrderForm.resx">
       <DependentUpon>addOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\addProductWin.resx">
+      <DependentUpon>addProductWin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\custumerList.resx">
       <DependentUpon>custumerList.cs</DependentUpon>
