@@ -17,7 +17,6 @@ namespace Landau.Win.forms
         {
             InitializeComponent();
         }
-
         private void firstNameTxt_TextChanged(object sender, EventArgs e)
         {
 

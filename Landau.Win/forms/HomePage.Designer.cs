@@ -128,9 +128,9 @@
             // kryptonRibbonGroupTriple2
             // 
             this.kryptonRibbonGroupTriple2.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.ordersHistoryBtn,
             this.newOrdedbtn,
-            this.updateOrderBtn});
+            this.updateOrderBtn,
+            this.ordersHistoryBtn});
             // 
             // ordersHistoryBtn
             // 
@@ -163,9 +163,9 @@
             // kryptonRibbonGroupTriple4
             // 
             this.kryptonRibbonGroupTriple4.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.lectureListBtn,
             this.addLectureBtn,
-            this.updLectureBtn});
+            this.updLectureBtn,
+            this.lectureListBtn});
             // 
             // lectureListBtn
             // 

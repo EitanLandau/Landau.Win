@@ -81,5 +81,9 @@ namespace Landau.Win
                 return false;
             }
         }
+        public static bool isNotNull(object obj)
+        {
+            return obj != null;
+        }
     }
 }

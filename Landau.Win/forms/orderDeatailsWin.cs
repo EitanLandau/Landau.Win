@@ -8,11 +8,13 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Landau.Win.forms
 {
     public partial class orderDeatailsWin : Form
     {
+        int subOrderCounter = 0;
         HomePage mainWin;
         orderTBL o1;
         public orderDeatailsWin()
@@ -40,14 +42,16 @@ namespace Landau.Win.forms
         private void addSubOrderBtn_Click(object sender, EventArgs e)
         {
             lecturesNseminarsTBL selectedLecture = (lecturesNseminarsTBL)picProductCmbx.SelectedItem;
-            if (!Utils.isValidInstitution(adressTxb.Text , errorProviderOrder , adressTxb , "יש להזין כתובת") )
+            if (!validateForm())
             {
                 return;
             }
             subOrderTBL s1 = new subOrderTBL();
+            DateTime DatePart = orderDateDtp.Value.Date;
+            TimeSpan orderHour = orderHourDtp.Value.TimeOfDay;
             s1.orderID = o1.Id;
             s1.lectureID = selectedLecture.Id;
-            s1.date = dtpOrder.Value;
+            s1.date = DatePart + orderHour;
             s1.amountInvited = (int)ammountInvitedUD.Value; ;
             s1.notes = OrderDeatsNotes.Text;
             s1.adress = adressTxb.Text;
@@ -59,6 +63,7 @@ namespace Landau.Win.forms
                 ammountInvitedUD.Value = 1;
                 adressTxb.Text = "";
                 OrderDeatsNotes.Text = "";
+                subOrderCounter++;
             }
             else
             {
@@ -71,9 +76,45 @@ namespace Landau.Win.forms
 
         private void finishOrderBtn_Click(object sender, EventArgs e)
         {
+            if (!validateForm() && subOrderCounter==0)
+            {
+                DialogResult result = MessageBox.Show(
+    "יש למלא פרטי הזמנה",
+    "שגיאה בהזמנה",
+    MessageBoxButtons.OKCancel,
+    MessageBoxIcon.Error);
+                if (result == DialogResult.Cancel)
+                {
+                    DBHelper.DeleteOrder(o1);
+                    mainWin.OpenAddOrderForm();
+                }
+            }
+            if (!validateForm())
+            {
+                return;
+            }
+
             mainWin.OpenAddOrderForm();
         }
 
+        private bool validateForm()
+        {
+         
+            bool a1 = Utils.isValidInstitution(adressTxb.Text, errorProviderOrder, adressTxb, "יש להזין כתובת");
+            bool a2 = picProductCmbx.SelectedItem != "" && picProductCmbx.SelectedItem != null;
+            bool a3 = adressTxb.Text != "" && adressTxb.Text != null;
+            if (!a2)
+            {
+                errorProviderOrder.SetError(picProductCmbx, "יש לבחור מוצר");
+                return false;
+            }
+            if (!a3)
+            {
+                errorProviderOrder.SetError(adressTxb, "יש להזין כתובת");
+                return false;
+            }
+            return a1 && a2 && a3;
+        }
         private void pictureBoxAddOrder_Click(object sender, EventArgs e)
         {
 

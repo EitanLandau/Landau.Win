@@ -100,5 +100,26 @@ namespace Landau.Win.forms
         {
 
         }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            costumerTBL selectedCustomer = (costumerTBL)pickCustomerCmbx.SelectedItem;
+            if (selectedCustomer == null)
+            {
+                MessageBox.Show("יש לבחור לקוח");
+                return;
+            }
+            DialogResult result = MessageBox.Show(
+                "האם אתה בטוח שאתה רוצה למחוק את הלקוח?",
+                "אישור מחיקה",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                DBHelper.DeleteCostumer(selectedCustomer);
+                MessageBox.Show("לקוח נמחק בהצלחה");
+            }
+        }
     }
 }

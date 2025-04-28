@@ -14,6 +14,7 @@ namespace Landau.Win
     public partial class HomePage : Form
     {
         Form current;
+
         public HomePage()
         {
             InitializeComponent();
@@ -24,26 +25,6 @@ namespace Landau.Win
             DBHelper.Init();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDeateils_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnChange_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void איתן(object sender, EventArgs e)
-        {
-
-
-        }
 
         private void kryptonRibbon1_SelectedTabChanged(object sender, EventArgs e)
         {
