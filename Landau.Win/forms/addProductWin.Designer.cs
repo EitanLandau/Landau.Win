@@ -81,7 +81,7 @@
             this.label1.ForeColor = System.Drawing.Color.Goldenrod;
             this.label1.Location = new System.Drawing.Point(659, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 28);
+            this.label1.Size = new System.Drawing.Size(108, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "סוג מוצר";
             // 
@@ -95,7 +95,9 @@
             // 
             // sessionLengthDtp
             // 
+            this.sessionLengthDtp.AllowButtonSpecToolTipPriority = true;
             this.sessionLengthDtp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sessionLengthDtp.CalendarFirstDayOfWeek = System.Windows.Forms.Day.Sunday;
             this.sessionLengthDtp.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.sessionLengthDtp.Location = new System.Drawing.Point(402, 243);
             this.sessionLengthDtp.Name = "sessionLengthDtp";
@@ -111,7 +113,7 @@
             this.label2.ForeColor = System.Drawing.Color.Goldenrod;
             this.label2.Location = new System.Drawing.Point(689, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 28);
+            this.label2.Size = new System.Drawing.Size(66, 29);
             this.label2.TabIndex = 5;
             this.label2.Text = "מחיר";
             // 
@@ -123,7 +125,7 @@
             this.label3.ForeColor = System.Drawing.Color.Goldenrod;
             this.label3.Location = new System.Drawing.Point(546, 243);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(206, 28);
+            this.label3.Size = new System.Drawing.Size(216, 29);
             this.label3.TabIndex = 6;
             this.label3.Text = "אורך הרצאה/סדנה";
             // 
@@ -135,7 +137,7 @@
             this.label4.ForeColor = System.Drawing.Color.Goldenrod;
             this.label4.Location = new System.Drawing.Point(204, 34);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 28);
+            this.label4.Size = new System.Drawing.Size(133, 29);
             this.label4.TabIndex = 7;
             this.label4.Text = "תיאור מוצר";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -148,7 +150,7 @@
             this.label5.ForeColor = System.Drawing.Color.Goldenrod;
             this.label5.Location = new System.Drawing.Point(675, 340);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 28);
+            this.label5.Size = new System.Drawing.Size(83, 29);
             this.label5.TabIndex = 8;
             this.label5.Text = "כותרת";
             // 

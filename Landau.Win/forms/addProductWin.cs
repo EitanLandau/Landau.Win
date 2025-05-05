@@ -35,11 +35,12 @@ namespace Landau.Win.forms
             }
 
             lecturesNseminarsTBL L1 = new lecturesNseminarsTBL();
-            L1.type = productTypeCmbx.SelectedItem == "סדנא";
+            L1.type = productTypeCmbx.SelectedItem.ToString() == "סדנא";
             L1.price = (int)priceNumUD.Value;
             L1.length = sessionLengthDtp.Value.TimeOfDay;
             L1.title = titleTxb.Text;
             L1.description = productDescribtionTxb.Text;
+            
             L1 = DBHelper.AddProduct(L1);
             if (L1 != null)
             {

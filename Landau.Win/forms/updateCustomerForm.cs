@@ -23,7 +23,6 @@ namespace Landau.Win.forms
         private void updateCustomerForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dbDataSet.costumerTBL' table. You can move, or remove it, as needed.
-            this.costumerTBLTableAdapter.Fill(this.dbDataSet.costumerTBL);
             updateComboBox();
 
         }
