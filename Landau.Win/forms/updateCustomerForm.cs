@@ -23,14 +23,10 @@ namespace Landau.Win.forms
         private void updateCustomerForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dbDataSet.costumerTBL' table. You can move, or remove it, as needed.
-            updateComboBox();
+    
 
         }
-        private void updateComboBox()
-        {
-            cstmrList = DBHelper.allCostumers;
-            pickCustomerCmbx.DataSource = cstmrList;
-        }
+
         private void updCustomerDeatils_Click(object sender, EventArgs e)
         {
             costumerTBL selectedCustomer = (costumerTBL)pickCustomerCmbx.SelectedItem;

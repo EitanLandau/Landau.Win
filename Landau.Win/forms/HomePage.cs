@@ -175,5 +175,28 @@ namespace Landau.Win
             mainPanel.Controls.Add(current);
             current.Show();
         }
+
+        private void updateOrderBtn_DropDown(object sender, Krypton.Toolkit.ContextMenuArgs e)
+        {
+
+        }
+
+        private void updateOrderBtn_Click(object sender, EventArgs e)
+        {
+            if (current != null)
+            {
+                if (current is updateOrderDeatsWin)
+                {
+                    return;
+                }
+                current.Close();
+            }
+            current = new updateOrderDeatsWin();
+            current.Dock = DockStyle.Fill;
+            current.TopLevel = false;
+            current.TopMost = true;
+            mainPanel.Controls.Add(current);
+            current.Show();
+        }
     }
 }

@@ -144,11 +144,11 @@
     <Compile Include="forms\addProductWin.Designer.cs">
       <DependentUpon>addProductWin.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\updateOrderDeats.cs">
+    <Compile Include="forms\updateOrderDeatsWin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\updateOrderDeats.Designer.cs">
-      <DependentUpon>updateOrderDeats.cs</DependentUpon>
+    <Compile Include="forms\updateOrderDeatsWin.Designer.cs">
+      <DependentUpon>updateOrderDeatsWin.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\orderDeatailsWin.cs">
       <SubType>Form</SubType>
@@ -219,8 +219,8 @@
     <EmbeddedResource Include="forms\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\updateOrderDeats.resx">
-      <DependentUpon>updateOrderDeats.cs</DependentUpon>
+    <EmbeddedResource Include="forms\updateOrderDeatsWin.resx">
+      <DependentUpon>updateOrderDeatsWin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -253,6 +253,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\costumerTBL.datasource" />
     <None Include="Properties\DataSources\lecturesNseminarsTBL.datasource" />
+    <None Include="Properties\DataSources\orderTBL.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

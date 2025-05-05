@@ -41,7 +41,7 @@ namespace Landau.Win.forms
 
         private void addSubOrderBtn_Click(object sender, EventArgs e)
         {
-            lecturesNseminarsTBL selectedLecture = (lecturesNseminarsTBL)picKProductCmbx.SelectedItem;
+            lecturesNseminarsTBL selectedLecture = (lecturesNseminarsTBL)pickProductCmbx.SelectedItem;
             if (!validateForm())
             {
                 return;
@@ -59,7 +59,7 @@ namespace Landau.Win.forms
             if (s1 != null)
             {
                 MessageBox.Show("🐋(:סבבי ");
-                picKProductCmbx.Text = "";
+                pickProductCmbx.Text = "";
                 ammountInvitedUD.Value = 1;
                 adressTxb.Text = "";
                 OrderDeatsNotes.Text = "";
@@ -109,11 +109,11 @@ MessageBoxIcon.Question);
         {
          
             bool a1 = Utils.isValidInstitution(adressTxb.Text, errorProviderOrder, adressTxb, "יש להזין כתובת");
-            bool a2 = picKProductCmbx.SelectedItem != "" && picKProductCmbx.SelectedItem != null;
+            bool a2 = pickProductCmbx.SelectedItem != "" && pickProductCmbx.SelectedItem != null;
             bool a3 = adressTxb.Text != "" && adressTxb.Text != null;
             if (!a2)
             {
-                errorProviderOrder.SetError(picKProductCmbx, "יש לבחור מוצר");
+                errorProviderOrder.SetError(pickProductCmbx, "יש לבחור מוצר");
                 return false;
             }
             if (!a3)
@@ -135,8 +135,8 @@ MessageBoxIcon.Question);
 
         private void orderDeatailsWin_Load(object sender, EventArgs e)
         {
-            picKProductCmbx.DataSource = DBHelper.GetAlllecturesNseminars();
-            picKProductCmbx.DisplayMember = "title";
+            pickProductCmbx.DataSource = DBHelper.GetAlllecturesNseminars();
+            pickProductCmbx.DisplayMember = "title";
         }
     }
 }

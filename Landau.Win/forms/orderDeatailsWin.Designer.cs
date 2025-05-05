@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.addSubOrderBtn = new System.Windows.Forms.Button();
             this.adressTxb = new System.Windows.Forms.TextBox();
-            this.picKProductCmbx = new System.Windows.Forms.ComboBox();
+            this.pickProductCmbx = new System.Windows.Forms.ComboBox();
             this.lecturesNseminarsTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.finishOrderBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(156)))), ((int)(((byte)(160)))));
             this.label1.Location = new System.Drawing.Point(566, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 28);
+            this.label1.Size = new System.Drawing.Size(209, 29);
             this.label1.TabIndex = 13;
             this.label1.Text = "בחר סדנה/הרצאה";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -85,16 +85,16 @@
             this.adressTxb.Size = new System.Drawing.Size(154, 22);
             this.adressTxb.TabIndex = 15;
             // 
-            // picKProductCmbx
+            // pickProductCmbx
             // 
-            this.picKProductCmbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picKProductCmbx.DataSource = this.lecturesNseminarsTBLBindingSource;
-            this.picKProductCmbx.DisplayMember = "title";
-            this.picKProductCmbx.FormattingEnabled = true;
-            this.picKProductCmbx.Location = new System.Drawing.Point(331, 40);
-            this.picKProductCmbx.Name = "picKProductCmbx";
-            this.picKProductCmbx.Size = new System.Drawing.Size(215, 24);
-            this.picKProductCmbx.TabIndex = 16;
+            this.pickProductCmbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pickProductCmbx.DataSource = this.lecturesNseminarsTBLBindingSource;
+            this.pickProductCmbx.DisplayMember = "title";
+            this.pickProductCmbx.FormattingEnabled = true;
+            this.pickProductCmbx.Location = new System.Drawing.Point(331, 40);
+            this.pickProductCmbx.Name = "pickProductCmbx";
+            this.pickProductCmbx.Size = new System.Drawing.Size(215, 24);
+            this.pickProductCmbx.TabIndex = 16;
             // 
             // lecturesNseminarsTBLBindingSource
             // 
@@ -122,7 +122,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(156)))), ((int)(((byte)(160)))));
             this.label2.Location = new System.Drawing.Point(687, 98);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 28);
+            this.label2.Size = new System.Drawing.Size(82, 29);
             this.label2.TabIndex = 18;
             this.label2.Text = "תאריך";
             // 
@@ -161,7 +161,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(156)))), ((int)(((byte)(160)))));
             this.label3.Location = new System.Drawing.Point(618, 166);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 28);
+            this.label3.Size = new System.Drawing.Size(155, 29);
             this.label3.TabIndex = 21;
             this.label3.Text = "כמות מוזמנים";
             // 
@@ -173,7 +173,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(156)))), ((int)(((byte)(160)))));
             this.label4.Location = new System.Drawing.Point(687, 298);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 28);
+            this.label4.Size = new System.Drawing.Size(83, 29);
             this.label4.TabIndex = 22;
             this.label4.Text = "הערות";
             // 
@@ -185,7 +185,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(156)))), ((int)(((byte)(160)))));
             this.label5.Location = new System.Drawing.Point(689, 232);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 28);
+            this.label5.Size = new System.Drawing.Size(84, 29);
             this.label5.TabIndex = 23;
             this.label5.Text = "כתובת";
             // 
@@ -237,7 +237,7 @@
             this.Controls.Add(this.ammountInvitedUD);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.finishOrderBtn);
-            this.Controls.Add(this.picKProductCmbx);
+            this.Controls.Add(this.pickProductCmbx);
             this.Controls.Add(this.adressTxb);
             this.Controls.Add(this.addSubOrderBtn);
             this.Controls.Add(this.label1);
@@ -258,7 +258,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button addSubOrderBtn;
         private System.Windows.Forms.TextBox adressTxb;
-        private System.Windows.Forms.ComboBox picKProductCmbx;
+        private System.Windows.Forms.ComboBox pickProductCmbx;
         private System.Windows.Forms.Button finishOrderBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown ammountInvitedUD;

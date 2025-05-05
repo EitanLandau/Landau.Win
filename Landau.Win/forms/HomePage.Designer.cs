@@ -142,6 +142,8 @@
             // 
             this.updateOrderBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("updateOrderBtn.ImageLarge")));
             this.updateOrderBtn.TextLine1 = "עדכן הזמנה";
+            this.updateOrderBtn.Click += new System.EventHandler(this.updateOrderBtn_Click);
+            this.updateOrderBtn.DropDown += new System.EventHandler<Krypton.Toolkit.ContextMenuArgs>(this.updateOrderBtn_DropDown);
             // 
             // ordersHistoryBtn
             // 

@@ -63,7 +63,7 @@
             this.pickCustomerCmbx.DataSource = this.costumerTBLBindingSource;
             this.pickCustomerCmbx.DisplayMember = "fullName";
             this.pickCustomerCmbx.FormattingEnabled = true;
-            this.pickCustomerCmbx.Location = new System.Drawing.Point(335, 65);
+            this.pickCustomerCmbx.Location = new System.Drawing.Point(329, 62);
             this.pickCustomerCmbx.Name = "pickCustomerCmbx";
             this.pickCustomerCmbx.Size = new System.Drawing.Size(142, 24);
             this.pickCustomerCmbx.TabIndex = 0;
@@ -77,7 +77,7 @@
             this.pickCustLbl.BackColor = System.Drawing.SystemColors.Control;
             this.pickCustLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickCustLbl.ForeColor = System.Drawing.Color.DarkOrange;
-            this.pickCustLbl.Location = new System.Drawing.Point(351, 18);
+            this.pickCustLbl.Location = new System.Drawing.Point(340, 19);
             this.pickCustLbl.Name = "pickCustLbl";
             this.pickCustLbl.Size = new System.Drawing.Size(120, 29);
             this.pickCustLbl.TabIndex = 1;
@@ -147,7 +147,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label1.Location = new System.Drawing.Point(684, 121);
+            this.label1.Location = new System.Drawing.Point(677, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 29);
             this.label1.TabIndex = 8;
