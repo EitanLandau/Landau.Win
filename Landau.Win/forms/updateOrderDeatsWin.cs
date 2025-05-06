@@ -24,14 +24,32 @@ namespace Landau.Win.forms
             if (int.TryParse(orderIDTxb.Text, out int num))
             {
             orderID = int.Parse(orderIDTxb.Text);
+            orderTBL O1 = allOrders.Where(x => x.Id.Equals(orderID)).FirstOrDefault();
+            
+
+
+
+
+
+
+
+
+
+
+
+
             }
             else
             {
                 MessageBox.Show("מספר לא תקיו");
             }
-          //  orderTBL O1 = allOrders.Where(x => x.Id.Equals(orderID));
+   
 
         }
 
+        private void updateOrderDeatsWin_Load(object sender, EventArgs e)
+        {
+            allOrders = DBHelper.allOrders;
+        }
     }
 }
