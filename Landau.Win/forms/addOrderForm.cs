@@ -52,5 +52,10 @@ namespace Landau.Win.forms
             pickCostumerCmbx.DisplayMember = "fullName";
             pickCostumerCmbx.ValueMember = "Id";
         }
+
+        private void pictureBoxAddOrder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

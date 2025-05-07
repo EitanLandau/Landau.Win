@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(updateCustomerForm));
             this.pickCustomerCmbx = new System.Windows.Forms.ComboBox();
+            this.costumerTBLBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.costumerTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pickCustLbl = new System.Windows.Forms.Label();
             this.updateFormPic = new System.Windows.Forms.PictureBox();
             this.updFirstNameTxb = new System.Windows.Forms.TextBox();
@@ -51,24 +53,32 @@
             this.label9 = new System.Windows.Forms.Label();
             this.updInstitutionTxb = new System.Windows.Forms.TextBox();
             this.deleteBtn = new System.Windows.Forms.Button();
-            this.costumerTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updateFormPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pickCustomerCmbx
             // 
             this.pickCustomerCmbx.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pickCustomerCmbx.DataSource = this.costumerTBLBindingSource;
+            this.pickCustomerCmbx.DataSource = this.costumerTBLBindingSource1;
             this.pickCustomerCmbx.DisplayMember = "fullName";
             this.pickCustomerCmbx.FormattingEnabled = true;
-            this.pickCustomerCmbx.Location = new System.Drawing.Point(329, 62);
+            this.pickCustomerCmbx.Location = new System.Drawing.Point(311, 62);
             this.pickCustomerCmbx.Name = "pickCustomerCmbx";
-            this.pickCustomerCmbx.Size = new System.Drawing.Size(142, 24);
+            this.pickCustomerCmbx.Size = new System.Drawing.Size(176, 24);
             this.pickCustomerCmbx.TabIndex = 0;
             this.pickCustomerCmbx.ValueMember = "Id";
             this.pickCustomerCmbx.SelectedIndexChanged += new System.EventHandler(this.pickCustomerCmbx_SelectedIndexChanged);
+            // 
+            // costumerTBLBindingSource1
+            // 
+            this.costumerTBLBindingSource1.DataSource = typeof(Landau.Win.costumerTBL);
+            // 
+            // costumerTBLBindingSource
+            // 
+            this.costumerTBLBindingSource.DataSource = typeof(Landau.Win.costumerTBL);
             // 
             // pickCustLbl
             // 
@@ -90,7 +100,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.updateFormPic.Image = ((System.Drawing.Image)(resources.GetObject("updateFormPic.Image")));
-            this.updateFormPic.Location = new System.Drawing.Point(0, 0);
+            this.updateFormPic.Location = new System.Drawing.Point(12, 3);
             this.updateFormPic.Name = "updateFormPic";
             this.updateFormPic.Size = new System.Drawing.Size(797, 455);
             this.updateFormPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -284,10 +294,6 @@
             this.deleteBtn.UseVisualStyleBackColor = false;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
-            // costumerTBLBindingSource
-            // 
-            this.costumerTBLBindingSource.DataSource = typeof(Landau.Win.costumerTBL);
-            // 
             // updateCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -318,9 +324,10 @@
             this.Name = "updateCustomerForm";
             this.Text = "עדכן פרטי לקוח";
             this.Load += new System.EventHandler(this.updateCustomerForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updateFormPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,5 +357,6 @@
         private System.Windows.Forms.TextBox updInstitutionTxb;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.BindingSource costumerTBLBindingSource;
+        private System.Windows.Forms.BindingSource costumerTBLBindingSource1;
     }
 }

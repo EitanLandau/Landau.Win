@@ -41,13 +41,13 @@ namespace Landau.Win.forms
             this.label2 = new System.Windows.Forms.Label();
             this.updOrderBtn = new System.Windows.Forms.Button();
             this.changeProductCmbx = new System.Windows.Forms.ComboBox();
+            this.lecturesNseminarsTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.updAdressTxb = new System.Windows.Forms.TextBox();
             this.deleteOrderBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.orderIDTxb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.lecturesNseminarsTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.updAmmountInvitedUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturesNseminarsTBLBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +80,7 @@ namespace Landau.Win.forms
             this.updOrderDeatsNotes.Location = new System.Drawing.Point(71, 147);
             this.updOrderDeatsNotes.Multiline = true;
             this.updOrderDeatsNotes.Name = "updOrderDeatsNotes";
-            this.updOrderDeatsNotes.Size = new System.Drawing.Size(218, 211);
+            this.updOrderDeatsNotes.Size = new System.Drawing.Size(218, 273);
             this.updOrderDeatsNotes.TabIndex = 38;
             // 
             // label5
@@ -189,6 +189,11 @@ namespace Landau.Win.forms
             this.changeProductCmbx.ValueMember = "Id";
             this.changeProductCmbx.SelectedIndexChanged += new System.EventHandler(this.changeProductCmbx_SelectedIndexChanged);
             // 
+            // lecturesNseminarsTBLBindingSource
+            // 
+            this.lecturesNseminarsTBLBindingSource.DataSource = typeof(Landau.Win.lecturesNseminarsTBL);
+            this.lecturesNseminarsTBLBindingSource.CurrentChanged += new System.EventHandler(this.lecturesNseminarsTBLBindingSource_CurrentChanged);
+            // 
             // updAdressTxb
             // 
             this.updAdressTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -217,7 +222,7 @@ namespace Landau.Win.forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label1.ForeColor = System.Drawing.Color.Tomato;
-            this.label1.Location = new System.Drawing.Point(736, 139);
+            this.label1.Location = new System.Drawing.Point(736, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(209, 29);
             this.label1.TabIndex = 28;
@@ -255,10 +260,6 @@ namespace Landau.Win.forms
             this.label7.Size = new System.Drawing.Size(190, 29);
             this.label7.TabIndex = 44;
             this.label7.Text = "הזן מספר הזמנה";
-            // 
-            // lecturesNseminarsTBLBindingSource
-            // 
-            this.lecturesNseminarsTBLBindingSource.DataSource = typeof(Landau.Win.lecturesNseminarsTBL);
             // 
             // updateOrderDeatsWin
             // 

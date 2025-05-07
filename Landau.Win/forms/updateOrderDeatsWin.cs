@@ -12,7 +12,7 @@ namespace Landau.Win.forms
 {
     public partial class updateOrderDeatsWin : Form
     {
-        List<orderTBL> allOrders;
+        List<lecturesNseminarsTBL> allLecturesNseminars;
         List<subOrderTBL> allSubOrders;
         public updateOrderDeatsWin()
         {
@@ -26,7 +26,8 @@ namespace Landau.Win.forms
             {
             orderID = int.Parse(orderIDTxb.Text);
             subOrderTBL SO1 = allSubOrders.Where(x => x.Id.Equals(orderID)).FirstOrDefault();
-          
+            lecturesNseminarsTBL current = allLecturesNseminars.Where(x => x.Id.Equals(SO1.lectureID)).FirstOrDefault();
+
 
 
 
@@ -50,8 +51,11 @@ namespace Landau.Win.forms
 
         private void updateOrderDeatsWin_Load(object sender, EventArgs e)
         {
-            allOrders = DBHelper.allOrders;
+            allLecturesNseminars = DBHelper.allLecturesNseminars;
             allSubOrders = DBHelper.allSubOrders;
+            changeProductCmbx.DataSource = allLecturesNseminars;
+            changeProductCmbx.DisplayMember = "title";
+            changeProductCmbx.ValueMember = "Id";
         }
 
         private void changeProductCmbx_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,6 +104,11 @@ namespace Landau.Win.forms
         }
 
         private void updOrderBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lecturesNseminarsTBLBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
         }

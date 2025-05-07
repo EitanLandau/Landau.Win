@@ -70,7 +70,7 @@
             this.costumerLbl.ForeColor = System.Drawing.Color.SteelBlue;
             this.costumerLbl.Location = new System.Drawing.Point(421, 37);
             this.costumerLbl.Name = "costumerLbl";
-            this.costumerLbl.Size = new System.Drawing.Size(115, 28);
+            this.costumerLbl.Size = new System.Drawing.Size(120, 29);
             this.costumerLbl.TabIndex = 1;
             this.costumerLbl.Text = "בחר לקוח";
             // 
@@ -100,6 +100,7 @@
             this.pictureBoxAddOrder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxAddOrder.TabIndex = 11;
             this.pictureBoxAddOrder.TabStop = false;
+            this.pictureBoxAddOrder.Click += new System.EventHandler(this.pictureBoxAddOrder_Click);
             // 
             // label1
             // 
@@ -109,7 +110,7 @@
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
             this.label1.Location = new System.Drawing.Point(434, 139);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 28);
+            this.label1.Size = new System.Drawing.Size(83, 29);
             this.label1.TabIndex = 12;
             this.label1.Text = "הערות";
             // 
