@@ -58,7 +58,7 @@ namespace Landau.Win.forms
             s1 = DBHelper.AddSubOrder(s1);
             if (s1 != null)
             {
-                MessageBox.Show("🐋(:סבבי ");
+                MessageBox.Show("הזמנה נוספה בהצלחה \n מספר הזמנה: "+s1.Id);
                 pickProductCmbx.Text = "";
                 ammountInvitedUD.Value = 1;
                 adressTxb.Text = "";

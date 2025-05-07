@@ -25,8 +25,8 @@ namespace Landau.Win.forms
             if (int.TryParse(orderIDTxb.Text, out int num))
             {
             orderID = int.Parse(orderIDTxb.Text);
-            orderTBL O1 = allOrders.Where(x => x.Id.Equals(orderID)).FirstOrDefault();
-            
+            subOrderTBL SO1 = allSubOrders.Where(x => x.Id.Equals(orderID)).FirstOrDefault();
+          
 
 
 
