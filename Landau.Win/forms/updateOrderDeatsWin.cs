@@ -24,31 +24,32 @@ namespace Landau.Win.forms
             int orderID;
             if (int.TryParse(orderIDTxb.Text, out int num))
             {
-            orderID = int.Parse(orderIDTxb.Text);
-            subOrderTBL SO1 = allSubOrders.Where(x => x.Id.Equals(orderID)).FirstOrDefault();
-            lecturesNseminarsTBL current = allLecturesNseminars.Where(x => x.Id.Equals(SO1.lectureID)).FirstOrDefault();
+                orderID = int.Parse(orderIDTxb.Text);
+                subOrderTBL SO1 = allSubOrders.Where(x => x.Id.Equals(orderID)).FirstOrDefault();
+                if (SO1 != null)
+                {
+                    lecturesNseminarsTBL current = allLecturesNseminars.Where(x => x.Id.Equals(SO1.lectureID)).FirstOrDefault();
+                    changeProductCmbx.Text = current.title;
+                    updOrderDateDtp.Value = SO1.date.Date;
+                    updOrderHourDtp.Value = SO1.date;
+                    updAmmountInvitedUD.Value = SO1.amountInvited;
+                    updAdressTxb.Text = SO1.adress;
+                    updOrderDeatsNotes.Text = SO1.notes;
+                }
+                else
+                {
+                    MessageBox.Show("מספר הזמנה לא קיים במערכת");
+                    return;
 
-
-
-
-
-
-
-
-
-
-
-
+                }
 
             }
             else
             {
                 MessageBox.Show("מספר לא תקיו");
+                return;
             }
-   
-
         }
-
         private void updateOrderDeatsWin_Load(object sender, EventArgs e)
         {
             allLecturesNseminars = DBHelper.allLecturesNseminars;
@@ -106,8 +107,54 @@ namespace Landau.Win.forms
         private void updOrderBtn_Click(object sender, EventArgs e)
         {
 
+            if (!validateForm())
+            {
+                return;
+            }
+            if (orderIDTxb.Text != null)
+            {
+                int orderID;
+                orderID = int.Parse(orderIDTxb.Text);
+                subOrderTBL s1 = allSubOrders.Where(x => x.Id.Equals(orderID)).FirstOrDefault();
+                lecturesNseminarsTBL selectedLecture = (lecturesNseminarsTBL)changeProductCmbx.SelectedItem;
+                DateTime DatePart = updOrderDateDtp.Value.Date;
+                TimeSpan orderHour = updOrderHourDtp.Value.TimeOfDay;
+                s1.lectureID = selectedLecture.Id;
+                s1.date = DatePart + orderHour;
+                s1.amountInvited = (int)updAmmountInvitedUD.Value;
+                s1.notes = updOrderDeatsNotes.Text;
+                s1.adress = updAdressTxb.Text;
+                DBHelper.UpdateSubOrder(s1);
+                changeProductCmbx.Text = "";
+                updAmmountInvitedUD.Value = 1;
+                updAdressTxb.Text = "";
+                updOrderDeatsNotes.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("יש למלא מספר הזמנה");
+                return;
+            }
+ 
         }
+        private bool validateForm()
+        {
 
+            bool a1 = Utils.isValidInstitution(updAdressTxb.Text, errorProviderUpdOrderDeats, updAdressTxb, "יש להזין כתובת");
+            bool a2 = changeProductCmbx.SelectedItem != "" && changeProductCmbx.SelectedItem != null;
+            bool a3 = updAdressTxb.Text != "" && updAdressTxb.Text != null;
+            if (!a2)
+            {
+                errorProviderUpdOrderDeats.SetError(changeProductCmbx, "יש לבחור מוצר");
+                return false;
+            }
+            if (!a3)
+            {
+                errorProviderUpdOrderDeats.SetError(updAdressTxb, "יש להזין כתובת");
+                return false;
+            }
+            return a1 && a2 && a3;
+        }
         private void lecturesNseminarsTBLBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 

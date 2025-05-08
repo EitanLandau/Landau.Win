@@ -250,7 +250,7 @@
             this.updCustomerDeatils.ForeColor = System.Drawing.Color.LightYellow;
             this.updCustomerDeatils.Location = new System.Drawing.Point(35, 376);
             this.updCustomerDeatils.Name = "updCustomerDeatils";
-            this.updCustomerDeatils.Size = new System.Drawing.Size(129, 52);
+            this.updCustomerDeatils.Size = new System.Drawing.Size(129, 50);
             this.updCustomerDeatils.TabIndex = 16;
             this.updCustomerDeatils.Text = "עדכן";
             this.updCustomerDeatils.UseVisualStyleBackColor = false;

@@ -48,8 +48,10 @@ namespace Landau.Win.forms
             this.label6 = new System.Windows.Forms.Label();
             this.orderIDTxb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.errorProviderUpdOrderDeats = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.updAmmountInvitedUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturesNseminarsTBLBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderUpdOrderDeats)).BeginInit();
             this.SuspendLayout();
             // 
             // updOrderHourDtp
@@ -58,6 +60,7 @@ namespace Landau.Win.forms
             this.updOrderHourDtp.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.updOrderHourDtp.Location = new System.Drawing.Point(537, 258);
             this.updOrderHourDtp.Name = "updOrderHourDtp";
+            this.updOrderHourDtp.ShowUpDown = true;
             this.updOrderHourDtp.Size = new System.Drawing.Size(141, 26);
             this.updOrderHourDtp.StateCommon.Content.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.updOrderHourDtp.TabIndex = 40;
@@ -261,6 +264,10 @@ namespace Landau.Win.forms
             this.label7.TabIndex = 44;
             this.label7.Text = "הזן מספר הזמנה";
             // 
+            // errorProviderUpdOrderDeats
+            // 
+            this.errorProviderUpdOrderDeats.ContainerControl = this;
+            // 
             // updateOrderDeatsWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -291,6 +298,7 @@ namespace Landau.Win.forms
             this.Load += new System.EventHandler(this.updateOrderDeatsWin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.updAmmountInvitedUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturesNseminarsTBLBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderUpdOrderDeats)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,5 +323,6 @@ namespace Landau.Win.forms
         private System.Windows.Forms.TextBox orderIDTxb;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.BindingSource lecturesNseminarsTBLBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProviderUpdOrderDeats;
     }
 }

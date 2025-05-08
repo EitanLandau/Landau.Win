@@ -211,6 +211,7 @@
             this.orderDateDtp.Size = new System.Drawing.Size(215, 26);
             this.orderDateDtp.StateCommon.Content.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.orderDateDtp.TabIndex = 26;
+            this.orderDateDtp.ValueChanged += new System.EventHandler(this.orderDateDtp_ValueChanged);
             // 
             // orderHourDtp
             // 

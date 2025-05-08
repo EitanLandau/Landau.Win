@@ -57,7 +57,7 @@
             this.firstNameLbl.ForeColor = System.Drawing.Color.SeaGreen;
             this.firstNameLbl.Location = new System.Drawing.Point(745, 48);
             this.firstNameLbl.Name = "firstNameLbl";
-            this.firstNameLbl.Size = new System.Drawing.Size(104, 28);
+            this.firstNameLbl.Size = new System.Drawing.Size(111, 29);
             this.firstNameLbl.TabIndex = 0;
             this.firstNameLbl.Text = "שם פרטי";
             this.firstNameLbl.Click += new System.EventHandler(this.firstNameLbl_Click);
@@ -79,7 +79,7 @@
             this.lastNameLbl.ForeColor = System.Drawing.Color.SeaGreen;
             this.lastNameLbl.Location = new System.Drawing.Point(713, 98);
             this.lastNameLbl.Name = "lastNameLbl";
-            this.lastNameLbl.Size = new System.Drawing.Size(136, 28);
+            this.lastNameLbl.Size = new System.Drawing.Size(141, 29);
             this.lastNameLbl.TabIndex = 3;
             this.lastNameLbl.Text = "שם משפחה";
             // 
@@ -108,7 +108,7 @@
             this.emailLbl.ForeColor = System.Drawing.Color.SeaGreen;
             this.emailLbl.Location = new System.Drawing.Point(774, 149);
             this.emailLbl.Name = "emailLbl";
-            this.emailLbl.Size = new System.Drawing.Size(75, 28);
+            this.emailLbl.Size = new System.Drawing.Size(81, 29);
             this.emailLbl.TabIndex = 6;
             this.emailLbl.Text = "אימייל";
             // 
@@ -120,7 +120,7 @@
             this.phoneNumberLbl.ForeColor = System.Drawing.Color.SeaGreen;
             this.phoneNumberLbl.Location = new System.Drawing.Point(710, 198);
             this.phoneNumberLbl.Name = "phoneNumberLbl";
-            this.phoneNumberLbl.Size = new System.Drawing.Size(139, 28);
+            this.phoneNumberLbl.Size = new System.Drawing.Size(149, 29);
             this.phoneNumberLbl.TabIndex = 7;
             this.phoneNumberLbl.Text = "מספר טלפון";
             // 
@@ -132,7 +132,7 @@
             this.addCostumerDeateilsBtn.ForeColor = System.Drawing.Color.LightGreen;
             this.addCostumerDeateilsBtn.Location = new System.Drawing.Point(30, 345);
             this.addCostumerDeateilsBtn.Name = "addCostumerDeateilsBtn";
-            this.addCostumerDeateilsBtn.Size = new System.Drawing.Size(143, 49);
+            this.addCostumerDeateilsBtn.Size = new System.Drawing.Size(157, 69);
             this.addCostumerDeateilsBtn.TabIndex = 9;
             this.addCostumerDeateilsBtn.Text = "הוסף לקוח";
             this.addCostumerDeateilsBtn.UseVisualStyleBackColor = false;
@@ -155,7 +155,7 @@
             this.BdateLbl.ForeColor = System.Drawing.Color.SeaGreen;
             this.BdateLbl.Location = new System.Drawing.Point(716, 251);
             this.BdateLbl.Name = "BdateLbl";
-            this.BdateLbl.Size = new System.Drawing.Size(133, 28);
+            this.BdateLbl.Size = new System.Drawing.Size(142, 29);
             this.BdateLbl.TabIndex = 7;
             this.BdateLbl.Text = "תאריך לידה";
             // 
@@ -191,7 +191,7 @@
             this.notesLbl.ForeColor = System.Drawing.Color.SeaGreen;
             this.notesLbl.Location = new System.Drawing.Point(335, 48);
             this.notesLbl.Name = "notesLbl";
-            this.notesLbl.Size = new System.Drawing.Size(78, 28);
+            this.notesLbl.Size = new System.Drawing.Size(83, 29);
             this.notesLbl.TabIndex = 15;
             this.notesLbl.Text = "הערות";
             // 
@@ -211,7 +211,7 @@
             this.institutionLbl.ForeColor = System.Drawing.Color.SeaGreen;
             this.institutionLbl.Location = new System.Drawing.Point(784, 306);
             this.institutionLbl.Name = "institutionLbl";
-            this.institutionLbl.Size = new System.Drawing.Size(65, 28);
+            this.institutionLbl.Size = new System.Drawing.Size(68, 29);
             this.institutionLbl.TabIndex = 17;
             this.institutionLbl.Text = "מוסד";
             // 

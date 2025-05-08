@@ -123,20 +123,17 @@ MessageBoxIcon.Question);
             }
             return a1 && a2 && a3;
         }
-        private void pictureBoxAddOrder_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void orderDeatailsWin_Load(object sender, EventArgs e)
         {
             pickProductCmbx.DataSource = DBHelper.GetAlllecturesNseminars();
             pickProductCmbx.DisplayMember = "title";
+        }
+
+        private void orderDateDtp_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -34,5 +34,10 @@ namespace Landau.Win.forms
             customerListDGV.DataSource = custList;
             lblTotalCustomers.Text = "סך לקוחות : "+custList.Count;
         }
+
+        private void lblTotalCustomers_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

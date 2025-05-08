@@ -66,9 +66,10 @@
             this.lblTotalCustomers.AutoSize = true;
             this.lblTotalCustomers.Location = new System.Drawing.Point(214, 13);
             this.lblTotalCustomers.Name = "lblTotalCustomers";
-            this.lblTotalCustomers.Size = new System.Drawing.Size(44, 16);
+            this.lblTotalCustomers.Size = new System.Drawing.Size(46, 17);
             this.lblTotalCustomers.TabIndex = 2;
             this.lblTotalCustomers.Text = "label2";
+            this.lblTotalCustomers.Click += new System.EventHandler(this.lblTotalCustomers_Click);
             // 
             // costumerTBLBindingSource
             // 
