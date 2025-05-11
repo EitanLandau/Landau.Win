@@ -85,7 +85,20 @@ namespace Landau.Win
 
         private void ordersHistoryBtn_Click(object sender, EventArgs e)
         {
-
+            if (current != null)
+            {
+                if (current is orderHistory)
+                {
+                    return;
+                }
+                current.Close();
+            }
+            current = new orderHistory();
+            current.Dock = DockStyle.Fill;
+            current.TopLevel = false;
+            current.TopMost = true;
+            mainPanel.Controls.Add(current);
+            current.Show();
         }
 
         private void addBtn_Click(object sender, EventArgs e)

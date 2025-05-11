@@ -135,7 +135,7 @@ namespace Landau.Win.forms
                 MessageBox.Show("יש למלא מספר הזמנה");
                 return;
             }
- 
+
         }
         private bool validateForm()
         {
@@ -158,6 +158,41 @@ namespace Landau.Win.forms
         private void lecturesNseminarsTBLBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void deleteOrderBtn_Click(object sender, EventArgs e)
+        {
+            int orderID;
+            if (int.TryParse(orderIDTxb.Text, out int num))
+            {
+                orderID = int.Parse(orderIDTxb.Text);
+                subOrderTBL selectedOrder = allSubOrders.Where(x => x.Id.Equals(orderID)).FirstOrDefault();
+                if (selectedOrder == null)
+                {
+                    MessageBox.Show("יש לבחור לקוח");
+                    return;
+                }
+                DialogResult result = MessageBox.Show(
+                    "האם אתה בטוח שאתה רוצה למחוק את הזמנה?",
+                    "אישור מחיקה",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    DBHelper.DeleteSubOrder(selectedOrder);
+                    MessageBox.Show("לקוח נמחק בהצלחה");
+                    changeProductCmbx.Text = "";
+                    updAmmountInvitedUD.Value = 1;
+                    updAdressTxb.Text = "";
+                    updOrderDeatsNotes.Text = "";
+                }
+            }
+            else
+            {
+                MessageBox.Show("מספר לא תקיו");
+                return;
+            }
         }
     }
 }

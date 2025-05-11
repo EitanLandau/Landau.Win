@@ -218,6 +218,7 @@ namespace Landau.Win.forms
             this.deleteOrderBtn.TabIndex = 29;
             this.deleteOrderBtn.Text = "מחק הזמנה";
             this.deleteOrderBtn.UseVisualStyleBackColor = false;
+            this.deleteOrderBtn.Click += new System.EventHandler(this.deleteOrderBtn_Click);
             // 
             // label1
             // 
