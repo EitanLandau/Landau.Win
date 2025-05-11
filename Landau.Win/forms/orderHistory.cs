@@ -12,6 +12,7 @@ namespace Landau.Win.forms
 {
     public partial class orderHistory : Form
     {
+        List<orderHistoryView> allorderHistoryViews;
         public orderHistory()
         {
             InitializeComponent();
@@ -19,8 +20,17 @@ namespace Landau.Win.forms
 
         private void orderHistory_Load(object sender, EventArgs e)
         {
+            updateDGV();
+        }
+        private void updateDGV()
+        {
+            allorderHistoryViews = DBHelper.allorderHistoryViews;
+            allorderHistoryViews = allorderHistoryViews.OrderBy(x => x.orderID).ToList();
+            orderHistoryDGV.DataSource = allorderHistoryViews;
+        }
+        private void orderHistoryDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
-
     }
 }

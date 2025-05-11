@@ -18,6 +18,7 @@ namespace Landau.Win
         public static List<subOrderTBL> allSubOrders;
         public static List<serviceTBL> allServices;
         public static List<lecturesNseminarsTBL> allLecturesNseminars;
+        public static List<orderHistoryView> allorderHistoryViews;
         #endregion
 
         #region Load Functions
@@ -29,6 +30,12 @@ namespace Landau.Win
             GetAllSubOrders();
             GetAllServices();
             GetAlllecturesNseminars();
+            getOrderHistoryViews();
+
+        }
+        public static void getOrderHistoryViews()
+        {
+            allorderHistoryViews = (from s in db.orderHistoryView select s).ToList();
         }
         #endregion
 
