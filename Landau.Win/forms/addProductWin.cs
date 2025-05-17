@@ -65,5 +65,10 @@ namespace Landau.Win.forms
             bool a2 = Utils.isNotEmpty(titleTxb.Text, errorProviderProduct, titleTxb, "יש להזין כותרת להרצאה");
             return a1 && a2;
                 }
+
+        private void addProductWin_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

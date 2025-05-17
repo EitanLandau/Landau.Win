@@ -100,7 +100,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.updateFormPic.Image = ((System.Drawing.Image)(resources.GetObject("updateFormPic.Image")));
-            this.updateFormPic.Location = new System.Drawing.Point(12, 3);
+            this.updateFormPic.Location = new System.Drawing.Point(-4, 0);
             this.updateFormPic.Name = "updateFormPic";
             this.updateFormPic.Size = new System.Drawing.Size(797, 455);
             this.updateFormPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

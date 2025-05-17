@@ -31,6 +31,7 @@ namespace Landau.Win.forms
         private void updateDGV()
         {
             custList = DBHelper.allCostumers;
+            custList = custList.OrderBy(x => x.fullName).ToList();
             customerListDGV.DataSource = custList;
             lblTotalCustomers.Text = "סך לקוחות : "+custList.Count;
         }

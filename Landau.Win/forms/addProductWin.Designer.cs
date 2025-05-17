@@ -203,6 +203,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "addProductWin";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.addProductWin_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.priceNumUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderProduct)).EndInit();
             this.ResumeLayout(false);
