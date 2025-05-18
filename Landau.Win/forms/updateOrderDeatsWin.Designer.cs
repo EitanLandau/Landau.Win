@@ -43,7 +43,6 @@ namespace Landau.Win.forms
             this.changeProductCmbx = new System.Windows.Forms.ComboBox();
             this.lecturesNseminarsTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.updAdressTxb = new System.Windows.Forms.TextBox();
-            this.deleteOrderBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.orderIDTxb = new System.Windows.Forms.TextBox();
@@ -171,9 +170,9 @@ namespace Landau.Win.forms
             this.updOrderBtn.BackColor = System.Drawing.Color.Firebrick;
             this.updOrderBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.updOrderBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(210)))), ((int)(((byte)(221)))));
-            this.updOrderBtn.Location = new System.Drawing.Point(38, 453);
+            this.updOrderBtn.Location = new System.Drawing.Point(38, 441);
             this.updOrderBtn.Name = "updOrderBtn";
-            this.updOrderBtn.Size = new System.Drawing.Size(169, 44);
+            this.updOrderBtn.Size = new System.Drawing.Size(156, 56);
             this.updOrderBtn.TabIndex = 32;
             this.updOrderBtn.Text = "עדכן הזמנה";
             this.updOrderBtn.UseVisualStyleBackColor = false;
@@ -205,20 +204,6 @@ namespace Landau.Win.forms
             this.updAdressTxb.Size = new System.Drawing.Size(154, 22);
             this.updAdressTxb.TabIndex = 30;
             this.updAdressTxb.TextChanged += new System.EventHandler(this.updAdressTxb_TextChanged);
-            // 
-            // deleteOrderBtn
-            // 
-            this.deleteOrderBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.deleteOrderBtn.BackColor = System.Drawing.Color.Firebrick;
-            this.deleteOrderBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.deleteOrderBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(210)))), ((int)(((byte)(221)))));
-            this.deleteOrderBtn.Location = new System.Drawing.Point(38, 401);
-            this.deleteOrderBtn.Name = "deleteOrderBtn";
-            this.deleteOrderBtn.Size = new System.Drawing.Size(169, 46);
-            this.deleteOrderBtn.TabIndex = 29;
-            this.deleteOrderBtn.Text = "מחק הזמנה";
-            this.deleteOrderBtn.UseVisualStyleBackColor = false;
-            this.deleteOrderBtn.Click += new System.EventHandler(this.deleteOrderBtn_Click);
             // 
             // label1
             // 
@@ -290,7 +275,6 @@ namespace Landau.Win.forms
             this.Controls.Add(this.updOrderBtn);
             this.Controls.Add(this.changeProductCmbx);
             this.Controls.Add(this.updAdressTxb);
-            this.Controls.Add(this.deleteOrderBtn);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -318,7 +302,6 @@ namespace Landau.Win.forms
         private System.Windows.Forms.Button updOrderBtn;
         private System.Windows.Forms.ComboBox changeProductCmbx;
         private System.Windows.Forms.TextBox updAdressTxb;
-        private System.Windows.Forms.Button deleteOrderBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox orderIDTxb;

@@ -15,6 +15,8 @@ namespace Landau.Win.forms
     public partial class updateCustomerForm : Form
     {
         List<costumerTBL> cstmrList;
+        List<orderTBL> allOrders;
+        List<subOrderTBL> allSubOrders;
         public updateCustomerForm()
         {
             InitializeComponent();
@@ -98,7 +100,7 @@ namespace Landau.Win.forms
 
         }
 
-        private void deleteBtn_Click(object sender, EventArgs e)
+    /*  private void deleteBtn_Click(object sender, EventArgs e)
         {
             costumerTBL selectedCustomer = (costumerTBL)pickCustomerCmbx.SelectedItem;
             if (selectedCustomer == null)
@@ -107,16 +109,32 @@ namespace Landau.Win.forms
                 return;
             }
             DialogResult result = MessageBox.Show(
-                "האם אתה בטוח שאתה רוצה למחוק את הלקוח?",
+                "האם אתה בטוח שאתה רוצה למחוק את הלקוח פעולה זאת תמחק גם את כל ההזמנות של הלקוח?",
                 "אישור מחיקה",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {
-                DBHelper.DeleteCostumer(selectedCustomer);
+                allOrders = DBHelper.allOrders;
+                allSubOrders = DBHelper.allSubOrders;
+
+                orderTBL current = allOrders.Where(x => x.costumerID.Equals(selectedCustomer.Id)).FirstOrDefault();
+                while ( current!= null)
+                {
+                    while (allSubOrders.Where(x => x.orderID.Equals(current.Id)).FirstOrDefault() != null)
+                    {
+                        subOrderTBL SO = allSubOrders.Where(x => x.orderID.Equals(current.Id)).FirstOrDefault();
+                        DBHelper.DeleteSubOrder(SO);
+                    }
+                    orderTBL tmp = current;
+                    DBHelper.DeleteOrder(tmp);
+                    current = allOrders.Where(x => x.costumerID.Equals(selectedCustomer.Id)).FirstOrDefault();
+                }
+                if (DBHelper.DeleteCostumer(selectedCustomer)) 
                 MessageBox.Show("לקוח נמחק בהצלחה");
+                
             }
-        }
+        }*/
     }
 }

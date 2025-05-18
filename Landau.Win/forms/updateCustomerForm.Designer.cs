@@ -52,7 +52,6 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.updInstitutionTxb = new System.Windows.Forms.TextBox();
-            this.deleteBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updateFormPic)).BeginInit();
@@ -248,11 +247,11 @@
             this.updCustomerDeatils.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.updCustomerDeatils.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updCustomerDeatils.ForeColor = System.Drawing.Color.LightYellow;
-            this.updCustomerDeatils.Location = new System.Drawing.Point(35, 376);
+            this.updCustomerDeatils.Location = new System.Drawing.Point(12, 373);
             this.updCustomerDeatils.Name = "updCustomerDeatils";
-            this.updCustomerDeatils.Size = new System.Drawing.Size(129, 50);
+            this.updCustomerDeatils.Size = new System.Drawing.Size(134, 53);
             this.updCustomerDeatils.TabIndex = 16;
-            this.updCustomerDeatils.Text = "עדכן";
+            this.updCustomerDeatils.Text = "עדכן לקוח";
             this.updCustomerDeatils.UseVisualStyleBackColor = false;
             this.updCustomerDeatils.Click += new System.EventHandler(this.updCustomerDeatils_Click);
             // 
@@ -280,26 +279,11 @@
             this.updInstitutionTxb.Size = new System.Drawing.Size(142, 22);
             this.updInstitutionTxb.TabIndex = 19;
             // 
-            // deleteBtn
-            // 
-            this.deleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.deleteBtn.BackColor = System.Drawing.Color.OrangeRed;
-            this.deleteBtn.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.deleteBtn.ForeColor = System.Drawing.Color.LightYellow;
-            this.deleteBtn.Location = new System.Drawing.Point(35, 320);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(129, 50);
-            this.deleteBtn.TabIndex = 20;
-            this.deleteBtn.Text = "מחק לקוח";
-            this.deleteBtn.UseVisualStyleBackColor = false;
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
-            // 
             // updateCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.updInstitutionTxb);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.updCustomerDeatils);
@@ -355,7 +339,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox updInstitutionTxb;
-        private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.BindingSource costumerTBLBindingSource;
         private System.Windows.Forms.BindingSource costumerTBLBindingSource1;
     }

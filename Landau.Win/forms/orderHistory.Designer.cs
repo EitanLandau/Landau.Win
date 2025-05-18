@@ -73,7 +73,7 @@ namespace Landau.Win.forms
             this.orderHistoryDGV.ReadOnly = true;
             this.orderHistoryDGV.RowHeadersWidth = 51;
             this.orderHistoryDGV.RowTemplate.Height = 24;
-            this.orderHistoryDGV.Size = new System.Drawing.Size(920, 428);
+            this.orderHistoryDGV.Size = new System.Drawing.Size(920, 451);
             this.orderHistoryDGV.TabIndex = 0;
             this.orderHistoryDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orderHistoryDGV_CellContentClick);
             // 
@@ -168,7 +168,7 @@ namespace Landau.Win.forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1017, 450);
+            this.ClientSize = new System.Drawing.Size(1017, 473);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.orderHistoryDGV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

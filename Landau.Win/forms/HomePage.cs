@@ -211,5 +211,41 @@ namespace Landau.Win
             mainPanel.Controls.Add(current);
             current.Show();
         }
+
+        private void updLectureBtn_Click(object sender, EventArgs e)
+        {
+            if (current != null)
+            {
+                if (current is updateProductForm)
+                {
+                    return;
+                }
+                current.Close();
+            }
+            current = new updateProductForm();
+            current.Dock = DockStyle.Fill;
+            current.TopLevel = false;
+            current.TopMost = true;
+            mainPanel.Controls.Add(current);
+            current.Show();
+        }
+
+        private void lectureListBtn_Click(object sender, EventArgs e)
+        {
+            if (current != null)
+            {
+                if (current is productList)
+                {
+                    return;
+                }
+                current.Close();
+            }
+            current = new productList();
+            current.Dock = DockStyle.Fill;
+            current.TopLevel = false;
+            current.TopMost = true;
+            mainPanel.Controls.Add(current);
+            current.Show();
+        }
     }
 }

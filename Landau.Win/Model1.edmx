@@ -31,6 +31,27 @@
           <Property Name="description" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="meetingTBL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="projectID" Type="int" Nullable="false" />
+          <Property Name="typeID" Type="int" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="duration" Type="time" Precision="0" Nullable="false" />
+          <Property Name="notes" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="meetingTypeTBL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="content" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="multiParticipant" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="orderTBL">
           <Key>
             <PropertyRef Name="Id" />
@@ -41,6 +62,19 @@
           <Property Name="orderDate" Type="datetime" Nullable="false" />
           <Property Name="status" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="projectTBL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customerID" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="finalPrice" Type="int" Nullable="false" />
+          <Property Name="meetingsNum" Type="int" Nullable="false" />
+          <Property Name="serviceID" Type="int" Nullable="false" />
+          <Property Name="status" Type="bit" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="2000" Nullable="false" />
+        </EntityType>
         <EntityType Name="serviceTBL">
           <Key>
             <PropertyRef Name="Id" />
@@ -48,7 +82,6 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="serviceName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="sessionsNum" Type="int" Nullable="false" />
-          <Property Name="sessionsLength" Type="time" Precision="0" Nullable="false" />
           <Property Name="price" Type="int" Nullable="false" />
           <Property Name="description" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
@@ -100,6 +133,30 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <Property Name="orderID" Type="int" Nullable="false" />
           <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <Association Name="FK_meetingTBL_meetingTypeTBL">
+          <End Role="meetingTypeTBL" Type="Self.meetingTypeTBL" Multiplicity="1" />
+          <End Role="meetingTBL" Type="Self.meetingTBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="meetingTypeTBL">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="meetingTBL">
+              <PropertyRef Name="typeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_meetingTBL_projectTBL">
+          <End Role="projectTBL" Type="Self.projectTBL" Multiplicity="1" />
+          <End Role="meetingTBL" Type="Self.meetingTBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projectTBL">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="meetingTBL">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_orderTBL_costumerTBL">
           <End Role="costumerTBL" Type="Self.costumerTBL" Multiplicity="1" />
           <End Role="orderTBL" Type="Self.orderTBL" Multiplicity="*" />
@@ -109,6 +166,30 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
             </Principal>
             <Dependent Role="orderTBL">
               <PropertyRef Name="costumerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_projectTBL_costumerTBL">
+          <End Role="costumerTBL" Type="Self.costumerTBL" Multiplicity="1" />
+          <End Role="projectTBL" Type="Self.projectTBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="costumerTBL">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="projectTBL">
+              <PropertyRef Name="customerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_projectTBL_serviceTBL">
+          <End Role="serviceTBL" Type="Self.serviceTBL" Multiplicity="1" />
+          <End Role="projectTBL" Type="Self.projectTBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="serviceTBL">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="projectTBL">
+              <PropertyRef Name="serviceID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -139,7 +220,10 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
         <EntityContainer Name="dbModelStoreContainer">
           <EntitySet Name="costumerTBL" EntityType="Self.costumerTBL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="lecturesNseminarsTBL" EntityType="Self.lecturesNseminarsTBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="meetingTBL" EntityType="Self.meetingTBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="meetingTypeTBL" EntityType="Self.meetingTypeTBL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="orderTBL" EntityType="Self.orderTBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="projectTBL" EntityType="Self.projectTBL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="serviceTBL" EntityType="Self.serviceTBL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="subOrderTBL" EntityType="Self.subOrderTBL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="orderHistoryView" EntityType="Self.orderHistoryView" store:Type="Views" store:Schema="dbo">
@@ -163,9 +247,25 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
     [SubOrderView].[title] AS [title]
     FROM [dbo].[SubOrderView] AS [SubOrderView]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK_meetingTBL_meetingTypeTBL" Association="Self.FK_meetingTBL_meetingTypeTBL">
+            <End Role="meetingTypeTBL" EntitySet="meetingTypeTBL" />
+            <End Role="meetingTBL" EntitySet="meetingTBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_meetingTBL_projectTBL" Association="Self.FK_meetingTBL_projectTBL">
+            <End Role="projectTBL" EntitySet="projectTBL" />
+            <End Role="meetingTBL" EntitySet="meetingTBL" />
+          </AssociationSet>
           <AssociationSet Name="FK_orderTBL_costumerTBL" Association="Self.FK_orderTBL_costumerTBL">
             <End Role="costumerTBL" EntitySet="costumerTBL" />
             <End Role="orderTBL" EntitySet="orderTBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_projectTBL_costumerTBL" Association="Self.FK_projectTBL_costumerTBL">
+            <End Role="costumerTBL" EntitySet="costumerTBL" />
+            <End Role="projectTBL" EntitySet="projectTBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_projectTBL_serviceTBL" Association="Self.FK_projectTBL_serviceTBL">
+            <End Role="serviceTBL" EntitySet="serviceTBL" />
+            <End Role="projectTBL" EntitySet="projectTBL" />
           </AssociationSet>
           <AssociationSet Name="FK_subOrderTBL_orderTBL" Association="Self.FK_subOrderTBL_orderTBL">
             <End Role="orderTBL" EntitySet="orderTBL" />
@@ -183,7 +283,10 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
         <EntityContainer Name="dbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="costumerTBL" EntityType="dbModel.costumerTBL" />
           <EntitySet Name="lecturesNseminarsTBL" EntityType="dbModel.lecturesNseminarsTBL" />
+          <EntitySet Name="meetingTBL" EntityType="dbModel.meetingTBL" />
+          <EntitySet Name="meetingTypeTBL" EntityType="dbModel.meetingTypeTBL" />
           <EntitySet Name="orderTBL" EntityType="dbModel.orderTBL" />
+          <EntitySet Name="projectTBL" EntityType="dbModel.projectTBL" />
           <EntitySet Name="serviceTBL" EntityType="dbModel.serviceTBL" />
           <EntitySet Name="subOrderTBL" EntityType="dbModel.subOrderTBL" />
           <EntitySet Name="orderHistoryView" EntityType="dbModel.orderHistoryView" />
@@ -192,13 +295,29 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
             <End Role="costumerTBL" EntitySet="costumerTBL" />
             <End Role="orderTBL" EntitySet="orderTBL" />
           </AssociationSet>
+          <AssociationSet Name="FK_projectTBL_costumerTBL" Association="dbModel.FK_projectTBL_costumerTBL">
+            <End Role="costumerTBL" EntitySet="costumerTBL" />
+            <End Role="projectTBL" EntitySet="projectTBL" />
+          </AssociationSet>
           <AssociationSet Name="FK_subOrderTBL_serviceTBL" Association="dbModel.FK_subOrderTBL_serviceTBL">
             <End Role="lecturesNseminarsTBL" EntitySet="lecturesNseminarsTBL" />
             <End Role="subOrderTBL" EntitySet="subOrderTBL" />
           </AssociationSet>
+          <AssociationSet Name="FK_meetingTBL_meetingTypeTBL" Association="dbModel.FK_meetingTBL_meetingTypeTBL">
+            <End Role="meetingTypeTBL" EntitySet="meetingTypeTBL" />
+            <End Role="meetingTBL" EntitySet="meetingTBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_meetingTBL_projectTBL" Association="dbModel.FK_meetingTBL_projectTBL">
+            <End Role="projectTBL" EntitySet="projectTBL" />
+            <End Role="meetingTBL" EntitySet="meetingTBL" />
+          </AssociationSet>
           <AssociationSet Name="FK_subOrderTBL_orderTBL" Association="dbModel.FK_subOrderTBL_orderTBL">
             <End Role="orderTBL" EntitySet="orderTBL" />
             <End Role="subOrderTBL" EntitySet="subOrderTBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_projectTBL_serviceTBL" Association="dbModel.FK_projectTBL_serviceTBL">
+            <End Role="serviceTBL" EntitySet="serviceTBL" />
+            <End Role="projectTBL" EntitySet="projectTBL" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="costumerTBL">
@@ -216,6 +335,7 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <Property Name="notes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="institution" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="orderTBL" Relationship="dbModel.FK_orderTBL_costumerTBL" FromRole="costumerTBL" ToRole="orderTBL" />
+          <NavigationProperty Name="projectTBL" Relationship="dbModel.FK_projectTBL_costumerTBL" FromRole="costumerTBL" ToRole="projectTBL" />
         </EntityType>
         <EntityType Name="lecturesNseminarsTBL">
           <Key>
@@ -229,6 +349,30 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="subOrderTBL" Relationship="dbModel.FK_subOrderTBL_serviceTBL" FromRole="lecturesNseminarsTBL" ToRole="subOrderTBL" />
         </EntityType>
+        <EntityType Name="meetingTBL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="projectID" Type="Int32" Nullable="false" />
+          <Property Name="typeID" Type="Int32" Nullable="false" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="duration" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="notes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="meetingTypeTBL" Relationship="dbModel.FK_meetingTBL_meetingTypeTBL" FromRole="meetingTBL" ToRole="meetingTypeTBL" />
+          <NavigationProperty Name="projectTBL" Relationship="dbModel.FK_meetingTBL_projectTBL" FromRole="meetingTBL" ToRole="projectTBL" />
+        </EntityType>
+        <EntityType Name="meetingTypeTBL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="content" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="multiParticipant" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="meetingTBL" Relationship="dbModel.FK_meetingTBL_meetingTypeTBL" FromRole="meetingTypeTBL" ToRole="meetingTBL" />
+        </EntityType>
         <EntityType Name="orderTBL">
           <Key>
             <PropertyRef Name="Id" />
@@ -241,6 +385,22 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <NavigationProperty Name="costumerTBL" Relationship="dbModel.FK_orderTBL_costumerTBL" FromRole="orderTBL" ToRole="costumerTBL" />
           <NavigationProperty Name="subOrderTBL" Relationship="dbModel.FK_subOrderTBL_orderTBL" FromRole="orderTBL" ToRole="subOrderTBL" />
         </EntityType>
+        <EntityType Name="projectTBL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerID" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="finalPrice" Type="Int32" Nullable="false" />
+          <Property Name="meetingsNum" Type="Int32" Nullable="false" />
+          <Property Name="serviceID" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="costumerTBL" Relationship="dbModel.FK_projectTBL_costumerTBL" FromRole="projectTBL" ToRole="costumerTBL" />
+          <NavigationProperty Name="meetingTBL" Relationship="dbModel.FK_meetingTBL_projectTBL" FromRole="projectTBL" ToRole="meetingTBL" />
+          <NavigationProperty Name="serviceTBL" Relationship="dbModel.FK_projectTBL_serviceTBL" FromRole="projectTBL" ToRole="serviceTBL" />
+        </EntityType>
         <EntityType Name="serviceTBL">
           <Key>
             <PropertyRef Name="Id" />
@@ -248,9 +408,9 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="serviceName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="sessionsNum" Type="Int32" Nullable="false" />
-          <Property Name="sessionsLength" Type="Time" Nullable="false" Precision="0" />
           <Property Name="price" Type="Int32" Nullable="false" />
           <Property Name="description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="projectTBL" Relationship="dbModel.FK_projectTBL_serviceTBL" FromRole="serviceTBL" ToRole="projectTBL" />
         </EntityType>
         <EntityType Name="subOrderTBL">
           <Key>
@@ -310,6 +470,18 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_projectTBL_costumerTBL">
+          <End Type="dbModel.costumerTBL" Role="costumerTBL" Multiplicity="1" />
+          <End Type="dbModel.projectTBL" Role="projectTBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="costumerTBL">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="projectTBL">
+              <PropertyRef Name="customerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_subOrderTBL_serviceTBL">
           <End Type="dbModel.lecturesNseminarsTBL" Role="lecturesNseminarsTBL" Multiplicity="1" />
           <End Type="dbModel.subOrderTBL" Role="subOrderTBL" Multiplicity="*" />
@@ -322,6 +494,30 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_meetingTBL_meetingTypeTBL">
+          <End Type="dbModel.meetingTypeTBL" Role="meetingTypeTBL" Multiplicity="1" />
+          <End Type="dbModel.meetingTBL" Role="meetingTBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="meetingTypeTBL">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="meetingTBL">
+              <PropertyRef Name="typeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_meetingTBL_projectTBL">
+          <End Type="dbModel.projectTBL" Role="projectTBL" Multiplicity="1" />
+          <End Type="dbModel.meetingTBL" Role="meetingTBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projectTBL">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="meetingTBL">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_subOrderTBL_orderTBL">
           <End Type="dbModel.orderTBL" Role="orderTBL" Multiplicity="1" />
           <End Type="dbModel.subOrderTBL" Role="subOrderTBL" Multiplicity="*" />
@@ -331,6 +527,18 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
             </Principal>
             <Dependent Role="subOrderTBL">
               <PropertyRef Name="orderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_projectTBL_serviceTBL">
+          <End Type="dbModel.serviceTBL" Role="serviceTBL" Multiplicity="1" />
+          <End Type="dbModel.projectTBL" Role="projectTBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="serviceTBL">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="projectTBL">
+              <PropertyRef Name="serviceID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -368,6 +576,29 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="meetingTBL">
+            <EntityTypeMapping TypeName="dbModel.meetingTBL">
+              <MappingFragment StoreEntitySet="meetingTBL">
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+                <ScalarProperty Name="projectID" ColumnName="projectID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="meetingTypeTBL">
+            <EntityTypeMapping TypeName="dbModel.meetingTypeTBL">
+              <MappingFragment StoreEntitySet="meetingTypeTBL">
+                <ScalarProperty Name="multiParticipant" ColumnName="multiParticipant" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="orderTBL">
             <EntityTypeMapping TypeName="dbModel.orderTBL">
               <MappingFragment StoreEntitySet="orderTBL">
@@ -379,12 +610,25 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="projectTBL">
+            <EntityTypeMapping TypeName="dbModel.projectTBL">
+              <MappingFragment StoreEntitySet="projectTBL">
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="serviceID" ColumnName="serviceID" />
+                <ScalarProperty Name="meetingsNum" ColumnName="meetingsNum" />
+                <ScalarProperty Name="finalPrice" ColumnName="finalPrice" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="customerID" ColumnName="customerID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="serviceTBL">
             <EntityTypeMapping TypeName="dbModel.serviceTBL">
               <MappingFragment StoreEntitySet="serviceTBL">
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="sessionsLength" ColumnName="sessionsLength" />
                 <ScalarProperty Name="sessionsNum" ColumnName="sessionsNum" />
                 <ScalarProperty Name="serviceName" ColumnName="serviceName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />

@@ -216,7 +216,6 @@ namespace Landau.Win
                 toUpdate.description = service.description;
                 toUpdate.serviceName = service.serviceName;
                 toUpdate.sessionsNum = service.sessionsNum;
-                toUpdate.sessionsLength = service.sessionsLength;
                 toUpdate.price = service.price;
                 db.SaveChanges();
                 GetAllServices();

@@ -18,6 +18,7 @@ namespace Landau.Win
         public costumerTBL()
         {
             this.orderTBL = new HashSet<orderTBL>();
+            this.projectTBL = new HashSet<projectTBL>();
         }
     
         public int Id { get; set; }
@@ -33,5 +34,7 @@ namespace Landau.Win
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<orderTBL> orderTBL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<projectTBL> projectTBL { get; set; }
     }
 }

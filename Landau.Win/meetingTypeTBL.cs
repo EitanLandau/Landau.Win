@@ -12,21 +12,20 @@ namespace Landau.Win
     using System;
     using System.Collections.Generic;
     
-    public partial class serviceTBL
+    public partial class meetingTypeTBL
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public serviceTBL()
+        public meetingTypeTBL()
         {
-            this.projectTBL = new HashSet<projectTBL>();
+            this.meetingTBL = new HashSet<meetingTBL>();
         }
     
         public int Id { get; set; }
-        public string serviceName { get; set; }
-        public int sessionsNum { get; set; }
-        public int price { get; set; }
-        public string description { get; set; }
+        public string name { get; set; }
+        public string content { get; set; }
+        public bool multiParticipant { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<projectTBL> projectTBL { get; set; }
+        public virtual ICollection<meetingTBL> meetingTBL { get; set; }
     }
 }
