@@ -127,7 +127,7 @@ MessageBoxIcon.Question);
 
         private void orderDeatailsWin_Load(object sender, EventArgs e)
         {
-            pickProductCmbx.DataSource = DBHelper.GetAlllecturesNseminars();
+            pickProductCmbx.DataSource = DBHelper.GetAllLecturesNseminars();
             pickProductCmbx.DisplayMember = "title";
         }
 

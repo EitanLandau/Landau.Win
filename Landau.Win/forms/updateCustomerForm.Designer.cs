@@ -288,6 +288,7 @@
             this.Controls.Add(this.updFirstNameTxb);
             this.Controls.Add(this.pickCustLbl);
             this.Controls.Add(this.pickCustomerCmbx);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
             this.Name = "updateCustomerForm";

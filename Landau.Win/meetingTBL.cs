@@ -21,6 +21,7 @@ namespace Landau.Win
         public System.DateTime date { get; set; }
         public System.TimeSpan duration { get; set; }
         public string notes { get; set; }
+        public string title { get; set; }
     
         public virtual meetingTypeTBL meetingTypeTBL { get; set; }
         public virtual projectTBL projectTBL { get; set; }

@@ -23,8 +23,6 @@ namespace Landau.Win
         public int Id { get; set; }
         public int customerID { get; set; }
         public string title { get; set; }
-        public int finalPrice { get; set; }
-        public int meetingsNum { get; set; }
         public int serviceID { get; set; }
         public bool status { get; set; }
         public string description { get; set; }

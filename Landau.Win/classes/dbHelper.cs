@@ -18,6 +18,8 @@ namespace Landau.Win
         public static List<subOrderTBL> allSubOrders;
         public static List<serviceTBL> allServices;
         public static List<lecturesNseminarsTBL> allLecturesNseminars;
+        public static List<meetingTBL> allMeetings;
+        public static List<projectTBL> allProjects;
         public static List<orderHistoryView> allorderHistoryViews;
         #endregion
 
@@ -29,7 +31,7 @@ namespace Landau.Win
             GetAllOrders();
             GetAllSubOrders();
             GetAllServices();
-            GetAlllecturesNseminars();
+            GetAllLecturesNseminars();
             getOrderHistoryViews();
 
         }
@@ -63,10 +65,20 @@ namespace Landau.Win
             allServices = (from s in db.serviceTBL orderby s.serviceName select s).ToList();
             return allServices;
         }
-        public static List<lecturesNseminarsTBL> GetAlllecturesNseminars()
+        public static List<lecturesNseminarsTBL> GetAllLecturesNseminars()
         {
            allLecturesNseminars = (from l in db.lecturesNseminarsTBL orderby l.title select l).ToList();
             return allLecturesNseminars;
+        }
+        public static List<meetingTBL> GetAllMeetings()
+        {
+            allMeetings = (from m in db.meetingTBL orderby m.date select m).ToList();
+            return allMeetings;
+        }
+        public static List<projectTBL> GetAllprojects()
+        {
+            allProjects = (from p in db.projectTBL orderby p.title select p).ToList();
+            return allProjects;
         }
         #endregion
 
@@ -124,7 +136,7 @@ namespace Landau.Win
             {
                 db.lecturesNseminarsTBL.Add(product);
                 db.SaveChanges();
-                GetAlllecturesNseminars();
+                GetAllLecturesNseminars();
                 return product;
             }
             catch (Exception ex)
@@ -141,6 +153,36 @@ namespace Landau.Win
                 db.SaveChanges();
                 GetAllServices();
                 return service;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error adding service: " + ex.Message);
+                return null;
+            }
+        }
+            public static meetingTBL AddMeeting(meetingTBL meeting)
+            {
+                try
+                {
+                    db.meetingTBL.Add(meeting);
+                    db.SaveChanges();
+                    GetAllServices();
+                    return meeting;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error adding service: " + ex.Message);
+                    return null;
+                }
+            }
+        public static projectTBL AddProject(projectTBL project)
+        {
+            try
+            {
+                db.projectTBL.Add(project);
+                db.SaveChanges();
+                GetAllprojects();
+                return project;
             }
             catch (Exception ex)
             {
@@ -219,6 +261,44 @@ namespace Landau.Win
                 toUpdate.price = service.price;
                 db.SaveChanges();
                 GetAllServices();
+                return true;
+            }
+            return false;
+        }
+        public static bool Updatemeeting(meetingTBL meeting)
+        {
+            var toUpdate = db.meetingTBL.FirstOrDefault(m => m.Id == meeting.Id);
+            if (toUpdate != null)
+            {
+                toUpdate.Id = meeting.Id;
+                toUpdate.projectID = meeting.projectID;
+                toUpdate.title = meeting.title;
+                toUpdate.duration = meeting.duration;
+                toUpdate.date = meeting.date;
+                toUpdate.address = meeting.address;
+                toUpdate.typeID = meeting.typeID;
+                toUpdate.notes = meeting.notes;
+                db.SaveChanges();
+                GetAllMeetings();
+                return true;
+            }
+            return false;
+        }
+        public static bool UpdateProject(projectTBL project)
+        {
+            var toUpdate = db.projectTBL.FirstOrDefault(p => p.Id == project.Id);
+            if (toUpdate != null)
+            {
+                toUpdate.Id = project.Id;
+                toUpdate.customerID = project.customerID;
+                toUpdate.title = project.title;
+                toUpdate.finalPrice = project.finalPrice;
+                toUpdate.meetingsNum = project.meetingsNum;
+                toUpdate.serviceID = project.serviceID;
+                toUpdate.status = project.status;
+                toUpdate.description = project.description;
+                db.SaveChanges();
+                GetAllprojects();
                 return true;
             }
             return false;
