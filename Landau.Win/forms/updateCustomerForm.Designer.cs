@@ -34,7 +34,6 @@
             this.costumerTBLBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.costumerTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pickCustLbl = new System.Windows.Forms.Label();
-            this.updateFormPic = new System.Windows.Forms.PictureBox();
             this.updFirstNameTxb = new System.Windows.Forms.TextBox();
             this.updEmailTxb = new System.Windows.Forms.TextBox();
             this.updLastNameTxb = new System.Windows.Forms.TextBox();
@@ -54,7 +53,6 @@
             this.updInstitutionTxb = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.updateFormPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +62,7 @@
             this.pickCustomerCmbx.DataSource = this.costumerTBLBindingSource1;
             this.pickCustomerCmbx.DisplayMember = "fullName";
             this.pickCustomerCmbx.FormattingEnabled = true;
-            this.pickCustomerCmbx.Location = new System.Drawing.Point(311, 62);
+            this.pickCustomerCmbx.Location = new System.Drawing.Point(373, 62);
             this.pickCustomerCmbx.Name = "pickCustomerCmbx";
             this.pickCustomerCmbx.Size = new System.Drawing.Size(176, 24);
             this.pickCustomerCmbx.TabIndex = 0;
@@ -86,31 +84,17 @@
             this.pickCustLbl.BackColor = System.Drawing.SystemColors.Control;
             this.pickCustLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickCustLbl.ForeColor = System.Drawing.Color.DarkOrange;
-            this.pickCustLbl.Location = new System.Drawing.Point(340, 19);
+            this.pickCustLbl.Location = new System.Drawing.Point(402, 19);
             this.pickCustLbl.Name = "pickCustLbl";
             this.pickCustLbl.Size = new System.Drawing.Size(120, 29);
             this.pickCustLbl.TabIndex = 1;
             this.pickCustLbl.Text = "בחר לקוח";
             this.pickCustLbl.Click += new System.EventHandler(this.pickCustLbl_Click);
             // 
-            // updateFormPic
-            // 
-            this.updateFormPic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.updateFormPic.Image = ((System.Drawing.Image)(resources.GetObject("updateFormPic.Image")));
-            this.updateFormPic.Location = new System.Drawing.Point(-4, 0);
-            this.updateFormPic.Name = "updateFormPic";
-            this.updateFormPic.Size = new System.Drawing.Size(797, 455);
-            this.updateFormPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.updateFormPic.TabIndex = 2;
-            this.updateFormPic.TabStop = false;
-            this.updateFormPic.Click += new System.EventHandler(this.updateFormPic_Click);
-            // 
             // updFirstNameTxb
             // 
             this.updFirstNameTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updFirstNameTxb.Location = new System.Drawing.Point(486, 127);
+            this.updFirstNameTxb.Location = new System.Drawing.Point(568, 120);
             this.updFirstNameTxb.Name = "updFirstNameTxb";
             this.updFirstNameTxb.Size = new System.Drawing.Size(142, 22);
             this.updFirstNameTxb.TabIndex = 3;
@@ -119,7 +103,7 @@
             // updEmailTxb
             // 
             this.updEmailTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updEmailTxb.Location = new System.Drawing.Point(486, 258);
+            this.updEmailTxb.Location = new System.Drawing.Point(568, 243);
             this.updEmailTxb.Name = "updEmailTxb";
             this.updEmailTxb.Size = new System.Drawing.Size(142, 22);
             this.updEmailTxb.TabIndex = 4;
@@ -127,7 +111,7 @@
             // updLastNameTxb
             // 
             this.updLastNameTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updLastNameTxb.Location = new System.Drawing.Point(486, 200);
+            this.updLastNameTxb.Location = new System.Drawing.Point(568, 186);
             this.updLastNameTxb.Name = "updLastNameTxb";
             this.updLastNameTxb.Size = new System.Drawing.Size(137, 22);
             this.updLastNameTxb.TabIndex = 5;
@@ -135,7 +119,7 @@
             // updPhoneMtxb
             // 
             this.updPhoneMtxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updPhoneMtxb.Location = new System.Drawing.Point(486, 307);
+            this.updPhoneMtxb.Location = new System.Drawing.Point(568, 302);
             this.updPhoneMtxb.Mask = "(999) 000-0000";
             this.updPhoneMtxb.Name = "updPhoneMtxb";
             this.updPhoneMtxb.Size = new System.Drawing.Size(142, 22);
@@ -145,7 +129,7 @@
             // 
             this.updBdateDtp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.updBdateDtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.updBdateDtp.Location = new System.Drawing.Point(486, 355);
+            this.updBdateDtp.Location = new System.Drawing.Point(568, 357);
             this.updBdateDtp.Name = "updBdateDtp";
             this.updBdateDtp.Size = new System.Drawing.Size(113, 22);
             this.updBdateDtp.TabIndex = 7;
@@ -156,7 +140,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label1.Location = new System.Drawing.Point(677, 120);
+            this.label1.Location = new System.Drawing.Point(791, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 29);
             this.label1.TabIndex = 8;
@@ -168,7 +152,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label2.Location = new System.Drawing.Point(643, 349);
+            this.label2.Location = new System.Drawing.Point(763, 352);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 29);
             this.label2.TabIndex = 9;
@@ -180,7 +164,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label3.Location = new System.Drawing.Point(705, 300);
+            this.label3.Location = new System.Drawing.Point(825, 301);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 29);
             this.label3.TabIndex = 10;
@@ -192,7 +176,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label4.Location = new System.Drawing.Point(701, 251);
+            this.label4.Location = new System.Drawing.Point(821, 236);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 29);
             this.label4.TabIndex = 11;
@@ -204,7 +188,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label5.Location = new System.Drawing.Point(652, 194);
+            this.label5.Location = new System.Drawing.Point(761, 179);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(141, 29);
             this.label5.TabIndex = 12;
@@ -225,7 +209,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label7.Location = new System.Drawing.Point(388, 127);
+            this.label7.Location = new System.Drawing.Point(412, 127);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 29);
             this.label7.TabIndex = 14;
@@ -234,10 +218,10 @@
             // updNotesTxb
             // 
             this.updNotesTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updNotesTxb.Location = new System.Drawing.Point(194, 128);
+            this.updNotesTxb.Location = new System.Drawing.Point(179, 134);
             this.updNotesTxb.Multiline = true;
             this.updNotesTxb.Name = "updNotesTxb";
-            this.updNotesTxb.Size = new System.Drawing.Size(176, 222);
+            this.updNotesTxb.Size = new System.Drawing.Size(176, 271);
             this.updNotesTxb.TabIndex = 15;
             // 
             // updCustomerDeatils
@@ -247,7 +231,7 @@
             this.updCustomerDeatils.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.updCustomerDeatils.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updCustomerDeatils.ForeColor = System.Drawing.Color.LightYellow;
-            this.updCustomerDeatils.Location = new System.Drawing.Point(12, 373);
+            this.updCustomerDeatils.Location = new System.Drawing.Point(12, 418);
             this.updCustomerDeatils.Name = "updCustomerDeatils";
             this.updCustomerDeatils.Size = new System.Drawing.Size(134, 53);
             this.updCustomerDeatils.TabIndex = 16;
@@ -265,7 +249,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label9.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label9.Location = new System.Drawing.Point(711, 401);
+            this.label9.Location = new System.Drawing.Point(837, 422);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 29);
             this.label9.TabIndex = 18;
@@ -274,7 +258,7 @@
             // updInstitutionTxb
             // 
             this.updInstitutionTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updInstitutionTxb.Location = new System.Drawing.Point(486, 406);
+            this.updInstitutionTxb.Location = new System.Drawing.Point(568, 429);
             this.updInstitutionTxb.Name = "updInstitutionTxb";
             this.updInstitutionTxb.Size = new System.Drawing.Size(142, 22);
             this.updInstitutionTxb.TabIndex = 19;
@@ -283,7 +267,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(925, 495);
             this.Controls.Add(this.updInstitutionTxb);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.updCustomerDeatils);
@@ -302,7 +288,6 @@
             this.Controls.Add(this.updFirstNameTxb);
             this.Controls.Add(this.pickCustLbl);
             this.Controls.Add(this.pickCustomerCmbx);
-            this.Controls.Add(this.updateFormPic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
             this.Name = "updateCustomerForm";
@@ -310,7 +295,6 @@
             this.Load += new System.EventHandler(this.updateCustomerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.updateFormPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -321,7 +305,6 @@
 
         private System.Windows.Forms.ComboBox pickCustomerCmbx;
         private System.Windows.Forms.Label pickCustLbl;
-        private System.Windows.Forms.PictureBox updateFormPic;
         private System.Windows.Forms.TextBox updFirstNameTxb;
         private System.Windows.Forms.TextBox updEmailTxb;
         private System.Windows.Forms.TextBox updLastNameTxb;

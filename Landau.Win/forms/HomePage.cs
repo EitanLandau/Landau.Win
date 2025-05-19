@@ -23,6 +23,7 @@ namespace Landau.Win
         private void HomePage_Load(object sender, EventArgs e)
         {
             DBHelper.Init();
+
         }
 
 
@@ -47,6 +48,7 @@ namespace Landau.Win
             current.TopMost = true;
             mainPanel.Controls.Add(current);
             current.Show();
+            
         }
         public void OpenAddOrderForm()
         {
