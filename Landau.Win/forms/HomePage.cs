@@ -249,5 +249,23 @@ namespace Landau.Win
             mainPanel.Controls.Add(current);
             current.Show();
         }
+
+        private void mangeServicesBtn_Click(object sender, EventArgs e)
+        {
+            if (current != null)
+            {
+                if (current is manageServiceWin)
+                {
+                    return;
+                }
+                current.Close();
+            }
+            current = new manageServiceWin();
+            current.Dock = DockStyle.Fill;
+            current.TopLevel = false;
+            current.TopMost = true;
+            mainPanel.Controls.Add(current);
+            current.Show();
+        }
     }
 }

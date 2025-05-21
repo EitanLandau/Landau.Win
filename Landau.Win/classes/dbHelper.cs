@@ -292,8 +292,6 @@ namespace Landau.Win
                 toUpdate.Id = project.Id;
                 toUpdate.customerID = project.customerID;
                 toUpdate.title = project.title;
-                toUpdate.finalPrice = project.finalPrice;
-                toUpdate.meetingsNum = project.meetingsNum;
                 toUpdate.serviceID = project.serviceID;
                 toUpdate.status = project.status;
                 toUpdate.description = project.description;

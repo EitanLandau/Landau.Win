@@ -12,6 +12,7 @@ namespace Landau.Win.forms
 {
     public partial class manageServiceWin : Form
     {
+        List<serviceTBL> serviceList;
         public manageServiceWin()
         {
             InitializeComponent();
@@ -19,7 +20,26 @@ namespace Landau.Win.forms
 
         private void manageServiceWin_Load(object sender, EventArgs e)
         {
+            updateDGV();
+            pickServiceCmbx.DataSource = DBHelper.allServices;
+            pickServiceCmbx.DisplayMember = "serviceName";
+            pickServiceCmbx.ValueMember = "Id";
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void updateDGV()
+        {
+            serviceList = DBHelper.allServices;
+            serviceList = serviceList.OrderBy(x => x.serviceName).ToList();
+            servicesDGV.DataSource = serviceList;
         }
     }
 }

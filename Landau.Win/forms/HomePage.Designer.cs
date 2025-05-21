@@ -52,16 +52,16 @@
             this.kryptonRibbonTab1 = new Krypton.Ribbon.KryptonRibbonTab();
             this.kryptonRibbonGroup1 = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple3 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
-            this.kryptonRibbonGroupButton1 = new Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.kryptonRibbonGroupButton2 = new Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.kryptonRibbonGroupButton3 = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.openProjectBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.updProjectBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.mangeProjectBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kryptonRibbonGroupTriple6 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.kryptonRibbonGroup4 = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple7 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
-            this.kryptonRibbonGroupButton5 = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.mangeServicesBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kryptonRibbonGroup3 = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple5 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
-            this.kryptonRibbonGroupButton4 = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.addTaskBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.kryptonRibbonGroupThemeComboBox1 = new Krypton.Ribbon.KryptonRibbonGroupThemeComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).BeginInit();
@@ -214,24 +214,24 @@
             // kryptonRibbonGroupTriple3
             // 
             this.kryptonRibbonGroupTriple3.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.kryptonRibbonGroupButton1,
-            this.kryptonRibbonGroupButton2,
-            this.kryptonRibbonGroupButton3});
+            this.openProjectBtn,
+            this.updProjectBtn,
+            this.mangeProjectBtn});
             // 
-            // kryptonRibbonGroupButton1
+            // openProjectBtn
             // 
-            this.kryptonRibbonGroupButton1.ImageLarge = ((System.Drawing.Image)(resources.GetObject("kryptonRibbonGroupButton1.ImageLarge")));
-            this.kryptonRibbonGroupButton1.TextLine1 = "פתיחת פרויקט";
+            this.openProjectBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("openProjectBtn.ImageLarge")));
+            this.openProjectBtn.TextLine1 = "פתיחת פרויקט";
             // 
-            // kryptonRibbonGroupButton2
+            // updProjectBtn
             // 
-            this.kryptonRibbonGroupButton2.ImageLarge = ((System.Drawing.Image)(resources.GetObject("kryptonRibbonGroupButton2.ImageLarge")));
-            this.kryptonRibbonGroupButton2.TextLine1 = "עדכון פרוייקט";
+            this.updProjectBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("updProjectBtn.ImageLarge")));
+            this.updProjectBtn.TextLine1 = "עדכון פרוייקט";
             // 
-            // kryptonRibbonGroupButton3
+            // mangeProjectBtn
             // 
-            this.kryptonRibbonGroupButton3.ImageLarge = ((System.Drawing.Image)(resources.GetObject("kryptonRibbonGroupButton3.ImageLarge")));
-            this.kryptonRibbonGroupButton3.TextLine1 = "עקוב אחרי הפרויקט";
+            this.mangeProjectBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("mangeProjectBtn.ImageLarge")));
+            this.mangeProjectBtn.TextLine1 = "עקוב אחרי הפרויקט";
             // 
             // kryptonRibbonGroup4
             // 
@@ -242,12 +242,13 @@
             // kryptonRibbonGroupTriple7
             // 
             this.kryptonRibbonGroupTriple7.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.kryptonRibbonGroupButton5});
+            this.mangeServicesBtn});
             // 
-            // kryptonRibbonGroupButton5
+            // mangeServicesBtn
             // 
-            this.kryptonRibbonGroupButton5.ImageLarge = ((System.Drawing.Image)(resources.GetObject("kryptonRibbonGroupButton5.ImageLarge")));
-            this.kryptonRibbonGroupButton5.TextLine1 = "נהל תהליכים";
+            this.mangeServicesBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("mangeServicesBtn.ImageLarge")));
+            this.mangeServicesBtn.TextLine1 = "נהל תהליכים";
+            this.mangeServicesBtn.Click += new System.EventHandler(this.mangeServicesBtn_Click);
             // 
             // kryptonRibbonGroup3
             // 
@@ -258,12 +259,12 @@
             // kryptonRibbonGroupTriple5
             // 
             this.kryptonRibbonGroupTriple5.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.kryptonRibbonGroupButton4});
+            this.addTaskBtn});
             // 
-            // kryptonRibbonGroupButton4
+            // addTaskBtn
             // 
-            this.kryptonRibbonGroupButton4.ImageLarge = ((System.Drawing.Image)(resources.GetObject("kryptonRibbonGroupButton4.ImageLarge")));
-            this.kryptonRibbonGroupButton4.TextLine1 = "הוסף משימה";
+            this.addTaskBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("addTaskBtn.ImageLarge")));
+            this.addTaskBtn.TextLine1 = "הוסף משימה";
             // 
             // mainPanel
             // 
@@ -319,22 +320,22 @@
         private Krypton.Ribbon.KryptonRibbonTab kryptonRibbonTab1;
         private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup1;
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple3;
-        private Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton1;
+        private Krypton.Ribbon.KryptonRibbonGroupButton openProjectBtn;
         private Krypton.Ribbon.KryptonRibbonGroupThemeComboBox kryptonRibbonGroupThemeComboBox1;
         private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup2;
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple4;
         private Krypton.Ribbon.KryptonRibbonGroupButton lectureListBtn;
         private Krypton.Ribbon.KryptonRibbonGroupButton addLectureBtn;
         private Krypton.Ribbon.KryptonRibbonGroupButton updLectureBtn;
-        private Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton2;
-        private Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton3;
+        private Krypton.Ribbon.KryptonRibbonGroupButton updProjectBtn;
+        private Krypton.Ribbon.KryptonRibbonGroupButton mangeProjectBtn;
         private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup3;
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple5;
-        private Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton4;
+        private Krypton.Ribbon.KryptonRibbonGroupButton addTaskBtn;
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple6;
         private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup4;
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple7;
-        private Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton5;
+        private Krypton.Ribbon.KryptonRibbonGroupButton mangeServicesBtn;
     }
 }
 
