@@ -14,6 +14,7 @@ namespace Landau.Win.forms
     {
         List<lecturesNseminarsTBL> allLecturesNseminars;
         List<subOrderTBL> allSubOrders;
+        List<orderTBL> allorders;
         public updateOrderDeatsWin()
         {
             InitializeComponent();
@@ -30,6 +31,10 @@ namespace Landau.Win.forms
             changeProductCmbx.DataSource = allLecturesNseminars;
             changeProductCmbx.DisplayMember = "title";
             changeProductCmbx.ValueMember = "Id";
+            allorders = DBHelper.allOrders;
+            pickOrderCmbx.DataSource = allorders;
+            pickOrderCmbx.DisplayMember = "Id";
+            pickOrderCmbx.ValueMember = "Id";
         }
 
         private void changeProductCmbx_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,10 +89,9 @@ namespace Landau.Win.forms
             {
                 return;
             }
-            if (orderIDTxb.Text != null)
+           /* if (pickOrderCmbx != null)
             {
                 int orderID;
-                orderID = int.Parse(orderIDTxb.Text);
                 subOrderTBL s1 = allSubOrders.Where(x => x.Id.Equals(orderID)).FirstOrDefault();
                 lecturesNseminarsTBL selectedLecture = (lecturesNseminarsTBL)changeProductCmbx.SelectedItem;
                 DateTime DatePart = updOrderDateDtp.Value.Date;
@@ -107,7 +111,7 @@ namespace Landau.Win.forms
             {
                 MessageBox.Show("יש למלא מספר הזמנה");
                 return;
-            }
+            }*/
 
         }
         private bool validateForm()
@@ -133,71 +137,9 @@ namespace Landau.Win.forms
 
         }
 
-        private void deleteOrderBtn_Click(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int orderID;
-            if (int.TryParse(orderIDTxb.Text, out int num))
-            {
-                orderID = int.Parse(orderIDTxb.Text);
-                subOrderTBL selectedOrder = allSubOrders.Where(x => x.Id.Equals(orderID)).FirstOrDefault();
-                if (selectedOrder == null)
-                {
-                    MessageBox.Show("יש לבחור לקוח");
-                    return;
-                }
-                DialogResult result = MessageBox.Show(
-                    "האם אתה בטוח שאתה רוצה למחוק את הזמנה?",
-                    "אישור מחיקה",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning);
 
-                if (result == DialogResult.Yes)
-                {
-                    DBHelper.DeleteSubOrder(selectedOrder);
-                    MessageBox.Show("לקוח נמחק בהצלחה");
-                    changeProductCmbx.Text = "";
-                    updAmmountInvitedUD.Value = 1;
-                    updAdressTxb.Text = "";
-                    updOrderDeatsNotes.Text = "";
-                }
-            }
-            else
-            {
-                MessageBox.Show("מספר לא תקיו");
-                return;
-            }
-        }
-
-        private void conffirmBtn_Click(object sender, EventArgs e)
-        {
-            int orderID;
-            if (int.TryParse(orderIDTxb.Text, out int num))
-            {
-                orderID = int.Parse(orderIDTxb.Text);
-                subOrderTBL SO1 = allSubOrders.Where(x => x.Id.Equals(orderID)).FirstOrDefault();
-                if (SO1 != null)
-                {
-                    lecturesNseminarsTBL current = allLecturesNseminars.Where(x => x.Id.Equals(SO1.lectureID)).FirstOrDefault();
-                    changeProductCmbx.Text = current.title;
-                    updOrderDateDtp.Value = SO1.date.Date;
-                    updOrderHourDtp.Value = SO1.date;
-                    updAmmountInvitedUD.Value = SO1.amountInvited;
-                    updAdressTxb.Text = SO1.adress;
-                    updOrderDeatsNotes.Text = SO1.notes;
-                }
-                else
-                {
-                    MessageBox.Show("מספר הזמנה לא קיים במערכת");
-                    return;
-
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("מספר לא תקיו");
-                return;
-            }
         }
     }
 }
