@@ -82,7 +82,7 @@
           <Property Name="serviceName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="sessionsNum" Type="int" Nullable="false" />
           <Property Name="price" Type="int" Nullable="false" />
-          <Property Name="description" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="description" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="subOrderTBL">
           <Key>
@@ -407,7 +407,7 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <Property Name="serviceName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="sessionsNum" Type="Int32" Nullable="false" />
           <Property Name="price" Type="Int32" Nullable="false" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="projectTBL" Relationship="dbModel.FK_projectTBL_serviceTBL" FromRole="serviceTBL" ToRole="projectTBL" />
         </EntityType>
         <EntityType Name="subOrderTBL">

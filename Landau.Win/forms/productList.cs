@@ -21,7 +21,7 @@ namespace Landau.Win.forms
         private void productList_Load(object sender, EventArgs e)
         {
             allLectures = DBHelper.allLecturesNseminars;
-            allLectures = allLectures.OrderBy(x => x.title).ToList();
+            allLectures = allLectures.OrderBy(x => x.Id).ToList();
             productsDGV.DataSource = allLectures;
         }
     }

@@ -21,34 +21,7 @@ namespace Landau.Win.forms
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            int orderID;
-            if (int.TryParse(orderIDTxb.Text, out int num))
-            {
-                orderID = int.Parse(orderIDTxb.Text);
-                subOrderTBL SO1 = allSubOrders.Where(x => x.Id.Equals(orderID)).FirstOrDefault();
-                if (SO1 != null)
-                {
-                    lecturesNseminarsTBL current = allLecturesNseminars.Where(x => x.Id.Equals(SO1.lectureID)).FirstOrDefault();
-                    changeProductCmbx.Text = current.title;
-                    updOrderDateDtp.Value = SO1.date.Date;
-                    updOrderHourDtp.Value = SO1.date;
-                    updAmmountInvitedUD.Value = SO1.amountInvited;
-                    updAdressTxb.Text = SO1.adress;
-                    updOrderDeatsNotes.Text = SO1.notes;
-                }
-                else
-                {
-                    MessageBox.Show("מספר הזמנה לא קיים במערכת");
-                    return;
 
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("מספר לא תקיו");
-                return;
-            }
         }
         private void updateOrderDeatsWin_Load(object sender, EventArgs e)
         {
@@ -187,6 +160,38 @@ namespace Landau.Win.forms
                     updAdressTxb.Text = "";
                     updOrderDeatsNotes.Text = "";
                 }
+            }
+            else
+            {
+                MessageBox.Show("מספר לא תקיו");
+                return;
+            }
+        }
+
+        private void conffirmBtn_Click(object sender, EventArgs e)
+        {
+            int orderID;
+            if (int.TryParse(orderIDTxb.Text, out int num))
+            {
+                orderID = int.Parse(orderIDTxb.Text);
+                subOrderTBL SO1 = allSubOrders.Where(x => x.Id.Equals(orderID)).FirstOrDefault();
+                if (SO1 != null)
+                {
+                    lecturesNseminarsTBL current = allLecturesNseminars.Where(x => x.Id.Equals(SO1.lectureID)).FirstOrDefault();
+                    changeProductCmbx.Text = current.title;
+                    updOrderDateDtp.Value = SO1.date.Date;
+                    updOrderHourDtp.Value = SO1.date;
+                    updAmmountInvitedUD.Value = SO1.amountInvited;
+                    updAdressTxb.Text = SO1.adress;
+                    updOrderDeatsNotes.Text = SO1.notes;
+                }
+                else
+                {
+                    MessageBox.Show("מספר הזמנה לא קיים במערכת");
+                    return;
+
+                }
+
             }
             else
             {

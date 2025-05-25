@@ -69,9 +69,9 @@
             this.addSubOrderBtn.BackColor = System.Drawing.Color.Navy;
             this.addSubOrderBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.addSubOrderBtn.ForeColor = System.Drawing.Color.AliceBlue;
-            this.addSubOrderBtn.Location = new System.Drawing.Point(41, 331);
+            this.addSubOrderBtn.Location = new System.Drawing.Point(32, 331);
             this.addSubOrderBtn.Name = "addSubOrderBtn";
-            this.addSubOrderBtn.Size = new System.Drawing.Size(147, 46);
+            this.addSubOrderBtn.Size = new System.Drawing.Size(156, 46);
             this.addSubOrderBtn.TabIndex = 14;
             this.addSubOrderBtn.Text = "הוסף הזמנה";
             this.addSubOrderBtn.UseVisualStyleBackColor = false;
@@ -106,9 +106,9 @@
             this.finishOrderBtn.BackColor = System.Drawing.Color.Navy;
             this.finishOrderBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.finishOrderBtn.ForeColor = System.Drawing.Color.AliceBlue;
-            this.finishOrderBtn.Location = new System.Drawing.Point(41, 383);
+            this.finishOrderBtn.Location = new System.Drawing.Point(32, 383);
             this.finishOrderBtn.Name = "finishOrderBtn";
-            this.finishOrderBtn.Size = new System.Drawing.Size(147, 46);
+            this.finishOrderBtn.Size = new System.Drawing.Size(156, 46);
             this.finishOrderBtn.TabIndex = 17;
             this.finishOrderBtn.Text = "סיים הזמנה";
             this.finishOrderBtn.UseVisualStyleBackColor = false;

@@ -41,5 +41,39 @@ namespace Landau.Win.forms
             serviceList = serviceList.OrderBy(x => x.serviceName).ToList();
             servicesDGV.DataSource = serviceList;
         }
+
+    private void addProductBtn_Click(object sender, EventArgs e)
+        {
+            if (!validateForm())
+            {
+                return;
+            }
+            serviceTBL s1 = new serviceTBL();
+            s1.serviceName = serviceNameTxb.Text;
+            s1.sessionsNum = (int)(howManySessionsUD.Value);
+            s1.price = (int)servicePriceUD.Value; ;
+            s1.description = serviceDescriptionTxb.Text;
+            s1 = DBHelper.AddService(s1);
+            if (s1 != null)
+            {
+                MessageBox.Show("שירות נוסף בהצלחה");
+                serviceDescriptionTxb .Text = "";
+                servicePriceUD.Value = 1;
+                serviceNameTxb.Text = "";
+                howManySessionsUD.Value = 1;
+                updateDGV();
+            }
+            else
+            {
+                MessageBox.Show("וואלה לא סבבה");
+            }
+        }
+
+        private bool validateForm()
+        {
+            bool a1 = Utils.isNotEmpty(serviceNameTxb.Text, errorProviderMangeServices, serviceNameTxb, "יש למלא שם תהליך");
+            bool a2 = Utils.isNotEmpty(serviceDescriptionTxb.Text, errorProviderMangeServices, serviceDescriptionTxb, "יש למלא תיאור");
+            return a1 && a2;
+        }
     }
 }

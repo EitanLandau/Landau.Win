@@ -244,6 +244,7 @@ namespace Landau.Win
                 toUpdate.notes = subOrder.notes;
                 db.SaveChanges();
                 GetAllSubOrders();
+                getOrderHistoryViews();
                 return true;
             }
             return false;
