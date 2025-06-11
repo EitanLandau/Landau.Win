@@ -100,41 +100,46 @@ namespace Landau.Win.forms
 
         }
 
-    /*  private void deleteBtn_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            costumerTBL selectedCustomer = (costumerTBL)pickCustomerCmbx.SelectedItem;
-            if (selectedCustomer == null)
-            {
-                MessageBox.Show("יש לבחור לקוח");
-                return;
-            }
-            DialogResult result = MessageBox.Show(
-                "האם אתה בטוח שאתה רוצה למחוק את הלקוח פעולה זאת תמחק גם את כל ההזמנות של הלקוח?",
-                "אישור מחיקה",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
 
-            if (result == DialogResult.Yes)
-            {
-                allOrders = DBHelper.allOrders;
-                allSubOrders = DBHelper.allSubOrders;
+        }
 
-                orderTBL current = allOrders.Where(x => x.costumerID.Equals(selectedCustomer.Id)).FirstOrDefault();
-                while ( current!= null)
+        /*  private void deleteBtn_Click(object sender, EventArgs e)
+            {
+                costumerTBL selectedCustomer = (costumerTBL)pickCustomerCmbx.SelectedItem;
+                if (selectedCustomer == null)
                 {
-                    while (allSubOrders.Where(x => x.orderID.Equals(current.Id)).FirstOrDefault() != null)
-                    {
-                        subOrderTBL SO = allSubOrders.Where(x => x.orderID.Equals(current.Id)).FirstOrDefault();
-                        DBHelper.DeleteSubOrder(SO);
-                    }
-                    orderTBL tmp = current;
-                    DBHelper.DeleteOrder(tmp);
-                    current = allOrders.Where(x => x.costumerID.Equals(selectedCustomer.Id)).FirstOrDefault();
+                    MessageBox.Show("יש לבחור לקוח");
+                    return;
                 }
-                if (DBHelper.DeleteCostumer(selectedCustomer)) 
-                MessageBox.Show("לקוח נמחק בהצלחה");
-                
-            }
-        }*/
+                DialogResult result = MessageBox.Show(
+                    "האם אתה בטוח שאתה רוצה למחוק את הלקוח פעולה זאת תמחק גם את כל ההזמנות של הלקוח?",
+                    "אישור מחיקה",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    allOrders = DBHelper.allOrders;
+                    allSubOrders = DBHelper.allSubOrders;
+
+                    orderTBL current = allOrders.Where(x => x.costumerID.Equals(selectedCustomer.Id)).FirstOrDefault();
+                    while ( current!= null)
+                    {
+                        while (allSubOrders.Where(x => x.orderID.Equals(current.Id)).FirstOrDefault() != null)
+                        {
+                            subOrderTBL SO = allSubOrders.Where(x => x.orderID.Equals(current.Id)).FirstOrDefault();
+                            DBHelper.DeleteSubOrder(SO);
+                        }
+                        orderTBL tmp = current;
+                        DBHelper.DeleteOrder(tmp);
+                        current = allOrders.Where(x => x.costumerID.Equals(selectedCustomer.Id)).FirstOrDefault();
+                    }
+                    if (DBHelper.DeleteCostumer(selectedCustomer)) 
+                    MessageBox.Show("לקוח נמחק בהצלחה");
+
+                }
+            }*/
     }
 }

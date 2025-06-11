@@ -203,6 +203,7 @@ namespace Landau.Win.forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "updateProductForm";
             this.Text = "updateCustomerWin";
+            this.Load += new System.EventHandler(this.updateProductForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.updPriceNumUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUpdProduct)).EndInit();
             this.ResumeLayout(false);

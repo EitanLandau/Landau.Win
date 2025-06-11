@@ -51,29 +51,32 @@ namespace Landau.Win.forms
             this.orderTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.orderHistoryDGV = new System.Windows.Forms.DataGridView();
-            this.orderHistoryViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountInvitedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subOrderNotesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountInvitedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderHistoryViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.changeCustomerCmbx = new System.Windows.Forms.ComboBox();
+            this.costumerTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.updAmmountInvitedUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturesNseminarsTBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUpdOrderDeats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderTBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderHistoryDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderHistoryViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // updOrderHourDtp
             // 
             this.updOrderHourDtp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.updOrderHourDtp.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.updOrderHourDtp.Location = new System.Drawing.Point(1062, 430);
+            this.updOrderHourDtp.Location = new System.Drawing.Point(1061, 445);
             this.updOrderHourDtp.Name = "updOrderHourDtp";
             this.updOrderHourDtp.ShowUpDown = true;
             this.updOrderHourDtp.Size = new System.Drawing.Size(137, 26);
@@ -85,7 +88,7 @@ namespace Landau.Win.forms
             // 
             this.updOrderDateDtp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.updOrderDateDtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.updOrderDateDtp.Location = new System.Drawing.Point(1026, 350);
+            this.updOrderDateDtp.Location = new System.Drawing.Point(1022, 380);
             this.updOrderDateDtp.Name = "updOrderDateDtp";
             this.updOrderDateDtp.Size = new System.Drawing.Size(211, 26);
             this.updOrderDateDtp.StateCommon.Content.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
@@ -107,7 +110,7 @@ namespace Landau.Win.forms
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label5.ForeColor = System.Drawing.Color.Tomato;
-            this.label5.Location = new System.Drawing.Point(1382, 611);
+            this.label5.Location = new System.Drawing.Point(1382, 624);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 29);
             this.label5.TabIndex = 37;
@@ -133,7 +136,7 @@ namespace Landau.Win.forms
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label3.ForeColor = System.Drawing.Color.Tomato;
-            this.label3.Location = new System.Drawing.Point(1311, 497);
+            this.label3.Location = new System.Drawing.Point(1311, 534);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(155, 29);
             this.label3.TabIndex = 35;
@@ -145,7 +148,7 @@ namespace Landau.Win.forms
             this.updAmmountInvitedUD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.updAmmountInvitedUD.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.updAmmountInvitedUD.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.updAmmountInvitedUD.Location = new System.Drawing.Point(1049, 498);
+            this.updAmmountInvitedUD.Location = new System.Drawing.Point(1045, 535);
             this.updAmmountInvitedUD.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -173,7 +176,7 @@ namespace Landau.Win.forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label2.ForeColor = System.Drawing.Color.Tomato;
-            this.label2.Location = new System.Drawing.Point(1378, 350);
+            this.label2.Location = new System.Drawing.Point(1384, 380);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 29);
             this.label2.TabIndex = 33;
@@ -186,7 +189,7 @@ namespace Landau.Win.forms
             this.updOrderBtn.BackColor = System.Drawing.Color.Firebrick;
             this.updOrderBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.updOrderBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(210)))), ((int)(((byte)(221)))));
-            this.updOrderBtn.Location = new System.Drawing.Point(12, 821);
+            this.updOrderBtn.Location = new System.Drawing.Point(12, 818);
             this.updOrderBtn.Name = "updOrderBtn";
             this.updOrderBtn.Size = new System.Drawing.Size(182, 63);
             this.updOrderBtn.TabIndex = 32;
@@ -200,7 +203,7 @@ namespace Landau.Win.forms
             this.changeProductCmbx.DataSource = this.lecturesNseminarsTBLBindingSource;
             this.changeProductCmbx.DisplayMember = "title";
             this.changeProductCmbx.FormattingEnabled = true;
-            this.changeProductCmbx.Location = new System.Drawing.Point(1026, 229);
+            this.changeProductCmbx.Location = new System.Drawing.Point(1022, 294);
             this.changeProductCmbx.Name = "changeProductCmbx";
             this.changeProductCmbx.Size = new System.Drawing.Size(211, 24);
             this.changeProductCmbx.TabIndex = 31;
@@ -215,7 +218,7 @@ namespace Landau.Win.forms
             // updAdressTxb
             // 
             this.updAdressTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updAdressTxb.Location = new System.Drawing.Point(1049, 611);
+            this.updAdressTxb.Location = new System.Drawing.Point(1049, 631);
             this.updAdressTxb.Name = "updAdressTxb";
             this.updAdressTxb.Size = new System.Drawing.Size(171, 22);
             this.updAdressTxb.TabIndex = 30;
@@ -227,7 +230,7 @@ namespace Landau.Win.forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label1.ForeColor = System.Drawing.Color.Tomato;
-            this.label1.Location = new System.Drawing.Point(1257, 224);
+            this.label1.Location = new System.Drawing.Point(1257, 289);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(209, 29);
             this.label1.TabIndex = 28;
@@ -251,7 +254,7 @@ namespace Landau.Win.forms
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label7.ForeColor = System.Drawing.Color.Tomato;
-            this.label7.Location = new System.Drawing.Point(919, 10);
+            this.label7.Location = new System.Drawing.Point(1276, 119);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(190, 29);
             this.label7.TabIndex = 44;
@@ -263,15 +266,16 @@ namespace Landau.Win.forms
             // 
             // pickOrderCmbx
             // 
+            this.pickOrderCmbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pickOrderCmbx.DataSource = this.orderTBLBindingSource;
             this.pickOrderCmbx.DisplayMember = "Id";
             this.pickOrderCmbx.FormattingEnabled = true;
-            this.pickOrderCmbx.Location = new System.Drawing.Point(901, 80);
+            this.pickOrderCmbx.Location = new System.Drawing.Point(1022, 124);
             this.pickOrderCmbx.Name = "pickOrderCmbx";
-            this.pickOrderCmbx.Size = new System.Drawing.Size(232, 24);
+            this.pickOrderCmbx.Size = new System.Drawing.Size(211, 24);
             this.pickOrderCmbx.TabIndex = 45;
             this.pickOrderCmbx.ValueMember = "Id";
-            this.pickOrderCmbx.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.pickOrderCmbx.SelectedIndexChanged += new System.EventHandler(this.pickOrderCmbx_SelectedIndexChanged);
             // 
             // orderTBLBindingSource
             // 
@@ -279,14 +283,13 @@ namespace Landau.Win.forms
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label8.Location = new System.Drawing.Point(193, 180);
+            this.label8.Location = new System.Drawing.Point(456, 64);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(165, 24);
+            this.label8.Size = new System.Drawing.Size(115, 24);
             this.label8.TabIndex = 47;
-            this.label8.Text = "היסטוריית הזמנות";
+            this.label8.Text = "פרטי הזמנה";
             // 
             // orderHistoryDGV
             // 
@@ -297,28 +300,32 @@ namespace Landau.Win.forms
             this.orderHistoryDGV.ColumnHeadersHeight = 29;
             this.orderHistoryDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.orderHistoryDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fullNameDataGridViewTextBoxColumn,
             this.idDataGridViewTextBoxColumn,
             this.orderID,
-            this.orderDateDataGridViewTextBoxColumn,
+            this.titleDataGridViewTextBoxColumn,
             this.adressDataGridViewTextBoxColumn,
-            this.amountInvitedDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
-            this.subOrderNotesDataGridViewTextBoxColumn,
-            this.fullNameDataGridViewTextBoxColumn,
-            this.titleDataGridViewTextBoxColumn});
+            this.amountInvitedDataGridViewTextBoxColumn,
+            this.orderDateDataGridViewTextBoxColumn});
             this.orderHistoryDGV.DataSource = this.orderHistoryViewBindingSource;
-            this.orderHistoryDGV.Location = new System.Drawing.Point(12, 231);
+            this.orderHistoryDGV.Location = new System.Drawing.Point(56, 119);
             this.orderHistoryDGV.Name = "orderHistoryDGV";
             this.orderHistoryDGV.ReadOnly = true;
             this.orderHistoryDGV.RowHeadersVisible = false;
             this.orderHistoryDGV.RowHeadersWidth = 51;
             this.orderHistoryDGV.RowTemplate.Height = 24;
-            this.orderHistoryDGV.Size = new System.Drawing.Size(998, 553);
+            this.orderHistoryDGV.Size = new System.Drawing.Size(913, 553);
             this.orderHistoryDGV.TabIndex = 46;
+            this.orderHistoryDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orderHistoryDGV_CellContentClick);
             // 
-            // orderHistoryViewBindingSource
+            // fullNameDataGridViewTextBoxColumn
             // 
-            this.orderHistoryViewBindingSource.DataSource = typeof(Landau.Win.orderHistoryView);
+            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "fullName";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "שם לקוח";
+            this.fullNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -336,13 +343,13 @@ namespace Landau.Win.forms
             this.orderID.Name = "orderID";
             this.orderID.ReadOnly = true;
             // 
-            // orderDateDataGridViewTextBoxColumn
+            // titleDataGridViewTextBoxColumn
             // 
-            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "orderDate";
-            this.orderDateDataGridViewTextBoxColumn.HeaderText = "תאריך הזמנה";
-            this.orderDateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
-            this.orderDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "מוצר";
+            this.titleDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // adressDataGridViewTextBoxColumn
             // 
@@ -352,14 +359,6 @@ namespace Landau.Win.forms
             this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
             this.adressDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // amountInvitedDataGridViewTextBoxColumn
-            // 
-            this.amountInvitedDataGridViewTextBoxColumn.DataPropertyName = "amountInvited";
-            this.amountInvitedDataGridViewTextBoxColumn.HeaderText = "מספר מוזמנים";
-            this.amountInvitedDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.amountInvitedDataGridViewTextBoxColumn.Name = "amountInvitedDataGridViewTextBoxColumn";
-            this.amountInvitedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // dateDataGridViewTextBoxColumn
             // 
             this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
@@ -368,29 +367,53 @@ namespace Landau.Win.forms
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // subOrderNotesDataGridViewTextBoxColumn
+            // amountInvitedDataGridViewTextBoxColumn
             // 
-            this.subOrderNotesDataGridViewTextBoxColumn.DataPropertyName = "הערות";
-            this.subOrderNotesDataGridViewTextBoxColumn.HeaderText = "הערות";
-            this.subOrderNotesDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.subOrderNotesDataGridViewTextBoxColumn.Name = "subOrderNotesDataGridViewTextBoxColumn";
-            this.subOrderNotesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.amountInvitedDataGridViewTextBoxColumn.DataPropertyName = "amountInvited";
+            this.amountInvitedDataGridViewTextBoxColumn.HeaderText = "מספר מוזמנים";
+            this.amountInvitedDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.amountInvitedDataGridViewTextBoxColumn.Name = "amountInvitedDataGridViewTextBoxColumn";
+            this.amountInvitedDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // fullNameDataGridViewTextBoxColumn
+            // orderDateDataGridViewTextBoxColumn
             // 
-            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "fullName";
-            this.fullNameDataGridViewTextBoxColumn.HeaderText = "שם לקוח";
-            this.fullNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
-            this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "orderDate";
+            this.orderDateDataGridViewTextBoxColumn.HeaderText = "תאריך הזמנה";
+            this.orderDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
+            this.orderDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // titleDataGridViewTextBoxColumn
+            // orderHistoryViewBindingSource
             // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "מוצר";
-            this.titleDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.orderHistoryViewBindingSource.DataSource = typeof(Landau.Win.orderHistoryView);
+            // 
+            // changeCustomerCmbx
+            // 
+            this.changeCustomerCmbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.changeCustomerCmbx.DataSource = this.costumerTBLBindingSource;
+            this.changeCustomerCmbx.DisplayMember = "fullName";
+            this.changeCustomerCmbx.FormattingEnabled = true;
+            this.changeCustomerCmbx.Location = new System.Drawing.Point(1022, 205);
+            this.changeCustomerCmbx.Name = "changeCustomerCmbx";
+            this.changeCustomerCmbx.Size = new System.Drawing.Size(211, 24);
+            this.changeCustomerCmbx.TabIndex = 49;
+            this.changeCustomerCmbx.ValueMember = "Id";
+            // 
+            // costumerTBLBindingSource
+            // 
+            this.costumerTBLBindingSource.DataSource = typeof(Landau.Win.costumerTBL);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label9.ForeColor = System.Drawing.Color.Tomato;
+            this.label9.Location = new System.Drawing.Point(1345, 200);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(121, 29);
+            this.label9.TabIndex = 48;
+            this.label9.Text = "שנה לקוח";
             // 
             // updateOrderDeatsWin
             // 
@@ -399,6 +422,8 @@ namespace Landau.Win.forms
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1492, 911);
+            this.Controls.Add(this.changeCustomerCmbx);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.orderHistoryDGV);
             this.Controls.Add(this.pickOrderCmbx);
@@ -427,6 +452,7 @@ namespace Landau.Win.forms
             ((System.ComponentModel.ISupportInitialize)(this.orderTBLBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderHistoryDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderHistoryViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -455,14 +481,17 @@ namespace Landau.Win.forms
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView orderHistoryDGV;
         private System.Windows.Forms.BindingSource orderHistoryViewBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amountInvitedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn subOrderNotesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderID;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountInvitedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox changeCustomerCmbx;
+        private System.Windows.Forms.BindingSource costumerTBLBindingSource;
+        private System.Windows.Forms.Label label9;
     }
 }

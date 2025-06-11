@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="dbModel.meetingTypeTBL" Width="1.5" PointX="3" PointY="0.875" />
         <EntityTypeShape EntityType="dbModel.orderTBL" Width="1.5" PointX="3" PointY="8.125" />
         <EntityTypeShape EntityType="dbModel.projectTBL" Width="1.5" PointX="3" PointY="4.5" />
-        <EntityTypeShape EntityType="dbModel.serviceTBL" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.serviceTBL" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="dbModel.subOrderTBL" Width="1.5" PointX="5.25" PointY="8" />
         <EntityTypeShape EntityType="dbModel.orderHistoryView" Width="1.5" PointX="7.75" PointY="2.25" />
         <EntityTypeShape EntityType="dbModel.SubOrderView" Width="1.5" PointX="7.75" PointY="6.25" />

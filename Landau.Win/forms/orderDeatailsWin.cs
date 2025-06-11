@@ -58,7 +58,7 @@ namespace Landau.Win.forms
             s1 = DBHelper.AddSubOrder(s1);
             if (s1 != null)
             {
-                MessageBox.Show("הזמנה נוספה בהצלחה \n מספר הזמנה: "+s1.Id);
+                MessageBox.Show("הזמנה נוספה בהצלחה");
                 pickProductCmbx.Text = "";
                 ammountInvitedUD.Value = 1;
                 adressTxb.Text = "";
@@ -76,7 +76,7 @@ namespace Landau.Win.forms
 
         private void finishOrderBtn_Click(object sender, EventArgs e)
         {
-            if(subOrderCounter == 0)
+            if (subOrderCounter == 0)
             {
                 DialogResult result = MessageBox.Show(
 "לא נוספה שום הזמנה לסל בטוח שאתה רוצה להמשיך? ",
@@ -84,11 +84,11 @@ namespace Landau.Win.forms
 MessageBoxButtons.YesNo,
 MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
-                { 
+                {
                     mainWin.OpenAddOrderForm();
                 }
-                }
-            if (!validateForm() && subOrderCounter==0)
+            }
+            if (!validateForm() && subOrderCounter == 0)
             {
                 DialogResult result = MessageBox.Show(
     "יש למלא פרטי הזמנה",
@@ -101,8 +101,10 @@ MessageBoxIcon.Question);
                     mainWin.OpenAddOrderForm();
                 }
             }
-            if (!validateForm())
-            mainWin.OpenAddOrderForm();
+            if (!validateForm()) {
+                MessageBox.Show("מספר הזמנה: "+o1.Id);
+                mainWin.OpenAddOrderForm();
+                 }
         }
 
         private bool validateForm()

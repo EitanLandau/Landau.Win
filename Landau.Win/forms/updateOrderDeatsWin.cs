@@ -15,19 +15,18 @@ namespace Landau.Win.forms
         List<lecturesNseminarsTBL> allLecturesNseminars;
         List<subOrderTBL> allSubOrders;
         List<orderTBL> allorders;
+        List<costumerTBL> allcustomers;
+        List<orderHistoryView> currentOrder;
+        List<orderHistoryView> allOrderHistoryViews;
         public updateOrderDeatsWin()
         {
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
         private void updateOrderDeatsWin_Load(object sender, EventArgs e)
         {
             allLecturesNseminars = DBHelper.allLecturesNseminars;
-            allSubOrders = DBHelper.allSubOrders;
             changeProductCmbx.DataSource = allLecturesNseminars;
             changeProductCmbx.DisplayMember = "title";
             changeProductCmbx.ValueMember = "Id";
@@ -35,13 +34,16 @@ namespace Landau.Win.forms
             pickOrderCmbx.DataSource = allorders;
             pickOrderCmbx.DisplayMember = "Id";
             pickOrderCmbx.ValueMember = "Id";
+            allcustomers = DBHelper.allCostumers;
+            changeCustomerCmbx.DataSource = allcustomers;
+            changeCustomerCmbx.DisplayMember = "fullName";
+            changeCustomerCmbx.ValueMember = "Id";
         }
-
+        #region 
         private void changeProductCmbx_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
-
+        } 
         private void updOrderDateDtp_ValueChanged(object sender, EventArgs e)
         {
 
@@ -81,8 +83,15 @@ namespace Landau.Win.forms
         {
 
         }
-
-        private void updOrderBtn_Click(object sender, EventArgs e)
+        #endregion
+        private void updateDGV()
+        {
+            allOrderHistoryViews = DBHelper.allorderHistoryViews;
+            orderTBL selectedOrder = (orderTBL)pickOrderCmbx.SelectedItem;
+               currentOrder = allOrderHistoryViews.Where(x => x.Id.Equals(selectedOrder.Id)).ToList();
+            orderHistoryDGV.DataSource = currentOrder;
+                  }
+            private void updOrderBtn_Click(object sender, EventArgs e)
         {
 
             if (!validateForm())
@@ -137,9 +146,19 @@ namespace Landau.Win.forms
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void pickOrderCmbx_SelectedIndexChanged(object sender, EventArgs e)
         {
+            allcustomers = DBHelper.allCostumers;
+            allLecturesNseminars = DBHelper.allLecturesNseminars;
+            orderTBL selectedOrder = (orderTBL)pickOrderCmbx.SelectedItem;
+            updateDGV();
+            costumerTBL cust = allcustomers.Where(x => x.Id.Equals(selectedOrder.costumerID)).FirstOrDefault();
+            changeCustomerCmbx.Text = cust.fullName;
+        }
 
+        private void orderHistoryDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }
