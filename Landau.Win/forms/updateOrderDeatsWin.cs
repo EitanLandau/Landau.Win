@@ -18,6 +18,7 @@ namespace Landau.Win.forms
         List<costumerTBL> allcustomers;
         List<orderHistoryView> currentOrder;
         List<orderHistoryView> allOrderHistoryViews;
+        costumerTBL tmp;
         public updateOrderDeatsWin()
         {
             InitializeComponent();
@@ -38,52 +39,9 @@ namespace Landau.Win.forms
             changeCustomerCmbx.DataSource = allcustomers;
             changeCustomerCmbx.DisplayMember = "fullName";
             changeCustomerCmbx.ValueMember = "Id";
+            updateDGV();
+            
         }
-        #region 
-        private void changeProductCmbx_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        } 
-        private void updOrderDateDtp_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void updAmmountInvitedUD_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void updOrderHourDtp_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void updAdressTxb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-        #endregion
         private void updateDGV()
         {
             allOrderHistoryViews = DBHelper.allorderHistoryViews;
@@ -98,29 +56,44 @@ namespace Landau.Win.forms
             {
                 return;
             }
-           /* if (pickOrderCmbx != null)
+            if (pickOrderCmbx != null)
             {
-                int orderID;
-                subOrderTBL s1 = allSubOrders.Where(x => x.Id.Equals(orderID)).FirstOrDefault();
+                allSubOrders = DBHelper.allSubOrders;
+                DataGridViewRow current = orderHistoryDGV.CurrentRow;
+                orderTBL selectedOrder = (orderTBL)pickOrderCmbx.SelectedItem;
+                int subOrderId = Convert.ToInt32(current.Cells["orderId"].Value);
+                subOrderTBL s1 = allSubOrders.Where(x => x.Id.Equals(subOrderId)).FirstOrDefault();
                 lecturesNseminarsTBL selectedLecture = (lecturesNseminarsTBL)changeProductCmbx.SelectedItem;
                 DateTime DatePart = updOrderDateDtp.Value.Date;
                 TimeSpan orderHour = updOrderHourDtp.Value.TimeOfDay;
                 s1.lectureID = selectedLecture.Id;
                 s1.date = DatePart + orderHour;
                 s1.amountInvited = (int)updAmmountInvitedUD.Value;
-                s1.notes = updOrderDeatsNotes.Text;
+                s1.notes = updOrderNotesTxb.Text;
                 s1.adress = updAdressTxb.Text;
-                DBHelper.UpdateSubOrder(s1);
-                changeProductCmbx.Text = "";
-                updAmmountInvitedUD.Value = 1;
-                updAdressTxb.Text = "";
-                updOrderDeatsNotes.Text = "";
+                selectedOrder.notes = updOrderDeatsNotesTxb.Text;
+                costumerTBL changeCust = (costumerTBL)changeCustomerCmbx.SelectedItem;
+                selectedOrder.costumerID = changeCust.Id;
+                if (DBHelper.UpdateOrder(selectedOrder) && DBHelper.UpdateSubOrder(s1)) { 
+
+                    MessageBox.Show("הזמנה עודכנה בהצלחה");
+                    changeProductCmbx.Text = "";
+                    updAmmountInvitedUD.Value = 1;
+                    updAdressTxb.Text = "";
+                    updOrderDeatsNotesTxb.Text = "";
+                    updOrderDeatsNotesTxb.Text = "";
+                    updateDGV();
+                }
+            else
+            {
+                    MessageBox.Show("וואלה משהו לא סבבה");
+                }
             }
             else
             {
                 MessageBox.Show("יש למלא מספר הזמנה");
                 return;
-            }*/
+            }
 
         }
         private bool validateForm()
@@ -154,11 +127,26 @@ namespace Landau.Win.forms
             updateDGV();
             costumerTBL cust = allcustomers.Where(x => x.Id.Equals(selectedOrder.costumerID)).FirstOrDefault();
             changeCustomerCmbx.Text = cust.fullName;
+            updOrderNotesTxb.Text = selectedOrder.notes;
+            tmp = cust;
+        }
+        private void orderHistoryDGV_SelectionChanged(object sender, EventArgs e)
+        {
+            if(orderHistoryDGV.CurrentRow != null)
+            {
+               DataGridViewRow row = orderHistoryDGV.CurrentRow;
+                changeProductCmbx.Text = row.Cells["titleDataGridViewTextBoxColumn"].Value.ToString();
+                updOrderDateDtp.Value = Convert.ToDateTime(row.Cells["dateDataGridViewTextBoxColumn"].Value);
+                updOrderHourDtp.Value = Convert.ToDateTime(row.Cells["dateDataGridViewTextBoxColumn"].Value);
+                updAdressTxb.Text = row.Cells["adressDataGridViewTextBoxColumn"].Value.ToString();
+                updAmmountInvitedUD.Value = Convert.ToInt32(row.Cells["amountInvitedDataGridViewTextBoxColumn"].Value);
+                updOrderDeatsNotesTxb.Text = row.Cells["subOrderNotes"].Value.ToString();
+            }
         }
 
-        private void orderHistoryDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void changeProductCmbx_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
