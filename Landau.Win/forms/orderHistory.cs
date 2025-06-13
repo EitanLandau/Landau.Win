@@ -22,7 +22,7 @@ namespace Landau.Win.forms
         {
             updateDGV();
         }
-        private void updateDGV()
+        public void updateDGV()
         {
             allorderHistoryViews = DBHelper.allorderHistoryViews;
             allorderHistoryViews = allorderHistoryViews.OrderBy(x => x.orderID).ToList();

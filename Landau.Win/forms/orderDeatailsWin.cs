@@ -103,6 +103,7 @@ MessageBoxIcon.Question);
             }
             if (!validateForm()) {
                 MessageBox.Show("מספר הזמנה: "+o1.Id);
+                orderHistory.updateDGV();
                 mainWin.OpenAddOrderForm();
                  }
         }
