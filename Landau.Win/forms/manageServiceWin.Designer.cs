@@ -50,6 +50,7 @@ namespace Landau.Win.forms
             this.label8 = new System.Windows.Forms.Label();
             this.updServiceName = new System.Windows.Forms.TextBox();
             this.pickServiceCmbx = new System.Windows.Forms.ComboBox();
+            this.serviceTBLBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.servicesDGV = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,15 +59,14 @@ namespace Landau.Win.forms
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.serviceTBLBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.errorProviderMangeServices = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.howManySessionsUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicePriceUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updPriceUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updMeetingNumUd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceTBLBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicesDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceTBLBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceTBLBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMangeServices)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +76,7 @@ namespace Landau.Win.forms
             this.serviceDescriptionTxb.Location = new System.Drawing.Point(738, 312);
             this.serviceDescriptionTxb.Multiline = true;
             this.serviceDescriptionTxb.Name = "serviceDescriptionTxb";
-            this.serviceDescriptionTxb.Size = new System.Drawing.Size(151, 200);
+            this.serviceDescriptionTxb.Size = new System.Drawing.Size(156, 183);
             this.serviceDescriptionTxb.TabIndex = 34;
             // 
             // label5
@@ -194,9 +194,9 @@ namespace Landau.Win.forms
             this.addProductBtn.BackColor = System.Drawing.Color.Teal;
             this.addProductBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.addProductBtn.ForeColor = System.Drawing.Color.Azure;
-            this.addProductBtn.Location = new System.Drawing.Point(756, 521);
+            this.addProductBtn.Location = new System.Drawing.Point(751, 521);
             this.addProductBtn.Name = "addProductBtn";
-            this.addProductBtn.Size = new System.Drawing.Size(118, 59);
+            this.addProductBtn.Size = new System.Drawing.Size(138, 59);
             this.addProductBtn.TabIndex = 36;
             this.addProductBtn.Text = "הוסף";
             this.addProductBtn.UseVisualStyleBackColor = false;
@@ -336,6 +336,10 @@ namespace Landau.Win.forms
             this.pickServiceCmbx.TabIndex = 46;
             this.pickServiceCmbx.ValueMember = "Id";
             // 
+            // serviceTBLBindingSource1
+            // 
+            this.serviceTBLBindingSource1.DataSource = typeof(Landau.Win.serviceTBL);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -416,10 +420,6 @@ namespace Landau.Win.forms
             // 
             this.serviceTBLBindingSource.DataSource = typeof(Landau.Win.serviceTBL);
             // 
-            // serviceTBLBindingSource1
-            // 
-            this.serviceTBLBindingSource1.DataSource = typeof(Landau.Win.serviceTBL);
-            // 
             // errorProviderMangeServices
             // 
             this.errorProviderMangeServices.ContainerControl = this;
@@ -431,7 +431,6 @@ namespace Landau.Win.forms
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1102, 718);
-            this.Controls.Add(this.servicesDGV);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pickServiceCmbx);
             this.Controls.Add(this.updServiceBtn);
@@ -452,6 +451,7 @@ namespace Landau.Win.forms
             this.Controls.Add(this.howManySessionsUD);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.serviceNameTxb);
+            this.Controls.Add(this.servicesDGV);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "manageServiceWin";
@@ -461,9 +461,9 @@ namespace Landau.Win.forms
             ((System.ComponentModel.ISupportInitialize)(this.servicePriceUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updPriceUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updMeetingNumUd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceTBLBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicesDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceTBLBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceTBLBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMangeServices)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

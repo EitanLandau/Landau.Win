@@ -51,12 +51,6 @@ namespace Landau.Win.forms
             this.orderTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.orderHistoryDGV = new System.Windows.Forms.DataGridView();
-            this.orderHistoryViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.changeCustomerCmbx = new System.Windows.Forms.ComboBox();
-            this.costumerTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label9 = new System.Windows.Forms.Label();
-            this.updOrderDeatsNotesTxb = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +60,12 @@ namespace Landau.Win.forms
             this.amountInvitedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subOrderNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderHistoryViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.changeCustomerCmbx = new System.Windows.Forms.ComboBox();
+            this.costumerTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label9 = new System.Windows.Forms.Label();
+            this.updOrderDeatsNotesTxb = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.updAmmountInvitedUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturesNseminarsTBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUpdOrderDeats)).BeginInit();
@@ -317,59 +317,6 @@ namespace Landau.Win.forms
             this.orderHistoryDGV.TabIndex = 46;
             this.orderHistoryDGV.SelectionChanged += new System.EventHandler(this.orderHistoryDGV_SelectionChanged);
             // 
-            // orderHistoryViewBindingSource
-            // 
-            this.orderHistoryViewBindingSource.DataSource = typeof(Landau.Win.orderHistoryView);
-            // 
-            // changeCustomerCmbx
-            // 
-            this.changeCustomerCmbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.changeCustomerCmbx.DataSource = this.costumerTBLBindingSource;
-            this.changeCustomerCmbx.DisplayMember = "fullName";
-            this.changeCustomerCmbx.FormattingEnabled = true;
-            this.changeCustomerCmbx.Location = new System.Drawing.Point(1022, 205);
-            this.changeCustomerCmbx.Name = "changeCustomerCmbx";
-            this.changeCustomerCmbx.Size = new System.Drawing.Size(211, 24);
-            this.changeCustomerCmbx.TabIndex = 49;
-            this.changeCustomerCmbx.ValueMember = "Id";
-            // 
-            // costumerTBLBindingSource
-            // 
-            this.costumerTBLBindingSource.DataSource = typeof(Landau.Win.costumerTBL);
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label9.ForeColor = System.Drawing.Color.Tomato;
-            this.label9.Location = new System.Drawing.Point(1345, 200);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(121, 29);
-            this.label9.TabIndex = 48;
-            this.label9.Text = "שנה לקוח";
-            // 
-            // updOrderDeatsNotesTxb
-            // 
-            this.updOrderDeatsNotesTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updOrderDeatsNotesTxb.Location = new System.Drawing.Point(527, 363);
-            this.updOrderDeatsNotesTxb.Multiline = true;
-            this.updOrderDeatsNotesTxb.Name = "updOrderDeatsNotesTxb";
-            this.updOrderDeatsNotesTxb.Size = new System.Drawing.Size(214, 209);
-            this.updOrderDeatsNotesTxb.TabIndex = 51;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label10.ForeColor = System.Drawing.Color.Tomato;
-            this.label10.Location = new System.Drawing.Point(759, 363);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(218, 29);
-            this.label10.TabIndex = 50;
-            this.label10.Text = "הערות פרטי הזמנה";
-            // 
             // fullNameDataGridViewTextBoxColumn
             // 
             this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "fullName";
@@ -442,6 +389,59 @@ namespace Landau.Win.forms
             this.subOrderNotes.Name = "subOrderNotes";
             this.subOrderNotes.ReadOnly = true;
             // 
+            // orderHistoryViewBindingSource
+            // 
+            this.orderHistoryViewBindingSource.DataSource = typeof(Landau.Win.orderHistoryView);
+            // 
+            // changeCustomerCmbx
+            // 
+            this.changeCustomerCmbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.changeCustomerCmbx.DataSource = this.costumerTBLBindingSource;
+            this.changeCustomerCmbx.DisplayMember = "fullName";
+            this.changeCustomerCmbx.FormattingEnabled = true;
+            this.changeCustomerCmbx.Location = new System.Drawing.Point(1022, 205);
+            this.changeCustomerCmbx.Name = "changeCustomerCmbx";
+            this.changeCustomerCmbx.Size = new System.Drawing.Size(211, 24);
+            this.changeCustomerCmbx.TabIndex = 49;
+            this.changeCustomerCmbx.ValueMember = "Id";
+            // 
+            // costumerTBLBindingSource
+            // 
+            this.costumerTBLBindingSource.DataSource = typeof(Landau.Win.costumerTBL);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label9.ForeColor = System.Drawing.Color.Tomato;
+            this.label9.Location = new System.Drawing.Point(1345, 200);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(121, 29);
+            this.label9.TabIndex = 48;
+            this.label9.Text = "שנה לקוח";
+            // 
+            // updOrderDeatsNotesTxb
+            // 
+            this.updOrderDeatsNotesTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.updOrderDeatsNotesTxb.Location = new System.Drawing.Point(527, 363);
+            this.updOrderDeatsNotesTxb.Multiline = true;
+            this.updOrderDeatsNotesTxb.Name = "updOrderDeatsNotesTxb";
+            this.updOrderDeatsNotesTxb.Size = new System.Drawing.Size(214, 209);
+            this.updOrderDeatsNotesTxb.TabIndex = 51;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label10.ForeColor = System.Drawing.Color.Tomato;
+            this.label10.Location = new System.Drawing.Point(759, 363);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(218, 29);
+            this.label10.TabIndex = 50;
+            this.label10.Text = "הערות פרטי הזמנה";
+            // 
             // updateOrderDeatsWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -449,7 +449,6 @@ namespace Landau.Win.forms
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1492, 1010);
-            this.Controls.Add(this.orderHistoryDGV);
             this.Controls.Add(this.updOrderDeatsNotesTxb);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.changeCustomerCmbx);
@@ -470,6 +469,7 @@ namespace Landau.Win.forms
             this.Controls.Add(this.changeProductCmbx);
             this.Controls.Add(this.updAdressTxb);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.orderHistoryDGV);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "updateOrderDeatsWin";
