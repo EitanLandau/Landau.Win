@@ -34,6 +34,7 @@ namespace Landau.Win
         public virtual DbSet<serviceTBL> serviceTBL { get; set; }
         public virtual DbSet<subOrderTBL> subOrderTBL { get; set; }
         public virtual DbSet<orderHistoryView> orderHistoryView { get; set; }
+        public virtual DbSet<projectTrackView> projectTrackView { get; set; }
         public virtual DbSet<SubOrderView> SubOrderView { get; set; }
     }
 }

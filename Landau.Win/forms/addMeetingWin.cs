@@ -72,6 +72,14 @@ namespace Landau.Win.forms
         private void openProjectBtn_Click(object sender, EventArgs e)
         {
             p1.meetingsNum = meetingCounter;
+            if (DBHelper.UpdateProject(p1))
+            {
+                mainWin.openNewProject();
+            }
+            else
+            {
+                MessageBox.Show("וואלה משהו לא סבבה פה");
+            }
         }
     }
 }

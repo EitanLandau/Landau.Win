@@ -126,6 +126,39 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU.WIN\DB.MDF.dbo.projectTrackView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="projectTrackView">
+          <Key>
+            <PropertyRef Name="meetingID" />
+            <PropertyRef Name="duration" />
+            <PropertyRef Name="projectID" />
+            <PropertyRef Name="typeID" />
+            <PropertyRef Name="address" />
+            <PropertyRef Name="date" />
+            <PropertyRef Name="topic" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="customerID" />
+            <PropertyRef Name="serviceID" />
+            <PropertyRef Name="title" />
+            <PropertyRef Name="serviceName" />
+            <PropertyRef Name="fullName" />
+          </Key>
+          <Property Name="meetingID" Type="int" Nullable="false" />
+          <Property Name="duration" Type="time" Precision="0" Nullable="false" />
+          <Property Name="projectID" Type="int" Nullable="false" />
+          <Property Name="typeID" Type="int" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="notes" Type="nvarchar" MaxLength="200" />
+          <Property Name="topic" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="customerID" Type="int" Nullable="false" />
+          <Property Name="serviceID" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="serviceName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fullName" Type="nvarchar" MaxLength="101" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU.WIN\DB.MDF.dbo.SubOrderView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SubOrderView">
           <Key>
@@ -243,6 +276,24 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
     [orderHistoryView].[title] AS [title]
     FROM [dbo].[orderHistoryView] AS [orderHistoryView]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="projectTrackView" EntityType="Self.projectTrackView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [projectTrackView].[meetingID] AS [meetingID], 
+    [projectTrackView].[duration] AS [duration], 
+    [projectTrackView].[projectID] AS [projectID], 
+    [projectTrackView].[typeID] AS [typeID], 
+    [projectTrackView].[address] AS [address], 
+    [projectTrackView].[date] AS [date], 
+    [projectTrackView].[notes] AS [notes], 
+    [projectTrackView].[topic] AS [topic], 
+    [projectTrackView].[name] AS [name], 
+    [projectTrackView].[customerID] AS [customerID], 
+    [projectTrackView].[serviceID] AS [serviceID], 
+    [projectTrackView].[title] AS [title], 
+    [projectTrackView].[serviceName] AS [serviceName], 
+    [projectTrackView].[fullName] AS [fullName]
+    FROM [dbo].[projectTrackView] AS [projectTrackView]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="SubOrderView" EntityType="Self.SubOrderView" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [SubOrderView].[orderID] AS [orderID], 
@@ -292,6 +343,7 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <EntitySet Name="serviceTBL" EntityType="dbModel.serviceTBL" />
           <EntitySet Name="subOrderTBL" EntityType="dbModel.subOrderTBL" />
           <EntitySet Name="orderHistoryView" EntityType="dbModel.orderHistoryView" />
+          <EntitySet Name="projectTrackView" EntityType="dbModel.projectTrackView" />
           <EntitySet Name="SubOrderView" EntityType="dbModel.SubOrderView" />
           <AssociationSet Name="FK_orderTBL_costumerTBL" Association="dbModel.FK_orderTBL_costumerTBL">
             <End Role="costumerTBL" EntitySet="costumerTBL" />
@@ -453,6 +505,37 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <Property Name="lectureID" Type="Int32" Nullable="false" />
           <Property Name="fullName" Type="String" Nullable="false" MaxLength="101" FixedLength="false" Unicode="true" />
           <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="projectTrackView">
+          <Key>
+            <PropertyRef Name="meetingID" />
+            <PropertyRef Name="duration" />
+            <PropertyRef Name="projectID" />
+            <PropertyRef Name="typeID" />
+            <PropertyRef Name="address" />
+            <PropertyRef Name="date" />
+            <PropertyRef Name="topic" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="customerID" />
+            <PropertyRef Name="serviceID" />
+            <PropertyRef Name="title" />
+            <PropertyRef Name="serviceName" />
+            <PropertyRef Name="fullName" />
+          </Key>
+          <Property Name="meetingID" Type="Int32" Nullable="false" />
+          <Property Name="duration" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="projectID" Type="Int32" Nullable="false" />
+          <Property Name="typeID" Type="Int32" Nullable="false" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="notes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="topic" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="customerID" Type="Int32" Nullable="false" />
+          <Property Name="serviceID" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="serviceName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fullName" Type="String" Nullable="false" MaxLength="101" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="SubOrderView">
           <Key>
@@ -668,6 +751,26 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
                 <ScalarProperty Name="orderNotes" ColumnName="orderNotes" />
                 <ScalarProperty Name="orderDate" ColumnName="orderDate" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="projectTrackView">
+            <EntityTypeMapping TypeName="dbModel.projectTrackView">
+              <MappingFragment StoreEntitySet="projectTrackView">
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="serviceName" ColumnName="serviceName" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="serviceID" ColumnName="serviceID" />
+                <ScalarProperty Name="customerID" ColumnName="customerID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="topic" ColumnName="topic" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+                <ScalarProperty Name="projectID" ColumnName="projectID" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="meetingID" ColumnName="meetingID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

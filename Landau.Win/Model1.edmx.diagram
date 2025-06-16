@@ -14,7 +14,8 @@
         <EntityTypeShape EntityType="dbModel.serviceTBL" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="dbModel.subOrderTBL" Width="1.5" PointX="5.25" PointY="8.375" />
         <EntityTypeShape EntityType="dbModel.orderHistoryView" Width="1.5" PointX="7.75" PointY="2.125" />
-        <EntityTypeShape EntityType="dbModel.SubOrderView" Width="1.5" PointX="7.75" PointY="6.125" />
+        <EntityTypeShape EntityType="dbModel.projectTrackView" Width="1.5" PointX="7.75" PointY="6.125" />
+        <EntityTypeShape EntityType="dbModel.SubOrderView" Width="1.5" PointX="9.75" PointY="2.125" />
         <AssociationConnector Association="dbModel.FK_orderTBL_costumerTBL" />
         <AssociationConnector Association="dbModel.FK_projectTBL_costumerTBL" />
         <AssociationConnector Association="dbModel.FK_subOrderTBL_serviceTBL" />

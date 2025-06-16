@@ -53,6 +53,7 @@
             this.kryptonRibbonGroup1 = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple3 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.openProjectBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.updProjBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.mangeProjectBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kryptonRibbonGroupTriple6 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.kryptonRibbonGroup4 = new Krypton.Ribbon.KryptonRibbonGroup();
@@ -60,7 +61,6 @@
             this.mangeServicesBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.kryptonRibbonGroupThemeComboBox1 = new Krypton.Ribbon.KryptonRibbonGroupThemeComboBox();
-            this.updProjBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +76,7 @@
             this.orders,
             this.serviceTab,
             this.kryptonRibbonTab1});
-            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab1;
+            this.kryptonRibbon1.SelectedTab = this.orders;
             this.kryptonRibbon1.Size = new System.Drawing.Size(946, 171);
             this.kryptonRibbon1.TabIndex = 0;
             this.kryptonRibbon1.SelectedTabChanged += new System.EventHandler(this.kryptonRibbon1_SelectedTabChanged);
@@ -220,6 +220,11 @@
             this.openProjectBtn.TextLine1 = "פתיחת פרויקט";
             this.openProjectBtn.Click += new System.EventHandler(this.openProjectBtn_Click);
             // 
+            // updProjBtn
+            // 
+            this.updProjBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("updProjBtn.ImageLarge")));
+            this.updProjBtn.TextLine1 = "עדכן פרוייקט";
+            // 
             // mangeProjectBtn
             // 
             this.mangeProjectBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("mangeProjectBtn.ImageLarge")));
@@ -257,11 +262,6 @@
             this.kryptonRibbonGroupThemeComboBox1.DropDownWidth = 121;
             this.kryptonRibbonGroupThemeComboBox1.FormattingEnabled = false;
             this.kryptonRibbonGroupThemeComboBox1.ItemHeight = 20;
-            // 
-            // updProjBtn
-            // 
-            this.updProjBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("updProjBtn.ImageLarge")));
-            this.updProjBtn.TextLine1 = "עדכן פרוייקט";
             // 
             // HomePage
             // 
