@@ -119,6 +119,7 @@ namespace Landau.Win.forms
             this.openProjectBtn.TabIndex = 57;
             this.openProjectBtn.Text = "צור פרוייקט";
             this.openProjectBtn.UseVisualStyleBackColor = false;
+            this.openProjectBtn.Click += new System.EventHandler(this.openProjectBtn_Click);
             // 
             // meetingTypeCmbx
             // 

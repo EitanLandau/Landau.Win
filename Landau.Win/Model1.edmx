@@ -75,6 +75,7 @@
           <Property Name="inProcess" Type="bit" Nullable="false" />
           <Property Name="description" Type="nvarchar" MaxLength="2000" Nullable="false" />
           <Property Name="creationDate" Type="datetime" Nullable="false" />
+          <Property Name="meetingsNum" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="serviceTBL">
           <Key>
@@ -399,6 +400,7 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <Property Name="inProcess" Type="Boolean" Nullable="false" />
           <Property Name="description" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
           <Property Name="creationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="meetingsNum" Type="Int32" Nullable="false" />
           <NavigationProperty Name="costumerTBL" Relationship="dbModel.FK_projectTBL_costumerTBL" FromRole="projectTBL" ToRole="costumerTBL" />
           <NavigationProperty Name="meetingTBL" Relationship="dbModel.FK_meetingTBL_projectTBL" FromRole="projectTBL" ToRole="meetingTBL" />
           <NavigationProperty Name="serviceTBL" Relationship="dbModel.FK_projectTBL_serviceTBL" FromRole="projectTBL" ToRole="serviceTBL" />
@@ -617,6 +619,7 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <EntitySetMapping Name="projectTBL">
             <EntityTypeMapping TypeName="dbModel.projectTBL">
               <MappingFragment StoreEntitySet="projectTBL">
+                <ScalarProperty Name="meetingsNum" ColumnName="meetingsNum" />
                 <ScalarProperty Name="creationDate" ColumnName="creationDate" />
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="inProcess" ColumnName="inProcess" />

@@ -12,6 +12,7 @@ namespace Landau.Win.forms
 {
     public partial class addMeetingWin : Form
     {
+        int meetingCounter = 0;
         HomePage mainWin;
         projectTBL p1;
         public addMeetingWin()
@@ -54,6 +55,7 @@ namespace Landau.Win.forms
                 addressTxb.Text = "";
                 meetingDescriptionTxb.Text = "";
                 meetingTitleTxb.Text = "";
+                meetingCounter++;
             }
             else
             {
@@ -65,6 +67,11 @@ namespace Landau.Win.forms
             bool a1 = true/*Utils.isNotNull(productTypeCmbx.SelectedItem, errorProviderProduct, productTypeCmbx, "יש לבחור סוג מוצר")*/;
             bool a2 = true/*Utils.isNotEmpty(titleTxb.Text, errorProviderProduct, titleTxb, "יש להזין כותרת להרצאה")*/;
             return a1 && a2;
+        }
+
+        private void openProjectBtn_Click(object sender, EventArgs e)
+        {
+            p1.meetingsNum = meetingCounter;
         }
     }
 }

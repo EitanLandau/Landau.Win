@@ -40,6 +40,7 @@ namespace Landau.Win.forms
             p1.creationDate = DateTime.Now;
             p1.description = projectDescriptionTxb.Text.Trim();
             p1.inProcess = true;
+            p1.meetingsNum = 1;
             p1 = DBHelper.AddProject(p1);
             if (p1 == null)
             {
