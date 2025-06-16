@@ -35,7 +35,7 @@ namespace Landau.Win.forms
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.updOrderBtn = new System.Windows.Forms.Button();
+            this.continueProjBtn = new System.Windows.Forms.Button();
             this.projectCustomerCmbx = new System.Windows.Forms.ComboBox();
             this.costumerTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projTitleTxb = new System.Windows.Forms.TextBox();
@@ -92,18 +92,19 @@ namespace Landau.Win.forms
             this.label2.TabIndex = 45;
             this.label2.Text = "בחר תהליך";
             // 
-            // updOrderBtn
+            // continueProjBtn
             // 
-            this.updOrderBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.updOrderBtn.BackColor = System.Drawing.Color.DimGray;
-            this.updOrderBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.updOrderBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.updOrderBtn.Location = new System.Drawing.Point(23, 482);
-            this.updOrderBtn.Name = "updOrderBtn";
-            this.updOrderBtn.Size = new System.Drawing.Size(144, 59);
-            this.updOrderBtn.TabIndex = 44;
-            this.updOrderBtn.Text = "המשך";
-            this.updOrderBtn.UseVisualStyleBackColor = false;
+            this.continueProjBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.continueProjBtn.BackColor = System.Drawing.Color.DimGray;
+            this.continueProjBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.continueProjBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.continueProjBtn.Location = new System.Drawing.Point(23, 482);
+            this.continueProjBtn.Name = "continueProjBtn";
+            this.continueProjBtn.Size = new System.Drawing.Size(150, 59);
+            this.continueProjBtn.TabIndex = 44;
+            this.continueProjBtn.Text = "המשך";
+            this.continueProjBtn.UseVisualStyleBackColor = false;
+            this.continueProjBtn.Click += new System.EventHandler(this.continueProjBtn_Click);
             // 
             // projectCustomerCmbx
             // 
@@ -169,7 +170,7 @@ namespace Landau.Win.forms
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.updOrderBtn);
+            this.Controls.Add(this.continueProjBtn);
             this.Controls.Add(this.projectCustomerCmbx);
             this.Controls.Add(this.projTitleTxb);
             this.Controls.Add(this.label1);
@@ -190,7 +191,7 @@ namespace Landau.Win.forms
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button updOrderBtn;
+        private System.Windows.Forms.Button continueProjBtn;
         private System.Windows.Forms.ComboBox projectCustomerCmbx;
         private System.Windows.Forms.TextBox projTitleTxb;
         private System.Windows.Forms.Label label1;

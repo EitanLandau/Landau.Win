@@ -267,5 +267,43 @@ namespace Landau.Win
             mainPanel.Controls.Add(current);
             current.Show();
         }
+
+        private void openProjectBtn_Click(object sender, EventArgs e)
+        {
+
+            if (current != null)
+            {
+                if (current is openNewProjectWin)
+                {
+                    return;
+                }
+                current.Close();
+            }
+            current = new openNewProjectWin(this);
+            current.Dock = DockStyle.Fill;
+            current.TopLevel = false;
+            current.TopMost = true;
+            mainPanel.Controls.Add(current);
+            current.Show();
+        }
+        public void openAddMeetingWin(projectTBL p1)
+        {
+
+            if (current != null)
+            {
+                if (current is addMeetingWin)
+                {
+                    return;
+                }
+                current.Close();
+            }
+            current = new addMeetingWin(p1, this);
+            current.Dock = DockStyle.Fill;
+            current.TopLevel = false;
+            current.TopMost = true;
+            mainPanel.Controls.Add(current);
+            current.Show();
+
+        }
     }
 }

@@ -12,9 +12,11 @@ namespace Landau.Win.forms
 {
     public partial class openNewProjectWin : Form
     {
-        public openNewProjectWin()
+        HomePage mainWin;
+        public openNewProjectWin(HomePage mainWin)
         {
             InitializeComponent();
+            this.mainWin = mainWin;
         }
 
         private void openNewProjectWin_Load(object sender, EventArgs e)
@@ -25,6 +27,26 @@ namespace Landau.Win.forms
             chooseServiceCmbx.DataSource = DBHelper.allServices;
             chooseServiceCmbx.DisplayMember = "serviceName";
             chooseServiceCmbx.ValueMember = "Id";
+        }
+
+        private void continueProjBtn_Click(object sender, EventArgs e)
+        {
+            costumerTBL selectedCustomer = (costumerTBL)projectCustomerCmbx.SelectedItem;
+            if (selectedCustomer == null)
+                return;
+
+            projectTBL p1 = new projectTBL();
+            p1.customerID = selectedCustomer.Id;
+            p1.creationDate = DateTime.Now;
+            p1.description = projectDescriptionTxb.Text.Trim();
+            p1.inProcess = true;
+            p1 = DBHelper.AddProject(p1);
+            if (p1 == null)
+            {
+                MessageBox.Show("ERROR");
+                return;
+            }
+            mainWin.openAddMeetingWin(p1);
         }
     }
 }

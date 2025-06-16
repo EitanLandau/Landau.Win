@@ -22,8 +22,9 @@ namespace Landau.Win
     
         public int Id { get; set; }
         public string name { get; set; }
-        public string content { get; set; }
+        public string description { get; set; }
         public bool multiParticipant { get; set; }
+        public bool isRequiresPreparation { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<meetingTBL> meetingTBL { get; set; }

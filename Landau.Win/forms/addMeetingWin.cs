@@ -12,13 +12,26 @@ namespace Landau.Win.forms
 {
     public partial class addMeetingWin : Form
     {
+        HomePage mainWin;
+        projectTBL p1;
         public addMeetingWin()
         {
+            InitializeComponent();
+        }
+        public addMeetingWin(projectTBL p1, HomePage mainWin)
+        {
+            this.p1 = p1;
+            this.mainWin = mainWin;
             InitializeComponent();
         }
 
         private void addMeetingWin_Load(object sender, EventArgs e)
         {
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

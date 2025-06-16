@@ -42,16 +42,17 @@
           <Property Name="date" Type="datetime" Nullable="false" />
           <Property Name="duration" Type="time" Precision="0" Nullable="false" />
           <Property Name="notes" Type="nvarchar" MaxLength="200" />
-          <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="topic" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="meetingTypeTBL">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="content" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="multiParticipant" Type="bit" Nullable="false" />
+          <Property Name="isRequiresPreparation" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="orderTBL">
           <Key>
@@ -71,8 +72,9 @@
           <Property Name="customerID" Type="int" Nullable="false" />
           <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="serviceID" Type="int" Nullable="false" />
-          <Property Name="status" Type="bit" Nullable="false" />
+          <Property Name="inProcess" Type="bit" Nullable="false" />
           <Property Name="description" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="creationDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="serviceTBL">
           <Key>
@@ -359,7 +361,7 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="duration" Type="Time" Nullable="false" Precision="0" />
           <Property Name="notes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="topic" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="meetingTypeTBL" Relationship="dbModel.FK_meetingTBL_meetingTypeTBL" FromRole="meetingTBL" ToRole="meetingTypeTBL" />
           <NavigationProperty Name="projectTBL" Relationship="dbModel.FK_meetingTBL_projectTBL" FromRole="meetingTBL" ToRole="projectTBL" />
         </EntityType>
@@ -367,10 +369,11 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="content" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="multiParticipant" Type="Boolean" Nullable="false" />
+          <Property Name="isRequiresPreparation" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="meetingTBL" Relationship="dbModel.FK_meetingTBL_meetingTypeTBL" FromRole="meetingTypeTBL" ToRole="meetingTBL" />
         </EntityType>
         <EntityType Name="orderTBL">
@@ -393,8 +396,9 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <Property Name="customerID" Type="Int32" Nullable="false" />
           <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="serviceID" Type="Int32" Nullable="false" />
-          <Property Name="status" Type="Boolean" Nullable="false" />
+          <Property Name="inProcess" Type="Boolean" Nullable="false" />
           <Property Name="description" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="creationDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="costumerTBL" Relationship="dbModel.FK_projectTBL_costumerTBL" FromRole="projectTBL" ToRole="costumerTBL" />
           <NavigationProperty Name="meetingTBL" Relationship="dbModel.FK_meetingTBL_projectTBL" FromRole="projectTBL" ToRole="meetingTBL" />
           <NavigationProperty Name="serviceTBL" Relationship="dbModel.FK_projectTBL_serviceTBL" FromRole="projectTBL" ToRole="serviceTBL" />
@@ -577,7 +581,7 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <EntitySetMapping Name="meetingTBL">
             <EntityTypeMapping TypeName="dbModel.meetingTBL">
               <MappingFragment StoreEntitySet="meetingTBL">
-                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="topic" ColumnName="topic" />
                 <ScalarProperty Name="notes" ColumnName="notes" />
                 <ScalarProperty Name="duration" ColumnName="duration" />
                 <ScalarProperty Name="date" ColumnName="date" />
@@ -591,8 +595,9 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <EntitySetMapping Name="meetingTypeTBL">
             <EntityTypeMapping TypeName="dbModel.meetingTypeTBL">
               <MappingFragment StoreEntitySet="meetingTypeTBL">
+                <ScalarProperty Name="isRequiresPreparation" ColumnName="isRequiresPreparation" />
                 <ScalarProperty Name="multiParticipant" ColumnName="multiParticipant" />
-                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
@@ -612,8 +617,9 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <EntitySetMapping Name="projectTBL">
             <EntityTypeMapping TypeName="dbModel.projectTBL">
               <MappingFragment StoreEntitySet="projectTBL">
+                <ScalarProperty Name="creationDate" ColumnName="creationDate" />
                 <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="inProcess" ColumnName="inProcess" />
                 <ScalarProperty Name="serviceID" ColumnName="serviceID" />
                 <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="customerID" ColumnName="customerID" />

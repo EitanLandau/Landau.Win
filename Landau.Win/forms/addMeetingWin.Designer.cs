@@ -36,7 +36,7 @@ namespace Landau.Win.forms
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.updOrderBtn = new System.Windows.Forms.Button();
+            this.openProjectBtn = new System.Windows.Forms.Button();
             this.meetingTypeCmbx = new System.Windows.Forms.ComboBox();
             this.meetingTypeTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.addressTxb = new System.Windows.Forms.TextBox();
@@ -45,6 +45,7 @@ namespace Landau.Win.forms
             this.meetingDateDtp = new Krypton.Toolkit.KryptonDateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.meetingTitleTxb = new System.Windows.Forms.TextBox();
+            this.addMeetingBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.meetingTypeTBLBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,18 +107,18 @@ namespace Landau.Win.forms
             this.label2.TabIndex = 58;
             this.label2.Text = "תאריך";
             // 
-            // updOrderBtn
+            // openProjectBtn
             // 
-            this.updOrderBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.updOrderBtn.BackColor = System.Drawing.Color.DimGray;
-            this.updOrderBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.updOrderBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.updOrderBtn.Location = new System.Drawing.Point(41, 482);
-            this.updOrderBtn.Name = "updOrderBtn";
-            this.updOrderBtn.Size = new System.Drawing.Size(179, 66);
-            this.updOrderBtn.TabIndex = 57;
-            this.updOrderBtn.Text = "צור פרוייקט";
-            this.updOrderBtn.UseVisualStyleBackColor = false;
+            this.openProjectBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.openProjectBtn.BackColor = System.Drawing.Color.DimGray;
+            this.openProjectBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.openProjectBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.openProjectBtn.Location = new System.Drawing.Point(40, 513);
+            this.openProjectBtn.Name = "openProjectBtn";
+            this.openProjectBtn.Size = new System.Drawing.Size(163, 52);
+            this.openProjectBtn.TabIndex = 57;
+            this.openProjectBtn.Text = "צור פרוייקט";
+            this.openProjectBtn.UseVisualStyleBackColor = false;
             // 
             // meetingTypeCmbx
             // 
@@ -197,6 +198,20 @@ namespace Landau.Win.forms
             this.meetingTitleTxb.Size = new System.Drawing.Size(215, 22);
             this.meetingTitleTxb.TabIndex = 67;
             // 
+            // addMeetingBtn
+            // 
+            this.addMeetingBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addMeetingBtn.BackColor = System.Drawing.Color.DimGray;
+            this.addMeetingBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.addMeetingBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.addMeetingBtn.Location = new System.Drawing.Point(40, 455);
+            this.addMeetingBtn.Name = "addMeetingBtn";
+            this.addMeetingBtn.Size = new System.Drawing.Size(163, 52);
+            this.addMeetingBtn.TabIndex = 69;
+            this.addMeetingBtn.Text = "הוסף פגישה";
+            this.addMeetingBtn.UseVisualStyleBackColor = false;
+            this.addMeetingBtn.Click += new System.EventHandler(this.button1_Click);
+            // 
             // addMeetingWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -204,6 +219,7 @@ namespace Landau.Win.forms
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1000, 577);
+            this.Controls.Add(this.addMeetingBtn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.meetingTitleTxb);
             this.Controls.Add(this.meetingDurationDtp);
@@ -213,7 +229,7 @@ namespace Landau.Win.forms
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.updOrderBtn);
+            this.Controls.Add(this.openProjectBtn);
             this.Controls.Add(this.meetingTypeCmbx);
             this.Controls.Add(this.addressTxb);
             this.Controls.Add(this.label1);
@@ -234,7 +250,7 @@ namespace Landau.Win.forms
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button updOrderBtn;
+        private System.Windows.Forms.Button openProjectBtn;
         private System.Windows.Forms.ComboBox meetingTypeCmbx;
         private System.Windows.Forms.TextBox addressTxb;
         private System.Windows.Forms.Label label1;
@@ -243,5 +259,6 @@ namespace Landau.Win.forms
         private Krypton.Toolkit.KryptonDateTimePicker meetingDateDtp;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox meetingTitleTxb;
+        private System.Windows.Forms.Button addMeetingBtn;
     }
 }

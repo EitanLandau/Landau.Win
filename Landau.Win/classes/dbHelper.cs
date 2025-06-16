@@ -273,7 +273,7 @@ namespace Landau.Win
             {
                 toUpdate.Id = meeting.Id;
                 toUpdate.projectID = meeting.projectID;
-                toUpdate.title = meeting.title;
+                toUpdate.topic = meeting.topic;
                 toUpdate.duration = meeting.duration;
                 toUpdate.date = meeting.date;
                 toUpdate.address = meeting.address;

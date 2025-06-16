@@ -76,7 +76,7 @@
             this.orders,
             this.serviceTab,
             this.kryptonRibbonTab1});
-            this.kryptonRibbon1.SelectedTab = this.costumersMangment;
+            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab1;
             this.kryptonRibbon1.Size = new System.Drawing.Size(946, 171);
             this.kryptonRibbon1.TabIndex = 0;
             this.kryptonRibbon1.SelectedTabChanged += new System.EventHandler(this.kryptonRibbon1_SelectedTabChanged);
@@ -218,6 +218,7 @@
             // 
             this.openProjectBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("openProjectBtn.ImageLarge")));
             this.openProjectBtn.TextLine1 = "פתיחת פרויקט";
+            this.openProjectBtn.Click += new System.EventHandler(this.openProjectBtn_Click);
             // 
             // updProjectBtn
             // 
