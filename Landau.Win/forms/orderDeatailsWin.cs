@@ -34,10 +34,6 @@ namespace Landau.Win.forms
 
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void addSubOrderBtn_Click(object sender, EventArgs e)
         {
@@ -103,7 +99,7 @@ MessageBoxIcon.Question);
             }
             if (!validateForm()) {
                 MessageBox.Show("מספר הזמנה: "+o1.Id);
-                orderHistory.updateDGV();
+                
                 mainWin.OpenAddOrderForm();
                  }
         }

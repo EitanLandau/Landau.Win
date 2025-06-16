@@ -59,9 +59,6 @@
             this.kryptonRibbonGroup4 = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple7 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.mangeServicesBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.kryptonRibbonGroup3 = new Krypton.Ribbon.KryptonRibbonGroup();
-            this.kryptonRibbonGroupTriple5 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
-            this.addTaskBtn = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.kryptonRibbonGroupThemeComboBox1 = new Krypton.Ribbon.KryptonRibbonGroupThemeComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).BeginInit();
@@ -79,7 +76,7 @@
             this.orders,
             this.serviceTab,
             this.kryptonRibbonTab1});
-            this.kryptonRibbon1.SelectedTab = this.orders;
+            this.kryptonRibbon1.SelectedTab = this.costumersMangment;
             this.kryptonRibbon1.Size = new System.Drawing.Size(946, 171);
             this.kryptonRibbon1.TabIndex = 0;
             this.kryptonRibbon1.SelectedTabChanged += new System.EventHandler(this.kryptonRibbon1_SelectedTabChanged);
@@ -200,8 +197,7 @@
             // 
             this.kryptonRibbonTab1.Groups.AddRange(new Krypton.Ribbon.KryptonRibbonGroup[] {
             this.kryptonRibbonGroup1,
-            this.kryptonRibbonGroup4,
-            this.kryptonRibbonGroup3});
+            this.kryptonRibbonGroup4});
             this.kryptonRibbonTab1.Text = "ניהול פרוייקטים";
             // 
             // kryptonRibbonGroup1
@@ -249,22 +245,6 @@
             this.mangeServicesBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("mangeServicesBtn.ImageLarge")));
             this.mangeServicesBtn.TextLine1 = "נהל תהליכים";
             this.mangeServicesBtn.Click += new System.EventHandler(this.mangeServicesBtn_Click);
-            // 
-            // kryptonRibbonGroup3
-            // 
-            this.kryptonRibbonGroup3.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
-            this.kryptonRibbonGroupTriple5});
-            this.kryptonRibbonGroup3.TextLine1 = "משימות";
-            // 
-            // kryptonRibbonGroupTriple5
-            // 
-            this.kryptonRibbonGroupTriple5.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.addTaskBtn});
-            // 
-            // addTaskBtn
-            // 
-            this.addTaskBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("addTaskBtn.ImageLarge")));
-            this.addTaskBtn.TextLine1 = "הוסף משימה";
             // 
             // mainPanel
             // 
@@ -329,9 +309,6 @@
         private Krypton.Ribbon.KryptonRibbonGroupButton updLectureBtn;
         private Krypton.Ribbon.KryptonRibbonGroupButton updProjectBtn;
         private Krypton.Ribbon.KryptonRibbonGroupButton mangeProjectBtn;
-        private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup3;
-        private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple5;
-        private Krypton.Ribbon.KryptonRibbonGroupButton addTaskBtn;
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple6;
         private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup4;
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple7;
