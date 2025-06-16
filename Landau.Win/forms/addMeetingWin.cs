@@ -29,9 +29,42 @@ namespace Landau.Win.forms
         {
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void addMeetingBtn_Click(object sender, EventArgs e)
         {
-
+            lecturesNseminarsTBL type = (lecturesNseminarsTBL)meetingTypeCmbx.SelectedItem;
+            if (!validateForm())
+            {
+                return;
+            }
+            meetingTBL m1 = new meetingTBL();
+            TimeSpan t = meetingDurationDtp.Value.TimeOfDay;
+            m1.projectID = p1.Id;
+            m1.typeID = type.Id;
+            m1.date = meetingDateDtp.Value.Date;
+            m1.duration = t;
+            m1.notes = meetingDescriptionTxb.Text;
+            m1.address = addressTxb.Text;
+            m1.topic = meetingTitleTxb.Text;
+            m1 = DBHelper.AddMeeting(m1);
+            if (m1 != null)
+            {
+                MessageBox.Show("הזמנה נוספה בהצלחה");
+                meetingTypeCmbx.Text = "";
+                meetingDateDtp.Value = DateTime.Now;
+                addressTxb.Text = "";
+                meetingDescriptionTxb.Text = "";
+                meetingTitleTxb.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("וואלה לא סבבה");
+            }
+        }
+        private bool validateForm()
+        {
+            bool a1 = true/*Utils.isNotNull(productTypeCmbx.SelectedItem, errorProviderProduct, productTypeCmbx, "יש לבחור סוג מוצר")*/;
+            bool a2 = true/*Utils.isNotEmpty(titleTxb.Text, errorProviderProduct, titleTxb, "יש להזין כותרת להרצאה")*/;
+            return a1 && a2;
         }
     }
 }

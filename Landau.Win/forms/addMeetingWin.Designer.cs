@@ -52,7 +52,7 @@ namespace Landau.Win.forms
             // meetingDescriptionTxb
             // 
             this.meetingDescriptionTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.meetingDescriptionTxb.Location = new System.Drawing.Point(105, 58);
+            this.meetingDescriptionTxb.Location = new System.Drawing.Point(92, 58);
             this.meetingDescriptionTxb.Multiline = true;
             this.meetingDescriptionTxb.Name = "meetingDescriptionTxb";
             this.meetingDescriptionTxb.Size = new System.Drawing.Size(218, 365);
@@ -210,7 +210,7 @@ namespace Landau.Win.forms
             this.addMeetingBtn.TabIndex = 69;
             this.addMeetingBtn.Text = "הוסף פגישה";
             this.addMeetingBtn.UseVisualStyleBackColor = false;
-            this.addMeetingBtn.Click += new System.EventHandler(this.button1_Click);
+            this.addMeetingBtn.Click += new System.EventHandler(this.addMeetingBtn_Click);
             // 
             // addMeetingWin
             // 

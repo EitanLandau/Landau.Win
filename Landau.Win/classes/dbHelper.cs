@@ -294,7 +294,7 @@ namespace Landau.Win
                 toUpdate.customerID = project.customerID;
                 toUpdate.title = project.title;
                 toUpdate.serviceID = project.serviceID;
-                toUpdate.status = project.status;
+                toUpdate.inProcess = project.inProcess;
                 toUpdate.description = project.description;
                 db.SaveChanges();
                 GetAllprojects();
