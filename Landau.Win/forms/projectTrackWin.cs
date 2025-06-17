@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Landau.Win.forms
 {
-    public partial class Form1 : Form
+    public partial class projectTrackWin : Form
     {
-        public Form1()
+        public projectTrackWin()
         {
             InitializeComponent();
         }

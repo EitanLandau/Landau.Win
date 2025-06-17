@@ -138,11 +138,11 @@
     <Compile Include="forms\addCostumerForm.Designer.cs">
       <DependentUpon>addCostumerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\Form1.cs">
+    <Compile Include="forms\projectTrackWin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="forms\projectTrackWin.Designer.cs">
+      <DependentUpon>projectTrackWin.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\manageServiceWin.cs">
       <SubType>Form</SubType>
@@ -270,8 +270,8 @@
     <EmbeddedResource Include="forms\addProductWin.resx">
       <DependentUpon>addProductWin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="forms\projectTrackWin.resx">
+      <DependentUpon>projectTrackWin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\manageServiceWin.resx">
       <DependentUpon>manageServiceWin.cs</DependentUpon>
