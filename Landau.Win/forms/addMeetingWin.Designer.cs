@@ -185,7 +185,7 @@ namespace Landau.Win.forms
             this.label6.BackColor = System.Drawing.SystemColors.Control;
             this.label6.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(874, 65);
+            this.label6.Location = new System.Drawing.Point(872, 58);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 29);
             this.label6.TabIndex = 68;

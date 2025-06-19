@@ -140,6 +140,7 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
             <PropertyRef Name="customerID" />
             <PropertyRef Name="serviceID" />
             <PropertyRef Name="title" />
+            <PropertyRef Name="description" />
             <PropertyRef Name="serviceName" />
             <PropertyRef Name="fullName" />
           </Key>
@@ -155,6 +156,7 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <Property Name="customerID" Type="int" Nullable="false" />
           <Property Name="serviceID" Type="int" Nullable="false" />
           <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="2000" Nullable="false" />
           <Property Name="serviceName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="fullName" Type="nvarchar" MaxLength="101" Nullable="false" />
         </EntityType>
@@ -290,6 +292,7 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
     [projectTrackView].[customerID] AS [customerID], 
     [projectTrackView].[serviceID] AS [serviceID], 
     [projectTrackView].[title] AS [title], 
+    [projectTrackView].[description] AS [description], 
     [projectTrackView].[serviceName] AS [serviceName], 
     [projectTrackView].[fullName] AS [fullName]
     FROM [dbo].[projectTrackView] AS [projectTrackView]</DefiningQuery>
@@ -519,6 +522,7 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
             <PropertyRef Name="customerID" />
             <PropertyRef Name="serviceID" />
             <PropertyRef Name="title" />
+            <PropertyRef Name="description" />
             <PropertyRef Name="serviceName" />
             <PropertyRef Name="fullName" />
           </Key>
@@ -534,6 +538,7 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
           <Property Name="customerID" Type="Int32" Nullable="false" />
           <Property Name="serviceID" Type="Int32" Nullable="false" />
           <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
           <Property Name="serviceName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="fullName" Type="String" Nullable="false" MaxLength="101" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -759,6 +764,7 @@ warning 6002: The table/view 'C:\USERS\לנדאו\SOURCE\REPOS\LANDAU.WIN\LANDAU
               <MappingFragment StoreEntitySet="projectTrackView">
                 <ScalarProperty Name="fullName" ColumnName="fullName" />
                 <ScalarProperty Name="serviceName" ColumnName="serviceName" />
+                <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="serviceID" ColumnName="serviceID" />
                 <ScalarProperty Name="customerID" ColumnName="customerID" />

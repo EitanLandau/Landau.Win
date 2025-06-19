@@ -26,6 +26,7 @@ namespace Landau.Win
         public int customerID { get; set; }
         public int serviceID { get; set; }
         public string title { get; set; }
+        public string description { get; set; }
         public string serviceName { get; set; }
         public string fullName { get; set; }
     }

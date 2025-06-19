@@ -35,12 +35,14 @@ namespace Landau.Win.forms
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.pickProjectCmbx = new System.Windows.Forms.ComboBox();
             this.projectTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projectMeetingsDGV = new System.Windows.Forms.DataGridView();
             this.projectTrackViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.meetingDescriptionTxb = new System.Windows.Forms.TextBox();
+            this.meetingTopicTxb = new System.Windows.Forms.TextBox();
+            this.nextMeetingDateLbl = new System.Windows.Forms.Label();
+            this.meetingsLeftLbl = new System.Windows.Forms.Label();
             this.topic = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +50,8 @@ namespace Landau.Win.forms
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.projectTBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectMeetingsDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectTrackViewBindingSource)).BeginInit();
@@ -59,7 +63,7 @@ namespace Landau.Win.forms
             this.projectNameLbl.BackColor = System.Drawing.SystemColors.Control;
             this.projectNameLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.projectNameLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.projectNameLbl.Location = new System.Drawing.Point(313, 44);
+            this.projectNameLbl.Location = new System.Drawing.Point(456, 46);
             this.projectNameLbl.Name = "projectNameLbl";
             this.projectNameLbl.Size = new System.Drawing.Size(83, 29);
             this.projectNameLbl.TabIndex = 69;
@@ -69,66 +73,40 @@ namespace Landau.Win.forms
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(987, 317);
+            this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label1.Location = new System.Drawing.Point(1291, 284);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 29);
+            this.label1.Size = new System.Drawing.Size(127, 29);
             this.label1.TabIndex = 70;
-            this.label1.Text = "כותרת";
+            this.label1.Text = "שם פגישה";
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(1184, 89);
+            this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label2.Location = new System.Drawing.Point(1266, 363);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 29);
+            this.label2.Size = new System.Drawing.Size(152, 29);
             this.label2.TabIndex = 71;
-            this.label2.Text = "כותרת";
+            this.label2.Text = "תיאור פגישה";
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.Control;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(1105, 32);
+            this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label3.Location = new System.Drawing.Point(1241, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 29);
+            this.label3.Size = new System.Drawing.Size(150, 29);
             this.label3.TabIndex = 72;
-            this.label3.Text = "כותרת";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.Control;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(1105, 381);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 29);
-            this.label4.TabIndex = 73;
-            this.label4.Text = "כותרת";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.Control;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(1048, 278);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 29);
-            this.label5.TabIndex = 74;
-            this.label5.Text = "כותרת";
+            this.label3.Text = "בחר פרוייקט";
             // 
             // pickProjectCmbx
             // 
@@ -136,11 +114,12 @@ namespace Landau.Win.forms
             this.pickProjectCmbx.DataSource = this.projectTBLBindingSource;
             this.pickProjectCmbx.DisplayMember = "title";
             this.pickProjectCmbx.FormattingEnabled = true;
-            this.pickProjectCmbx.Location = new System.Drawing.Point(916, 37);
+            this.pickProjectCmbx.Location = new System.Drawing.Point(1069, 34);
             this.pickProjectCmbx.Name = "pickProjectCmbx";
-            this.pickProjectCmbx.Size = new System.Drawing.Size(166, 24);
+            this.pickProjectCmbx.Size = new System.Drawing.Size(149, 24);
             this.pickProjectCmbx.TabIndex = 75;
             this.pickProjectCmbx.ValueMember = "Id";
+            this.pickProjectCmbx.SelectedIndexChanged += new System.EventHandler(this.pickProjectCmbx_SelectedIndexChanged);
             // 
             // projectTBLBindingSource
             // 
@@ -148,6 +127,8 @@ namespace Landau.Win.forms
             // 
             // projectMeetingsDGV
             // 
+            this.projectMeetingsDGV.AllowUserToAddRows = false;
+            this.projectMeetingsDGV.AllowUserToDeleteRows = false;
             this.projectMeetingsDGV.AutoGenerateColumns = false;
             this.projectMeetingsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.projectMeetingsDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -157,24 +138,80 @@ namespace Landau.Win.forms
             this.nameDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
             this.addressDataGridViewTextBoxColumn,
-            this.durationDataGridViewTextBoxColumn});
+            this.durationDataGridViewTextBoxColumn,
+            this.notes,
+            this.description});
             this.projectMeetingsDGV.DataSource = this.projectTrackViewBindingSource;
-            this.projectMeetingsDGV.Location = new System.Drawing.Point(21, 89);
+            this.projectMeetingsDGV.Location = new System.Drawing.Point(21, 98);
             this.projectMeetingsDGV.Name = "projectMeetingsDGV";
             this.projectMeetingsDGV.RowHeadersVisible = false;
             this.projectMeetingsDGV.RowHeadersWidth = 51;
             this.projectMeetingsDGV.RowTemplate.Height = 24;
-            this.projectMeetingsDGV.Size = new System.Drawing.Size(877, 453);
+            this.projectMeetingsDGV.Size = new System.Drawing.Size(1138, 504);
             this.projectMeetingsDGV.TabIndex = 76;
+            this.projectMeetingsDGV.SelectionChanged += new System.EventHandler(this.projectMeetingsDGV_SelectionChanged);
             // 
             // projectTrackViewBindingSource
             // 
             this.projectTrackViewBindingSource.DataSource = typeof(Landau.Win.projectTrackView);
             // 
+            // meetingDescriptionTxb
+            // 
+            this.meetingDescriptionTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.meetingDescriptionTxb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.meetingDescriptionTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.meetingDescriptionTxb.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.meetingDescriptionTxb.Location = new System.Drawing.Point(1050, 363);
+            this.meetingDescriptionTxb.Multiline = true;
+            this.meetingDescriptionTxb.Name = "meetingDescriptionTxb";
+            this.meetingDescriptionTxb.Size = new System.Drawing.Size(198, 239);
+            this.meetingDescriptionTxb.TabIndex = 77;
+            // 
+            // meetingTopicTxb
+            // 
+            this.meetingTopicTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.meetingTopicTxb.BackColor = System.Drawing.SystemColors.Window;
+            this.meetingTopicTxb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.meetingTopicTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.meetingTopicTxb.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.meetingTopicTxb.Location = new System.Drawing.Point(1050, 291);
+            this.meetingTopicTxb.Name = "meetingTopicTxb";
+            this.meetingTopicTxb.ReadOnly = true;
+            this.meetingTopicTxb.Size = new System.Drawing.Size(198, 20);
+            this.meetingTopicTxb.TabIndex = 78;
+            // 
+            // nextMeetingDateLbl
+            // 
+            this.nextMeetingDateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nextMeetingDateLbl.AutoSize = true;
+            this.nextMeetingDateLbl.BackColor = System.Drawing.Color.Transparent;
+            this.nextMeetingDateLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.nextMeetingDateLbl.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.nextMeetingDateLbl.Location = new System.Drawing.Point(1158, 116);
+            this.nextMeetingDateLbl.Name = "nextMeetingDateLbl";
+            this.nextMeetingDateLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.nextMeetingDateLbl.Size = new System.Drawing.Size(186, 29);
+            this.nextMeetingDateLbl.TabIndex = 80;
+            this.nextMeetingDateLbl.Text = "פגישה הבאה:   ";
+            // 
+            // meetingsLeftLbl
+            // 
+            this.meetingsLeftLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.meetingsLeftLbl.AutoSize = true;
+            this.meetingsLeftLbl.BackColor = System.Drawing.Color.Transparent;
+            this.meetingsLeftLbl.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.meetingsLeftLbl.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.meetingsLeftLbl.Location = new System.Drawing.Point(1224, 207);
+            this.meetingsLeftLbl.Name = "meetingsLeftLbl";
+            this.meetingsLeftLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.meetingsLeftLbl.Size = new System.Drawing.Size(194, 29);
+            this.meetingsLeftLbl.TabIndex = 81;
+            this.meetingsLeftLbl.Text = "פגישות שנשארו:";
+            // 
             // topic
             // 
             this.topic.DataPropertyName = "topic";
-            this.topic.HeaderText = "כותרת הפגישה";
+            this.topic.HeaderText = "שם הפגישה";
             this.topic.MinimumWidth = 6;
             this.topic.Name = "topic";
             this.topic.Width = 125;
@@ -227,17 +264,37 @@ namespace Landau.Win.forms
             this.durationDataGridViewTextBoxColumn.Name = "durationDataGridViewTextBoxColumn";
             this.durationDataGridViewTextBoxColumn.Width = 125;
             // 
+            // notes
+            // 
+            this.notes.DataPropertyName = "notes";
+            this.notes.HeaderText = "notes";
+            this.notes.MinimumWidth = 6;
+            this.notes.Name = "notes";
+            this.notes.Visible = false;
+            this.notes.Width = 125;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "description";
+            this.description.HeaderText = "description";
+            this.description.MinimumWidth = 6;
+            this.description.Name = "description";
+            this.description.Visible = false;
+            this.description.Width = 125;
+            // 
             // projectTrackWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1279, 743);
+            this.ClientSize = new System.Drawing.Size(1430, 889);
+            this.Controls.Add(this.meetingsLeftLbl);
+            this.Controls.Add(this.nextMeetingDateLbl);
+            this.Controls.Add(this.meetingTopicTxb);
+            this.Controls.Add(this.meetingDescriptionTxb);
             this.Controls.Add(this.projectMeetingsDGV);
             this.Controls.Add(this.pickProjectCmbx);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -260,12 +317,14 @@ namespace Landau.Win.forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox pickProjectCmbx;
         private System.Windows.Forms.DataGridView projectMeetingsDGV;
         private System.Windows.Forms.BindingSource projectTBLBindingSource;
         private System.Windows.Forms.BindingSource projectTrackViewBindingSource;
+        private System.Windows.Forms.TextBox meetingDescriptionTxb;
+        private System.Windows.Forms.TextBox meetingTopicTxb;
+        private System.Windows.Forms.Label nextMeetingDateLbl;
+        private System.Windows.Forms.Label meetingsLeftLbl;
         private System.Windows.Forms.DataGridViewTextBoxColumn topic;
         private System.Windows.Forms.DataGridViewTextBoxColumn projectIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
@@ -273,5 +332,7 @@ namespace Landau.Win.forms
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn durationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn notes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
     }
 }

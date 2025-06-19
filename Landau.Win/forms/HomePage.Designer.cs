@@ -229,6 +229,7 @@
             // 
             this.trackYourProjectBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("trackYourProjectBtn.ImageLarge")));
             this.trackYourProjectBtn.TextLine1 = "עקוב אחרי הפרויקט";
+            this.trackYourProjectBtn.Click += new System.EventHandler(this.trackYourProjectBtn_Click);
             // 
             // kryptonRibbonGroup4
             // 
