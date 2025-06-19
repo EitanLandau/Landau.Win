@@ -21,6 +21,7 @@ namespace Landau.Win
         public static List<meetingTBL> allMeetings;
         public static List<projectTBL> allProjects;
         public static List<orderHistoryView> allorderHistoryViews;
+        public static List<projectTrackView> allProjectTrackViews;
         #endregion
 
         #region Load Functions
@@ -32,16 +33,23 @@ namespace Landau.Win
             GetAllSubOrders();
             GetAllServices();
             GetAllLecturesNseminars();
+            GetAllMeetings();
+            GetAllprojects();
+            getProjectTrackViewsViews();
             getOrderHistoryViews();
 
-        }
-        public static void getOrderHistoryViews()
-        {
-            allorderHistoryViews = (from s in db.orderHistoryView select s).ToList();
         }
         #endregion
 
         #region Get Functions
+        public static void getOrderHistoryViews()
+        {
+            allorderHistoryViews = (from s in db.orderHistoryView select s).ToList();
+        }
+        public static void getProjectTrackViewsViews()
+        {
+            allProjectTrackViews = (from p in db.projectTrackView select p).ToList();
+        }
         public static List<costumerTBL> GetAllCostumers()
         {
             allCostumers = (from c in db.costumerTBL orderby c.lastName select c).ToList();

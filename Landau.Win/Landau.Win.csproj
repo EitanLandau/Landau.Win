@@ -337,6 +337,8 @@
     <None Include="Properties\DataSources\meetingTypeTBL.datasource" />
     <None Include="Properties\DataSources\orderHistoryView.datasource" />
     <None Include="Properties\DataSources\orderTBL.datasource" />
+    <None Include="Properties\DataSources\projectTBL.datasource" />
+    <None Include="Properties\DataSources\projectTrackView.datasource" />
     <None Include="Properties\DataSources\serviceTBL.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

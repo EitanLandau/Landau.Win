@@ -29,27 +29,29 @@ namespace Landau.Win.forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(projectTrackWin));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.projectNameLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.pickProjectCmbx = new System.Windows.Forms.ComboBox();
+            this.projectTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projectMeetingsDGV = new System.Windows.Forms.DataGridView();
+            this.projectTrackViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.topic = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.projectTBLBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectMeetingsDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectTrackViewBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 90);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(759, 484);
-            this.dataGridView1.TabIndex = 0;
             // 
             // projectNameLbl
             // 
@@ -83,7 +85,7 @@ namespace Landau.Win.forms
             this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(1016, 205);
+            this.label2.Location = new System.Drawing.Point(1184, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 29);
             this.label2.TabIndex = 71;
@@ -96,7 +98,7 @@ namespace Landau.Win.forms
             this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(1105, 57);
+            this.label3.Location = new System.Drawing.Point(1105, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 29);
             this.label3.TabIndex = 72;
@@ -128,13 +130,102 @@ namespace Landau.Win.forms
             this.label5.TabIndex = 74;
             this.label5.Text = "כותרת";
             // 
-            // comboBox1
+            // pickProjectCmbx
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(912, 90);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 24);
-            this.comboBox1.TabIndex = 75;
+            this.pickProjectCmbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pickProjectCmbx.DataSource = this.projectTBLBindingSource;
+            this.pickProjectCmbx.DisplayMember = "title";
+            this.pickProjectCmbx.FormattingEnabled = true;
+            this.pickProjectCmbx.Location = new System.Drawing.Point(916, 37);
+            this.pickProjectCmbx.Name = "pickProjectCmbx";
+            this.pickProjectCmbx.Size = new System.Drawing.Size(166, 24);
+            this.pickProjectCmbx.TabIndex = 75;
+            this.pickProjectCmbx.ValueMember = "Id";
+            // 
+            // projectTBLBindingSource
+            // 
+            this.projectTBLBindingSource.DataSource = typeof(Landau.Win.projectTBL);
+            // 
+            // projectMeetingsDGV
+            // 
+            this.projectMeetingsDGV.AutoGenerateColumns = false;
+            this.projectMeetingsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.projectMeetingsDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.topic,
+            this.projectIDDataGridViewTextBoxColumn,
+            this.fullNameDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn,
+            this.durationDataGridViewTextBoxColumn});
+            this.projectMeetingsDGV.DataSource = this.projectTrackViewBindingSource;
+            this.projectMeetingsDGV.Location = new System.Drawing.Point(21, 89);
+            this.projectMeetingsDGV.Name = "projectMeetingsDGV";
+            this.projectMeetingsDGV.RowHeadersVisible = false;
+            this.projectMeetingsDGV.RowHeadersWidth = 51;
+            this.projectMeetingsDGV.RowTemplate.Height = 24;
+            this.projectMeetingsDGV.Size = new System.Drawing.Size(877, 453);
+            this.projectMeetingsDGV.TabIndex = 76;
+            // 
+            // projectTrackViewBindingSource
+            // 
+            this.projectTrackViewBindingSource.DataSource = typeof(Landau.Win.projectTrackView);
+            // 
+            // topic
+            // 
+            this.topic.DataPropertyName = "topic";
+            this.topic.HeaderText = "כותרת הפגישה";
+            this.topic.MinimumWidth = 6;
+            this.topic.Name = "topic";
+            this.topic.Width = 125;
+            // 
+            // projectIDDataGridViewTextBoxColumn
+            // 
+            this.projectIDDataGridViewTextBoxColumn.DataPropertyName = "projectID";
+            this.projectIDDataGridViewTextBoxColumn.HeaderText = "מספר פרוייקט";
+            this.projectIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.projectIDDataGridViewTextBoxColumn.Name = "projectIDDataGridViewTextBoxColumn";
+            this.projectIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // fullNameDataGridViewTextBoxColumn
+            // 
+            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "fullName";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "שם לקוח";
+            this.fullNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            this.fullNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "סוג פגישה";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "תאריך";
+            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "כתובת";
+            this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // durationDataGridViewTextBoxColumn
+            // 
+            this.durationDataGridViewTextBoxColumn.DataPropertyName = "duration";
+            this.durationDataGridViewTextBoxColumn.HeaderText = "משך זמן הפגישה";
+            this.durationDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.durationDataGridViewTextBoxColumn.Name = "durationDataGridViewTextBoxColumn";
+            this.durationDataGridViewTextBoxColumn.Width = 125;
             // 
             // projectTrackWin
             // 
@@ -143,32 +234,44 @@ namespace Landau.Win.forms
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 743);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.projectMeetingsDGV);
+            this.Controls.Add(this.pickProjectCmbx);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.projectNameLbl);
-            this.Controls.Add(this.dataGridView1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "projectTrackWin";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.projectTrackWin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.projectTBLBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectMeetingsDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectTrackViewBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label projectNameLbl;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox pickProjectCmbx;
+        private System.Windows.Forms.DataGridView projectMeetingsDGV;
+        private System.Windows.Forms.BindingSource projectTBLBindingSource;
+        private System.Windows.Forms.BindingSource projectTrackViewBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn topic;
+        private System.Windows.Forms.DataGridViewTextBoxColumn projectIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn durationDataGridViewTextBoxColumn;
     }
 }
