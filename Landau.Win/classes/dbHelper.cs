@@ -19,6 +19,7 @@ namespace Landau.Win
         public static List<serviceTBL> allServices;
         public static List<lecturesNseminarsTBL> allLecturesNseminars;
         public static List<meetingTBL> allMeetings;
+        public static List<meetingTypeTBL> allMeetingTypes;
         public static List<projectTBL> allProjects;
         public static List<orderHistoryView> allorderHistoryViews;
         public static List<projectTrackView> allProjectTrackViews;
@@ -37,7 +38,7 @@ namespace Landau.Win
             GetAllprojects();
             getProjectTrackViewsViews();
             getOrderHistoryViews();
-
+            GetAllMeetingTypes();
         }
         #endregion
 
@@ -82,6 +83,11 @@ namespace Landau.Win
         {
             allMeetings = (from m in db.meetingTBL orderby m.date select m).ToList();
             return allMeetings;
+        }
+        public static List<meetingTypeTBL> GetAllMeetingTypes()
+        {
+            allMeetingTypes = (from t in db.meetingTypeTBL orderby t.name select t).ToList();
+            return allMeetingTypes;
         }
         public static List<projectTBL> GetAllprojects()
         {
@@ -380,6 +386,24 @@ namespace Landau.Win
                 db.serviceTBL.Remove(toDelete);
                 db.SaveChanges();
                 GetAllServices();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting service: " + ex.Message);
+                return false;
+            }
+        }
+        public static bool DeleteProject(projectTBL project)
+        {
+            try
+            {
+                var toDelete = db.projectTBL.FirstOrDefault(s => s.Id == project.Id);
+                if (toDelete == null)
+                    return false;
+                db.projectTBL.Remove(toDelete);
+                db.SaveChanges();
+                GetAllprojects();
                 return true;
             }
             catch (Exception ex)

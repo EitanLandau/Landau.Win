@@ -46,6 +46,7 @@ namespace Landau.Win.forms
             this.label6 = new System.Windows.Forms.Label();
             this.meetingTitleTxb = new System.Windows.Forms.TextBox();
             this.addMeetingBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.meetingTypeTBLBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,7 +116,7 @@ namespace Landau.Win.forms
             this.openProjectBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.openProjectBtn.Location = new System.Drawing.Point(40, 513);
             this.openProjectBtn.Name = "openProjectBtn";
-            this.openProjectBtn.Size = new System.Drawing.Size(163, 52);
+            this.openProjectBtn.Size = new System.Drawing.Size(178, 52);
             this.openProjectBtn.TabIndex = 57;
             this.openProjectBtn.Text = "צור פרוייקט";
             this.openProjectBtn.UseVisualStyleBackColor = false;
@@ -172,7 +173,8 @@ namespace Landau.Win.forms
             // 
             this.meetingDateDtp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.meetingDateDtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.meetingDateDtp.Location = new System.Drawing.Point(566, 373);
+            this.meetingDateDtp.Location = new System.Drawing.Point(566, 374);
+            this.meetingDateDtp.MinDate = new System.DateTime(2025, 6, 20, 14, 5, 20, 0);
             this.meetingDateDtp.Name = "meetingDateDtp";
             this.meetingDateDtp.Size = new System.Drawing.Size(215, 26);
             this.meetingDateDtp.StateCommon.Content.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
@@ -207,11 +209,25 @@ namespace Landau.Win.forms
             this.addMeetingBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.addMeetingBtn.Location = new System.Drawing.Point(40, 455);
             this.addMeetingBtn.Name = "addMeetingBtn";
-            this.addMeetingBtn.Size = new System.Drawing.Size(163, 52);
+            this.addMeetingBtn.Size = new System.Drawing.Size(178, 52);
             this.addMeetingBtn.TabIndex = 69;
             this.addMeetingBtn.Text = "הוסף פגישה";
             this.addMeetingBtn.UseVisualStyleBackColor = false;
             this.addMeetingBtn.Click += new System.EventHandler(this.addMeetingBtn_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.Location = new System.Drawing.Point(291, 455);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(189, 81);
+            this.button1.TabIndex = 70;
+            this.button1.Text = "כפתור הבאסה";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // addMeetingWin
             // 
@@ -220,6 +236,7 @@ namespace Landau.Win.forms
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1000, 577);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.addMeetingBtn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.meetingTitleTxb);
@@ -261,5 +278,6 @@ namespace Landau.Win.forms
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox meetingTitleTxb;
         private System.Windows.Forms.Button addMeetingBtn;
+        private System.Windows.Forms.Button button1;
     }
 }

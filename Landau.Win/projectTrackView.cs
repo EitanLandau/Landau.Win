@@ -29,5 +29,6 @@ namespace Landau.Win
         public string description { get; set; }
         public string serviceName { get; set; }
         public string fullName { get; set; }
+        public string institution { get; set; }
     }
 }

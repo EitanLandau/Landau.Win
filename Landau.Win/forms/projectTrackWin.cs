@@ -29,7 +29,6 @@ namespace Landau.Win.forms
             pickProjectCmbx.DataSource = allProjects;
             pickProjectCmbx.DisplayMember = "title";
             pickProjectCmbx.ValueMember = "id";
-            
             updateDGV();
         }
         private void updateDGV()
@@ -42,33 +41,34 @@ namespace Landau.Win.forms
 
         private void projectMeetingsDGV_SelectionChanged(object sender, EventArgs e)
         {
-            /*  if (projectMeetingsDGV.CurrentRow != null)
+            if (projectMeetingsDGV.CurrentRow != null)
               {
                   DataGridViewRow row = projectMeetingsDGV.CurrentRow;
-                  meetingDescriptionTxb.Text = row.Cells["titleDataGridViewTextBoxColumn"].Value.ToString();
-                  updOrderDateDtp.Value = Convert.ToDateTime(row.Cells["dateDataGridViewTextBoxColumn"].Value);
-                  updOrderHourDtp.Value = Convert.ToDateTime(row.Cells["dateDataGridViewTextBoxColumn"].Value);
-                  updAdressTxb.Text = row.Cells["adressDataGridViewTextBoxColumn"].Value.ToString();
-                  updAmmountInvitedUD.Value = Convert.ToInt32(row.Cells["amountInvitedDataGridViewTextBoxColumn"].Value);
-                  updOrderDeatsNotesTxb.Text = row.Cells["subOrderNotes"].Value.ToString();
-              }*/
+                  meetingDescriptionTxb.Text = row.Cells["notes"].Value.ToString();
+                  meetingTopicTxb.Text = row.Cells["topic"].Value.ToString();
+              }
         }
 
         private void pickProjectCmbx_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedProject = (projectTBL)pickProjectCmbx.SelectedItem;
-            updateDGV();
-            if (!selectedProject.inProcess)
+            projectNameLbl.Text = selectedProject.title;
+            projectDescriptionTxb.Text = selectedProject.description;
+            projectCreationDateTxb.Text = selectedProject.creationDate.Date.ToString("D", new CultureInfo("he-IL"));
+            DateTime today = DateTime.Now;
+            List<projectTrackView> lst = allProjectTrackViews.Where(x => x.projectID.Equals(selectedProject.Id) && x.date >= today).ToList();
+
+            if (lst.Count == 0)
             {
                 nextMeetingDateLbl.Text = "הפרוייקט לא פעיל";
                 meetingsLeftLbl.Text = "פגישות שנשארו: 0";
             }
             else
             {
-                DateTime today = DateTime.Now;
-
-                // nextMeetingDateLbl.Text = 
+                nextMeetingDateLbl.Text = "פגישה הבאה:" + lst.FirstOrDefault().date.ToString("D", new CultureInfo("he-IL"));
+                meetingsLeftLbl.Text = "פגישות שנשארו:" + lst.Count;
             }
+            updateDGV();
         }
     }
 }

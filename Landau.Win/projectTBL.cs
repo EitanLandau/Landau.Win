@@ -27,7 +27,6 @@ namespace Landau.Win
         public bool inProcess { get; set; }
         public string description { get; set; }
         public System.DateTime creationDate { get; set; }
-        public int meetingsNum { get; set; }
     
         public virtual costumerTBL costumerTBL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

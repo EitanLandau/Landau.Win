@@ -12,9 +12,9 @@ namespace Landau.Win.forms
 {
     public partial class addMeetingWin : Form
     {
-        int meetingCounter = 0;
         HomePage mainWin;
         projectTBL p1;
+        List<meetingTypeTBL> allMeetingTypes;
         public addMeetingWin()
         {
             InitializeComponent();
@@ -28,11 +28,16 @@ namespace Landau.Win.forms
 
         private void addMeetingWin_Load(object sender, EventArgs e)
         {
+            allMeetingTypes = DBHelper.allMeetingTypes;
+            meetingTypeCmbx.DataSource = allMeetingTypes;
+            meetingTypeCmbx.DisplayMember = "name";
+            meetingTypeCmbx.ValueMember = "id";
+            meetingDateDtp.MinDate = DateTime.Now;
         }
 
         private void addMeetingBtn_Click(object sender, EventArgs e)
         {
-            lecturesNseminarsTBL type = (lecturesNseminarsTBL)meetingTypeCmbx.SelectedItem;
+            meetingTypeTBL type = (meetingTypeTBL)meetingTypeCmbx.SelectedItem;
             if (!validateForm())
             {
                 return;
@@ -49,13 +54,12 @@ namespace Landau.Win.forms
             m1 = DBHelper.AddMeeting(m1);
             if (m1 != null)
             {
-                MessageBox.Show("הזמנה נוספה בהצלחה");
+                MessageBox.Show("פגישה נוספה בהצלחה");
                 meetingTypeCmbx.Text = "";
                 meetingDateDtp.Value = DateTime.Now;
                 addressTxb.Text = "";
                 meetingDescriptionTxb.Text = "";
                 meetingTitleTxb.Text = "";
-                meetingCounter++;
             }
             else
             {
@@ -71,14 +75,18 @@ namespace Landau.Win.forms
 
         private void openProjectBtn_Click(object sender, EventArgs e)
         {
-            p1.meetingsNum = meetingCounter;
-            if (DBHelper.UpdateProject(p1))
+                mainWin.openNewProject();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (DBHelper.DeleteProject(p1))
             {
                 mainWin.openNewProject();
             }
             else
             {
-                MessageBox.Show("וואלה משהו לא סבבה פה");
+                MessageBox.Show("לא סבבי בכלל");
             }
         }
     }

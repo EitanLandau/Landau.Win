@@ -32,15 +32,18 @@ namespace Landau.Win.forms
         private void continueProjBtn_Click(object sender, EventArgs e)
         {
             costumerTBL selectedCustomer = (costumerTBL)projectCustomerCmbx.SelectedItem;
+            serviceTBL selectedService = (serviceTBL)chooseServiceCmbx.SelectedItem;
+
             if (selectedCustomer == null)
                 return;
 
             projectTBL p1 = new projectTBL();
             p1.customerID = selectedCustomer.Id;
+            p1.serviceID = selectedService.Id;
+            p1.title = projTitleTxb.Text;
             p1.creationDate = DateTime.Now;
             p1.description = projectDescriptionTxb.Text.Trim();
             p1.inProcess = true;
-            p1.meetingsNum = 1;
             p1 = DBHelper.AddProject(p1);
             if (p1 == null)
             {
