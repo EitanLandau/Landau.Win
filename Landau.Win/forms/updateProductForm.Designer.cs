@@ -43,6 +43,8 @@ namespace Landau.Win.forms
             this.updPriceNumUD = new System.Windows.Forms.NumericUpDown();
             this.updProductTypeCmbx = new System.Windows.Forms.ComboBox();
             this.errorProviderUpdProduct = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.updPriceNumUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUpdProduct)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +55,7 @@ namespace Landau.Win.forms
             this.updateProductBtn.BackColor = System.Drawing.Color.Purple;
             this.updateProductBtn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.updateProductBtn.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.updateProductBtn.Location = new System.Drawing.Point(24, 380);
+            this.updateProductBtn.Location = new System.Drawing.Point(24, 472);
             this.updateProductBtn.Name = "updateProductBtn";
             this.updateProductBtn.Size = new System.Drawing.Size(145, 58);
             this.updateProductBtn.TabIndex = 21;
@@ -64,7 +66,7 @@ namespace Landau.Win.forms
             // updProductDescribtionTxb
             // 
             this.updProductDescribtionTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updProductDescribtionTxb.Location = new System.Drawing.Point(177, 76);
+            this.updProductDescribtionTxb.Location = new System.Drawing.Point(344, 161);
             this.updProductDescribtionTxb.Multiline = true;
             this.updProductDescribtionTxb.Name = "updProductDescribtionTxb";
             this.updProductDescribtionTxb.Size = new System.Drawing.Size(194, 287);
@@ -76,7 +78,7 @@ namespace Landau.Win.forms
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label5.ForeColor = System.Drawing.Color.Magenta;
-            this.label5.Location = new System.Drawing.Point(683, 334);
+            this.label5.Location = new System.Drawing.Point(854, 419);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 29);
             this.label5.TabIndex = 19;
@@ -88,7 +90,7 @@ namespace Landau.Win.forms
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label4.ForeColor = System.Drawing.Color.Magenta;
-            this.label4.Location = new System.Drawing.Point(215, 28);
+            this.label4.Location = new System.Drawing.Point(382, 113);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 29);
             this.label4.TabIndex = 18;
@@ -100,7 +102,7 @@ namespace Landau.Win.forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label3.ForeColor = System.Drawing.Color.Magenta;
-            this.label3.Location = new System.Drawing.Point(550, 237);
+            this.label3.Location = new System.Drawing.Point(721, 322);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(216, 29);
             this.label3.TabIndex = 17;
@@ -112,7 +114,7 @@ namespace Landau.Win.forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label2.ForeColor = System.Drawing.Color.Magenta;
-            this.label2.Location = new System.Drawing.Point(700, 121);
+            this.label2.Location = new System.Drawing.Point(871, 206);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 29);
             this.label2.TabIndex = 16;
@@ -124,7 +126,7 @@ namespace Landau.Win.forms
             this.updSessionLengthDtp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.updSessionLengthDtp.CalendarFirstDayOfWeek = System.Windows.Forms.Day.Sunday;
             this.updSessionLengthDtp.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.updSessionLengthDtp.Location = new System.Drawing.Point(413, 237);
+            this.updSessionLengthDtp.Location = new System.Drawing.Point(584, 322);
             this.updSessionLengthDtp.Name = "updSessionLengthDtp";
             this.updSessionLengthDtp.Size = new System.Drawing.Size(120, 26);
             this.updSessionLengthDtp.StateCommon.Content.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
@@ -133,7 +135,7 @@ namespace Landau.Win.forms
             // updTitleTxb
             // 
             this.updTitleTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updTitleTxb.Location = new System.Drawing.Point(413, 340);
+            this.updTitleTxb.Location = new System.Drawing.Point(584, 425);
             this.updTitleTxb.Name = "updTitleTxb";
             this.updTitleTxb.Size = new System.Drawing.Size(249, 22);
             this.updTitleTxb.TabIndex = 14;
@@ -144,7 +146,7 @@ namespace Landau.Win.forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label1.ForeColor = System.Drawing.Color.Magenta;
-            this.label1.Location = new System.Drawing.Point(658, 28);
+            this.label1.Location = new System.Drawing.Point(829, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 29);
             this.label1.TabIndex = 13;
@@ -154,14 +156,14 @@ namespace Landau.Win.forms
             // 
             this.updPriceNumUD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.updPriceNumUD.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.updPriceNumUD.Location = new System.Drawing.Point(414, 121);
+            this.updPriceNumUD.Location = new System.Drawing.Point(585, 206);
             this.updPriceNumUD.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
             this.updPriceNumUD.Name = "updPriceNumUD";
-            this.updPriceNumUD.Size = new System.Drawing.Size(120, 32);
+            this.updPriceNumUD.Size = new System.Drawing.Size(177, 32);
             this.updPriceNumUD.TabIndex = 12;
             this.updPriceNumUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -172,14 +174,38 @@ namespace Landau.Win.forms
             this.updProductTypeCmbx.Items.AddRange(new object[] {
             "סדנא",
             "הרצאה"});
-            this.updProductTypeCmbx.Location = new System.Drawing.Point(413, 35);
+            this.updProductTypeCmbx.Location = new System.Drawing.Point(584, 120);
             this.updProductTypeCmbx.Name = "updProductTypeCmbx";
-            this.updProductTypeCmbx.Size = new System.Drawing.Size(121, 24);
+            this.updProductTypeCmbx.Size = new System.Drawing.Size(178, 24);
             this.updProductTypeCmbx.TabIndex = 11;
             // 
             // errorProviderUpdProduct
             // 
             this.errorProviderUpdProduct.ContainerControl = this;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label6.ForeColor = System.Drawing.Color.Magenta;
+            this.label6.Location = new System.Drawing.Point(706, 43);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(117, 29);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "בחר מוצר";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "סדנא",
+            "הרצאה"});
+            this.comboBox1.Location = new System.Drawing.Point(491, 48);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(178, 24);
+            this.comboBox1.TabIndex = 22;
             // 
             // updateProductForm
             // 
@@ -187,7 +213,9 @@ namespace Landau.Win.forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(969, 542);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.updateProductBtn);
             this.Controls.Add(this.updProductDescribtionTxb);
             this.Controls.Add(this.label5);
@@ -225,5 +253,7 @@ namespace Landau.Win.forms
         private System.Windows.Forms.NumericUpDown updPriceNumUD;
         private System.Windows.Forms.ComboBox updProductTypeCmbx;
         private System.Windows.Forms.ErrorProvider errorProviderUpdProduct;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

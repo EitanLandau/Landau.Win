@@ -151,11 +151,13 @@ namespace Landau.Win.forms
             this.projectMeetingsDGV.DataSource = this.projectTrackViewBindingSource;
             this.projectMeetingsDGV.Location = new System.Drawing.Point(42, 92);
             this.projectMeetingsDGV.Name = "projectMeetingsDGV";
+            this.projectMeetingsDGV.ReadOnly = true;
             this.projectMeetingsDGV.RowHeadersVisible = false;
             this.projectMeetingsDGV.RowHeadersWidth = 52;
             this.projectMeetingsDGV.RowTemplate.Height = 24;
             this.projectMeetingsDGV.Size = new System.Drawing.Size(1042, 510);
             this.projectMeetingsDGV.TabIndex = 76;
+            this.projectMeetingsDGV.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.projectMeetingsDGV_CellMouseClick);
             this.projectMeetingsDGV.SelectionChanged += new System.EventHandler(this.projectMeetingsDGV_SelectionChanged);
             // 
             // topic
@@ -164,6 +166,7 @@ namespace Landau.Win.forms
             this.topic.HeaderText = "שם הפגישה";
             this.topic.MinimumWidth = 6;
             this.topic.Name = "topic";
+            this.topic.ReadOnly = true;
             // 
             // projectIDDataGridViewTextBoxColumn
             // 
@@ -171,6 +174,7 @@ namespace Landau.Win.forms
             this.projectIDDataGridViewTextBoxColumn.HeaderText = "מספר פרוייקט";
             this.projectIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.projectIDDataGridViewTextBoxColumn.Name = "projectIDDataGridViewTextBoxColumn";
+            this.projectIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fullNameDataGridViewTextBoxColumn
             // 
@@ -178,6 +182,7 @@ namespace Landau.Win.forms
             this.fullNameDataGridViewTextBoxColumn.HeaderText = "שם לקוח";
             this.fullNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // institution
             // 
@@ -185,6 +190,7 @@ namespace Landau.Win.forms
             this.institution.HeaderText = "מוסד";
             this.institution.MinimumWidth = 6;
             this.institution.Name = "institution";
+            this.institution.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -192,6 +198,7 @@ namespace Landau.Win.forms
             this.nameDataGridViewTextBoxColumn.HeaderText = "סוג פגישה";
             this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dateDataGridViewTextBoxColumn
             // 
@@ -199,6 +206,7 @@ namespace Landau.Win.forms
             this.dateDataGridViewTextBoxColumn.HeaderText = "תאריך";
             this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // addressDataGridViewTextBoxColumn
             // 
@@ -206,6 +214,7 @@ namespace Landau.Win.forms
             this.addressDataGridViewTextBoxColumn.HeaderText = "כתובת";
             this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // durationDataGridViewTextBoxColumn
             // 
@@ -213,6 +222,7 @@ namespace Landau.Win.forms
             this.durationDataGridViewTextBoxColumn.HeaderText = "משך זמן הפגישה";
             this.durationDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.durationDataGridViewTextBoxColumn.Name = "durationDataGridViewTextBoxColumn";
+            this.durationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // notes
             // 
@@ -220,6 +230,7 @@ namespace Landau.Win.forms
             this.notes.HeaderText = "notes";
             this.notes.MinimumWidth = 6;
             this.notes.Name = "notes";
+            this.notes.ReadOnly = true;
             this.notes.Visible = false;
             // 
             // description
@@ -228,6 +239,7 @@ namespace Landau.Win.forms
             this.description.HeaderText = "description";
             this.description.MinimumWidth = 6;
             this.description.Name = "description";
+            this.description.ReadOnly = true;
             this.description.Visible = false;
             // 
             // projectTrackViewBindingSource

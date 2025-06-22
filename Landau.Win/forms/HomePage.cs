@@ -42,13 +42,13 @@ namespace Landau.Win
                 }
                 current.Close();
             }
-            current = new orderDeatailsWin(o1 , this);
+            current = new orderDeatailsWin(o1, this);
             current.Dock = DockStyle.Fill;
             current.TopLevel = false;
             current.TopMost = true;
             mainPanel.Controls.Add(current);
             current.Show();
-            
+
         }
         public void OpenAddOrderForm()
         {
@@ -341,6 +341,27 @@ namespace Landau.Win
             current.TopMost = true;
             mainPanel.Controls.Add(current);
             current.Show();
+        }
+
+        private void updProjBtn_Click(object sender, EventArgs e)
+        {
+            if (current != null)
+            {
+                if (current is updateProjectWin)
+                {
+                    return;
+                }
+                current.Close();
+            }
+            current = new updateProjectWin();
+            current.Dock = DockStyle.Fill;
+            current.TopLevel = false;
+            current.TopMost = true;
+            mainPanel.Controls.Add(current);
+            current.Show();
+            {
+
+            }
         }
     }
 }

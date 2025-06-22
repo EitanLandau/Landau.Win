@@ -217,13 +217,13 @@ namespace Landau.Win.forms
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.DimGray;
             this.button1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(291, 455);
+            this.button1.Location = new System.Drawing.Point(967, 550);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 81);
+            this.button1.Size = new System.Drawing.Size(34, 29);
             this.button1.TabIndex = 70;
             this.button1.Text = "כפתור הבאסה";
             this.button1.UseVisualStyleBackColor = false;

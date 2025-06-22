@@ -16,6 +16,7 @@ namespace Landau.Win.forms
         List<projectTBL> allProjects;
         List<projectTrackView> allProjectTrackViews;
         List<projectTrackView> currentProject;
+        List<meetingTypeTBL> allMeetingTypes;
         projectTBL selectedProject;
         public projectTrackWin()
         {
@@ -69,6 +70,35 @@ namespace Landau.Win.forms
                 meetingsLeftLbl.Text = "פגישות שנשארו:" + lst.Count;
             }
             updateDGV();
+        }
+
+        private void projectMeetingsDGV_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == 4 && e.RowIndex >= 0)
+            {
+                allMeetingTypes = DBHelper.allMeetingTypes;
+                DataGridViewCell cell = projectMeetingsDGV.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                meetingTypeTBL selectedType = allMeetingTypes.FirstOrDefault(x => x.name.Equals(cell.Value.ToString()));
+                string str = "";
+                str += "סוג פגישה:" + selectedType.name + "\n";
+                if (selectedType.isRequiresPreparation)
+                    str += " דורש הכנה מוקדמת?: כן" + "\n";
+                else
+                    str += " דורש הכנה מוקדמת?: לא" + "\n";
+
+                if (selectedType.multiParticipant)
+                    str += " רב משתתפים?: כן" + "\n";
+                else
+                    str += " רב משתתפים?: לא" + "\n";
+
+                str += "תיאור:" + selectedType.description;
+
+                cell.ToolTipText = str;
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

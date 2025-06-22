@@ -224,6 +224,7 @@
             // 
             this.updProjBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("updProjBtn.ImageLarge")));
             this.updProjBtn.TextLine1 = "עדכן פרוייקט";
+            this.updProjBtn.Click += new System.EventHandler(this.updProjBtn_Click);
             // 
             // trackYourProjectBtn
             // 

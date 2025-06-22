@@ -70,9 +70,9 @@ namespace Landau.Win.forms
                 s1.lectureID = selectedLecture.Id;
                 s1.date = DatePart + orderHour;
                 s1.amountInvited = (int)updAmmountInvitedUD.Value;
-                s1.notes = updOrderNotesTxb.Text;
+                s1.notes = updOrderDeatsNotesTxb.Text;
                 s1.adress = updAdressTxb.Text;
-                selectedOrder.notes = updOrderDeatsNotesTxb.Text;
+                selectedOrder.notes = updOrderNotesTxb.Text;
                 costumerTBL changeCust = (costumerTBL)changeCustomerCmbx.SelectedItem;
                 selectedOrder.costumerID = changeCust.Id;
                 if (DBHelper.UpdateOrder(selectedOrder) && DBHelper.UpdateSubOrder(s1)) { 
@@ -83,10 +83,10 @@ namespace Landau.Win.forms
                     changeCustomerCmbx.Text = "";
                     updAmmountInvitedUD.Value = 1;
                     updAdressTxb.Text = "";
-                    updOrderDeatsNotesTxb.Text = "";
+                    updOrderNotesTxb.Text = "";
                     updOrderDeatsNotesTxb.Text = "";
                     pickOrderCmbx.Text = "";
-                    
+
                 }
             else
             {

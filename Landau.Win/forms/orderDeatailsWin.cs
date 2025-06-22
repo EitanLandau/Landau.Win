@@ -81,6 +81,7 @@ MessageBoxButtons.YesNo,
 MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    DBHelper.DeleteOrder(o1);
                     mainWin.OpenAddOrderForm();
                 }
             }
@@ -97,11 +98,10 @@ MessageBoxIcon.Question);
                     mainWin.OpenAddOrderForm();
                 }
             }
-            if (!validateForm()) {
                 MessageBox.Show("מספר הזמנה: "+o1.Id);
                 
                 mainWin.OpenAddOrderForm();
-                 }
+                 
         }
 
         private bool validateForm()
