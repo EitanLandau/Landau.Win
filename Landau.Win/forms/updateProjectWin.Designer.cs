@@ -31,18 +31,24 @@ namespace Landau.Win.forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(updateProjectWin));
-            this.changeCustomerCmbx = new System.Windows.Forms.ComboBox();
+            this.changeProjCustomerCmbx = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.pickOrderCmbx = new System.Windows.Forms.ComboBox();
+            this.projToUpdCmbx = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.updOrderDateDtp = new Krypton.Toolkit.KryptonDateTimePicker();
             this.updOrderNotesTxb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.changeProductCmbx = new System.Windows.Forms.ComboBox();
+            this.changeServiceCmbx = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.orderHistoryDGV = new System.Windows.Forms.DataGridView();
+            this.updProjDGV = new System.Windows.Forms.DataGridView();
+            this.projectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.meetingID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.topic = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectTrackViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -54,33 +60,52 @@ namespace Landau.Win.forms
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.meetingTypeCmbx = new System.Windows.Forms.ComboBox();
+            this.updMeetingTypeCmbx = new System.Windows.Forms.ComboBox();
             this.addressTxb = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.continueProjBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.projectTrackViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.meetingID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.topic = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.orderHistoryDGV)).BeginInit();
+            this.meetingIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.topicDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.institutionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.costumerTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.serviceTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.meetingTypeTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.updProjDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectTrackViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectTBLBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceTBLBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.meetingTypeTBLBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // changeCustomerCmbx
+            // changeProjCustomerCmbx
             // 
-            this.changeCustomerCmbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.changeCustomerCmbx.DisplayMember = "fullName";
-            this.changeCustomerCmbx.FormattingEnabled = true;
-            this.changeCustomerCmbx.Location = new System.Drawing.Point(853, 270);
-            this.changeCustomerCmbx.Name = "changeCustomerCmbx";
-            this.changeCustomerCmbx.Size = new System.Drawing.Size(211, 24);
-            this.changeCustomerCmbx.TabIndex = 63;
-            this.changeCustomerCmbx.ValueMember = "Id";
+            this.changeProjCustomerCmbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.changeProjCustomerCmbx.DataSource = this.costumerTBLBindingSource;
+            this.changeProjCustomerCmbx.DisplayMember = "fullName";
+            this.changeProjCustomerCmbx.FormattingEnabled = true;
+            this.changeProjCustomerCmbx.Location = new System.Drawing.Point(853, 270);
+            this.changeProjCustomerCmbx.Name = "changeProjCustomerCmbx";
+            this.changeProjCustomerCmbx.Size = new System.Drawing.Size(211, 24);
+            this.changeProjCustomerCmbx.TabIndex = 63;
+            this.changeProjCustomerCmbx.ValueMember = "Id";
             // 
             // label9
             // 
@@ -105,16 +130,18 @@ namespace Landau.Win.forms
             this.label8.TabIndex = 61;
             this.label8.Text = "פרטי הזמנה";
             // 
-            // pickOrderCmbx
+            // projToUpdCmbx
             // 
-            this.pickOrderCmbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pickOrderCmbx.DisplayMember = "Id";
-            this.pickOrderCmbx.FormattingEnabled = true;
-            this.pickOrderCmbx.Location = new System.Drawing.Point(853, 114);
-            this.pickOrderCmbx.Name = "pickOrderCmbx";
-            this.pickOrderCmbx.Size = new System.Drawing.Size(214, 24);
-            this.pickOrderCmbx.TabIndex = 59;
-            this.pickOrderCmbx.ValueMember = "Id";
+            this.projToUpdCmbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.projToUpdCmbx.DataSource = this.projectTBLBindingSource;
+            this.projToUpdCmbx.DisplayMember = "Id";
+            this.projToUpdCmbx.FormattingEnabled = true;
+            this.projToUpdCmbx.Location = new System.Drawing.Point(853, 114);
+            this.projToUpdCmbx.Name = "projToUpdCmbx";
+            this.projToUpdCmbx.Size = new System.Drawing.Size(214, 24);
+            this.projToUpdCmbx.TabIndex = 59;
+            this.projToUpdCmbx.ValueMember = "Id";
+            this.projToUpdCmbx.SelectedIndexChanged += new System.EventHandler(this.projToUpdCmbx_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -172,16 +199,17 @@ namespace Landau.Win.forms
             this.label2.TabIndex = 54;
             this.label2.Text = "תאריך פגישה";
             // 
-            // changeProductCmbx
+            // changeServiceCmbx
             // 
-            this.changeProductCmbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.changeProductCmbx.DisplayMember = "title";
-            this.changeProductCmbx.FormattingEnabled = true;
-            this.changeProductCmbx.Location = new System.Drawing.Point(853, 359);
-            this.changeProductCmbx.Name = "changeProductCmbx";
-            this.changeProductCmbx.Size = new System.Drawing.Size(211, 24);
-            this.changeProductCmbx.TabIndex = 53;
-            this.changeProductCmbx.ValueMember = "Id";
+            this.changeServiceCmbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.changeServiceCmbx.DataSource = this.serviceTBLBindingSource;
+            this.changeServiceCmbx.DisplayMember = "serviceName";
+            this.changeServiceCmbx.FormattingEnabled = true;
+            this.changeServiceCmbx.Location = new System.Drawing.Point(853, 359);
+            this.changeServiceCmbx.Name = "changeServiceCmbx";
+            this.changeServiceCmbx.Size = new System.Drawing.Size(211, 24);
+            this.changeServiceCmbx.TabIndex = 53;
+            this.changeServiceCmbx.ValueMember = "Id";
             // 
             // label1
             // 
@@ -195,30 +223,90 @@ namespace Landau.Win.forms
             this.label1.TabIndex = 52;
             this.label1.Text = "בחר תהליך";
             // 
-            // orderHistoryDGV
+            // updProjDGV
             // 
-            this.orderHistoryDGV.AllowUserToAddRows = false;
-            this.orderHistoryDGV.AllowUserToDeleteRows = false;
-            this.orderHistoryDGV.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.orderHistoryDGV.AutoGenerateColumns = false;
-            this.orderHistoryDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.orderHistoryDGV.ColumnHeadersHeight = 29;
-            this.orderHistoryDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.orderHistoryDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.updProjDGV.AllowUserToAddRows = false;
+            this.updProjDGV.AllowUserToDeleteRows = false;
+            this.updProjDGV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.updProjDGV.AutoGenerateColumns = false;
+            this.updProjDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.updProjDGV.ColumnHeadersHeight = 29;
+            this.updProjDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.updProjDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.projectID,
             this.meetingID,
             this.name,
             this.topic,
-            this.description});
-            this.orderHistoryDGV.DataSource = this.projectTrackViewBindingSource;
-            this.orderHistoryDGV.Location = new System.Drawing.Point(302, 91);
-            this.orderHistoryDGV.Name = "orderHistoryDGV";
-            this.orderHistoryDGV.ReadOnly = true;
-            this.orderHistoryDGV.RowHeadersVisible = false;
-            this.orderHistoryDGV.RowHeadersWidth = 51;
-            this.orderHistoryDGV.RowTemplate.Height = 24;
-            this.orderHistoryDGV.Size = new System.Drawing.Size(625, 478);
-            this.orderHistoryDGV.TabIndex = 60;
+            this.description,
+            this.meetingIDDataGridViewTextBoxColumn,
+            this.durationDataGridViewTextBoxColumn,
+            this.projectIDDataGridViewTextBoxColumn,
+            this.typeIDDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.notesDataGridViewTextBoxColumn,
+            this.topicDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.customerIDDataGridViewTextBoxColumn,
+            this.serviceIDDataGridViewTextBoxColumn,
+            this.titleDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.serviceNameDataGridViewTextBoxColumn,
+            this.fullNameDataGridViewTextBoxColumn,
+            this.institutionDataGridViewTextBoxColumn});
+            this.updProjDGV.DataSource = this.projectTrackViewBindingSource;
+            this.updProjDGV.Location = new System.Drawing.Point(302, 91);
+            this.updProjDGV.Name = "updProjDGV";
+            this.updProjDGV.ReadOnly = true;
+            this.updProjDGV.RowHeadersVisible = false;
+            this.updProjDGV.RowHeadersWidth = 51;
+            this.updProjDGV.RowTemplate.Height = 24;
+            this.updProjDGV.Size = new System.Drawing.Size(625, 478);
+            this.updProjDGV.TabIndex = 60;
+            // 
+            // projectID
+            // 
+            this.projectID.DataPropertyName = "projectID";
+            this.projectID.HeaderText = "מספר פרוייקט";
+            this.projectID.MinimumWidth = 6;
+            this.projectID.Name = "projectID";
+            this.projectID.ReadOnly = true;
+            // 
+            // meetingID
+            // 
+            this.meetingID.DataPropertyName = "meetingID";
+            this.meetingID.HeaderText = "מספר פגישה";
+            this.meetingID.MinimumWidth = 6;
+            this.meetingID.Name = "meetingID";
+            this.meetingID.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "סוג פגישה";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // topic
+            // 
+            this.topic.DataPropertyName = "topic";
+            this.topic.HeaderText = "תיאור פגישה";
+            this.topic.MinimumWidth = 6;
+            this.topic.Name = "topic";
+            this.topic.ReadOnly = true;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "description";
+            this.description.HeaderText = "תיאור פרוייקט";
+            this.description.MinimumWidth = 6;
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            // 
+            // projectTrackViewBindingSource
+            // 
+            this.projectTrackViewBindingSource.DataSource = typeof(Landau.Win.projectTrackView);
             // 
             // textBox1
             // 
@@ -245,6 +333,9 @@ namespace Landau.Win.forms
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.DisplayMember = "title";
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "פעיל",
+            "לא פעיל"});
             this.comboBox1.Location = new System.Drawing.Point(853, 513);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(211, 24);
@@ -336,15 +427,16 @@ namespace Landau.Win.forms
             this.label13.TabIndex = 73;
             this.label13.Text = "שנה תאריך";
             // 
-            // meetingTypeCmbx
+            // updMeetingTypeCmbx
             // 
-            this.meetingTypeCmbx.DisplayMember = "name";
-            this.meetingTypeCmbx.FormattingEnabled = true;
-            this.meetingTypeCmbx.Location = new System.Drawing.Point(16, 199);
-            this.meetingTypeCmbx.Name = "meetingTypeCmbx";
-            this.meetingTypeCmbx.Size = new System.Drawing.Size(215, 24);
-            this.meetingTypeCmbx.TabIndex = 72;
-            this.meetingTypeCmbx.ValueMember = "Id";
+            this.updMeetingTypeCmbx.DataSource = this.meetingTypeTBLBindingSource;
+            this.updMeetingTypeCmbx.DisplayMember = "name";
+            this.updMeetingTypeCmbx.FormattingEnabled = true;
+            this.updMeetingTypeCmbx.Location = new System.Drawing.Point(16, 199);
+            this.updMeetingTypeCmbx.Name = "updMeetingTypeCmbx";
+            this.updMeetingTypeCmbx.Size = new System.Drawing.Size(215, 24);
+            this.updMeetingTypeCmbx.TabIndex = 72;
+            this.updMeetingTypeCmbx.ValueMember = "Id";
             // 
             // addressTxb
             // 
@@ -410,49 +502,149 @@ namespace Landau.Win.forms
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // projectTrackViewBindingSource
+            // meetingIDDataGridViewTextBoxColumn
             // 
-            this.projectTrackViewBindingSource.DataSource = typeof(Landau.Win.projectTrackView);
+            this.meetingIDDataGridViewTextBoxColumn.DataPropertyName = "meetingID";
+            this.meetingIDDataGridViewTextBoxColumn.HeaderText = "meetingID";
+            this.meetingIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.meetingIDDataGridViewTextBoxColumn.Name = "meetingIDDataGridViewTextBoxColumn";
+            this.meetingIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // projectID
+            // durationDataGridViewTextBoxColumn
             // 
-            this.projectID.DataPropertyName = "projectID";
-            this.projectID.HeaderText = "מספר פרוייקט";
-            this.projectID.MinimumWidth = 6;
-            this.projectID.Name = "projectID";
-            this.projectID.ReadOnly = true;
+            this.durationDataGridViewTextBoxColumn.DataPropertyName = "duration";
+            this.durationDataGridViewTextBoxColumn.HeaderText = "duration";
+            this.durationDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.durationDataGridViewTextBoxColumn.Name = "durationDataGridViewTextBoxColumn";
+            this.durationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // meetingID
+            // projectIDDataGridViewTextBoxColumn
             // 
-            this.meetingID.DataPropertyName = "meetingID";
-            this.meetingID.HeaderText = "מספר פגישה";
-            this.meetingID.MinimumWidth = 6;
-            this.meetingID.Name = "meetingID";
-            this.meetingID.ReadOnly = true;
+            this.projectIDDataGridViewTextBoxColumn.DataPropertyName = "projectID";
+            this.projectIDDataGridViewTextBoxColumn.HeaderText = "projectID";
+            this.projectIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.projectIDDataGridViewTextBoxColumn.Name = "projectIDDataGridViewTextBoxColumn";
+            this.projectIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // name
+            // typeIDDataGridViewTextBoxColumn
             // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "סוג פגישה";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
+            this.typeIDDataGridViewTextBoxColumn.DataPropertyName = "typeID";
+            this.typeIDDataGridViewTextBoxColumn.HeaderText = "typeID";
+            this.typeIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.typeIDDataGridViewTextBoxColumn.Name = "typeIDDataGridViewTextBoxColumn";
+            this.typeIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // topic
+            // addressDataGridViewTextBoxColumn
             // 
-            this.topic.DataPropertyName = "topic";
-            this.topic.HeaderText = "תיאור פגישה";
-            this.topic.MinimumWidth = 6;
-            this.topic.Name = "topic";
-            this.topic.ReadOnly = true;
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "address";
+            this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // description
+            // dateDataGridViewTextBoxColumn
             // 
-            this.description.DataPropertyName = "description";
-            this.description.HeaderText = "תיאור פרוייקט";
-            this.description.MinimumWidth = 6;
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
+            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // notesDataGridViewTextBoxColumn
+            // 
+            this.notesDataGridViewTextBoxColumn.DataPropertyName = "notes";
+            this.notesDataGridViewTextBoxColumn.HeaderText = "notes";
+            this.notesDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
+            this.notesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // topicDataGridViewTextBoxColumn
+            // 
+            this.topicDataGridViewTextBoxColumn.DataPropertyName = "topic";
+            this.topicDataGridViewTextBoxColumn.HeaderText = "topic";
+            this.topicDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.topicDataGridViewTextBoxColumn.Name = "topicDataGridViewTextBoxColumn";
+            this.topicDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // customerIDDataGridViewTextBoxColumn
+            // 
+            this.customerIDDataGridViewTextBoxColumn.DataPropertyName = "customerID";
+            this.customerIDDataGridViewTextBoxColumn.HeaderText = "customerID";
+            this.customerIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.customerIDDataGridViewTextBoxColumn.Name = "customerIDDataGridViewTextBoxColumn";
+            this.customerIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // serviceIDDataGridViewTextBoxColumn
+            // 
+            this.serviceIDDataGridViewTextBoxColumn.DataPropertyName = "serviceID";
+            this.serviceIDDataGridViewTextBoxColumn.HeaderText = "serviceID";
+            this.serviceIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.serviceIDDataGridViewTextBoxColumn.Name = "serviceIDDataGridViewTextBoxColumn";
+            this.serviceIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "title";
+            this.titleDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // serviceNameDataGridViewTextBoxColumn
+            // 
+            this.serviceNameDataGridViewTextBoxColumn.DataPropertyName = "serviceName";
+            this.serviceNameDataGridViewTextBoxColumn.HeaderText = "serviceName";
+            this.serviceNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.serviceNameDataGridViewTextBoxColumn.Name = "serviceNameDataGridViewTextBoxColumn";
+            this.serviceNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fullNameDataGridViewTextBoxColumn
+            // 
+            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "fullName";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "fullName";
+            this.fullNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // institutionDataGridViewTextBoxColumn
+            // 
+            this.institutionDataGridViewTextBoxColumn.DataPropertyName = "institution";
+            this.institutionDataGridViewTextBoxColumn.HeaderText = "institution";
+            this.institutionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.institutionDataGridViewTextBoxColumn.Name = "institutionDataGridViewTextBoxColumn";
+            this.institutionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // projectTBLBindingSource
+            // 
+            this.projectTBLBindingSource.DataSource = typeof(Landau.Win.projectTBL);
+            // 
+            // costumerTBLBindingSource
+            // 
+            this.costumerTBLBindingSource.DataSource = typeof(Landau.Win.costumerTBL);
+            // 
+            // serviceTBLBindingSource
+            // 
+            this.serviceTBLBindingSource.DataSource = typeof(Landau.Win.serviceTBL);
+            // 
+            // meetingTypeTBLBindingSource
+            // 
+            this.meetingTypeTBLBindingSource.DataSource = typeof(Landau.Win.meetingTypeTBL);
             // 
             // updateProjectWin
             // 
@@ -472,49 +664,54 @@ namespace Landau.Win.forms
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.meetingTypeCmbx);
+            this.Controls.Add(this.updMeetingTypeCmbx);
             this.Controls.Add(this.addressTxb);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.changeCustomerCmbx);
+            this.Controls.Add(this.changeProjCustomerCmbx);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.pickOrderCmbx);
+            this.Controls.Add(this.projToUpdCmbx);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.updOrderDateDtp);
             this.Controls.Add(this.updOrderNotesTxb);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.changeProductCmbx);
+            this.Controls.Add(this.changeServiceCmbx);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.orderHistoryDGV);
+            this.Controls.Add(this.updProjDGV);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "updateProjectWin";
             this.Text = "updateProjectWin";
-            ((System.ComponentModel.ISupportInitialize)(this.orderHistoryDGV)).EndInit();
+            this.Load += new System.EventHandler(this.updateProjectWin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.updProjDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectTrackViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectTBLBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.costumerTBLBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceTBLBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.meetingTypeTBLBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox changeCustomerCmbx;
+        private System.Windows.Forms.ComboBox changeProjCustomerCmbx;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox pickOrderCmbx;
+        private System.Windows.Forms.ComboBox projToUpdCmbx;
         private System.Windows.Forms.Label label7;
         private Krypton.Toolkit.KryptonDateTimePicker updOrderDateDtp;
         private System.Windows.Forms.TextBox updOrderNotesTxb;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox changeProductCmbx;
+        private System.Windows.Forms.ComboBox changeServiceCmbx;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView orderHistoryDGV;
+        private System.Windows.Forms.DataGridView updProjDGV;
         private System.Windows.Forms.BindingSource projectTrackViewBindingSource;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
@@ -527,7 +724,7 @@ namespace Landau.Win.forms
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox meetingTypeCmbx;
+        private System.Windows.Forms.ComboBox updMeetingTypeCmbx;
         private System.Windows.Forms.TextBox addressTxb;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox2;
@@ -539,5 +736,25 @@ namespace Landau.Win.forms
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn topic;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn meetingIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn durationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn projectIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn notesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn topicDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serviceIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serviceNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn institutionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource costumerTBLBindingSource;
+        private System.Windows.Forms.BindingSource projectTBLBindingSource;
+        private System.Windows.Forms.BindingSource serviceTBLBindingSource;
+        private System.Windows.Forms.BindingSource meetingTypeTBLBindingSource;
     }
 }
